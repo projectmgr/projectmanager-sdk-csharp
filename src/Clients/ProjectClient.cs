@@ -1,0 +1,113 @@
+/***
+ * ProjectManager API for C#
+ *
+ * (c) 2023-2023 ProjectManager.com, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     ProjectManager.com <support@projectmanager.com>
+ * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
+ */
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using ProjectManager.SDK.Models;
+
+
+namespace ProjectManager.SDK.Clients
+{
+    /// <summary>
+    /// API methods related to Project
+    /// </summary>
+    public class ProjectClient
+    {
+        private readonly ProjectManagerClient _client;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public ProjectClient(ProjectManagerClient client)
+        {
+            _client = client;
+        }
+
+        /// <summary>
+        /// Retrieve a list of Projects that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        /// </summary>
+        /// <param name="$top">The number of records to return</param>
+        /// <param name="$skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="$filter">Filter the expression according to oData queries</param>
+        /// <param name="$select">Specify which properties should be returned</param>
+        /// <param name="$orderby">Order collection by this field.</param>
+        /// <param name="$expand">Include related data in the response</param>
+        public async Task<AstroResult<ProjectDtoListAstroResult>> QueryProjects(string $top = null, string $skip = null, string $filter = null, string $select = null, string $orderby = null, string $expand = null)
+        {
+            var url = $"/project-api/public/projects";
+            var options = new Dictionary<string, object>();
+            if ($top != null) { options["$top"] = $top; }
+            if ($skip != null) { options["$skip"] = $skip; }
+            if ($filter != null) { options["$filter"] = $filter; }
+            if ($select != null) { options["$select"] = $select; }
+            if ($orderby != null) { options["$orderby"] = $orderby; }
+            if ($expand != null) { options["$expand"] = $expand; }
+            return await _client.Request<ProjectDtoListAstroResult>(HttpMethod.Get, url, options, null, null);
+        }
+
+        /// <summary>
+        /// Create a new project based on the details provided.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        /// </summary>
+        /// <param name="body">Information about the Project you wish to create</param>
+        public async Task<AstroResult<ProjectCreateResponseDtoAstroResult>> CreateProject(ProjectCreateRequestDto body)
+        {
+            var url = $"/project-api/public/projects";
+            return await _client.Request<ProjectCreateResponseDtoAstroResult>(HttpMethod.Post, url, null, body, null);
+        }
+
+        /// <summary>
+        /// Retrieves a project based on its unique identifier.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project to retrieve.</param>
+        public async Task<AstroResult<ProjectDtoAstroResult>> RetrieveProject(string projectId)
+        {
+            var url = $"/project-api/public/projects/{projectId}";
+            return await _client.Request<ProjectDtoAstroResult>(HttpMethod.Get, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Update an existing Project and replace the values of fields specified.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        ///
+        /// Multiple users can be working on data at the same time.  When you call an API to update an
+        /// object, this call is converted into a Changeset that is then applied sequentially.  You can use
+        /// RetrieveChangeset to see the status of an individual Changeset.
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project to update</param>
+        /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
+        public async Task<AstroResult<AstroResult>> UpdateProject(Guid projectId, ProjectUpdateDto body)
+        {
+            var url = $"/project-api/public/projects/{projectId}";
+            return await _client.Request<AstroResult>(HttpMethod.Put, url, null, body, null);
+        }
+    }
+}

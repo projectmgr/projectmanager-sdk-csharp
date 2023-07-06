@@ -1,0 +1,121 @@
+/***
+ * ProjectManager API for C#
+ *
+ * (c) 2023-2023 ProjectManager.com, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     ProjectManager.com <support@projectmanager.com>
+ * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
+ */
+
+
+
+#pragma warning disable CS8618
+
+using System;
+
+namespace ProjectManager.SDK.Models
+{
+
+    /// <summary>
+    /// A Task is an individual element of work that must be performed to complete a Project.  A
+    /// Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
+    /// indicate whether they have a dependency or a connection.
+    /// </summary>
+    public class TaskCreateDto
+    {
+
+        /// <summary>
+        /// The unique identifier of this Task.
+        ///
+        /// TODO - Are people allowed to set this when creating a task?  Doesn&#39;t that violate
+        /// the principle of GUIDs?
+        /// </summary>
+        public Guid? Id { get; set; }
+
+        /// <summary>
+        /// The common name of this Task.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// A description of the work to be performed in this Task.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// If this Task is the child of another Task, set this value to the unique identifier
+        /// of the parent Task.
+        /// </summary>
+        public Guid? ParentTaskId { get; set; }
+
+        /// <summary>
+        /// The numerical percentage, from 0-100, representing the percentage completion
+        /// for this Task.  Any numbers below zero or above 100 will be clamped to the
+        /// minimum or maximum value.
+        ///
+        /// This value can be edited manually in the Gantt chart view of the application,
+        /// or can be selected on the Task Detail page within the Kanban board.
+        /// </summary>
+        public int? PercentComplete { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the TaskStatus for this Task
+        /// </summary>
+        public Guid? StatusId { get; set; }
+
+        /// <summary>
+        /// A numerical value representing the Priority of this Task
+        /// </summary>
+        public int? PriorityId { get; set; }
+
+        /// <summary>
+        /// A list of unique identifiers of TaskAssignees to be assigned to this Task
+        /// </summary>
+        public Guid[] Assignees { get; set; }
+
+        /// <summary>
+        /// The date when work on this Task is planned to begin.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string PlannedStartDate { get; set; }
+
+        /// <summary>
+        /// The date when work on this Task is expected to complete.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string PlannedFinishDate { get; set; }
+
+        /// <summary>
+        /// The planned duration (in minutes) for this Task.  Cannot be negative.
+        /// </summary>
+        public int? PlannedDuration { get; set; }
+
+        /// <summary>
+        /// The planned effort (in minutes) for this Task.  Cannot be negative.
+        /// </summary>
+        public int? PlannedEffort { get; set; }
+
+        /// <summary>
+        /// The planned cost for this Task.  Cannot be negative.
+        /// </summary>
+        public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// The date when work on this Task actually started, if known.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string ActualStartDate { get; set; }
+
+        /// <summary>
+        /// The actual cost of this Task to date, if known.
+        /// </summary>
+        public decimal? ActualCost { get; set; }
+    }
+}

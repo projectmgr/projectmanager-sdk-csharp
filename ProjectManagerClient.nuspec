@@ -9,7 +9,7 @@
 		<license type="file">docs/LICENSE</license>
 		<projectUrl>https://github.com/projectmgr/projectmanager-sdk-csharp</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description></description>
+		<description>A client library that exposes the functionality of ProjectManager.com through C#/DotNet.</description>
 		<icon>docs/logo.png</icon>
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for CSharp</summary>
@@ -19,7 +19,7 @@
             https://learn.projectmanager.com/latest-releases
         </releaseNotes>
 		<copyright>Copyright 2023 - 2023</copyright>
-    	<tags></tags>
+    	<tags>projectmanager project management task tracking projects tasks</tags>
 		<repository type="git" url="https://github.com/projectmgr/projectmanager-sdk-csharp" />
 		<dependencies>
 			<group targetFramework=".NETStandard2.0">

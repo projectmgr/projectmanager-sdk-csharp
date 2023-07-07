@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.SDK", "src\ProjectManager.SDK.csproj", "{7CC02133-5958-4B8D-B8FB-729E543F1896}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Files", "Other Files", "{2F567EA9-D4E4-49C2-B1AA-BB27D247D6E1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.nuspec = .nuspec
+		LICENSE = LICENSE
+		ProjectManagerClient.nuspec = ProjectManagerClient.nuspec
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PmConsole", "PmConsole\PmConsole.csproj", "{A3D7A495-2B96-4FAF-B688-527D4A72967E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CC02133-5958-4B8D-B8FB-729E543F1896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC02133-5958-4B8D-B8FB-729E543F1896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC02133-5958-4B8D-B8FB-729E543F1896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC02133-5958-4B8D-B8FB-729E543F1896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D7A495-2B96-4FAF-B688-527D4A72967E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D7A495-2B96-4FAF-B688-527D4A72967E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D7A495-2B96-4FAF-B688-527D4A72967E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D7A495-2B96-4FAF-B688-527D4A72967E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

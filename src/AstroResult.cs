@@ -40,11 +40,6 @@ namespace ProjectManager.SDK
         public bool Success { get; set; }
 
         /// <summary>
-        /// True if the API call failed.
-        /// </summary>
-        public bool? HasError { get; set; }
-
-        /// <summary>
         /// The HTTP code of the response.
         /// </summary>
         public HttpStatusCode Status { get; set; }
@@ -52,7 +47,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The result data, if this API call succeeded
         /// </summary>
-        public T Value { get; set; }
+        public T Data { get; set; }
 
         /// <summary>
         /// If this API was a file download API call, and the API call succeeded, this will contain the file data.
@@ -77,9 +72,8 @@ namespace ProjectManager.SDK
         /// <param name="errorContent"></param>
         internal void ParseError(ProjectManagerClient client, HttpStatusCode statusCode, string errorContent)
         {
-            HasError = true;
             Status = statusCode;
-            Value = default(T);
+            Data = default(T);
             FileData = null;
             try
             {

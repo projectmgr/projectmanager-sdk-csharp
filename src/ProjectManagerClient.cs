@@ -356,7 +356,8 @@ namespace ProjectManager.SDK
                         // Successful API responses can be very large, so let's stream them
                         using (var stream = await response.Content.ReadAsStreamAsync())
                         {
-                            result.Value = await JsonSerializer.DeserializeAsync<T>(stream, _options);
+                            var newResult = await JsonSerializer.DeserializeAsync<AstroResult<T>>(stream, _options);
+                            result.Data = newResult.Data;
                         }
                     }
                 }

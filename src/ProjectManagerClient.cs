@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1355
+ * @version    11.1.1371
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,11 +39,11 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1355";
+        public const string SdkVersion = "11.1.1371";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
-        private readonly JsonSerializerOptions _options;
+        internal readonly JsonSerializerOptions _options;
         
         private string _appName;
         private string _bearerToken;
@@ -93,6 +93,11 @@ namespace ProjectManager.SDK
         /// API methods related to ProjectStatus
         /// </summary>
         public ProjectStatusClient ProjectStatus { get; }
+
+        /// <summary>
+        /// API methods related to ProjectTemplate
+        /// </summary>
+        public ProjectTemplateClient ProjectTemplate { get; }
 
         /// <summary>
         /// API methods related to Resource
@@ -165,6 +170,7 @@ namespace ProjectManager.SDK
             ProjectFolder = new ProjectFolderClient(this);
             ProjectPriority = new ProjectPriorityClient(this);
             ProjectStatus = new ProjectStatusClient(this);
+            ProjectTemplate = new ProjectTemplateClient(this);
             Resource = new ResourceClient(this);
             ResourceSkill = new ResourceSkillClient(this);
             ResourceTeam = new ResourceTeamClient(this);
@@ -328,7 +334,7 @@ namespace ProjectManager.SDK
                 var result = new AstroResult<T>
                 {
                     Success = response.IsSuccessStatusCode,
-                    StatusCode = response.StatusCode,
+                    Status = response.StatusCode,
                 };
                 if (response.Headers.TryGetValues("Server-Duration", out var durations))
                 {
@@ -338,7 +344,7 @@ namespace ProjectManager.SDK
                         result.ServerDuration = duration;
                     }
                 }
-                if (result.Success == true)
+                if (result.Success)
                 {
                     // Handle file downloads
                     if (typeof(T) == typeof(byte[]))
@@ -360,31 +366,7 @@ namespace ProjectManager.SDK
                     // or "server down" can fail to provide valid JSON in the response.  If
                     // we fail to parse the response as JSON, just create a simulated error
                     // object with as much information as is available.
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    if (!string.IsNullOrEmpty(errorContent))
-                    {
-                        try
-                        {
-                            result.Error = JsonSerializer.Deserialize<AstroError>(errorContent, _options);
-                            if (result.Error != null)
-                            {
-                                result.Error.Content = errorContent;
-                            }
-                        }
-                        catch
-                        {
-                            // ignored
-                        }
-                    }
-
-                    if (result.Error == null)
-                    {
-                        result.Error = new AstroError()
-                        {
-                            Message = $"{(int)response.StatusCode} {response.StatusCode}",
-                            Content = errorContent
-                        };
-                    }
+                    result.ParseError(this, response.StatusCode, await response.Content.ReadAsStringAsync());
                 }
 
                 // Calculate length of time it took including JSON processing

@@ -17,15 +17,11 @@
 
 using System;
 
-namespace ProjectManager.SDK.Models
+namespace ProjectManager.SDK
 {
-
-    /// <summary>
-    /// Information about an error that occurred within the ProjectManager API.
-    /// </summary>
     public class AstroError
     {
-
+                
         /// <summary>
         /// A technical description of the error that occurred.  Not suitable for
         /// display to end users.
@@ -45,7 +41,7 @@ namespace ProjectManager.SDK.Models
         public string Message { get; set; }
         
         /// <summary>
-        /// The raw string content of the error.
+        /// The raw JSON result of the error message, for debugging purposes.
         /// </summary>
         public string Content { get; set; }
     }

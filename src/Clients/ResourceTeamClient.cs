@@ -40,14 +40,13 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ResourceTeams defined within your Workspace.
         ///
-        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
-        /// in a manner consistent with your business needs.  You can assign Resources to be members
-        /// of zero, one, or many ResourceTeams.
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
+        ///
         /// </summary>
-        public async Task<AstroResult<BusinessTeamDtoListAstroResult>> RetrieveResourceTeams()
+        public async Task<AstroResult<BusinessTeamDto[]>> RetrieveResourceTeams()
         {
             var url = $"/project-api/public/resources/teams";
-            return await _client.Request<BusinessTeamDtoListAstroResult>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<BusinessTeamDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

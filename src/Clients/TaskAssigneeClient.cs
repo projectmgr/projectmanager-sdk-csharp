@@ -40,45 +40,43 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Replace all TaskAssignees on a Task with new TaskAssignees.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
-        /// to a Task and designate what proportion of their time will be allocated to this Task.
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
+        ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignees will be replaced</param>
         /// <param name="body">The new list of TaskAssignees for this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDtoAstroResult>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDtoAstroResult>(HttpMethod.Post, url, null, body, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
         }
 
         /// <summary>
-        /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update
-        /// their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their
-        /// allocation level to the correct amount.
+        /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their allocation level to the correct amount.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
-        /// to a Task and designate what proportion of their time will be allocated to this Task.
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
+        ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
         /// <param name="body">List of Assignee data</param>
-        public async Task<AstroResult<ChangeSetStatusDtoAstroResult>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDtoAstroResult>(HttpMethod.Put, url, null, body, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
         }
 
         /// <summary>
         /// Remove one or more TaskAssignees from a Task.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
-        /// to a Task and designate what proportion of their time will be allocated to this Task.
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
+        ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
         /// <param name="body">List of TaskAssignee records to remove</param>
-        public async Task<AstroResult<ChangeSetStatusDtoAstroResult>> DeleteTaskAssignees(Guid taskId, IdDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body)
         {
             var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDtoAstroResult>(HttpMethod.Delete, url, null, body, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);
         }
     }
 }

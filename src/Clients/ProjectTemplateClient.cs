@@ -23,30 +23,30 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to ResourceSkill
+    /// API methods related to ProjectTemplate
     /// </summary>
-    public class ResourceSkillClient
+    public class ProjectTemplateClient
     {
         private readonly ProjectManagerClient _client;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ResourceSkillClient(ProjectManagerClient client)
+        public ProjectTemplateClient(ProjectManagerClient client)
         {
             _client = client;
         }
 
         /// <summary>
-        /// Retrieves all ResourceSkills defined within your Workspace.
+        /// Retrieves all ProjectTemplates defined in the system.
         ///
-        /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
+        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.
         ///
         /// </summary>
-        public async Task<AstroResult<BusinessSkillDto[]>> RetrieveResourceSkills()
+        public async Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates()
         {
-            var url = $"/project-api/public/resources/skills";
-            return await _client.Request<BusinessSkillDto[]>(HttpMethod.Get, url, null, null, null);
+            var url = $"/project-api/public/projects/templates";
+            return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

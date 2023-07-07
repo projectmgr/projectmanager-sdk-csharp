@@ -40,62 +40,54 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ProjectFields defined within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
-        /// for any integration purpose that is important to your business.  Each ProjectField has a data
-        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
-        /// within your Workspace.
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+        ///
         /// </summary>
-        public async Task<AstroResult<GetProjectFieldsResponseDtoListAstroResult>> RetrieveProjectFields()
+        public async Task<AstroResult<GetProjectFieldsResponseDto[]>> RetrieveProjectFields()
         {
             var url = $"/project-api/public/projects/fields";
-            return await _client.Request<GetProjectFieldsResponseDtoListAstroResult>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<GetProjectFieldsResponseDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
         /// Creates a new ProjectField within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
-        /// for any integration purpose that is important to your business.  Each ProjectField has a data
-        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
-        /// within your Workspace.
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+        ///
         /// </summary>
         /// <param name="body">Information about the ProjectField to create</param>
-        public async Task<AstroResult<CreateProjectFieldResponseDtoAstroResult>> CreateProjectField(CreateProjectFieldDto body)
+        public async Task<AstroResult<CreateProjectFieldResponseDto>> CreateProjectField(CreateProjectFieldDto body)
         {
             var url = $"/project-api/public/projects/fields";
-            return await _client.Request<CreateProjectFieldResponseDtoAstroResult>(HttpMethod.Post, url, null, body, null);
+            return await _client.Request<CreateProjectFieldResponseDto>(HttpMethod.Post, url, null, body, null);
         }
 
         /// <summary>
         /// Deletes an existing ProjectField within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
-        /// for any integration purpose that is important to your business.  Each ProjectField has a data
-        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
-        /// within your Workspace.
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+        ///
         /// </summary>
         /// <param name="body">The identity of the ProjectField to delete</param>
-        public async Task<AstroResult<AstroResult>> DeleteProjectField(DeleteProjectFieldDto body)
+        public async Task<AstroResult<string>> DeleteProjectField(DeleteProjectFieldDto body)
         {
             var url = $"/project-api/public/projects/fields";
-            return await _client.Request<AstroResult>(HttpMethod.Delete, url, null, body, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null, body, null);
         }
 
         /// <summary>
         /// Updates an existing ProjectField with new information.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
-        /// for any integration purpose that is important to your business.  Each ProjectField has a data
-        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
-        /// within your Workspace.
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+        ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that contains this ProjectField</param>
         /// <param name="fieldId">The unique identifier of this ProjectField</param>
         /// <param name="body">The new information for this ProjectField</param>
-        public async Task<AstroResult<AstroResult>> UpdateProjectField(Guid projectId, Guid fieldId, UpdateProjectFieldValueDto body)
+        public async Task<AstroResult<string>> UpdateProjectField(Guid projectId, Guid fieldId, UpdateProjectFieldValueDto body)
         {
             var url = $"/project-api/public/projects/{projectId}/fields/{fieldId}";
-            return await _client.Request<AstroResult>(HttpMethod.Put, url, null, body, null);
+            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
     }
 }

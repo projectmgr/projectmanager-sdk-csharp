@@ -346,19 +346,7 @@ namespace ProjectManager.SDK
                 }
                 if (result.Success)
                 {
-                    // Handle file downloads
-                    if (typeof(T) == typeof(byte[]))
-                    {
-                        result.FileData = await response.Content.ReadAsByteArrayAsync();
-                    }
-                    else
-                    {
-                        // Successful API responses can be very large, so let's stream them
-                        using (var stream = await response.Content.ReadAsStreamAsync())
-                        {
-                            result.Data = await JsonSerializer.DeserializeAsync<T>(stream, _options);
-                        }
-                    }
+                    await result.ParseSuccess(this, response);
                 }
                 else
                 {
@@ -366,7 +354,7 @@ namespace ProjectManager.SDK
                     // or "server down" can fail to provide valid JSON in the response.  If
                     // we fail to parse the response as JSON, just create a simulated error
                     // object with as much information as is available.
-                    result.ParseError(this, response.StatusCode, await response.Content.ReadAsStringAsync());
+                    await result.ParseError(this, response);
                 }
 
                 // Calculate length of time it took including JSON processing

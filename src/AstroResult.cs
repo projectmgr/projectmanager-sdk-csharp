@@ -17,7 +17,9 @@
 
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace ProjectManager.SDK
 {
@@ -68,18 +70,18 @@ namespace ProjectManager.SDK
         /// Logic for parsing an error from the API
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="statusCode"></param>
-        /// <param name="errorContent"></param>
-        internal void ParseError(ProjectManagerClient client, HttpStatusCode statusCode, string errorContent)
+        /// <param name="response"></param>
+        internal async Task ParseError(ProjectManagerClient client, HttpResponseMessage response)
         {
-            Status = statusCode;
+            Status = response.StatusCode;
             Data = default(T);
             FileData = null;
             try
             {
-                if (!string.IsNullOrWhiteSpace(errorContent))
+                var content = await response.Content.ReadAsStringAsync();
+                if (!string.IsNullOrWhiteSpace(content))
                 {
-                    var errorResult = JsonSerializer.Deserialize<AstroResult<string>>(errorContent, client._options);
+                    var errorResult = JsonSerializer.Deserialize<AstroResult<string>>(content, client._options);
                     if (errorResult != null)
                     {
                         Error = errorResult.Error;
@@ -96,9 +98,32 @@ namespace ProjectManager.SDK
             {
                 Error = new AstroError()
                 {
-                    Message = $"{(int)statusCode} {statusCode}",
-                    Content = errorContent,
+                    Message = $"{(int)response.StatusCode} {response.StatusCode}",
+                    Content = await response.Content.ReadAsStringAsync(),
                 };
+            }
+        }
+
+        public async Task ParseSuccess(ProjectManagerClient projectManagerClient, HttpResponseMessage response)
+        {
+            Status = response.StatusCode;
+            Success = true;
+            
+            // Handle file downloads
+            if (typeof(T) == typeof(byte[]))
+            {
+                FileData = await response.Content.ReadAsByteArrayAsync();
+                Data = default;
+            }
+            else
+            {
+                // Successful API responses can be very large, so let's stream them
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                {
+                    var newResult = await JsonSerializer.DeserializeAsync<AstroResult<T>>(stream, projectManagerClient._options);
+                    Data = newResult.Data;
+                    FileData = null;
+                }
             }
         }
     }

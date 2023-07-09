@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to ProjectPriority
     /// </summary>
-    public class ProjectPriorityClient : IProjectPriorityClient
+    public interface IProjectPriorityClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ProjectPriorityClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieves all ProjectPriorities defined within your Workspace.
@@ -46,10 +35,6 @@ namespace ProjectManager.SDK.Clients
         /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities()
-        {
-            var url = $"/project-api/public/projects/priorities";
-            return await _client.Request<ProjectPriorityDto[]>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities();
     }
 }

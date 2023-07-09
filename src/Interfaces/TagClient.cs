@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to Tag
     /// </summary>
-    public class TagClient : ITagClient
+    public interface ITagClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public TagClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieve a list of Tags that match an [OData formatted query](https://www.odata.org/).
@@ -50,18 +39,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TagDto[]>> QueryTags(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
-        {
-            var url = $"/project-api/public/tags";
-            var options = new Dictionary<string, object>();
-            if (top != null) { options["$top"] = top; }
-            if (skip != null) { options["$skip"] = skip; }
-            if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
-            if (orderby != null) { options["$orderby"] = orderby; }
-            if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TagDto[]>(HttpMethod.Get, url, options, null, null);
-        }
+        Task<AstroResult<TagDto[]>> QueryTags(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Creates a new Tag based on information you provide.
@@ -70,10 +48,6 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">The information for the new Tag to create</param>
-        public async Task<AstroResult<TagDto>> CreateTag(TagCreateDto body)
-        {
-            var url = $"/project-api/public/tags";
-            return await _client.Request<TagDto>(HttpMethod.Post, url, null, body, null);
-        }
+        Task<AstroResult<TagDto>> CreateTag(TagCreateDto body);
     }
 }

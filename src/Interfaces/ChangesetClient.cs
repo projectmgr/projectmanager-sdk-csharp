@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to Changeset
     /// </summary>
-    public class ChangesetClient : IChangesetClient
+    public interface IChangesetClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ChangesetClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieve a Changeset by its unique ID.
@@ -47,11 +36,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId)
-        {
-            var url = $"/project-api/public/changesets/{changeSetId}";
-            return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId);
 
         /// <summary>
         /// Retrieve a Changeset by its unique ID. This endpoint waits for the Changeset to complete its processing prior to returning a result.
@@ -64,10 +49,6 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId)
-        {
-            var url = $"/project-api/public/changesets/{changeSetId}/poll";
-            return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId);
     }
 }

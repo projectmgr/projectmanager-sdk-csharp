@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to Project
     /// </summary>
-    public class ProjectClient : IProjectClient
+    public interface IProjectClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ProjectClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieve a list of Projects that match an [OData formatted query](https://www.odata.org/).
@@ -50,18 +39,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ProjectDto[]>> QueryProjects(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
-        {
-            var url = $"/project-api/public/projects";
-            var options = new Dictionary<string, object>();
-            if (top != null) { options["$top"] = top; }
-            if (skip != null) { options["$skip"] = skip; }
-            if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
-            if (orderby != null) { options["$orderby"] = orderby; }
-            if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<ProjectDto[]>(HttpMethod.Get, url, options, null, null);
-        }
+        Task<AstroResult<ProjectDto[]>> QueryProjects(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Create a new project based on the details provided.
@@ -70,11 +48,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">Information about the Project you wish to create</param>
-        public async Task<AstroResult<ProjectCreateResponseDto>> CreateProject(ProjectCreateRequestDto body)
-        {
-            var url = $"/project-api/public/projects";
-            return await _client.Request<ProjectCreateResponseDto>(HttpMethod.Post, url, null, body, null);
-        }
+        Task<AstroResult<ProjectCreateResponseDto>> CreateProject(ProjectCreateRequestDto body);
 
         /// <summary>
         /// Retrieves a project based on its unique identifier.
@@ -83,11 +57,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve.</param>
-        public async Task<AstroResult<ProjectDto>> RetrieveProject(string projectId)
-        {
-            var url = $"/project-api/public/projects/{projectId}";
-            return await _client.Request<ProjectDto>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ProjectDto>> RetrieveProject(string projectId);
 
         /// <summary>
         /// Update an existing Project and replace the values of fields specified.
@@ -99,10 +69,6 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body)
-        {
-            var url = $"/project-api/public/projects/{projectId}";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
-        }
+        Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body);
     }
 }

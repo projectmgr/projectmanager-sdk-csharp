@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to Discussion
     /// </summary>
-    public class DiscussionClient : IDiscussionClient
+    public interface IDiscussionClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public DiscussionClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Adds a Markdown-formatted comment to a task.
@@ -46,10 +35,6 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique ID number of the task being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        public async Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body)
-        {
-            var url = $"/project-api/public/tasks/{taskId}/discussions";
-            return await _client.Request<DiscussionCreateResponseDto>(HttpMethod.Post, url, null, body, null);
-        }
+        Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body);
     }
 }

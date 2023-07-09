@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to TaskStatus
     /// </summary>
-    public class TaskStatusClient : ITaskStatusClient
+    public interface ITaskStatusClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public TaskStatusClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieves the list of TaskStatus levels for a specific Project within your Workspace.
@@ -45,11 +34,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskStatuses</param>
-        public async Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId)
-        {
-            var url = $"/project-api/public/projects/{projectId}/tasks/statuses";
-            return await _client.Request<TaskStatusDto[]>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId);
 
         /// <summary>
         /// Creates a new TaskStatus level for a specific Project within your Workspace.
@@ -59,10 +44,6 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
         /// <param name="body">Information about the new TaskStatus level to create within this Project</param>
-        public async Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body)
-        {
-            var url = $"/project-api/public/projects/{projectId}/tasks/statuses";
-            return await _client.Request<TaskStatusDto>(HttpMethod.Post, url, null, body, null);
-        }
+        Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body);
     }
 }

@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to TaskAssignee
     /// </summary>
-    public class TaskAssigneeClient : ITaskAssigneeClient
+    public interface ITaskAssigneeClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public TaskAssigneeClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Replace all TaskAssignees on a Task with new TaskAssignees.
@@ -46,11 +35,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignees will be replaced</param>
         /// <param name="body">The new list of TaskAssignees for this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body)
-        {
-            var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
-        }
+        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
         /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their allocation level to the correct amount.
@@ -60,11 +45,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
         /// <param name="body">List of Assignee data</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
-        {
-            var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
-        }
+        Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
         /// Remove one or more TaskAssignees from a Task.
@@ -74,10 +55,6 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
         /// <param name="body">List of TaskAssignee records to remove</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body)
-        {
-            var url = $"/project-api/public/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);
-        }
+        Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body);
     }
 }

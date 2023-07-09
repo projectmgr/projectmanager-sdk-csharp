@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to ProjectFolder
     /// </summary>
-    public class ProjectFolderClient : IProjectFolderClient
+    public interface IProjectFolderClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ProjectFolderClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieves all ProjectFolders defined within your Workspace.
@@ -44,10 +33,6 @@ namespace ProjectManager.SDK.Clients
         /// A ProjectFolder is a named storage location that can contain Projects.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders()
-        {
-            var url = $"/project-api/public/project-folders";
-            return await _client.Request<ProjectFolderDto[]>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders();
     }
 }

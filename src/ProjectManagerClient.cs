@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1371
+ * @version    11.1.1377
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1371";
+        public const string SdkVersion = "11.1.1377";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -350,10 +350,6 @@ namespace ProjectManager.SDK
                 }
                 else
                 {
-                    // Error responses tend to be very short, and issues such as proxy errors
-                    // or "server down" can fail to provide valid JSON in the response.  If
-                    // we fail to parse the response as JSON, just create a simulated error
-                    // object with as much information as is available.
                     await result.ParseError(this, response);
                 }
 

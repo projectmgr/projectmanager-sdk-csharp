@@ -15,28 +15,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Clients
+namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
     /// API methods related to ProjectChargeCode
     /// </summary>
-    public class ProjectChargeCodeClient : IProjectChargeCodeClient
+    public interface IProjectChargeCodeClient
     {
-        private readonly ProjectManagerClient _client;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ProjectChargeCodeClient(ProjectManagerClient client)
-        {
-            _client = client;
-        }
 
         /// <summary>
         /// Retrieve all defined ChargeCodes that can be used when creating Tasks.
@@ -44,10 +33,6 @@ namespace ProjectManager.SDK.Clients
         /// A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes()
-        {
-            var url = $"/project-api/public/projects/chargecodes";
-            return await _client.Request<ProjectChargeCodeDto[]>(HttpMethod.Get, url, null, null, null);
-        }
+        Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes();
     }
 }

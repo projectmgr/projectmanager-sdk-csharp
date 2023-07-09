@@ -104,7 +104,7 @@ namespace ProjectManager.SDK
             }
         }
 
-        public async Task ParseSuccess(ProjectManagerClient projectManagerClient, HttpResponseMessage response)
+        internal async Task ParseSuccess(ProjectManagerClient projectManagerClient, HttpResponseMessage response)
         {
             Status = response.StatusCode;
             Success = true;

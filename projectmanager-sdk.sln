@@ -5,7 +5,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Files", "Other Files", "{2F567EA9-D4E4-49C2-B1AA-BB27D247D6E1}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		.nuspec = .nuspec
 		LICENSE = LICENSE
 		ProjectManagerClient.nuspec = ProjectManagerClient.nuspec
 		README.md = README.md

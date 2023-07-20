@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.1377</version>
+		<version>11.1.1438</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,7 +14,7 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for CSharp</summary>
 		<releaseNotes>
-            # 11.1.1377
+            # 11.1.1438
         
             https://learn.projectmanager.com/latest-releases
         </releaseNotes>

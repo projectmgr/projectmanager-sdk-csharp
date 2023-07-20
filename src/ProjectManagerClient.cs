@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1377
+ * @version    11.1.1438
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -26,7 +26,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Web;
 using ProjectManager.SDK.Clients;
-using ProjectManager.SDK.Models;
+using ProjectManager.SDK.Interfaces;
 
 
 namespace ProjectManager.SDK 
@@ -34,12 +34,12 @@ namespace ProjectManager.SDK
     /// <summary>
     /// A client object that connects to the ProjectManager API
     /// </summary>
-    public class ProjectManagerClient
+    public class ProjectManagerClient : IProjectManagerClient
     {
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1377";
+        public const string SdkVersion = "11.1.1438";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -52,97 +52,97 @@ namespace ProjectManager.SDK
         /// <summary>
         /// API methods related to Changeset
         /// </summary>
-        public ChangesetClient Changeset { get; }
+        public IChangesetClient Changeset { get; }
 
         /// <summary>
         /// API methods related to Discussion
         /// </summary>
-        public DiscussionClient Discussion { get; }
+        public IDiscussionClient Discussion { get; }
 
         /// <summary>
         /// API methods related to Project
         /// </summary>
-        public ProjectClient Project { get; }
+        public IProjectClient Project { get; }
 
         /// <summary>
         /// API methods related to ProjectChargeCode
         /// </summary>
-        public ProjectChargeCodeClient ProjectChargeCode { get; }
+        public IProjectChargeCodeClient ProjectChargeCode { get; }
 
         /// <summary>
         /// API methods related to ProjectCustomer
         /// </summary>
-        public ProjectCustomerClient ProjectCustomer { get; }
+        public IProjectCustomerClient ProjectCustomer { get; }
 
         /// <summary>
         /// API methods related to ProjectField
         /// </summary>
-        public ProjectFieldClient ProjectField { get; }
+        public IProjectFieldClient ProjectField { get; }
 
         /// <summary>
         /// API methods related to ProjectFolder
         /// </summary>
-        public ProjectFolderClient ProjectFolder { get; }
+        public IProjectFolderClient ProjectFolder { get; }
 
         /// <summary>
         /// API methods related to ProjectPriority
         /// </summary>
-        public ProjectPriorityClient ProjectPriority { get; }
+        public IProjectPriorityClient ProjectPriority { get; }
 
         /// <summary>
         /// API methods related to ProjectStatus
         /// </summary>
-        public ProjectStatusClient ProjectStatus { get; }
+        public IProjectStatusClient ProjectStatus { get; }
 
         /// <summary>
         /// API methods related to ProjectTemplate
         /// </summary>
-        public ProjectTemplateClient ProjectTemplate { get; }
+        public IProjectTemplateClient ProjectTemplate { get; }
 
         /// <summary>
         /// API methods related to Resource
         /// </summary>
-        public ResourceClient Resource { get; }
+        public IResourceClient Resource { get; }
 
         /// <summary>
         /// API methods related to ResourceSkill
         /// </summary>
-        public ResourceSkillClient ResourceSkill { get; }
+        public IResourceSkillClient ResourceSkill { get; }
 
         /// <summary>
         /// API methods related to ResourceTeam
         /// </summary>
-        public ResourceTeamClient ResourceTeam { get; }
+        public IResourceTeamClient ResourceTeam { get; }
 
         /// <summary>
         /// API methods related to Tag
         /// </summary>
-        public TagClient Tag { get; }
+        public ITagClient Tag { get; }
 
         /// <summary>
         /// API methods related to Task
         /// </summary>
-        public TaskClient Task { get; }
+        public ITaskClient Task { get; }
 
         /// <summary>
         /// API methods related to TaskAssignee
         /// </summary>
-        public TaskAssigneeClient TaskAssignee { get; }
+        public ITaskAssigneeClient TaskAssignee { get; }
 
         /// <summary>
         /// API methods related to TaskField
         /// </summary>
-        public TaskFieldClient TaskField { get; }
+        public ITaskFieldClient TaskField { get; }
 
         /// <summary>
         /// API methods related to TaskStatus
         /// </summary>
-        public TaskStatusClient TaskStatus { get; }
+        public ITaskStatusClient TaskStatus { get; }
 
         /// <summary>
         /// API methods related to TaskTag
         /// </summary>
-        public TaskTagClient TaskTag { get; }
+        public ITaskTagClient TaskTag { get; }
 
 
         /// <summary>

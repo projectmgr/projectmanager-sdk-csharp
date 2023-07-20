@@ -105,5 +105,12 @@ namespace ProjectManager.SDK.Models
         /// application.
         /// </summary>
         public bool? Template { get; set; }
+
+        /// <summary>
+        /// The Template that this project should be created from.
+        ///
+        /// Specifying a TemplateId will copy default settings for Tasks.
+        /// </summary>
+        public Guid? TemplateId { get; set; }
     }
 }

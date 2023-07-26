@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<BusinessTeamDto[]>> RetrieveResourceTeams()
         {
-            var url = $"/project-api/public/resources/teams";
+            var url = $"/api/data/resources/teams";
             return await _client.Request<BusinessTeamDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

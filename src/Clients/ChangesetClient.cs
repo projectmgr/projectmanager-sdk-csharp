@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
         public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId)
         {
-            var url = $"/project-api/public/changesets/{changeSetId}";
+            var url = $"/api/data/changesets/{changeSetId}";
             return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
         }
 
@@ -66,7 +66,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
         public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId)
         {
-            var url = $"/project-api/public/changesets/{changeSetId}/poll";
+            var url = $"/api/data/changesets/{changeSetId}/poll";
             return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
         }
     }

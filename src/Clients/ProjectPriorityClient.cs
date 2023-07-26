@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities()
         {
-            var url = $"/project-api/public/projects/priorities";
+            var url = $"/api/data/projects/priorities";
             return await _client.Request<ProjectPriorityDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

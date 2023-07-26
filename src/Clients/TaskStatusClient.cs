@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskStatuses</param>
         public async Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId)
         {
-            var url = $"/project-api/public/projects/{projectId}/tasks/statuses";
+            var url = $"/api/data/projects/{projectId}/tasks/statuses";
             return await _client.Request<TaskStatusDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">Information about the new TaskStatus level to create within this Project</param>
         public async Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body)
         {
-            var url = $"/project-api/public/projects/{projectId}/tasks/statuses";
+            var url = $"/api/data/projects/{projectId}/tasks/statuses";
             return await _client.Request<TaskStatusDto>(HttpMethod.Post, url, null, body, null);
         }
     }

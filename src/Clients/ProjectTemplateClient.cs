@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates()
         {
-            var url = $"/project-api/public/projects/templates";
+            var url = $"/api/data/projects/templates";
             return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

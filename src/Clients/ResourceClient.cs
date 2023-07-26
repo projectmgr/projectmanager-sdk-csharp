@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The details for the new Resource to create</param>
         public async Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body)
         {
-            var url = $"/project-api/public/resources";
+            var url = $"/api/data/resources";
             return await _client.Request<ResourceDto>(HttpMethod.Post, url, null, body, null);
         }
 
@@ -65,7 +65,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="expand">Include related data in the response</param>
         public async Task<AstroResult<ResourceDto[]>> QueryResources(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
-            var url = $"/project-api/public/resources";
+            var url = $"/api/data/resources";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }

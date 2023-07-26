@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The replacement list of TaskTags for this Task</param>
         public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body)
         {
-            var url = $"/project-api/public/tasks/{taskId}/tags";
+            var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
         }
 
@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The new TaskTags to add to this Task</param>
         public async Task<AstroResult<ChangeSetStatusDto>> AddTaskTagtoTask(Guid taskId, NameDto[] body)
         {
-            var url = $"/project-api/public/tasks/{taskId}/tags";
+            var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
         }
 
@@ -76,7 +76,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The TaskTags to remove from this Task</param>
         public async Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagfromTask(Guid taskId, NameDto[] body)
         {
-            var url = $"/project-api/public/tasks/{taskId}/tags";
+            var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);
         }
     }

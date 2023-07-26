@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<GetProjectFieldsResponseDto[]>> RetrieveProjectFields()
         {
-            var url = $"/project-api/public/projects/fields";
+            var url = $"/api/data/projects/fields";
             return await _client.Request<GetProjectFieldsResponseDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">Information about the ProjectField to create</param>
         public async Task<AstroResult<CreateProjectFieldResponseDto>> CreateProjectField(CreateProjectFieldDto body)
         {
-            var url = $"/project-api/public/projects/fields";
+            var url = $"/api/data/projects/fields";
             return await _client.Request<CreateProjectFieldResponseDto>(HttpMethod.Post, url, null, body, null);
         }
 
@@ -72,7 +72,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The identity of the ProjectField to delete</param>
         public async Task<AstroResult<string>> DeleteProjectField(DeleteProjectFieldDto body)
         {
-            var url = $"/project-api/public/projects/fields";
+            var url = $"/api/data/projects/fields";
             return await _client.Request<string>(HttpMethod.Delete, url, null, body, null);
         }
 
@@ -87,7 +87,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The new information for this ProjectField</param>
         public async Task<AstroResult<string>> UpdateProjectField(Guid projectId, Guid fieldId, UpdateProjectFieldValueDto body)
         {
-            var url = $"/project-api/public/projects/{projectId}/fields/{fieldId}";
+            var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
     }

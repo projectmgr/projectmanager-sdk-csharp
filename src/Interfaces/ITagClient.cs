@@ -49,5 +49,15 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="body">The information for the new Tag to create</param>
         Task<AstroResult<TagDto>> CreateTag(TagCreateDto body);
+
+        /// <summary>
+        /// Updates a new Tag based on information you provide.
+        ///
+        /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
+        ///
+        /// </summary>
+        /// <param name="tagId">The id of the tag</param>
+        /// <param name="body">The information to update the tag</param>
+        Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body);
     }
 }

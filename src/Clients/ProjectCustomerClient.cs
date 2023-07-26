@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers()
         {
-            var url = $"/project-api/public/projects/customers";
+            var url = $"/api/data/projects/customers";
             return await _client.Request<ProjectCustomerDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes()
         {
-            var url = $"/project-api/public/projects/chargecodes";
+            var url = $"/api/data/projects/chargecodes";
             return await _client.Request<ProjectChargeCodeDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

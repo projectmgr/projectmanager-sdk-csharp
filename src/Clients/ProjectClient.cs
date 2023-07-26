@@ -52,7 +52,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="expand">Include related data in the response</param>
         public async Task<AstroResult<ProjectDto[]>> QueryProjects(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
-            var url = $"/project-api/public/projects";
+            var url = $"/api/data/projects";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
@@ -72,7 +72,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">Information about the Project you wish to create</param>
         public async Task<AstroResult<ProjectCreateResponseDto>> CreateProject(ProjectCreateRequestDto body)
         {
-            var url = $"/project-api/public/projects";
+            var url = $"/api/data/projects";
             return await _client.Request<ProjectCreateResponseDto>(HttpMethod.Post, url, null, body, null);
         }
 
@@ -85,7 +85,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="projectId">The unique identifier of the Project to retrieve.</param>
         public async Task<AstroResult<ProjectDto>> RetrieveProject(string projectId)
         {
-            var url = $"/project-api/public/projects/{projectId}";
+            var url = $"/api/data/projects/{projectId}";
             return await _client.Request<ProjectDto>(HttpMethod.Get, url, null, null, null);
         }
 
@@ -101,7 +101,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
         public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body)
         {
-            var url = $"/project-api/public/projects/{projectId}";
+            var url = $"/api/data/projects/{projectId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
     }

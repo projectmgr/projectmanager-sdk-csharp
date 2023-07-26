@@ -52,7 +52,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="expand">Include related data in the response</param>
         public async Task<AstroResult<TagDto[]>> QueryTags(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
-            var url = $"/project-api/public/tags";
+            var url = $"/api/data/tags";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
@@ -72,8 +72,22 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The information for the new Tag to create</param>
         public async Task<AstroResult<TagDto>> CreateTag(TagCreateDto body)
         {
-            var url = $"/project-api/public/tags";
+            var url = $"/api/data/tags";
             return await _client.Request<TagDto>(HttpMethod.Post, url, null, body, null);
+        }
+
+        /// <summary>
+        /// Updates a new Tag based on information you provide.
+        ///
+        /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
+        ///
+        /// </summary>
+        /// <param name="tagId">The id of the tag</param>
+        /// <param name="body">The information to update the tag</param>
+        public async Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body)
+        {
+            var url = $"/api/data/tags/{tagId}";
+            return await _client.Request<TagDto>(HttpMethod.Put, url, null, body, null);
         }
     }
 }

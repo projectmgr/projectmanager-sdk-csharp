@@ -136,5 +136,11 @@ namespace ProjectManager.SDK.Models
         /// adding child tasks underneath a parent Task.
         /// </summary>
         public bool? IsSummary { get; set; }
+
+        /// <summary>
+        /// The WBS (Work Breakdown Structure) number for this task.  See [What Is a Work Breakdown Structure (WBS)?](https://www.projectmanager.com/guides/work-breakdown-structure) on Project Manager for more information.
+        /// The WBS number is an outline number in the form `#.#.#.#` which indicates how tasks are organized and sorted.
+        /// </summary>
+        public string Wbs { get; set; }
     }
 }

@@ -161,5 +161,20 @@ namespace ProjectManager.SDK.Models
         /// adding child tasks underneath a parent Task.
         /// </summary>
         public bool? IsSummary { get; set; }
+
+        /// <summary>
+        /// Return the priority of a task
+        /// </summary>
+        public int? PriorityId { get; set; }
+
+        /// <summary>
+        /// The Wbs value. Wbs is the structure value of the task in it&#39;s gantt hierarchy.
+        /// </summary>
+        public string Wbs { get; set; }
+
+        /// <summary>
+        /// Task Color as set in the Gantt
+        /// </summary>
+        public string Color { get; set; }
     }
 }

@@ -15,24 +15,33 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
+using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Interfaces
+namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to ProjectStatus
+    /// API methods related to Me
     /// </summary>
-    public interface IProjectStatusClient
+    public class MeClient : IMeClient
     {
+        private readonly ProjectManagerClient _client;
 
         /// <summary>
-        /// Retrieves all ProjectStatuses defined within your Workspace.
-        ///
-        /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
-        ///
+        /// Constructor
         /// </summary>
-        Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
+        public MeClient(ProjectManagerClient client)
+        {
+            _client = client;
+        }
+
+        public async Task<AstroResult<WorkSpaceUserInfoDto>> UnknownName()
+        {
+            var url = $"/api/data/me";
+            return await _client.Request<WorkSpaceUserInfoDto>(HttpMethod.Get, url, null, null, null);
+        }
     }
 }

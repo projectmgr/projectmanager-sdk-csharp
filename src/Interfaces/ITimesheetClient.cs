@@ -22,17 +22,16 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to ProjectStatus
+    /// API methods related to Timesheet
     /// </summary>
-    public interface IProjectStatusClient
+    public interface ITimesheetClient
     {
 
         /// <summary>
-        /// Retrieves all ProjectStatuses defined within your Workspace.
-        ///
-        /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// Creates new time entry for given resource on given day.
         ///
         /// </summary>
-        Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
+        /// <param name="body">Payload</param>
+        Task<AstroResult<TimesheetCreatedResponseDto>> Createtimeentry(TimesheetCreateRequestDto body);
     }
 }

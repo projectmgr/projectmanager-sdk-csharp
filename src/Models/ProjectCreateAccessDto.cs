@@ -21,29 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectManager is a person who manages a Project.
+    /// Specify who has access to a newly created project
     /// </summary>
-    public class ProjectManagerDto
+    public class ProjectCreateAccessDto
     {
 
         /// <summary>
-        /// The unique identifier of this ProjectManager
+        /// If set to true every user will get access to this project
         /// </summary>
-        public Guid? Id { get; set; }
+        public bool? Everyone { get; set; }
 
         /// <summary>
-        /// The name of this ProjectManager
+        /// If everyone is set to false the list of members will be used to give people access
         /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Manager initials
-        /// </summary>
-        public string Initials { get; set; }
-
-        /// <summary>
-        /// Avatar&#39;s url
-        /// </summary>
-        public string AvatarUrl { get; set; }
+        public ProjectMemberDto[] Members { get; set; }
     }
 }

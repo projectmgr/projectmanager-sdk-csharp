@@ -20,22 +20,15 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// A ProjectStatus is a named condition used by your business to categorize the completion level
-    /// of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything
-    /// you like and you can reorganize the order of the ProjectPriority levels at any time.
-    /// </summary>
-    public class PublicProjectStatusDto
+    public class IntegrationCategoryDto
     {
 
-        /// <summary>
-        /// The unique identifier of this ProjectStatus.
-        /// </summary>
         public Guid? Id { get; set; }
 
-        /// <summary>
-        /// The name of this ProjectStatus.
-        /// </summary>
         public string Name { get; set; }
+
+        public string ShortId { get; set; }
+
+        public string[] IntegrationShortIds { get; set; }
     }
 }

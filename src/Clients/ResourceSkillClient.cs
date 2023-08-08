@@ -44,10 +44,46 @@ namespace ProjectManager.SDK.Clients
         /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
         ///
         /// </summary>
-        public async Task<AstroResult<BusinessSkillDto[]>> RetrieveResourceSkills()
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        public async Task<AstroResult<ResourceSkillDto[]>> RetrieveResourceSkills(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources/skills";
-            return await _client.Request<BusinessSkillDto[]>(HttpMethod.Get, url, null, null, null);
+            var options = new Dictionary<string, object>();
+            if (top != null) { options["$top"] = top; }
+            if (skip != null) { options["$skip"] = skip; }
+            if (filter != null) { options["$filter"] = filter; }
+            if (select != null) { options["$select"] = select; }
+            if (orderby != null) { options["$orderby"] = orderby; }
+            if (expand != null) { options["$expand"] = expand; }
+            return await _client.Request<ResourceSkillDto[]>(HttpMethod.Get, url, options, null, null);
+        }
+
+        /// <summary>
+        /// Create a Resource Skill.
+        ///
+        /// </summary>
+        /// <param name="body">The name of the skill to create.</param>
+        public async Task<AstroResult<ResourceSkillDto>> CreateResourceSkill(CreateResourceSkillDto body)
+        {
+            var url = $"/api/data/resources/skills";
+            return await _client.Request<ResourceSkillDto>(HttpMethod.Post, url, null, body, null);
+        }
+
+        /// <summary>
+        /// Update a Resource Skill.
+        ///
+        /// </summary>
+        /// <param name="skillId">The id of the skill to update.</param>
+        /// <param name="body">The data of the skill to update.</param>
+        public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body)
+        {
+            var url = $"/api/data/resources/skills/{skillId}";
+            return await _client.Request<ResourceSkillDto>(HttpMethod.Put, url, null, body, null);
         }
     }
 }

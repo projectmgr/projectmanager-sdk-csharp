@@ -28,11 +28,39 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Retrieves all ResourceTeams defined within your Workspace.
+        /// Retrieves all ResourceTeams defined within your Workspace that match an [OData formatted query](https://www.odata.org/).
         ///
         /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
         ///
         /// </summary>
-        Task<AstroResult<BusinessTeamDto[]>> RetrieveResourceTeams();
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+
+        /// <summary>
+        /// Create a Resource Team.
+        ///
+        /// </summary>
+        /// <param name="body">The name of the team to create.</param>
+        Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body);
+
+        /// <summary>
+        /// The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
+        ///
+        /// </summary>
+        /// <param name="resourceTeamId">The name of the team to create.</param>
+        Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId);
+
+        /// <summary>
+        /// Update a Resource Team.
+        ///
+        /// </summary>
+        /// <param name="teamresourceId">The id of the resource team</param>
+        /// <param name="body">The name of the team to Update.</param>
+        Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body);
     }
 }

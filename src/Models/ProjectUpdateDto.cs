@@ -97,5 +97,10 @@ namespace ProjectManager.SDK.Models
         /// To update the Project&#39;s status text, set this to the new status text.
         /// </summary>
         public string StatusUpdate { get; set; }
+
+        /// <summary>
+        /// Mark this project as favorite for the logged in user.
+        /// </summary>
+        public bool? Favorite { get; set; }
     }
 }

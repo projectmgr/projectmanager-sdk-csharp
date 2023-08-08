@@ -21,29 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectManager is a person who manages a Project.
+    /// This is a skill that can be allocated to a resource.
     /// </summary>
-    public class ProjectManagerDto
+    public class UpdateResourceSkillDto
     {
 
         /// <summary>
-        /// The unique identifier of this ProjectManager
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ProjectManager
+        /// The name of this Skill.
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Manager initials
-        /// </summary>
-        public string Initials { get; set; }
-
-        /// <summary>
-        /// Avatar&#39;s url
-        /// </summary>
-        public string AvatarUrl { get; set; }
     }
 }

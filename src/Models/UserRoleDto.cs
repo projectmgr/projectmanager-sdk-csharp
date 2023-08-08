@@ -20,30 +20,11 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// A ProjectManager is a person who manages a Project.
-    /// </summary>
-    public class ProjectManagerDto
+    public class UserRoleDto
     {
 
-        /// <summary>
-        /// The unique identifier of this ProjectManager
-        /// </summary>
         public Guid? Id { get; set; }
 
-        /// <summary>
-        /// The name of this ProjectManager
-        /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Manager initials
-        /// </summary>
-        public string Initials { get; set; }
-
-        /// <summary>
-        /// Avatar&#39;s url
-        /// </summary>
-        public string AvatarUrl { get; set; }
     }
 }

@@ -21,29 +21,26 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectManager is a person who manages a Project.
+    /// A ProjectStatus is a named condition used by your business to categorize the completion level
+    /// of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything
+    /// you like and you can reorganize the order of the ProjectPriority levels at any time.
     /// </summary>
-    public class ProjectManagerDto
+    public class ProjectStatusDto
     {
 
         /// <summary>
-        /// The unique identifier of this ProjectManager
+        /// The unique identifier of this ProjectStatus.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this ProjectManager
+        /// The name of this ProjectStatus.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Manager initials
+        /// Is this a deleted status
         /// </summary>
-        public string Initials { get; set; }
-
-        /// <summary>
-        /// Avatar&#39;s url
-        /// </summary>
-        public string AvatarUrl { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

@@ -21,20 +21,13 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
-    /// in a manner consistent with your business needs.  You can assign Resources to be members
-    /// of zero, one, or many ResourceTeams.
+    /// This is a skill that can be allocated to a resource.
     /// </summary>
-    public class BusinessTeamDto
+    public class CreateResourceSkillDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceTeam
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The friendly name of this ResourceTeam
+        /// The name of this Skill.
         /// </summary>
         public string Name { get; set; }
     }

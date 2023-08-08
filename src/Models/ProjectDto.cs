@@ -72,7 +72,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The ProjectStatus chosen for this Project.
         /// </summary>
-        public PublicProjectStatusDto Status { get; set; }
+        public ProjectStatusDto Status { get; set; }
 
         /// <summary>
         /// The earliest planned or actual start date of tasks on the project.

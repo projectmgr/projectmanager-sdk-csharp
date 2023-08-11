@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.1636</version>
+		<version>11.1.1637</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,9 +14,21 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # 11.1.1636
-        
-            https://learn.projectmanager.com/latest-releases
+            # Patch notes for 11.1.1637
+            
+            These patch notes summarize the changes from version 11.1.1468.
+            
+            ## Methods
+            
+            Added 34 new APIs, including:
+            * Dashboard.UnknownName (GET /api/data/dashboard/settings)
+            * File.DownloadFile (GET /api/data/files/{documentId}/download)
+            * File.UploadFile (POST /api/data/files/upload)
+            * File.UpdateFile (PUT /api/data/files/{fileId})
+            * Integration.RetrieveIntegration (GET /api/data/integrations/{integrationId})
+            * ... 29 more
+            
+
         </releaseNotes>
 		<copyright>Copyright 2023 - 2023</copyright>
     	<tags>projectmanager project management task tracking projects tasks</tags>

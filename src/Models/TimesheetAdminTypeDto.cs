@@ -21,19 +21,18 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// Represents admin task to track time
     /// </summary>
-    public class ResourceApproverDto
+    public class TimesheetAdminTypeDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// admin task id
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this ResourceApprover
+        /// admin task name
         /// </summary>
         public string Name { get; set; }
     }

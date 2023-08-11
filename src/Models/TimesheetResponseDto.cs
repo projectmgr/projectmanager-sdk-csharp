@@ -21,41 +21,54 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectMember is a user who can collaborate on a Project.  You can control
-    /// permissions for what each ProjectMember can do and how they can interact with
-    /// the Project using this model.
+    /// Time entry representation
     /// </summary>
-    public class ProjectMemberDto
+    public class TimesheetResponseDto
     {
 
         /// <summary>
-        /// The unique identifier of the user of this ProjectMember.
+        /// TimesheetId
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// the initials of the user
+        /// associated task id
         /// </summary>
-        public string Initials { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
-        /// The display name of the user
+        /// associated project id
         /// </summary>
-        public string Name { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
-        /// Avatar URL
+        /// resource id time entry entered
         /// </summary>
-        public string AvatarUrl { get; set; }
+        public Guid? ResourceId { get; set; }
 
         /// <summary>
-        /// The role of the user in the project
+        /// admin task id
         /// </summary>
-        public string Role { get; set; }
+        public Guid? TimesheetAdminTypeId { get; set; }
 
         /// <summary>
-        /// The color for their avatar
+        /// Date of time entry
         /// </summary>
-        public string Color { get; set; }
+        public DateTime? Date { get; set; }
+
+        /// <summary>
+        /// Notes
+        /// </summary>
+        public string Notes { get; set; }
+
+        /// <summary>
+        /// Shows if timesheet approved
+        /// </summary>
+        public bool? Approved { get; set; }
+
+        /// <summary>
+        /// Total Hours
+        /// </summary>
+        public decimal? Hours { get; set; }
     }
 }

@@ -21,20 +21,15 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// The Integrations API is intended for use by ProjectManager and its business
+    /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
     /// </summary>
-    public class ResourceApproverDto
+    public class NewIntegrationInstanceDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// The unique identifier of the newly created IntegrationInstance.
         /// </summary>
         public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ResourceApprover
-        /// </summary>
-        public string Name { get; set; }
     }
 }

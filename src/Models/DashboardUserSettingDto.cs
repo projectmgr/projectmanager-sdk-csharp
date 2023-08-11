@@ -20,21 +20,11 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
-    /// </summary>
-    public class ResourceApproverDto
+    public class DashboardUserSettingDto
     {
 
-        /// <summary>
-        /// The unique identifier of this ResourceApprover
-        /// </summary>
         public Guid? Id { get; set; }
 
-        /// <summary>
-        /// The name of this ResourceApprover
-        /// </summary>
-        public string Name { get; set; }
+        public object MySummaryPageLayout { get; set; }
     }
 }

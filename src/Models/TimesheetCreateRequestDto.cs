@@ -21,41 +21,41 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectMember is a user who can collaborate on a Project.  You can control
-    /// permissions for what each ProjectMember can do and how they can interact with
-    /// the Project using this model.
+    /// Payload to create time entry
     /// </summary>
-    public class ProjectMemberDto
+    public class TimesheetCreateRequestDto
     {
 
         /// <summary>
-        /// The unique identifier of the user of this ProjectMember.
+        /// Time entry date
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public Guid? Id { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
-        /// the initials of the user
+        /// Reported hours
         /// </summary>
-        public string Initials { get; set; }
+        public decimal? Hours { get; set; }
 
         /// <summary>
-        /// The display name of the user
+        /// Task id that time reported to
         /// </summary>
-        public string Name { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
-        /// Avatar URL
+        /// Admin task id that time reportsed to
         /// </summary>
-        public string AvatarUrl { get; set; }
+        public Guid? AdminTypeId { get; set; }
 
         /// <summary>
-        /// The role of the user in the project
+        /// Resource id that time reported to
         /// </summary>
-        public string Role { get; set; }
+        public Guid? ResourceId { get; set; }
 
         /// <summary>
-        /// The color for their avatar
+        /// Notes
         /// </summary>
-        public string Color { get; set; }
+        public string Notes { get; set; }
     }
 }

@@ -22,17 +22,17 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to ProjectStatus
+    /// API methods related to Me
     /// </summary>
-    public interface IProjectStatusClient
+    public interface IMeClient
     {
 
         /// <summary>
-        /// Retrieves all ProjectStatuses defined within your Workspace.
+        /// Retrieve information about the currently logged on user.
         ///
-        /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// This API call will always succeed with a 200 OK if called with valid authentication information. If the authentication information provided is not valid, calling this API will return a 401 Authentication Failed error message.  If successful, this API returns information about the user including its home URL, email address, user name, and workspace name.
         ///
         /// </summary>
-        Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
+        Task<AstroResult<WorkSpaceUserInfoDto>> RetrieveMe();
     }
 }

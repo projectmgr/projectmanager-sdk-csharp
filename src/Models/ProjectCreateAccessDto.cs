@@ -21,20 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// Specify who has access to a newly created project
     /// </summary>
-    public class ResourceApproverDto
+    public class ProjectCreateAccessDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// If set to true every user will get access to this project
         /// </summary>
-        public Guid? Id { get; set; }
+        public bool? Everyone { get; set; }
 
         /// <summary>
-        /// The name of this ResourceApprover
+        /// If everyone is set to false the list of members will be used to give people access
         /// </summary>
-        public string Name { get; set; }
+        public ProjectMemberDto[] Members { get; set; }
     }
 }

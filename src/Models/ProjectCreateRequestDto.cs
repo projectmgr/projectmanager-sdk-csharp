@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Models
         /// provide a list of ProjectMembers here.  If you do not specify anyone, this Project will
         /// be available to only yourself.
         /// </summary>
-        public ProjectMemberDto[] Members { get; set; }
+        public ProjectCreateAccessDto ProjectAccess { get; set; }
 
         /// <summary>
         /// The unique identifier of the customer for this project, or null if not customer specific

@@ -21,41 +21,29 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectMember is a user who can collaborate on a Project.  You can control
-    /// permissions for what each ProjectMember can do and how they can interact with
-    /// the Project using this model.
+    /// Information about a category of Integrations available on the Marketplace.
     /// </summary>
-    public class ProjectMemberDto
+    public class IntegrationCategoryDto
     {
 
         /// <summary>
-        /// The unique identifier of the user of this ProjectMember.
+        /// The unique identifier of this Integration Category.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// the initials of the user
-        /// </summary>
-        public string Initials { get; set; }
-
-        /// <summary>
-        /// The display name of the user
+        /// A friendly name for this Integration Category.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Avatar URL
+        /// A short identifier that uniquely identifies this Integration Category.
         /// </summary>
-        public string AvatarUrl { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
-        /// The role of the user in the project
+        /// A list of short identifiers for Integrations available within this Integration Category.
         /// </summary>
-        public string Role { get; set; }
-
-        /// <summary>
-        /// The color for their avatar
-        /// </summary>
-        public string Color { get; set; }
+        public string[] IntegrationShortIds { get; set; }
     }
 }

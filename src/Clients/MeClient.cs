@@ -24,30 +24,30 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to ProjectStatus
+    /// API methods related to Me
     /// </summary>
-    public class ProjectStatusClient : IProjectStatusClient
+    public class MeClient : IMeClient
     {
         private readonly ProjectManagerClient _client;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ProjectStatusClient(ProjectManagerClient client)
+        public MeClient(ProjectManagerClient client)
         {
             _client = client;
         }
 
         /// <summary>
-        /// Retrieves all ProjectStatuses defined within your Workspace.
+        /// Retrieve information about the currently logged on user.
         ///
-        /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// This API call will always succeed with a 200 OK if called with valid authentication information. If the authentication information provided is not valid, calling this API will return a 401 Authentication Failed error message.  If successful, this API returns information about the user including its home URL, email address, user name, and workspace name.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses()
+        public async Task<AstroResult<WorkSpaceUserInfoDto>> RetrieveMe()
         {
-            var url = $"/api/data/projects/statuses";
-            return await _client.Request<ProjectStatusDto[]>(HttpMethod.Get, url, null, null, null);
+            var url = $"/api/data/me";
+            return await _client.Request<WorkSpaceUserInfoDto>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

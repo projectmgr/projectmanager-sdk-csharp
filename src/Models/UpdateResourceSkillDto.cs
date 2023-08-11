@@ -21,19 +21,13 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// This is a skill that can be allocated to a resource.
     /// </summary>
-    public class ResourceApproverDto
+    public class UpdateResourceSkillDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ResourceApprover
+        /// The name of this Skill.
         /// </summary>
         public string Name { get; set; }
     }

@@ -21,20 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// This class contains the URL to use to authenticate with the Integration Provider.
     /// </summary>
-    public class ResourceApproverDto
+    public class DirectLinkDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// The URL to use to authenticate with the Integration Provider.
         /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ResourceApprover
-        /// </summary>
-        public string Name { get; set; }
+        public string Url { get; set; }
     }
 }

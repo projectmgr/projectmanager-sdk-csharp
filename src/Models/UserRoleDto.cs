@@ -21,19 +21,20 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39;
+    /// UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed.
+    /// You can choose which UserRole applies to a User within your Workspace.
     /// </summary>
-    public class ResourceApproverDto
+    public class UserRoleDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// The unique identifier of this UserRole.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this ResourceApprover
+        /// The friendly name of this UserRole.
         /// </summary>
         public string Name { get; set; }
     }

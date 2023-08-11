@@ -2,19 +2,19 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.1468</version>
+		<version>11.1.1636</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
 		<license type="file">docs/LICENSE</license>
 		<projectUrl>https://github.com/projectmgr/projectmanager-sdk-csharp</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>A client library that exposes the functionality of ProjectManager.com through C#/DotNet.</description>
+		<description>Software development kit for the ProjectManager.com API. for DotNet</description>
 		<icon>docs/logo.png</icon>
 		<readme>docs/README.md</readme>
-		<summary>ProjectManager API for CSharp</summary>
+		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # 11.1.1468
+            # 11.1.1636
         
             https://learn.projectmanager.com/latest-releases
         </releaseNotes>

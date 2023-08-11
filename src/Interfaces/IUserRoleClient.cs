@@ -22,17 +22,17 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to ProjectStatus
+    /// API methods related to UserRole
     /// </summary>
-    public interface IProjectStatusClient
+    public interface IUserRoleClient
     {
 
         /// <summary>
-        /// Retrieves all ProjectStatuses defined within your Workspace.
+        /// Retrieves the list of UserRoles defined within this Workspace.
         ///
-        /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39; UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
         ///
         /// </summary>
-        Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
+        Task<AstroResult<UserRoleDto[]>> RetrieveUserRoles();
     }
 }

@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     /// The users in your Workspace are also considered Resources.  To invite a new User to your
     /// Workspace, create a new Resource for that user.
     /// </summary>
-    public class ResourceCreateDto
+    public class ResourceUpdateDto
     {
 
         /// <summary>
@@ -46,6 +46,8 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// The email address of this Resource.
+        ///
+        /// Note that this email cannot be changed once it has been assigned.
         /// </summary>
         public string Email { get; set; }
 

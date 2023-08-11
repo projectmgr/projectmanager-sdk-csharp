@@ -21,21 +21,13 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish
-    /// different classes of Resources suitable for use by a Task.  You can specify that a Task
-    /// requires a Resource with a particular set of ResourceSkills and then allocate Resources
-    /// based on whether or not they have the suitable ResourceSkills.
+    /// This is a skill that can be allocated to a resource.
     /// </summary>
-    public class BusinessSkillDto
+    public class CreateResourceSkillDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceSkill
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The friendly name of this ResourceSkill
+        /// The name of this Skill.
         /// </summary>
         public string Name { get; set; }
     }

@@ -21,21 +21,30 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectStatus is a named condition used by your business to categorize the completion level
-    /// of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything
-    /// you like and you can reorganize the order of the ProjectPriority levels at any time.
+    /// A License represents a subscription to a particular product or bundle of products
+    /// within ProjectManager.
     /// </summary>
-    public class PublicProjectStatusDto
+    public class LicenseDto
     {
 
         /// <summary>
-        /// The unique identifier of this ProjectStatus.
+        /// The unique identifier of this License.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this ProjectStatus.
+        /// The SKU code of this License, used for billing purposes.
         /// </summary>
-        public string Name { get; set; }
+        public string LicenseSku { get; set; }
+
+        /// <summary>
+        /// The SKU code of the bundle of this License, used for billing purposes.
+        /// </summary>
+        public string BundleSku { get; set; }
+
+        /// <summary>
+        /// True if this license is optional.
+        /// </summary>
+        public bool? Optional { get; set; }
     }
 }

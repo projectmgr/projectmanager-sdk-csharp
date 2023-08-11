@@ -21,20 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// TODO - What is this?
     /// </summary>
-    public class ResourceApproverDto
+    public class WorkSpaceLinksDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// TODO - What is this?
         /// </summary>
-        public Guid? Id { get; set; }
+        public string Project { get; set; }
 
         /// <summary>
-        /// The name of this ResourceApprover
+        /// This is the link to the api for this business, some legacy endpoints may need this.
         /// </summary>
-        public string Name { get; set; }
+        public string WorkSpaceApi { get; set; }
     }
 }

@@ -21,20 +21,16 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
-    /// is a ResourceApprover.  You can specify this person within the Resource object.
+    /// A Workspace represents a single business subscription to the ProjectManager.com service.  You
+    /// can be a member of multiple Workspaces.  Each Workspace is completely separate from all other
+    /// Workspaces and a user cannot log in to multiple Workspaces at the same time.
     /// </summary>
-    public class ResourceApproverDto
+    public class WorkSpaceJoinDto
     {
 
         /// <summary>
-        /// The unique identifier of this ResourceApprover
+        /// The unique identifier of the BusinessUser to invite to this Workspace.
         /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ResourceApprover
-        /// </summary>
-        public string Name { get; set; }
+        public Guid? BusinessUserId { get; set; }
     }
 }

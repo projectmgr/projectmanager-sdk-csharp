@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// TODO - What is this?
     /// </summary>
-    public class WorkSpaceLinksDto
+    public class WorkSpaceLinksDto : ApiModel
     {
 
         /// <summary>

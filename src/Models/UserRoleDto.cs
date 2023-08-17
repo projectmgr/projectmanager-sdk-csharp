@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed.
     /// You can choose which UserRole applies to a User within your Workspace.
     /// </summary>
-    public class UserRoleDto
+    public class UserRoleDto : ApiModel
     {
 
         /// <summary>

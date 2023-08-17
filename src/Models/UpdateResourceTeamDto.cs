@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A resource can update a team.
     /// </summary>
-    public class UpdateResourceTeamDto
+    public class UpdateResourceTeamDto : ApiModel
     {
 
         /// <summary>

@@ -21,16 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// When uploading a list of names to an API, this data structure represents an
-    /// individual name within the list.
+    /// Set the connection status of an integration
     /// </summary>
-    public class NameDto : ApiModel
+    public class AuthenticationStatusDto : ApiModel
     {
 
         /// <summary>
-        /// A name.  To determine the meaning of this name, see the field to which this
-        /// value is attached in the parent object.
+        /// Set to true if the connection was successful. False is not supported right now.
         /// </summary>
-        public string Name { get; set; }
+        public bool? Connected { get; set; }
     }
 }

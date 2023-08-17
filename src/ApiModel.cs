@@ -11,24 +11,14 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
-
-
-#pragma warning disable CS8618
-
-using System;
-
-namespace ProjectManager.SDK.Models
+namespace ProjectManager.SDK
 {
-
     /// <summary>
-    /// A resource can be allocated a team.
+    /// Represents the base class for all API model schema within this project.
+    /// All API schema models derive from this.
     /// </summary>
-    public class CreateResourceTeamDto : ApiModel
+    public class ApiModel
     {
-
-        /// <summary>
-        /// The name of this Team.
-        /// </summary>
-        public string Name { get; set; }
+        
     }
 }

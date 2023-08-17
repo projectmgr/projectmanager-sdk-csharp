@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// When uploading a list of unique identifiers to the API, this data structure
     /// represents one individual unique identifier within the list.
     /// </summary>
-    public class IdDto
+    public class IdDto : ApiModel
     {
 
         /// <summary>

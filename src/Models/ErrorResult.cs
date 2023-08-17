@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Represents a failed API request.
     /// </summary>
-    public class ErrorResult
+    public class ErrorResult : ApiModel
     {
 
         /// <summary>

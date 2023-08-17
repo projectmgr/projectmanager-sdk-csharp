@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything
     /// you like and you can reorganize the order of the ProjectPriority levels at any time.
     /// </summary>
-    public class ProjectStatusDto
+    public class ProjectStatusDto : ApiModel
     {
 
         /// <summary>

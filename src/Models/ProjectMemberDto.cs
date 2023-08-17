@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// permissions for what each ProjectMember can do and how they can interact with
     /// the Project using this model.
     /// </summary>
-    public class ProjectMemberDto
+    public class ProjectMemberDto : ApiModel
     {
 
         /// <summary>

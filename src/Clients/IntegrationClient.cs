@@ -39,6 +39,16 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Configure the WorkSpace for integrations
+        ///
+        /// </summary>
+        public async Task<AstroResult<IntegrationSetupResponseDto>> SetupWorkSpaceforIntegrations()
+        {
+            var url = $"/api/data/integrations/setup";
+            return await _client.Request<IntegrationSetupResponseDto>(HttpMethod.Post, url, null, null, null);
+        }
+
+        /// <summary>
         /// Retrieves an Integration specified by a unique identifier.
         ///
         /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
@@ -112,6 +122,29 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/integrations/{providerId}/auth";
             return await _client.Request<DirectLinkDto>(HttpMethod.Post, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Allows you to update the auth status of the main project manager connection.
+        ///
+        /// </summary>
+        /// <param name="providerId">the identifier to the provider</param>
+        /// <param name="body">Specify the auth status</param>
+        public async Task<AstroResult<string>> UpdateIntegrationProviderauthstatus(Guid providerId, AuthenticationStatusDto body)
+        {
+            var url = $"/api/data/integrations/{providerId}/auth";
+            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+        }
+
+        /// <summary>
+        /// Allows you to update the auth status of the main project manager connection.
+        ///
+        /// </summary>
+        /// <param name="body">Specify the auth status</param>
+        public async Task<AstroResult<string>> UpdateAuthStatusforprojectmanagerintegrationtoAPI(AuthenticationStatusDto body)
+        {
+            var url = $"/api/data/integrations/project-manager/auth";
+            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
 
         /// <summary>

@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     ///
     /// Project Templates are defined for the system and are shared among Projects.
     /// </summary>
-    public class ProjectTemplateDto
+    public class ProjectTemplateDto : ApiModel
     {
 
         /// <summary>
@@ -46,5 +46,42 @@ namespace ProjectManager.SDK.Models
         /// Title can be used as a description text for Project Templates.
         /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// The full text description of this ProjectTemplate.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// The icon path for this ProjectTemplate.
+        /// </summary>
+        public string Icon { get; set; }
+
+        /// <summary>
+        /// The preview image path for this ProjectTemplate.
+        /// </summary>
+        public string PreviewImage { get; set; }
+
+        /// <summary>
+        /// The overall order of this ProjectTemplate.
+        ///
+        /// This order only applies to non-Custom ProjectTemplates
+        /// </summary>
+        public int? Order { get; set; }
+
+        /// <summary>
+        /// Is this ProjectTemplate a custom template.
+        ///
+        /// Custom templates are Templates that have been created from existing
+        /// Project definitions.
+        /// </summary>
+        public bool? IsCustom { get; set; }
+
+        /// <summary>
+        /// The ProjectTemplateCategories that this Project Template belongs to.
+        ///
+        /// Custom ProjectTemplates do not belong to any ProjectTemplateCategories.
+        /// </summary>
+        public ProjectTemplateCategoryDto[] Categories { get; set; }
     }
 }

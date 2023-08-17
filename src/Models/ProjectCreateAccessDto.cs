@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Specify who has access to a newly created project
     /// </summary>
-    public class ProjectCreateAccessDto
+    public class ProjectCreateAccessDto : ApiModel
     {
 
         /// <summary>

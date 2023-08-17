@@ -21,26 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
-    /// represent individual items of work that team members must complete.  The sum total of Tasks
-    /// within a Project represents the work to be completed for that Project.
+    /// This class contains the information about the WorkSpace setup
     /// </summary>
-    public class TaskProjectDto : ApiModel
+    public class IntegrationSetupResponseDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this Project.
+        /// Returns true if the customer needs to authenticate the integration
         /// </summary>
-        public Guid? Id { get; set; }
+        public bool? RequiresAuthentication { get; set; }
 
         /// <summary>
-        /// The ShortId of this Project.
+        /// The URL to use to run the setup for the integration
         /// </summary>
-        public string ShortId { get; set; }
-
-        /// <summary>
-        /// The common name of this Project.
-        /// </summary>
-        public string Name { get; set; }
+        public string Url { get; set; }
     }
 }

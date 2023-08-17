@@ -20,11 +20,25 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    public class DashboardUserSettingDto
+    /// <summary>
+    /// The Dashboards API is intended for use by ProjectManager
+    /// </summary>
+    public class DashboardSettingDto : ApiModel
     {
 
+        /// <summary>
+        /// Unique ID
+        /// </summary>
         public Guid? Id { get; set; }
 
-        public object MySummaryPageLayout { get; set; }
+        /// <summary>
+        /// User ID
+        /// </summary>
+        public Guid? UserId { get; set; }
+
+        /// <summary>
+        /// Either custom or one of DashboardType enum
+        /// </summary>
+        public string Type { get; set; }
     }
 }

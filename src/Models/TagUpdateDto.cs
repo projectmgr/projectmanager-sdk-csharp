@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// A Tag is a named categorization you can use to distinguish objects from each other.
     /// Tags each have a unique identifier, a name, and a color.
     /// </summary>
-    public class TagUpdateDto
+    public class TagUpdateDto : ApiModel
     {
 
         /// <summary>

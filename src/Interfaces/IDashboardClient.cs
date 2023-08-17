@@ -27,6 +27,11 @@ namespace ProjectManager.SDK.Interfaces
     public interface IDashboardClient
     {
 
-        Task<AstroResult<DashboardUserSettingDto>> UnknownName();
+        /// <summary>
+        /// Returns user dashboard settings
+        ///
+        /// </summary>
+        /// <param name="type">The dashboard type that is not custom</param>
+        Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(DashboardType type);
     }
 }

@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Information about a category of Integrations available on the Marketplace.
     /// </summary>
-    public class IntegrationCategoryDto
+    public class IntegrationCategoryDto : ApiModel
     {
 
         /// <summary>

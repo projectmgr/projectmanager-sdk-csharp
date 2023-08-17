@@ -29,7 +29,7 @@ namespace ProjectManager.SDK.Models
     /// contain problems such as malware. Once a File has completed the upload the process, you
     /// may retrieve it using the DownloadFile API.
     /// </summary>
-    public class UpdateRequestDto
+    public class UpdateRequestDto : ApiModel
     {
 
         /// <summary>

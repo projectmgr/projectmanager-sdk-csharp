@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Dto To Describe a ProjectMember Role
     /// </summary>
-    public class ProjectMemberRoleDto
+    public class ProjectMemberRoleDto : ApiModel
     {
 
         /// <summary>

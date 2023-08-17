@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Time entry representation
     /// </summary>
-    public class TimesheetResponseDto
+    public class TimesheetResponseDto : ApiModel
     {
 
         /// <summary>

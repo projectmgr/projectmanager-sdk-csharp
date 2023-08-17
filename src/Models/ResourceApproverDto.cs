@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
     /// is a ResourceApprover.  You can specify this person within the Resource object.
     /// </summary>
-    public class ResourceApproverDto
+    public class ResourceApproverDto : ApiModel
     {
 
         /// <summary>

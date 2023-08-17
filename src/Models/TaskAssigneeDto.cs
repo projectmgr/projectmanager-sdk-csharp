@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// A TaskAssignee is the person to whom a Task is assigned.  A single Task
     /// can be assigned to multiple TaskAssignees.
     /// </summary>
-    public class TaskAssigneeDto
+    public class TaskAssigneeDto : ApiModel
     {
 
         /// <summary>

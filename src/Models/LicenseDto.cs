@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// A License represents a subscription to a particular product or bundle of products
     /// within ProjectManager.
     /// </summary>
-    public class LicenseDto
+    public class LicenseDto : ApiModel
     {
 
         /// <summary>

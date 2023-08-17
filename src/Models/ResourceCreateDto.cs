@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     /// The users in your Workspace are also considered Resources.  To invite a new User to your
     /// Workspace, create a new Resource for that user.
     /// </summary>
-    public class ResourceCreateDto
+    public class ResourceCreateDto : ApiModel
     {
 
         /// <summary>

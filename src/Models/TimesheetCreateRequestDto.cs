@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Payload to create time entry
     /// </summary>
-    public class TimesheetCreateRequestDto
+    public class TimesheetCreateRequestDto : ApiModel
     {
 
         /// <summary>

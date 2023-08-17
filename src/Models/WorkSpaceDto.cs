@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// can be a member of multiple Workspaces.  Each Workspace is completely separate from all other
     /// Workspaces and a user cannot log in to multiple Workspaces at the same time.
     /// </summary>
-    public class WorkSpaceDto
+    public class WorkSpaceDto : ApiModel
     {
 
         /// <summary>

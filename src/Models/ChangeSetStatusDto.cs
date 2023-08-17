@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Returns the id of a specific ChangeSet
     /// </summary>
-    public class ChangeSetStatusDto
+    public class ChangeSetStatusDto : ApiModel
     {
 
         /// <summary>

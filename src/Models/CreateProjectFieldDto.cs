@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
     /// within your Workspace.
     /// </summary>
-    public class CreateProjectFieldDto
+    public class CreateProjectFieldDto : ApiModel
     {
 
         /// <summary>

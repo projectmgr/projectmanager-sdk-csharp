@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// a new assignment of effort to a TaskAssignee or update an existing effort
     /// amount for an existing TaskAssignee.
     /// </summary>
-    public class AssigneeUpsertDto
+    public class AssigneeUpsertDto : ApiModel
     {
 
         /// <summary>

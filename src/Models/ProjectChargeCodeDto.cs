@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared
     /// among Projects.
     /// </summary>
-    public class ProjectChargeCodeDto
+    public class ProjectChargeCodeDto : ApiModel
     {
 
         /// <summary>

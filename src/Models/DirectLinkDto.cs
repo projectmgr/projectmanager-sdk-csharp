@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// This class contains the URL to use to authenticate with the Integration Provider.
     /// </summary>
-    public class DirectLinkDto
+    public class DirectLinkDto : ApiModel
     {
 
         /// <summary>

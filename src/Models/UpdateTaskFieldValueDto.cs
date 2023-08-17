@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A model that contains a new value to be set for a TaskField.
     /// </summary>
-    public class UpdateTaskFieldValueDto
+    public class UpdateTaskFieldValueDto : ApiModel
     {
 
         /// <summary>

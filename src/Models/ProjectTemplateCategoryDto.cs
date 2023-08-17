@@ -21,26 +21,23 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A TaskStatus is a named status level used by your business to determine how to measure the
-    /// progress of Tasks.  You can define your own named status levels that are appropriate for
-    /// your business and determine which status levels are considered done.
+    /// Information about a Category of ProjectTemplates.
     /// </summary>
-    public class TaskStatusCreateDto : ApiModel
+    public class ProjectTemplateCategoryDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this TaskStatus.
+        /// The unique identifier of this ProjectTemplate Category.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this TaskStatus.
+        /// A friendly name for this ProjectTemplate Category.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// A numerical value that can be used to sort TaskStatus values according to the
-        /// needs of your business.
+        /// The overall order of this ProjectTemplate Category
         /// </summary>
         public int? Order { get; set; }
     }

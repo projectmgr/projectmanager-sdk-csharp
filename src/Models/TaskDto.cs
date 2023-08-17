@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
     /// indicate whether they have a dependency or a connection.
     /// </summary>
-    public class TaskDto
+    public class TaskDto : ApiModel
     {
 
         /// <summary>

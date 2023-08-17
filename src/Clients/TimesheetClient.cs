@@ -78,7 +78,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         public async Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime()
         {
-            var url = $"/api/data/timesheets/admintasks";
+            var url = $"/api/data/timesheets/admin-tasks";
             return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }

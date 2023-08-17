@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A ProjectManager is a person who manages a Project.
     /// </summary>
-    public class ProjectManagerDto
+    public class ProjectManagerDto : ApiModel
     {
 
         /// <summary>

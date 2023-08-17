@@ -28,6 +28,12 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
+        /// Configure the WorkSpace for integrations
+        ///
+        /// </summary>
+        Task<AstroResult<IntegrationSetupResponseDto>> SetupWorkSpaceforIntegrations();
+
+        /// <summary>
         /// Retrieves an Integration specified by a unique identifier.
         ///
         /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
@@ -78,6 +84,21 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
         Task<AstroResult<DirectLinkDto>> RetrieveProviderAuthentication(Guid providerId);
+
+        /// <summary>
+        /// Allows you to update the auth status of the main project manager connection.
+        ///
+        /// </summary>
+        /// <param name="providerId">the identifier to the provider</param>
+        /// <param name="body">Specify the auth status</param>
+        Task<AstroResult<string>> UpdateIntegrationProviderauthstatus(Guid providerId, AuthenticationStatusDto body);
+
+        /// <summary>
+        /// Allows you to update the auth status of the main project manager connection.
+        ///
+        /// </summary>
+        /// <param name="body">Specify the auth status</param>
+        Task<AstroResult<string>> UpdateAuthStatusforprojectmanagerintegrationtoAPI(AuthenticationStatusDto body);
 
         /// <summary>
         /// Retrieves the list of available IntegrationProvider categories.

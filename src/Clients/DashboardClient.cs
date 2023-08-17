@@ -38,10 +38,15 @@ namespace ProjectManager.SDK.Clients
             _client = client;
         }
 
-        public async Task<AstroResult<DashboardUserSettingDto>> UnknownName()
+        /// <summary>
+        /// Returns user dashboard settings
+        ///
+        /// </summary>
+        /// <param name="type">The dashboard type that is not custom</param>
+        public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(DashboardType type)
         {
-            var url = $"/api/data/dashboard/settings";
-            return await _client.Request<DashboardUserSettingDto>(HttpMethod.Get, url, null, null, null);
+            var url = $"/api/data/dashboards/settings/{type}";
+            return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

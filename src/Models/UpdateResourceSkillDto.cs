@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// This is a skill that can be allocated to a resource.
     /// </summary>
-    public class UpdateResourceSkillDto
+    public class UpdateResourceSkillDto : ApiModel
     {
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A model that contains a new value to be set for a ProjectField.
     /// </summary>
-    public class UpdateProjectFieldValueDto
+    public class UpdateProjectFieldValueDto : ApiModel
     {
 
         /// <summary>

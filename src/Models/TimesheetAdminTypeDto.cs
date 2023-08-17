@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Represents admin task to track time
     /// </summary>
-    public class TimesheetAdminTypeDto
+    public class TimesheetAdminTypeDto : ApiModel
     {
 
         /// <summary>

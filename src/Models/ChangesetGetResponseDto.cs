@@ -42,7 +42,9 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// A status flag that indicates the progress of the Changeset through resolution.
+        ///
+        /// For a list of values, see `StateValues`.
         /// </summary>
-        public State State { get; set; }
+        public string State { get; set; }
     }
 }

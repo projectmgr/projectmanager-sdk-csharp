@@ -42,8 +42,8 @@ namespace ProjectManager.SDK.Clients
         /// Returns user dashboard settings
         ///
         /// </summary>
-        /// <param name="type">The dashboard type that is not custom</param>
-        public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(DashboardType type)
+        /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
+        public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type)
         {
             var url = $"/api/data/dashboards/settings/{type}";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null, null, null);

@@ -28,7 +28,9 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// Role to apply
+        ///
+        /// For a list of values, see `ProjectPermissionValues`.
         /// </summary>
-        public ProjectPermission Role { get; set; }
+        public string Role { get; set; }
     }
 }

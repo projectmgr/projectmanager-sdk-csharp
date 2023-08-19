@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.1691</version>
+		<version>11.1.1703</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,19 +14,18 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 11.1.1691
+            # Patch notes for 11.1.1703
             
             These patch notes summarize the changes from version 11.1.1468.
             
-            ## Methods
             
-            Added 37 new APIs, including:
+            Added 36 new APIs, including:
             * Dashboard.RetrieveDashboardUserSettings (GET /api/data/dashboards/settings/{type})
             * File.DownloadFile (GET /api/data/files/{documentId}/download)
             * File.UploadFile (POST /api/data/files/upload)
             * File.UpdateFile (PUT /api/data/files/{fileId})
             * Integration.SetupWorkSpaceforIntegrations (POST /api/data/integrations/setup)
-            * ... 32 more
+            * ... 31 more
             
 
         </releaseNotes>

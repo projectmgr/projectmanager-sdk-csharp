@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Files", "Other Files"
 		LICENSE = LICENSE
 		ProjectManagerClient.nuspec = ProjectManagerClient.nuspec
 		README.md = README.md
+		.github\workflows\nuget-publish.yml = .github\workflows\nuget-publish.yml
 	EndProjectSection
 EndProject
 Global

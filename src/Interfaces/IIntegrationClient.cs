@@ -94,13 +94,6 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<string>> UpdateIntegrationProviderauthstatus(Guid providerId, AuthenticationStatusDto body);
 
         /// <summary>
-        /// Allows you to update the auth status of the main project manager connection.
-        ///
-        /// </summary>
-        /// <param name="body">Specify the auth status</param>
-        Task<AstroResult<string>> UpdateAuthStatusforprojectmanagerintegrationtoAPI(AuthenticationStatusDto body);
-
-        /// <summary>
         /// Retrieves the list of available IntegrationProvider categories.
         ///
         /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.

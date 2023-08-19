@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// A ResourceTeam is a group of Resources that can be referred to as a group.  You can use a
     /// ResourceTeam as a shortcut to quickly assign or allocate multiple Resources quickly.
     /// </summary>
-    public class ResourceTeamDto
+    public class ResourceTeamDto : ApiModel
     {
 
         /// <summary>

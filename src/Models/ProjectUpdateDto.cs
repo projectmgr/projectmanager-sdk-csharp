@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
     /// </summary>
-    public class ProjectUpdateDto
+    public class ProjectUpdateDto : ApiModel
     {
 
         /// <summary>
@@ -97,5 +97,10 @@ namespace ProjectManager.SDK.Models
         /// To update the Project&#39;s status text, set this to the new status text.
         /// </summary>
         public string StatusUpdate { get; set; }
+
+        /// <summary>
+        /// Mark this project as favorite for the logged in user.
+        /// </summary>
+        public bool? Favorite { get; set; }
     }
 }

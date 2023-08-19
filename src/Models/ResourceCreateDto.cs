@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     /// The users in your Workspace are also considered Resources.  To invite a new User to your
     /// Workspace, create a new Resource for that user.
     /// </summary>
-    public class ResourceCreateDto
+    public class ResourceCreateDto : ApiModel
     {
 
         /// <summary>
@@ -71,10 +71,10 @@ namespace ProjectManager.SDK.Models
         public string State { get; set; }
 
         /// <summary>
-        /// A text field indicating the country in which this Resource is located.  This value
-        /// is not constrained to the list of known ISO 3166 country names or codes.
+        /// A text field indicating the country in which this Resource is located.
+        /// This value must be one of the following: US, NZ, AU.
         /// </summary>
-        public string Country { get; set; }
+        public string CountryCode { get; set; }
 
         /// <summary>
         /// Free-form text notes about this Resource.  You may use this field to store extra
@@ -83,20 +83,20 @@ namespace ProjectManager.SDK.Models
         public string Notes { get; set; }
 
         /// <summary>
-        /// The Role privileges associated with this Resource.
+        /// The Role Id associated with this Resource.
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string Role { get; set; }
+        public Guid? RoleId { get; set; }
 
         /// <summary>
         /// The list of ResourceTeams to which this Resource belongs.
         /// </summary>
-        public string[] Teams { get; set; }
+        public Guid[] TeamIds { get; set; }
 
         /// <summary>
         /// The list of ResourceSkills possessed by this Resource.
         /// </summary>
-        public string[] Skills { get; set; }
+        public Guid[] SkillIds { get; set; }
     }
 }

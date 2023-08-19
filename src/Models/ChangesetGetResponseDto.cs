@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// a Changeset causes a conflict or cannot be applied, it will be rejected.  You can examine a
     /// Changeset to determine its conflict resolution status.
     /// </summary>
-    public class ChangesetGetResponseDto
+    public class ChangesetGetResponseDto : ApiModel
     {
 
         /// <summary>
@@ -42,7 +42,9 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// A status flag that indicates the progress of the Changeset through resolution.
+        ///
+        /// For a list of values, see `StateValues`.
         /// </summary>
-        public State State { get; set; }
+        public string State { get; set; }
     }
 }

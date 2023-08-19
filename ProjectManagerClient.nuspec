@@ -2,21 +2,32 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.1468</version>
+		<version>11.1.1703</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
 		<license type="file">docs/LICENSE</license>
 		<projectUrl>https://github.com/projectmgr/projectmanager-sdk-csharp</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>A client library that exposes the functionality of ProjectManager.com through C#/DotNet.</description>
+		<description>Software development kit for the ProjectManager.com API. for DotNet</description>
 		<icon>docs/logo.png</icon>
 		<readme>docs/README.md</readme>
-		<summary>ProjectManager API for CSharp</summary>
+		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # 11.1.1468
-        
-            https://learn.projectmanager.com/latest-releases
+            # Patch notes for 11.1.1703
+            
+            These patch notes summarize the changes from version 11.1.1468.
+            
+            
+            Added 36 new APIs, including:
+            * Dashboard.RetrieveDashboardUserSettings (GET /api/data/dashboards/settings/{type})
+            * File.DownloadFile (GET /api/data/files/{documentId}/download)
+            * File.UploadFile (POST /api/data/files/upload)
+            * File.UpdateFile (PUT /api/data/files/{fileId})
+            * Integration.SetupWorkSpaceforIntegrations (POST /api/data/integrations/setup)
+            * ... 31 more
+            
+
         </releaseNotes>
 		<copyright>Copyright 2023 - 2023</copyright>
     	<tags>projectmanager project management task tracking projects tasks</tags>

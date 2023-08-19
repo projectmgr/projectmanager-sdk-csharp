@@ -44,10 +44,10 @@ namespace ProjectManager.SDK.Clients
         /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
         ///
         /// </summary>
-        public async Task<AstroResult<PublicProjectStatusDto[]>> RetrieveProjectStatuses()
+        public async Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses()
         {
             var url = $"/api/data/projects/statuses";
-            return await _client.Request<PublicProjectStatusDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectStatusDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

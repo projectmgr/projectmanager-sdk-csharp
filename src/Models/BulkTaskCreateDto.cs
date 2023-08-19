@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// provides access to a subset of Task information; for full control over Task creation
     /// please use the normal Create Task API.
     /// </summary>
-    public class BulkTaskCreateDto
+    public class BulkTaskCreateDto : ApiModel
     {
 
         /// <summary>

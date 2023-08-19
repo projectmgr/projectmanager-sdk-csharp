@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
     /// </summary>
-    public class ProjectCreateRequestDto
+    public class ProjectCreateRequestDto : ApiModel
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Models
         /// provide a list of ProjectMembers here.  If you do not specify anyone, this Project will
         /// be available to only yourself.
         /// </summary>
-        public ProjectMemberDto[] Members { get; set; }
+        public ProjectCreateAccessDto ProjectAccess { get; set; }
 
         /// <summary>
         /// The unique identifier of the customer for this project, or null if not customer specific
@@ -110,6 +110,9 @@ namespace ProjectManager.SDK.Models
         /// The Template that this project should be created from.
         ///
         /// Specifying a TemplateId will copy default settings for Tasks.
+        ///
+        /// NOTE: This does not support custom templates - TemplateId has to be a reference
+        /// to a static non-Custom template.
         /// </summary>
         public Guid? TemplateId { get; set; }
     }

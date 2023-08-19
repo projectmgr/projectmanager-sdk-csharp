@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// are in high demand and some Tasks may have a requirement for Resources with particular
     /// ResourceSkills.
     /// </summary>
-    public class ResourceSkillDto
+    public class ResourceSkillDto : ApiModel
     {
 
         /// <summary>

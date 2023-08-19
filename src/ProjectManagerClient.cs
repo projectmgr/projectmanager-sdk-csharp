@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1468
+ * @version    11.1.1703
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1468";
+        public const string SdkVersion = "11.1.1703";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -55,9 +55,34 @@ namespace ProjectManager.SDK
         public IChangesetClient Changeset { get; }
 
         /// <summary>
+        /// API methods related to Dashboard
+        /// </summary>
+        public IDashboardClient Dashboard { get; }
+
+        /// <summary>
         /// API methods related to Discussion
         /// </summary>
         public IDiscussionClient Discussion { get; }
+
+        /// <summary>
+        /// API methods related to File
+        /// </summary>
+        public IFileClient File { get; }
+
+        /// <summary>
+        /// API methods related to Integration
+        /// </summary>
+        public IIntegrationClient Integration { get; }
+
+        /// <summary>
+        /// API methods related to License
+        /// </summary>
+        public ILicenseClient License { get; }
+
+        /// <summary>
+        /// API methods related to Me
+        /// </summary>
+        public IMeClient Me { get; }
 
         /// <summary>
         /// API methods related to Project
@@ -83,6 +108,11 @@ namespace ProjectManager.SDK
         /// API methods related to ProjectFolder
         /// </summary>
         public IProjectFolderClient ProjectFolder { get; }
+
+        /// <summary>
+        /// API methods related to ProjectMembers
+        /// </summary>
+        public IProjectMembersClient ProjectMembers { get; }
 
         /// <summary>
         /// API methods related to ProjectPriority
@@ -144,6 +174,21 @@ namespace ProjectManager.SDK
         /// </summary>
         public ITaskTagClient TaskTag { get; }
 
+        /// <summary>
+        /// API methods related to Timesheet
+        /// </summary>
+        public ITimesheetClient Timesheet { get; }
+
+        /// <summary>
+        /// API methods related to UserRole
+        /// </summary>
+        public IUserRoleClient UserRole { get; }
+
+        /// <summary>
+        /// API methods related to WorkSpace
+        /// </summary>
+        public IWorkSpaceClient WorkSpace { get; }
+
 
         /// <summary>
         /// Internal constructor for the client. You should always begin with `WithEnvironment()` or `WithCustomEnvironment`.
@@ -162,12 +207,18 @@ namespace ProjectManager.SDK
             
             _apiUrl = url;
             Changeset = new ChangesetClient(this);
+            Dashboard = new DashboardClient(this);
             Discussion = new DiscussionClient(this);
+            File = new FileClient(this);
+            Integration = new IntegrationClient(this);
+            License = new LicenseClient(this);
+            Me = new MeClient(this);
             Project = new ProjectClient(this);
             ProjectChargeCode = new ProjectChargeCodeClient(this);
             ProjectCustomer = new ProjectCustomerClient(this);
             ProjectField = new ProjectFieldClient(this);
             ProjectFolder = new ProjectFolderClient(this);
+            ProjectMembers = new ProjectMembersClient(this);
             ProjectPriority = new ProjectPriorityClient(this);
             ProjectStatus = new ProjectStatusClient(this);
             ProjectTemplate = new ProjectTemplateClient(this);
@@ -180,6 +231,9 @@ namespace ProjectManager.SDK
             TaskField = new TaskFieldClient(this);
             TaskStatus = new TaskStatusClient(this);
             TaskTag = new TaskTagClient(this);
+            Timesheet = new TimesheetClient(this);
+            UserRole = new UserRoleClient(this);
+            WorkSpace = new WorkSpaceClient(this);
                 
             // Configure JSON serializer options
             _options = new JsonSerializerOptions
@@ -321,7 +375,7 @@ namespace ProjectManager.SDK
             }
             else if (filename != null)
             {
-                var bytesFile = File.ReadAllBytes(filename);
+                var bytesFile = System.IO.File.ReadAllBytes(filename);
                 var fileContent = new ByteArrayContent(bytesFile);
                 var form = new MultipartFormDataContent(Guid.NewGuid().ToString());
                 form.Add(fileContent, "file", Path.GetFileName(filename));

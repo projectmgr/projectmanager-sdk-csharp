@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
     /// indicate whether they have a dependency or a connection.
     /// </summary>
-    public class TaskDetailsDto
+    public class TaskDetailsDto : ApiModel
     {
 
         /// <summary>
@@ -136,5 +136,26 @@ namespace ProjectManager.SDK.Models
         /// adding child tasks underneath a parent Task.
         /// </summary>
         public bool? IsSummary { get; set; }
+
+        /// <summary>
+        /// The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
+        /// Is a Work Breakdown Structure (WBS)?](https://www.projectmanager.com/guides/work-breakdown-structure)
+        /// on Project Manager for more information. The WBS number is an outline number in the form `#.#.#.#`
+        /// which indicates how tasks are organized and sorted.
+        ///
+        /// The WBS value is only available to users at certain edition levels.  This value can only be changed
+        /// if you are a Project Editor.
+        /// </summary>
+        public string Wbs { get; set; }
+
+        /// <summary>
+        /// The actual cost of this Task to date, if known.
+        /// </summary>
+        public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// The planned cost for this Task.  Cannot be negative.
+        /// </summary>
+        public decimal? PlannedCost { get; set; }
     }
 }

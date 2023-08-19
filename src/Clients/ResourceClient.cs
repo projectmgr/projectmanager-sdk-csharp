@@ -75,5 +75,19 @@ namespace ProjectManager.SDK.Clients
             if (expand != null) { options["$expand"] = expand; }
             return await _client.Request<ResourceDto[]>(HttpMethod.Get, url, options, null, null);
         }
+
+        /// <summary>
+        /// Updates an existing Resource based on information you provide.
+        ///
+        /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
+        ///
+        /// </summary>
+        /// <param name="resourceId">The id of the resource</param>
+        /// <param name="body">The information to update the resource</param>
+        public async Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body)
+        {
+            var url = $"/api/data/resources/{resourceId}";
+            return await _client.Request<ResourceDto>(HttpMethod.Put, url, null, body, null);
+        }
     }
 }

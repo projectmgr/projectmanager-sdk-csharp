@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
     /// classify your Tasks and prioritize work.
     /// </summary>
-    public class TaskTagDto
+    public class TaskTagDto : ApiModel
     {
 
         /// <summary>

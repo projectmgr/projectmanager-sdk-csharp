@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// When uploading a list of names to an API, this data structure represents an
     /// individual name within the list.
     /// </summary>
-    public class NameDto
+    public class NameDto : ApiModel
     {
 
         /// <summary>

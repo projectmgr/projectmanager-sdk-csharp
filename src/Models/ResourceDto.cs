@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     /// The users in your Workspace are also considered Resources.  To invite a new User to your
     /// Workspace, create a new Resource for that user.
     /// </summary>
-    public class ResourceDto
+    public class ResourceDto : ApiModel
     {
 
         /// <summary>
@@ -88,7 +88,8 @@ namespace ProjectManager.SDK.Models
         public string Notes { get; set; }
 
         /// <summary>
-        /// The approver who must review all proposed usage of this Resource, if specified.
+        /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
+        /// is a ResourceApprover.  You can specify this person within the Resource object.
         /// </summary>
         public ResourceApproverDto Approver { get; set; }
 

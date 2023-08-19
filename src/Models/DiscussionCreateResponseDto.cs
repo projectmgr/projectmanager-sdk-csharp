@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// and users should be aware that HTML embedding is not permitted due to the risk of cross-site
     /// attacks and other embedding challenges.
     /// </summary>
-    public class DiscussionCreateResponseDto
+    public class DiscussionCreateResponseDto : ApiModel
     {
 
         /// <summary>

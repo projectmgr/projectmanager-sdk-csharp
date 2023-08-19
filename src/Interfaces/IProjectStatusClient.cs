@@ -33,6 +33,6 @@ namespace ProjectManager.SDK.Interfaces
         /// A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
         ///
         /// </summary>
-        Task<AstroResult<PublicProjectStatusDto[]>> RetrieveProjectStatuses();
+        Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
     }
 }

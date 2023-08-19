@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
     /// </summary>
-    public class TaskProjectDto
+    public class TaskProjectDto : ApiModel
     {
 
         /// <summary>

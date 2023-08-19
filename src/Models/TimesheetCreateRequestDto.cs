@@ -21,39 +21,41 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a failed API request.
+    /// Payload to create time entry
     /// </summary>
-    public class ErrorResult
+    public class TimesheetCreateRequestDto : ApiModel
     {
 
         /// <summary>
-        /// A description of the type of error that occurred.
+        /// Time entry date
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Type { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
-        /// A short title describing the error.
+        /// Reported hours
         /// </summary>
-        public string Title { get; set; }
+        public decimal? Hours { get; set; }
 
         /// <summary>
-        /// If an error code is applicable, this contains an error number.
+        /// Task id that time reported to
         /// </summary>
-        public int? Status { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
-        /// If detailed information about this error is available, this value contains more information.
+        /// Admin task id that time reportsed to
         /// </summary>
-        public string Detail { get; set; }
+        public Guid? AdminTypeId { get; set; }
 
         /// <summary>
-        /// If this error corresponds to a specific instance or object, this field indicates which one.
+        /// Resource id that time reported to
         /// </summary>
-        public string Instance { get; set; }
+        public Guid? ResourceId { get; set; }
 
         /// <summary>
-        /// The full content of the HTTP response.
+        /// Notes
         /// </summary>
-        public string Content { get; set; }
+        public string Notes { get; set; }
     }
 }

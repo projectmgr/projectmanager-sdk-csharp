@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
     /// </summary>
-    public class ProjectDto
+    public class ProjectDto : ApiModel
     {
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The ProjectStatus chosen for this Project.
         /// </summary>
-        public PublicProjectStatusDto Status { get; set; }
+        public ProjectStatusDto Status { get; set; }
 
         /// <summary>
         /// The earliest planned or actual start date of tasks on the project.

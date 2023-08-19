@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// which Tasks are the most important.  You can name your ProjectPriority levels anything you like
     /// and you can reorganize the order of the ProjectPriority levels at any time.
     /// </summary>
-    public class ProjectPriorityDto
+    public class ProjectPriorityDto : ApiModel
     {
 
         /// <summary>

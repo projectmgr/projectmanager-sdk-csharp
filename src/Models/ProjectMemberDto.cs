@@ -25,17 +25,37 @@ namespace ProjectManager.SDK.Models
     /// permissions for what each ProjectMember can do and how they can interact with
     /// the Project using this model.
     /// </summary>
-    public class ProjectMemberDto
+    public class ProjectMemberDto : ApiModel
     {
 
         /// <summary>
         /// The unique identifier of the user of this ProjectMember.
         /// </summary>
-        public Guid? UserId { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of this membertype
+        /// the initials of the user
         /// </summary>
-        public string MemberType { get; set; }
+        public string Initials { get; set; }
+
+        /// <summary>
+        /// The display name of the user
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Avatar URL
+        /// </summary>
+        public string AvatarUrl { get; set; }
+
+        /// <summary>
+        /// The role of the user in the project
+        /// </summary>
+        public string Role { get; set; }
+
+        /// <summary>
+        /// The color for their avatar
+        /// </summary>
+        public string Color { get; set; }
     }
 }

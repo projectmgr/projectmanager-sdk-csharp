@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// progress of Tasks.  You can define your own named status levels that are appropriate for
     /// your business and determine which status levels are considered done.
     /// </summary>
-    public class TaskStatusDto
+    public class TaskStatusDto : ApiModel
     {
 
         /// <summary>

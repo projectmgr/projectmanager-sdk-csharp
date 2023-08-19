@@ -21,9 +21,10 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// TODO - What is a ResourceApprover?  Ted&#39;s theory is that this is a Workflow stage &quot;name&quot;.
+    /// When managing users, you can choose who will approve a person&#39;s Timesheets. This
+    /// is a ResourceApprover.  You can specify this person within the Resource object.
     /// </summary>
-    public class ResourceApproverDto
+    public class ResourceApproverDto : ApiModel
     {
 
         /// <summary>

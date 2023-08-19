@@ -24,7 +24,7 @@ namespace ProjectManager.SDK.Models
     /// A TaskTodo is a sub-task that represents a unit of work on the Task.  You can use
     /// TaskTodo to represent individual items for a larger piece of work.
     /// </summary>
-    public class TaskTodoDto
+    public class TaskTodoDto : ApiModel
     {
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A ProjectFolder is a named storage location that can contain Projects.
     /// </summary>
-    public class ProjectFolderDto
+    public class ProjectFolderDto : ApiModel
     {
 
         /// <summary>

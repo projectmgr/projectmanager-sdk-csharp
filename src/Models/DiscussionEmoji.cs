@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// A reaction to a specific comment within a discussion thread.
     /// </summary>
-    public class DiscussionEmoji
+    public class DiscussionEmoji : ApiModel
     {
 
         /// <summary>

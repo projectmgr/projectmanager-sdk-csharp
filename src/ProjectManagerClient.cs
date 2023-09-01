@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1703";
+        public const string SdkVersion = "11.1.1704";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;

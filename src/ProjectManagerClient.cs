@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1703
+ * @version    11.1.1863
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1704";
+        public const string SdkVersion = "11.1.1863";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -68,6 +68,11 @@ namespace ProjectManager.SDK
         /// API methods related to File
         /// </summary>
         public IFileClient File { get; }
+
+        /// <summary>
+        /// API methods related to HomeFile
+        /// </summary>
+        public IHomeFileClient HomeFile { get; }
 
         /// <summary>
         /// API methods related to Integration
@@ -103,6 +108,11 @@ namespace ProjectManager.SDK
         /// API methods related to ProjectField
         /// </summary>
         public IProjectFieldClient ProjectField { get; }
+
+        /// <summary>
+        /// API methods related to ProjectFile
+        /// </summary>
+        public IProjectFileClient ProjectFile { get; }
 
         /// <summary>
         /// API methods related to ProjectFolder
@@ -165,6 +175,11 @@ namespace ProjectManager.SDK
         public ITaskFieldClient TaskField { get; }
 
         /// <summary>
+        /// API methods related to TaskFile
+        /// </summary>
+        public ITaskFileClient TaskFile { get; }
+
+        /// <summary>
         /// API methods related to TaskStatus
         /// </summary>
         public ITaskStatusClient TaskStatus { get; }
@@ -210,6 +225,7 @@ namespace ProjectManager.SDK
             Dashboard = new DashboardClient(this);
             Discussion = new DiscussionClient(this);
             File = new FileClient(this);
+            HomeFile = new HomeFileClient(this);
             Integration = new IntegrationClient(this);
             License = new LicenseClient(this);
             Me = new MeClient(this);
@@ -217,6 +233,7 @@ namespace ProjectManager.SDK
             ProjectChargeCode = new ProjectChargeCodeClient(this);
             ProjectCustomer = new ProjectCustomerClient(this);
             ProjectField = new ProjectFieldClient(this);
+            ProjectFile = new ProjectFileClient(this);
             ProjectFolder = new ProjectFolderClient(this);
             ProjectMembers = new ProjectMembersClient(this);
             ProjectPriority = new ProjectPriorityClient(this);
@@ -229,6 +246,7 @@ namespace ProjectManager.SDK
             Task = new TaskClient(this);
             TaskAssignee = new TaskAssigneeClient(this);
             TaskField = new TaskFieldClient(this);
+            TaskFile = new TaskFileClient(this);
             TaskStatus = new TaskStatusClient(this);
             TaskTag = new TaskTagClient(this);
             Timesheet = new TimesheetClient(this);

@@ -21,9 +21,9 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
+    /// User dashboard create or update dto
     /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class DashboardSettingCreateDto : ApiModel
     {
 
         /// <summary>

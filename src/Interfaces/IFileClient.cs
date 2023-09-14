@@ -34,16 +34,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
-        Task<AstroResult<string>> DownloadFile(Guid documentId);
-
-        /// <summary>
-        /// Uploads a File to the specified location.
-        ///
-        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project or a Discussion.  When you upload a File, please allow a few moments for the File to be processed and verified.  ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
-        ///
-        /// </summary>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<string>> UploadFile(string filename);
+        /// <param name="type">The type of downloaded file (optional)</param>
+        Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null);
 
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.

@@ -21,29 +21,44 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
+    /// React grid layout item object
     /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class ReactGridLayoutItemDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// Width
         /// </summary>
-        public Guid? Id { get; set; }
+        public int? W { get; set; }
 
         /// <summary>
-        /// User ID
+        /// Height
         /// </summary>
-        public Guid? UserId { get; set; }
+        public int? H { get; set; }
 
         /// <summary>
-        /// Either custom or one of DashboardType enum
+        /// X position
         /// </summary>
-        public string Type { get; set; }
+        public int? X { get; set; }
 
         /// <summary>
-        /// React grid layout configuration
+        /// Y position
         /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
+        public int? Y { get; set; }
+
+        /// <summary>
+        /// ID
+        /// </summary>
+        public string I { get; set; }
+
+        /// <summary>
+        /// Moved indicator
+        /// </summary>
+        public bool? Moved { get; set; }
+
+        /// <summary>
+        /// If true, equal to `isDraggable: false, isResizable: false`
+        /// </summary>
+        public bool? Static { get; set; }
     }
 }

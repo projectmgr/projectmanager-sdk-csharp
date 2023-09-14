@@ -22,23 +22,19 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to Dashboard
+    /// API methods related to TaskFile
     /// </summary>
-    public interface IDashboardClient
+    public interface ITaskFileClient
     {
 
         /// <summary>
-        /// Returns user dashboard settings
+        /// Uploads a file to a task.
+        ///
+        /// When you upload a File, please allow a few moments. ProjectManager may reject File uploads based on security policies. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
-        /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
-        Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type);
-
-        /// <summary>
-        /// Create or Update User Dashboard Settings
-        ///
-        /// </summary>
-        /// <param name="body">User dashboard settings object</param>
-        Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body);
+        /// <param name="taskId">The reference to the task</param>
+        /// <param name="filename">The full path of a file to upload to the API</param>
+        Task<AstroResult<FileDto>> UploadaFiletoaTask(Guid taskId, string filename);
     }
 }

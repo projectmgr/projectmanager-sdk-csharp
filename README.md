@@ -6,7 +6,7 @@ This software development kit contains all API definitions for the [ProjectManag
 
 # Why use the SDK?
 
-The ProjectManager API v4 is available as a REST definition in OpenAPI format.  You can read the documentation online at [developer.projectmanager.com](https://developer.projectmanager.com/v4/reference/api-reference).
+The ProjectManager API v4 is available as a REST definition in OpenAPI format.  You can read the documentation online at [developer.projectmanager.com](https://developer.projectmanager.com/reference/api-overview-2).
 
 This SDK provides a few capabilities that developers may find more useful than hand-writing REST API code:
 * Documentation is available in your editor via autocomplete and hover docblocks

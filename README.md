@@ -2,7 +2,7 @@
 
 # ProjectManager.com SDK for API v4
 
-This software development kit contains all API definitions for the [ProjectManager.com] REST API v4.  
+This software development kit contains all API definitions for the [ProjectManager.com](https://www.projectmanager.com) REST API v4.  
 
 # Why use the SDK?
 
@@ -28,10 +28,11 @@ To create an API client for ProjectManager, you must specify:
 
 For the ProjectManager production environment, the environment URL is `https://api.projectmanager.com`.
 
-To obtain an API key:
+To [obtain a ProjectManager.com API key](https://softwaredeveloper.projectmanager.com/v4/reference/api-keys):
 * Log on to ProjectManager.com
 * Click your name in the bottom left hand corner
 * Select Account, then API
+* Follow the instructions on the page to create a new API key
 
 ```csharp
 using System;

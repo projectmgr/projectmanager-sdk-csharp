@@ -6,7 +6,7 @@ This software development kit contains all API definitions for the [ProjectManag
 
 # Why use the SDK?
 
-The ProjectManager API v4 is available as a REST definition in OpenAPI format.  You can read the documentation online at [softwaredeveloper.projectmanager.com](https://softwaredeveloper.projectmanager.com/v4/reference/api-reference).
+The ProjectManager API v4 is available as a REST definition in OpenAPI format.  You can read the documentation online at [developer.projectmanager.com](https://developer.projectmanager.com/reference/api-overview-2).
 
 This SDK provides a few capabilities that developers may find more useful than hand-writing REST API code:
 * Documentation is available in your editor via autocomplete and hover docblocks
@@ -28,7 +28,7 @@ To create an API client for ProjectManager, you must specify:
 
 For the ProjectManager production environment, the environment URL is `https://api.projectmanager.com`.
 
-To [obtain a ProjectManager.com API key](https://softwaredeveloper.projectmanager.com/v4/reference/api-keys):
+To [obtain a ProjectManager.com API key](https://developer.projectmanager.com/reference/api-keys):
 * Log on to ProjectManager.com
 * Click your name in the bottom left hand corner
 * Select Account, then API

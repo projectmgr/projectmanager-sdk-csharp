@@ -74,5 +74,10 @@ namespace ProjectManager.SDK.Models
         /// True if this Integration is enabled for the current Workspace.
         /// </summary>
         public bool? Enabled { get; set; }
+
+        /// <summary>
+        /// True if the user has authenticated
+        /// </summary>
+        public bool? Authenticated { get; set; }
     }
 }

@@ -21,19 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// This class contains the information about the WorkSpace setup
+    /// Represents a new api access key entity
     /// </summary>
-    public class IntegrationSetupResponseDto : ApiModel
+    public class ApiKeyCreateDto : ApiModel
     {
 
         /// <summary>
-        /// Returns true if the customer needs to authenticate the integration
+        /// Name of token
         /// </summary>
-        public bool? RequiresAuthentication { get; set; }
-
-        /// <summary>
-        /// The URL to use to run the setup for the integration
-        /// </summary>
-        public string Url { get; set; }
+        public string TokenName { get; set; }
     }
 }

@@ -41,12 +41,14 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Uploads a file to a task.
         ///
-        /// When you upload a File, please allow a few moments. ProjectManager may reject File uploads based on security policies. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
         /// <param name="taskId">The reference to the task</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadaFiletoaTask(Guid taskId, string filename)
+        public async Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string filename)
         {
             var url = $"/api/data/tasks/{taskId}/files";
             return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);

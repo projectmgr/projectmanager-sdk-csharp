@@ -41,11 +41,13 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Downloads the contents of a file that was previously uploaded to ProjectManager.com.
         ///
-        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project or a Discussion.  When you upload a File, please allow a few moments for the File to be processed and verified.  ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
-        /// <param name="type">The type of downloaded file (optional)</param>
+        /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
         public async Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null)
         {
             var url = $"/api/data/files/{documentId}/download";
@@ -57,7 +59,9 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.
         ///
-        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project or a Discussion.  When you upload a File, please allow a few moments for the File to be processed and verified.  ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to update</param>

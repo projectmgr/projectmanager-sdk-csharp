@@ -21,25 +21,33 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
-    /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
-    /// classify your Tasks and prioritize work.
+    /// Represents api access key entity
     /// </summary>
-    public class TimesheetTaskTagDto : ApiModel
+    public class ApiKeyDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this TaskStatus.
+        /// Internal access token id
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
-        /// The unique identifier of the TaskTag id.
+        /// Created by user id
         /// </summary>
-        public Guid? TagId { get; set; }
+        public Guid? CreatedBy { get; set; }
 
         /// <summary>
-        /// The name of this TaskStatus.
+        /// Expires date
+        /// </summary>
+        public DateTime? Expires { get; set; }
+
+        /// <summary>
+        /// Bearer Key
+        /// </summary>
+        public string ApiKey { get; set; }
+
+        /// <summary>
+        /// Name of token
         /// </summary>
         public string Name { get; set; }
     }

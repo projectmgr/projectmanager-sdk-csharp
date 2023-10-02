@@ -21,29 +21,26 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
+    /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
+    /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
+    /// classify your Tasks and prioritize work.
     /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class TimesheetTaskTagDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// The unique identifier of this TaskStatus.
         /// </summary>
-        public Guid? Id { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
-        /// User ID
+        /// The unique identifier of the TaskTag id.
         /// </summary>
-        public Guid? UserId { get; set; }
+        public Guid? TagId { get; set; }
 
         /// <summary>
-        /// Either custom or one of DashboardType enum
+        /// The name of this TaskStatus.
         /// </summary>
-        public string Type { get; set; }
-
-        /// <summary>
-        /// React grid layout configuration
-        /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
+        public string Name { get; set; }
     }
 }

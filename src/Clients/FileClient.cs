@@ -45,23 +45,13 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
-        public async Task<AstroResult<string>> DownloadFile(Guid documentId)
+        /// <param name="type">The type of downloaded file (optional)</param>
+        public async Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null)
         {
             var url = $"/api/data/files/{documentId}/download";
-            return await _client.Request<string>(HttpMethod.Get, url, null, null, null);
-        }
-
-        /// <summary>
-        /// Uploads a File to the specified location.
-        ///
-        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project or a Discussion.  When you upload a File, please allow a few moments for the File to be processed and verified.  ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
-        ///
-        /// </summary>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<string>> UploadFile(string filename)
-        {
-            var url = $"/api/data/files/upload";
-            return await _client.Request<string>(HttpMethod.Post, url, null, null, filename);
+            var options = new Dictionary<string, object>();
+            if (type != null) { options["type"] = type; }
+            return await _client.Request<string>(HttpMethod.Get, url, options, null, null);
         }
 
         /// <summary>

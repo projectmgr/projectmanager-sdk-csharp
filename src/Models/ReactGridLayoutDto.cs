@@ -21,29 +21,34 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
+    /// A setting for react grid layout sizes
     /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class ReactGridLayoutDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// Used for large screen size (1200)
         /// </summary>
-        public Guid? Id { get; set; }
+        public ReactGridLayoutItemDto[] Lg { get; set; }
 
         /// <summary>
-        /// User ID
+        /// Used for medium screen size (996)
         /// </summary>
-        public Guid? UserId { get; set; }
+        public ReactGridLayoutItemDto[] Md { get; set; }
 
         /// <summary>
-        /// Either custom or one of DashboardType enum
+        /// Used for small screen size (768)
         /// </summary>
-        public string Type { get; set; }
+        public ReactGridLayoutItemDto[] Sm { get; set; }
 
         /// <summary>
-        /// React grid layout configuration
+        /// Used for extra small screen size (480)
         /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
+        public ReactGridLayoutItemDto[] Xs { get; set; }
+
+        /// <summary>
+        /// Used for super small screen size (0)
+        /// </summary>
+        public ReactGridLayoutItemDto[] Xxs { get; set; }
     }
 }

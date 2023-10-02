@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1703
+ * @version    11.1.1863
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -40,6 +40,10 @@ namespace ProjectManager.SDK
         /// </summary>
         IFileClient File { get; }
         /// <summary>
+        /// API methods related to HomeFile
+        /// </summary>
+        IHomeFileClient HomeFile { get; }
+        /// <summary>
         /// API methods related to Integration
         /// </summary>
         IIntegrationClient Integration { get; }
@@ -67,6 +71,10 @@ namespace ProjectManager.SDK
         /// API methods related to ProjectField
         /// </summary>
         IProjectFieldClient ProjectField { get; }
+        /// <summary>
+        /// API methods related to ProjectFile
+        /// </summary>
+        IProjectFileClient ProjectFile { get; }
         /// <summary>
         /// API methods related to ProjectFolder
         /// </summary>
@@ -115,6 +123,10 @@ namespace ProjectManager.SDK
         /// API methods related to TaskField
         /// </summary>
         ITaskFieldClient TaskField { get; }
+        /// <summary>
+        /// API methods related to TaskFile
+        /// </summary>
+        ITaskFileClient TaskFile { get; }
         /// <summary>
         /// API methods related to TaskStatus
         /// </summary>

@@ -48,5 +48,16 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/dashboards/settings/{type}";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null, null, null);
         }
+
+        /// <summary>
+        /// Create or Update User Dashboard Settings
+        ///
+        /// </summary>
+        /// <param name="body">User dashboard settings object</param>
+        public async Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body)
+        {
+            var url = $"/api/data/dashboards/settings";
+            return await _client.Request<DashboardSettingDto>(HttpMethod.Post, url, null, body, null);
+        }
     }
 }

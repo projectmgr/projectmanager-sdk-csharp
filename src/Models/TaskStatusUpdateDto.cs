@@ -25,18 +25,13 @@ namespace ProjectManager.SDK.Models
     /// progress of Tasks.  You can define your own named status levels that are appropriate for
     /// your business and determine which status levels are considered done.
     /// </summary>
-    public class TimesheetTaskStatusDto : ApiModel
+    public class TaskStatusUpdateDto : ApiModel
     {
 
         /// <summary>
         /// The unique identifier of this TaskStatus.
         /// </summary>
         public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The unique identifier of the Project to which this TaskStatus belongs.
-        /// </summary>
-        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// The name of this TaskStatus.
@@ -48,10 +43,5 @@ namespace ProjectManager.SDK.Models
         /// needs of your business.
         /// </summary>
         public int? Order { get; set; }
-
-        /// <summary>
-        /// True if a Task in this TaskStatus is considered done.
-        /// </summary>
-        public bool? IsDone { get; set; }
     }
 }

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1863
+ * @version    11.1.2012
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.1863";
+        public const string SdkVersion = "11.1.2012";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -49,6 +49,11 @@ namespace ProjectManager.SDK
         private string _bearerToken;
         private string _apiKey;
     
+        /// <summary>
+        /// API methods related to ApiKey
+        /// </summary>
+        public IApiKeyClient ApiKey { get; }
+
         /// <summary>
         /// API methods related to Changeset
         /// </summary>
@@ -78,6 +83,21 @@ namespace ProjectManager.SDK
         /// API methods related to Integration
         /// </summary>
         public IIntegrationClient Integration { get; }
+
+        /// <summary>
+        /// API methods related to IntegrationCategory
+        /// </summary>
+        public IIntegrationCategoryClient IntegrationCategory { get; }
+
+        /// <summary>
+        /// API methods related to IntegrationProvider
+        /// </summary>
+        public IIntegrationProviderClient IntegrationProvider { get; }
+
+        /// <summary>
+        /// API methods related to Jira
+        /// </summary>
+        public IJiraClient Jira { get; }
 
         /// <summary>
         /// API methods related to License
@@ -221,12 +241,16 @@ namespace ProjectManager.SDK
             _client = new HttpClient(handler);
             
             _apiUrl = url;
+            ApiKey = new ApiKeyClient(this);
             Changeset = new ChangesetClient(this);
             Dashboard = new DashboardClient(this);
             Discussion = new DiscussionClient(this);
             File = new FileClient(this);
             HomeFile = new HomeFileClient(this);
             Integration = new IntegrationClient(this);
+            IntegrationCategory = new IntegrationCategoryClient(this);
+            IntegrationProvider = new IntegrationProviderClient(this);
+            Jira = new JiraClient(this);
             License = new LicenseClient(this);
             Me = new MeClient(this);
             Project = new ProjectClient(this);

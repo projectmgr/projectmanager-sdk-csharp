@@ -21,19 +21,25 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Specify who has access to a newly created project
+    /// The Jira API is intended for use by ProjectManager and its business
+    /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
     /// </summary>
-    public class ProjectCreateAccessDto : ApiModel
+    public class RetunJiraProjectsDto : ApiModel
     {
 
         /// <summary>
-        /// If set to true every user will get access to this project
+        /// The unique identifier of the Jira Project
         /// </summary>
-        public bool? Everyone { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
-        /// If everyone is set to false the list of members will be used to give people access
+        /// The name of jira project
         /// </summary>
-        public ProjectCreateAccessMemberDto[] Members { get; set; }
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The key of Jira Project
+        /// </summary>
+        public string Key { get; set; }
     }
 }

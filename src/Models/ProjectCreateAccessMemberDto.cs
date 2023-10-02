@@ -21,19 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Specify who has access to a newly created project
+    /// Represents project member that have access to new project
     /// </summary>
-    public class ProjectCreateAccessDto : ApiModel
+    public class ProjectCreateAccessMemberDto : ApiModel
     {
 
         /// <summary>
-        /// If set to true every user will get access to this project
+        /// Member&#39;s id
         /// </summary>
-        public bool? Everyone { get; set; }
+        public Guid? UserId { get; set; }
 
         /// <summary>
-        /// If everyone is set to false the list of members will be used to give people access
+        /// Member&#39;s role in the project
         /// </summary>
-        public ProjectCreateAccessMemberDto[] Members { get; set; }
+        public string Permission { get; set; }
     }
 }

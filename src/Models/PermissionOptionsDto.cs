@@ -21,44 +21,35 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Created Time entry response data
+    /// Specifies the permissions a member can be changed to on a project.
+    /// This objects values can change based on the logged in user and the role they have.
     /// </summary>
-    public class TimesheetGetResponseDto : ApiModel
+    public class PermissionOptionsDto : ApiModel
     {
 
         /// <summary>
-        /// TimesheetId
+        /// If true, the users access can be removed
         /// </summary>
-        public Guid? Id { get; set; }
+        public bool? None { get; set; }
 
         /// <summary>
-        /// Date of time entry
+        /// If true the user can be changed to collaborator
         /// </summary>
-        public DateTime? Date { get; set; }
+        public bool? Collaborate { get; set; }
 
         /// <summary>
-        /// Notes
+        /// If true a user can be set as guest, a guest can only be Guest or None
         /// </summary>
-        public string Notes { get; set; }
+        public bool? Guest { get; set; }
 
         /// <summary>
-        /// Shows if timesheet approved
+        /// If true the user can be changed to editor
         /// </summary>
-        public bool? Approved { get; set; }
+        public bool? Editor { get; set; }
 
         /// <summary>
-        /// Total Hours
+        /// If true the user can be changed to Manager
         /// </summary>
-        public decimal? Hours { get; set; }
-
-        /// <summary>
-        /// associated tasks with time sheet
-        /// </summary>
-        public TimesheetTaskDto Task { get; set; }
-
-        /// <summary>
-        /// associated projects with timesheet
-        /// </summary>
-        public TimeSheetProjectDto Project { get; set; }
+        public bool? Manager { get; set; }
     }
 }

@@ -28,11 +28,19 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
+        /// Returns a list of membership options for existing members. Optionally include users who are not a member yet.
+        ///
+        /// </summary>
+        /// <param name="projectId">Reference to the project</param>
+        /// <param name="includeAllUsers">Set to true to include all users in the workspace</param>
+        Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null);
+
+        /// <summary>
         /// Return the membership of a project for a user.
         ///
         /// </summary>
-        /// <param name="projectId">Reference of Project to update</param>
-        /// <param name="userId">Reference of User to update</param>
+        /// <param name="projectId">Reference of Project</param>
+        /// <param name="userId">Reference of User</param>
         Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMemberShip(Guid projectId, Guid userId);
 
         /// <summary>

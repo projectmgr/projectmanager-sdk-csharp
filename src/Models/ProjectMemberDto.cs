@@ -49,13 +49,18 @@ namespace ProjectManager.SDK.Models
         public string AvatarUrl { get; set; }
 
         /// <summary>
-        /// The role of the user in the project
+        /// The current permission of the user
         /// </summary>
-        public string Role { get; set; }
+        public string Permission { get; set; }
 
         /// <summary>
         /// The color for their avatar
         /// </summary>
         public string Color { get; set; }
+
+        /// <summary>
+        /// Specifies the permissions that you can set against the project member. This changes based on who is logged in and the role they have.
+        /// </summary>
+        public PermissionOptionsDto PermissionOptions { get; set; }
     }
 }

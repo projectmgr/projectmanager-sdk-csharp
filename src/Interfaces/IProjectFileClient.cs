@@ -30,22 +30,26 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Uploads a file to a project folder.
         ///
-        /// When you upload a File, please allow a few moments. ProjectManager may reject File uploads based on security policies. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadaFiletoaProject(Guid projectId, string filename);
+        Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename);
 
         /// <summary>
         /// Uploads a file to a project folder.
         ///
-        /// When you upload a File, please allow a few moments. ProjectManager may reject File uploads based on security policies. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadaFiletoaProject(Guid projectId, Guid folderId, string filename);
+        Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename);
     }
 }

@@ -31,7 +31,28 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of this Task.
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Id { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the Project to which this Task belongs.
+        /// </summary>
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// A short ID that can be used to refer to this Task.  This short ID is
+        /// guaranteed to be unique within your Workspace.
+        /// </summary>
+        public string ShortId { get; set; }
+
+        /// <summary>
+        /// The common name of this Task.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// A description of the work to be performed in this Task.
+        /// </summary>
+        public string Description { get; set; }
 
         /// <summary>
         /// The date when work on this Task is planned to begin.
@@ -64,37 +85,6 @@ namespace ProjectManager.SDK.Models
         public DateTime? PlannedFinishDate { get; set; }
 
         /// <summary>
-        /// The total span of active working time.
-        /// e.g. 3days = 3days x 8hours x 600 (magic number for minutes?) = 14400
-        /// </summary>
-        public int? PlannedDuration { get; set; }
-
-        /// <summary>
-        /// The planned cost for this Task.  Cannot be negative.
-        /// </summary>
-        public int? PlannedHours { get; set; }
-
-        /// <summary>
-        /// The planned cost for this Task.  Cannot be negative.
-        /// </summary>
-        public decimal? PlannedCost { get; set; }
-
-        /// <summary>
-        /// The planned resource cost for this Task.  Cannot be negative.
-        /// </summary>
-        public decimal? PlannedResourceCost { get; set; }
-
-        /// <summary>
-        /// The numerical percentage, from 0-100, representing the percentage completion
-        /// for this Task.  Any numbers below zero or above 100 will be clamped to the
-        /// minimum or maximum value.
-        ///
-        /// This value can be edited manually in the Gantt chart view of the application,
-        /// or can be selected on the Task Detail page within the Kanban board.
-        /// </summary>
-        public int? PercentComplete { get; set; }
-
-        /// <summary>
         /// If set, this is the actual date when work began on the Task.
         ///
         /// This value contains only the date in year-month-day format.  For display, this
@@ -125,91 +115,24 @@ namespace ProjectManager.SDK.Models
         public DateTime? ActualFinishDate { get; set; }
 
         /// <summary>
-        /// The total span of active working time.
-        /// e.g. 3days = 3days x 8hours x 600 (magic number for minutes?) = 14400
+        /// The timestamp in UTC when this Task was most recently modified.
         /// </summary>
-        public int? ActualDuration { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
         /// <summary>
-        /// The actual work hrs
+        /// The timestamp in UTC when this Task was created.
         /// </summary>
-        public int? ActualWork { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
-        /// The actual cost of this Task to date, if known.
-        /// </summary>
-        public decimal? ActualCost { get; set; }
-
-        /// <summary>
-        /// The actual resource cost of this Task to date, if known.
-        /// </summary>
-        public decimal? ActualResourceCost { get; set; }
-
-        /// <summary>
-        /// The date when work on this Task is planned to begin.
+        /// The numerical percentage, from 0-100, representing the percentage completion
+        /// for this Task.  Any numbers below zero or above 100 will be clamped to the
+        /// minimum or maximum value.
         ///
-        /// This value contains only the date in year-month-day format.  For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
-        /// For reporting purposes, this date is calculated against the official time zone
-        /// of the Workspace.
-        ///
-        /// For example: A Task has a planned completion date of July 5, 2023 in a Workspace
-        /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
-        /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
-        /// US Pacific time.
+        /// This value can be edited manually in the Gantt chart view of the application,
+        /// or can be selected on the Task Detail page within the Kanban board.
         /// </summary>
-        public DateTime? BaselineStartDate { get; set; }
-
-        /// <summary>
-        /// The date when work on this Task is expected to complete.
-        ///
-        /// This value contains only the date in year-month-day format.  For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
-        /// For reporting purposes, this date is calculated against the official time zone
-        /// of the Workspace.
-        ///
-        /// For example: A Task has a planned completion date of July 5, 2023 in a Workspace
-        /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
-        /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
-        /// US Pacific time.
-        /// </summary>
-        public DateTime? BaselineFinishDate { get; set; }
-
-        /// <summary>
-        /// The total span of active working time.
-        /// e.g. 3days = 3days x 8hours x 600 (magic number for minutes?) = 14400
-        /// </summary>
-        public int? BaselineDuration { get; set; }
-
-        /// <summary>
-        /// The actual work hrs
-        /// </summary>
-        public int? BaselineHours { get; set; }
-
-        /// <summary>
-        /// The actual cost of this Task to date, if known.
-        /// </summary>
-        public decimal? BaselineCost { get; set; }
-
-        /// <summary>
-        /// The TaskStatus assigned to this Task.
-        /// </summary>
-        public TimesheetTaskStatusDto Status { get; set; }
-
-        /// <summary>
-        /// Return the priority of a task
-        /// </summary>
-        public int? Priority { get; set; }
-
-        /// <summary>
-        /// A notes of the work to be performed in this Task.
-        /// </summary>
-        public string Notes { get; set; }
-
-        /// <summary>
-        /// Task Tags
-        /// </summary>
-        public TimesheetTaskTagDto[] Tag { get; set; }
+        public int? PercentComplete { get; set; }
 
         /// <summary>
         /// True if this Task is the parent of multiple Tasks underneath it.  A parent Task
@@ -222,13 +145,34 @@ namespace ProjectManager.SDK.Models
         public bool? IsSummary { get; set; }
 
         /// <summary>
-        /// his means that the dates and assigned resources are locked for this task and it will not be automatically changed by any process.  So, if this field is checked, then this task is always ignored by leveling or any changes to the schedule.
+        /// Return the priority of a task
         /// </summary>
-        public bool? IsLock { get; set; }
+        public int? PriorityId { get; set; }
 
         /// <summary>
-        /// milestone
+        /// The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
+        /// Is a Work Breakdown Structure (WBS)?](https://www.projectmanager.com/guides/work-breakdown-structure)
+        /// on Project Manager for more information. The WBS number is an outline number in the form `#.#.#.#`
+        /// which indicates how tasks are organized and sorted.
+        ///
+        /// The WBS value is only available to users at certain edition levels.  This value can only be changed
+        /// if you are a Project Editor.
         /// </summary>
-        public bool? IsMilestone { get; set; }
+        public string Wbs { get; set; }
+
+        /// <summary>
+        /// Task Color as set in the Gantt
+        /// </summary>
+        public string Color { get; set; }
+
+        /// <summary>
+        /// The actual cost of this Task to date, if known.
+        /// </summary>
+        public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// The planned cost for this Task.  Cannot be negative.
+        /// </summary>
+        public decimal? PlannedCost { get; set; }
     }
 }

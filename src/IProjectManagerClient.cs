@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.1863
+ * @version    11.1.2012
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -23,6 +23,10 @@ namespace ProjectManager.SDK
     /// </summary>
     public interface IProjectManagerClient
     {
+        /// <summary>
+        /// API methods related to ApiKey
+        /// </summary>
+        IApiKeyClient ApiKey { get; }
         /// <summary>
         /// API methods related to Changeset
         /// </summary>
@@ -47,6 +51,18 @@ namespace ProjectManager.SDK
         /// API methods related to Integration
         /// </summary>
         IIntegrationClient Integration { get; }
+        /// <summary>
+        /// API methods related to IntegrationCategory
+        /// </summary>
+        IIntegrationCategoryClient IntegrationCategory { get; }
+        /// <summary>
+        /// API methods related to IntegrationProvider
+        /// </summary>
+        IIntegrationProviderClient IntegrationProvider { get; }
+        /// <summary>
+        /// API methods related to Jira
+        /// </summary>
+        IJiraClient Jira { get; }
         /// <summary>
         /// API methods related to License
         /// </summary>

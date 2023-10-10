@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.2012</version>
+		<version>11.1.2053</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,39 +14,18 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 11.1.2012
+            # Patch notes for 11.1.2053
             
-            These patch notes summarize the changes from version 11.1.1863.
+            These patch notes summarize the changes from version 11.1.2012.
             
-            Added 14 new APIs:
-            * ApiKey.Createsanapikeyforthecurrentuser (POST /api/data/api-keys)
-            * ApiKey.Returnslistofcreatedapikeysforcurrentworkspace (GET /api/data/api-keys)
-            * ApiKey.Revokesallapikeys (DELETE /api/data/api-keys/revoke-all)
-            * ApiKey.Revokesingleapikey (DELETE /api/data/api-keys/{id}/revoke)
-            * IntegrationProvider.ActivateIntegrationProvider (POST /api/data/integrations/providers/{providerId})
-            * IntegrationProvider.UpdateIntegrationProvider (PUT /api/data/integrations/providers/{providerId})
-            * IntegrationProvider.DeactivateIntegrationProvider (DELETE /api/data/integrations/providers/{providerId})
-            * IntegrationProvider.CreateUserIntegrationProviderConnection (POST /api/data/integrations/providers/{providerId}/user-connection)
-            * IntegrationProvider.UpdateUserIntegrationProviderConnection (PUT /api/data/integrations/providers/{providerId}/user-connection)
-            * Jira.RetrieveProjectsfromJirawithEpic (GET /api/data/integrations/jira/projects/{jiraProjectId}/epics)
-            * Jira.RetrieveProjectsfromJira (GET /api/data/integrations/jira)
-            * ProjectMembers.RetrieveProjectMembers (GET /api/data/projects/{projectId}/members)
-            * TaskStatus.UpdateTaskStatus (PUT /api/data/projects/{projectId}/tasks/statuses)
-            * TaskStatus.DeleteTaskStatus (DELETE /api/data/projects/{projectId}/tasks/statuses/{taskStatusId})
+            Renamed 4 old APIs:
+            * Renamed 'ApiKey.Createsanapikeyforthecurrentuser' to 'ApiKey.CreateApiKey'
+            * Renamed 'ApiKey.Returnslistofcreatedapikeysforcurrentworkspace' to 'ApiKey.ListApiKeys'
+            * Renamed 'ApiKey.Revokesallapikeys' to 'ApiKey.RevokeAllApiKeys'
+            * Renamed 'ApiKey.Revokesingleapikey' to 'ApiKey.RevokeAPIKey'
             
-            Renamed 7 old APIs:
-            * Renamed 'HomeFile.UploadaFiletoausersHomeArea' to 'HomeFile.UploadHomeFile'
-            * Renamed 'HomeFile.UploadaFiletotheusersHomeArea' to 'HomeFile.UploadHomeFileToFolder'
-            * Renamed 'Integration.RetrieveProviderCategories' to 'IntegrationCategory.RetrieveProviderCategories'
-            * Renamed 'Integration.ListProviders' to 'IntegrationProvider.ListProviders'
-            * Renamed 'ProjectFile.UploadaFiletoaProject' to 'ProjectFile.UploadProjectFile'
-            * Renamed 'ProjectFile.UploadaFiletoaProject' to 'ProjectFile.UploadProjectFileToFolder'
-            * Renamed 'TaskFile.UploadaFiletoaTask' to 'TaskFile.UploadTaskFile'
-            
-            Deprecated 3 old APIs:
-            * Integration.SetupWorkSpaceforIntegrations
-            * Integration.RetrieveProviderAuthentication
-            * Integration.UpdateIntegrationProviderauthstatus
+            Changes to 1 existing APIs:
+            * Added new parameters to Retrieve Projects from Jira
             
 
         </releaseNotes>

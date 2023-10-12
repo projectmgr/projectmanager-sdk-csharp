@@ -30,17 +30,17 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves all ProjectTemplates defined in the system.
         ///
-        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.
+        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
         ///
         /// </summary>
         Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates();
 
         /// <summary>
-        /// Retrieves all ProjectTemplates defined in the system.
+        /// Retrieves all ProjectTemplate Categories defined in the system.
         ///
-        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.
+        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
         ///
         /// </summary>
-        Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveProjectTemplates();
+        Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveTemplateCategories();
     }
 }

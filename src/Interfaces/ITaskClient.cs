@@ -103,6 +103,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that will contain these Tasks</param>
         /// <param name="body">The list of new Tasks to create</param>
-        Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, BulkTaskCreateDto[] body);
+        Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body);
     }
 }

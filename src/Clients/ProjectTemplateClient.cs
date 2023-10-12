@@ -49,5 +49,17 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/templates";
             return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null, null, null);
         }
+
+        /// <summary>
+        /// Retrieves all ProjectTemplates defined in the system.
+        ///
+        /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.
+        ///
+        /// </summary>
+        public async Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveProjectTemplates()
+        {
+            var url = $"/api/data/projects/templates/categories";
+            return await _client.Request<ProjectTemplateCategoryDto[]>(HttpMethod.Get, url, null, null, null);
+        }
     }
 }

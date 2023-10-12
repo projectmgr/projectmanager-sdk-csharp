@@ -145,7 +145,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that will contain these Tasks</param>
         /// <param name="body">The list of new Tasks to create</param>
-        public async Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, BulkTaskCreateDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/bulk";
             return await _client.Request<ChangeSetStatusDto[]>(HttpMethod.Post, url, null, body, null);

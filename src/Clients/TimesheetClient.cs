@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TimesheetGetResponseDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/timesheets";
             var options = new Dictionary<string, object>();
@@ -71,7 +71,7 @@ namespace ProjectManager.SDK.Clients
             if (select != null) { options["$select"] = select; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TimesheetGetResponseDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TimesheetDto[]>(HttpMethod.Get, url, options, null, null);
         }
 
         /// <summary>

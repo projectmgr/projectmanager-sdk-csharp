@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="body">Information about the Project you wish to create</param>
-        Task<AstroResult<ProjectCreateResponseDto>> CreateProject(ProjectCreateRequestDto body);
+        Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body);
 
         /// <summary>
         /// Retrieves a project based on its unique identifier.

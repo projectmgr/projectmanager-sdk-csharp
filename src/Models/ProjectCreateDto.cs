@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
     /// </summary>
-    public class ProjectCreateRequestDto : ApiModel
+    public class ProjectCreateDto : ApiModel
     {
 
         /// <summary>
@@ -115,5 +115,19 @@ namespace ProjectManager.SDK.Models
         /// to a static non-Custom template.
         /// </summary>
         public Guid? TemplateId { get; set; }
+
+        /// <summary>
+        /// The target planned completion date for this Project, or null if one has
+        /// not been selected.  This value can be updated in the Project Settings
+        /// page or the Portfolio Project page within the application.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string TargetDate { get; set; }
+
+        /// <summary>
+        /// True if this Project is marked as favorite for current user
+        /// </summary>
+        public bool? Favorite { get; set; }
     }
 }

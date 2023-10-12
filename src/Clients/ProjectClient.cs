@@ -70,10 +70,10 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">Information about the Project you wish to create</param>
-        public async Task<AstroResult<ProjectCreateResponseDto>> CreateProject(ProjectCreateRequestDto body)
+        public async Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body)
         {
             var url = $"/api/data/projects";
-            return await _client.Request<ProjectCreateResponseDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.Request<ProjectDto>(HttpMethod.Post, url, null, body, null);
         }
 
         /// <summary>

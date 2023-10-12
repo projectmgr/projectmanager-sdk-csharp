@@ -152,5 +152,15 @@ namespace ProjectManager.SDK.Models
         /// for future Projects.
         /// </summary>
         public bool? IsTemplate { get; set; }
+
+        /// <summary>
+        /// True if this Project is marked as favorite for current user
+        /// </summary>
+        public bool? Favorite { get; set; }
+
+        /// <summary>
+        /// The members of the project
+        /// </summary>
+        public ProjectMemberDto[] Members { get; set; }
     }
 }

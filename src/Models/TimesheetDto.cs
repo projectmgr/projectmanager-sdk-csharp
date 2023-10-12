@@ -23,7 +23,7 @@ namespace ProjectManager.SDK.Models
     /// <summary>
     /// Created Time entry response data
     /// </summary>
-    public class TimesheetGetResponseDto : ApiModel
+    public class TimesheetDto : ApiModel
     {
 
         /// <summary>
@@ -60,5 +60,10 @@ namespace ProjectManager.SDK.Models
         /// associated projects with timesheet
         /// </summary>
         public TimeSheetProjectDto Project { get; set; }
+
+        /// <summary>
+        /// The resource associated with this timesheet entry
+        /// </summary>
+        public TimesheetResourceDto Resource { get; set; }
     }
 }

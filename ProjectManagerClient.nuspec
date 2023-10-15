@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>96.0.2104</version>
+		<version>96.0.2123</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,7 +14,7 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 96.0.2104
+            # Patch notes for 96.0.2123
             
             These patch notes summarize the changes from version 11.1.2053.
             

@@ -89,5 +89,18 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/resources/{resourceId}";
             return await _client.Request<ResourceDto>(HttpMethod.Put, url, null, body, null);
         }
+
+        /// <summary>
+        /// Retrieve the Resource matching the specified unique ID.
+        ///
+        /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
+        ///
+        /// </summary>
+        /// <param name="resourceId">The id of the Resource</param>
+        public async Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId)
+        {
+            var url = $"/api/data/resources/{resourceId}";
+            return await _client.Request<ResourceDto>(HttpMethod.Get, url, null, null, null);
+        }
     }
 }

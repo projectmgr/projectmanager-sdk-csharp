@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.2053
+ * @version    96.0.2123
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "11.1.2053";
+        public const string SdkVersion = "96.0.2123";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -93,11 +93,6 @@ namespace ProjectManager.SDK
         /// API methods related to IntegrationProvider
         /// </summary>
         public IIntegrationProviderClient IntegrationProvider { get; }
-
-        /// <summary>
-        /// API methods related to Jira
-        /// </summary>
-        public IJiraClient Jira { get; }
 
         /// <summary>
         /// API methods related to License
@@ -250,7 +245,6 @@ namespace ProjectManager.SDK
             Integration = new IntegrationClient(this);
             IntegrationCategory = new IntegrationCategoryClient(this);
             IntegrationProvider = new IntegrationProviderClient(this);
-            Jira = new JiraClient(this);
             License = new LicenseClient(this);
             Me = new MeClient(this);
             Project = new ProjectClient(this);
@@ -296,7 +290,7 @@ namespace ProjectManager.SDK
             switch (env)
             {
                 case "production":
-                    return new ProjectManagerClient("api.projectmanager.com", clientHandler);
+                    return new ProjectManagerClient("https://api.projectmanager.com", clientHandler);
             }
     
             throw new InvalidOperationException($"Unknown environment: {env}");

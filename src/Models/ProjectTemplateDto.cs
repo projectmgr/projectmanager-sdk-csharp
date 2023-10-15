@@ -78,10 +78,8 @@ namespace ProjectManager.SDK.Models
         public bool? IsCustom { get; set; }
 
         /// <summary>
-        /// The ProjectTemplateCategories that this Project Template belongs to.
-        ///
-        /// Custom ProjectTemplates do not belong to any ProjectTemplateCategories.
+        /// The web default view of the template.
         /// </summary>
-        public ProjectTemplateCategoryDto[] Categories { get; set; }
+        public string DefaultView { get; set; }
     }
 }

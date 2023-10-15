@@ -28,6 +28,12 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
+        /// Returns a list of membership options for new projects.
+        ///
+        /// </summary>
+        Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers();
+
+        /// <summary>
         /// Returns a list of membership options for existing members. Optionally include users who are not a member yet.
         ///
         /// </summary>

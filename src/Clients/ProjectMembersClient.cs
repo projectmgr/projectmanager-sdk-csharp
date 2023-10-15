@@ -39,6 +39,16 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Returns a list of membership options for new projects.
+        ///
+        /// </summary>
+        public async Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers()
+        {
+            var url = $"/api/data/projects/members";
+            return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, null, null, null);
+        }
+
+        /// <summary>
         /// Returns a list of membership options for existing members. Optionally include users who are not a member yet.
         ///
         /// </summary>

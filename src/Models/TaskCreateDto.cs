@@ -29,14 +29,6 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// The unique identifier of this Task.
-        ///
-        /// TODO - Are people allowed to set this when creating a task?  Doesn&#39;t that violate
-        /// the principle of GUIDs?
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
         /// The common name of this Task.
         /// </summary>
         public string Name { get; set; }
@@ -45,12 +37,6 @@ namespace ProjectManager.SDK.Models
         /// A description of the work to be performed in this Task.
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// If this Task is the child of another Task, set this value to the unique identifier
-        /// of the parent Task.
-        /// </summary>
-        public Guid? ParentTaskId { get; set; }
 
         /// <summary>
         /// The numerical percentage, from 0-100, representing the percentage completion
@@ -117,5 +103,13 @@ namespace ProjectManager.SDK.Models
         /// The actual cost of this Task to date, if known.
         /// </summary>
         public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// Color theme definition for this task.
+        ///
+        /// eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+        /// LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+        /// </summary>
+        public string Theme { get; set; }
     }
 }

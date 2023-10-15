@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.2053
+ * @version    96.0.2123
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -59,10 +59,6 @@ namespace ProjectManager.SDK
         /// API methods related to IntegrationProvider
         /// </summary>
         IIntegrationProviderClient IntegrationProvider { get; }
-        /// <summary>
-        /// API methods related to Jira
-        /// </summary>
-        IJiraClient Jira { get; }
         /// <summary>
         /// API methods related to License
         /// </summary>

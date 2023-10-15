@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>11.1.2053</version>
+		<version>96.0.2123</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,18 +14,19 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 11.1.2053
+            # Patch notes for 96.0.2123
             
-            These patch notes summarize the changes from version 11.1.2012.
+            These patch notes summarize the changes from version 11.1.2053.
             
-            Renamed 4 old APIs:
-            * Renamed 'ApiKey.Createsanapikeyforthecurrentuser' to 'ApiKey.CreateApiKey'
-            * Renamed 'ApiKey.Returnslistofcreatedapikeysforcurrentworkspace' to 'ApiKey.ListApiKeys'
-            * Renamed 'ApiKey.Revokesallapikeys' to 'ApiKey.RevokeAllApiKeys'
-            * Renamed 'ApiKey.Revokesingleapikey' to 'ApiKey.RevokeAPIKey'
+            Added 3 new APIs:
+            * ProjectMembers.RetrieveNewProjectMembers (GET /api/data/projects/members)
+            * ProjectTemplate.RetrieveTemplateCategories (GET /api/data/projects/templates/categories)
+            * Resource.RetrieveResource (GET /api/data/resources/{resourceId})
             
-            Changes to 1 existing APIs:
-            * Added new parameters to Retrieve Projects from Jira
+            Deprecated 3 old APIs:
+            * Jira.RetrieveProjectsfromJirawithEpic
+            * Jira.RetrieveProjectsfromJira
+            * Jira.RetrieveProjectsfromJira
             
 
         </releaseNotes>

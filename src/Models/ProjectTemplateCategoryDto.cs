@@ -40,5 +40,10 @@ namespace ProjectManager.SDK.Models
         /// The overall order of this ProjectTemplate Category
         /// </summary>
         public int? Order { get; set; }
+
+        /// <summary>
+        /// A list of templates in this category
+        /// </summary>
+        public ProjectTemplateDto[] Templates { get; set; }
     }
 }

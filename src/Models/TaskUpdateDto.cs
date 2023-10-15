@@ -128,5 +128,13 @@ namespace ProjectManager.SDK.Models
         /// If set, this represents the actual tracked cost for this Task.
         /// </summary>
         public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// Color theme definition for this task.
+        ///
+        /// eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+        /// LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+        /// </summary>
+        public string Theme { get; set; }
     }
 }

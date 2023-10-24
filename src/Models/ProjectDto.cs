@@ -29,7 +29,8 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// The unique identifier of the Project.
+        /// The unique identifier of the Project.  This value is set by the system and cannot
+        /// be set with a CreateProject or changed with an UpdateProject call.
         /// </summary>
         public Guid? Id { get; set; }
 
@@ -98,6 +99,32 @@ namespace ProjectManager.SDK.Models
         public string TargetDate { get; set; }
 
         /// <summary>
+        /// The planned start date for this Project. This is calculated based
+        /// off of the earliest task start date
+        /// </summary>
+        public DateTime? PlannedStartDate { get; set; }
+
+        /// <summary>
+        /// The planned start date for this Project. This is calculated based
+        /// off of the latest task finish date
+        /// </summary>
+        public DateTime? PlannedFinishDate { get; set; }
+
+        /// <summary>
+        /// The actual start date for this Project. This is calculated based
+        /// on the earliest task actual start date, or null if no projects have
+        /// been started
+        /// </summary>
+        public DateTime? ActualStartDate { get; set; }
+
+        /// <summary>
+        /// The actual finish date for this Project. This is calculated based
+        /// on the latest task actual finish date, or null if no projects have
+        /// been finished
+        /// </summary>
+        public DateTime? ActualFinishDate { get; set; }
+
+        /// <summary>
         /// The ProjectPriority level of this Project, if defined.
         /// </summary>
         public ProjectPriorityDto Priority { get; set; }
@@ -139,11 +166,17 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// The timestamp in UTC when the Project was most recently modified.
+        ///
+        /// This field is automatically determined by the system when this Project is modified
+        /// and cannot be directly changed by the user.
         /// </summary>
         public DateTime? ModifyDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when the Project was created.
+        ///
+        /// This field is automatically determined by the system when this Project is created
+        /// and cannot be changed by the user.
         /// </summary>
         public DateTime? CreateDate { get; set; }
 

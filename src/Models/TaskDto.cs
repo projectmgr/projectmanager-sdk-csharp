@@ -39,6 +39,11 @@ namespace ProjectManager.SDK.Models
         public TaskProjectDto Project { get; set; }
 
         /// <summary>
+        /// The TaskTags that apply to this Task.
+        /// </summary>
+        public TaskTagDto[] Tags { get; set; }
+
+        /// <summary>
         /// The unique identifier of the Project to which this Task belongs.
         /// </summary>
         public Guid? ProjectId { get; set; }
@@ -47,6 +52,11 @@ namespace ProjectManager.SDK.Models
         /// The list of assignees who are to work on this Task, if any.
         /// </summary>
         public TaskAssigneeDto[] Assignees { get; set; }
+
+        /// <summary>
+        /// A list of TaskTodo items, which are sub-tasks within this Task.
+        /// </summary>
+        public TaskTodoDto[] Todos { get; set; }
 
         /// <summary>
         /// A short ID that can be used to refer to this Task.  This short ID is
@@ -63,6 +73,11 @@ namespace ProjectManager.SDK.Models
         /// A description of the work to be performed in this Task.
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// The TaskStatus assigned to this Task.
+        /// </summary>
+        public TaskStatusDto Status { get; set; }
 
         /// <summary>
         /// The date when work on this Task is planned to begin.
@@ -192,5 +207,15 @@ namespace ProjectManager.SDK.Models
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
         public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// The planned duration (in minutes) for this Task.
+        /// </summary>
+        public int? PlannedDuration { get; set; }
+
+        /// <summary>
+        /// The planned effort (in minutes) for this Task.
+        /// </summary>
+        public int? PlannedEffort { get; set; }
     }
 }

@@ -150,5 +150,40 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}/tasks/bulk";
             return await _client.Request<ChangeSetStatusDto[]>(HttpMethod.Post, url, null, body, null);
         }
+
+        /// <summary>
+        /// Adds a task parent relationship
+        ///
+        /// </summary>
+        /// <param name="taskId">The task that will become the child</param>
+        /// <param name="parentTaskId">The parent task</param>
+        public async Task<AstroResult<ChangeSetStatusDto>> AddParentTask(Guid taskId, Guid parentTaskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Updates a task parent relationship
+        ///
+        /// </summary>
+        /// <param name="taskId">The task that will become the child</param>
+        /// <param name="parentTaskId">The parent task</param>
+        public async Task<AstroResult<ChangeSetStatusDto>> UpdateParentTask(Guid taskId, Guid parentTaskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Removes a task parent relationship completely
+        ///
+        /// </summary>
+        /// <param name="taskId">The child task</param>
+        public async Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/parent";
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, null, null);
+        }
     }
 }

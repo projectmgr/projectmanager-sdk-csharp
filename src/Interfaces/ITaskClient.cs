@@ -104,5 +104,28 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The unique identifier of the Project that will contain these Tasks</param>
         /// <param name="body">The list of new Tasks to create</param>
         Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body);
+
+        /// <summary>
+        /// Adds a task parent relationship
+        ///
+        /// </summary>
+        /// <param name="taskId">The task that will become the child</param>
+        /// <param name="parentTaskId">The parent task</param>
+        Task<AstroResult<ChangeSetStatusDto>> AddParentTask(Guid taskId, Guid parentTaskId);
+
+        /// <summary>
+        /// Updates a task parent relationship
+        ///
+        /// </summary>
+        /// <param name="taskId">The task that will become the child</param>
+        /// <param name="parentTaskId">The parent task</param>
+        Task<AstroResult<ChangeSetStatusDto>> UpdateParentTask(Guid taskId, Guid parentTaskId);
+
+        /// <summary>
+        /// Removes a task parent relationship completely
+        ///
+        /// </summary>
+        /// <param name="taskId">The child task</param>
+        Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId);
     }
 }

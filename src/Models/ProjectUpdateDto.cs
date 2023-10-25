@@ -24,6 +24,9 @@ namespace ProjectManager.SDK.Models
     /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
     /// represent individual items of work that team members must complete.  The sum total of Tasks
     /// within a Project represents the work to be completed for that Project.
+    ///
+    /// Fields that cannot be modified during an UpdateProject call are not visible on this data
+    /// model.
     /// </summary>
     public class ProjectUpdateDto : ApiModel
     {

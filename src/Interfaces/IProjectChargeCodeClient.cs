@@ -28,11 +28,12 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Retrieve all defined ChargeCodes that can be used when creating Tasks.
+        /// Retrieve all defined ChargeCodes that can be used when creating Projects.
         ///
         /// A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
         ///
         /// </summary>
-        Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes(string xintegrationname = null);
     }
 }

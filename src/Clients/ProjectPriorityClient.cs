@@ -41,12 +41,13 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ProjectPriorities defined within your Workspace.
         ///
-        /// A ProjectPriority is a named priority level used by your business to determine how to decide which Tasks are the most important.  You can name your ProjectPriority levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// A ProjectPriority is a named priority level used by your business to determine how to decide which Projects are the most important.  You can name your ProjectPriority levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
         ///
         /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities()
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities(string xintegrationname = null)
         {
             var url = $"/api/data/projects/priorities";
             return await _client.Request<ProjectPriorityDto[]>(HttpMethod.Get, url, null, null, null);

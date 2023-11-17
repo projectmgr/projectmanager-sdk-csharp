@@ -20,16 +20,20 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// The Integrations API is intended for use by ProjectManager and its business
-    /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-    /// </summary>
-    public class CreateIntegrationInstanceDto : ApiModel
+    public class IEdmEntityContainer : ApiModel
     {
 
+        public IEdmEntityContainerElement[] Elements { get; set; }
+
         /// <summary>
-        /// Extra metadata required by this Integration Instance.
+        ///
+        ///
+        /// For a list of values, see `EdmSchemaElementKindValues`.
         /// </summary>
-        public object Config { get; set; }
+        public string SchemaElementKind { get; set; }
+
+        public string Namespace { get; set; }
+
+        public string Name { get; set; }
     }
 }

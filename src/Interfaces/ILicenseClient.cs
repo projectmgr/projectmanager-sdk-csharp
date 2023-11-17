@@ -33,7 +33,8 @@ namespace ProjectManager.SDK.Interfaces
         /// Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
         ///
         /// </summary>
-        Task<AstroResult<LicenseDto[]>> RetrieveLicenses();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<LicenseDto[]>> RetrieveLicenses(string xintegrationname = null);
 
         /// <summary>
         /// Adds a new License to the current Workspace.
@@ -42,6 +43,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="bundleSku">Information about the SKU you wish to add to your Workspace</param>
-        Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku, string xintegrationname = null);
     }
 }

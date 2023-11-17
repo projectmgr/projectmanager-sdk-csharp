@@ -42,7 +42,8 @@ namespace ProjectManager.SDK.Clients
         /// Returns a list of membership options for new projects.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers()
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers(string xintegrationname = null)
         {
             var url = $"/api/data/projects/members";
             return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, null, null, null);
@@ -54,7 +55,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">Reference to the project</param>
         /// <param name="includeAllUsers">Set to true to include all users in the workspace</param>
-        public async Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/members";
             var options = new Dictionary<string, object>();
@@ -68,7 +70,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">Reference of Project</param>
         /// <param name="userId">Reference of User</param>
-        public async Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMemberShip(Guid projectId, Guid userId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMemberShip(Guid projectId, Guid userId, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.Request<ProjectMemberDto>(HttpMethod.Get, url, null, null, null);
@@ -80,8 +83,9 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The permission to set</param>
-        public async Task<AstroResult<ProjectMemberDto>> CreateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
+        public async Task<AstroResult<ProjectMemberDto>> CreateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.Request<ProjectMemberDto>(HttpMethod.Post, url, null, body, null);
@@ -93,8 +97,9 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The permission to update</param>
-        public async Task<AstroResult<ProjectMemberDto>> UpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
+        public async Task<AstroResult<ProjectMemberDto>> UpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.Request<ProjectMemberDto>(HttpMethod.Put, url, null, body, null);
@@ -106,7 +111,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
-        public async Task<AstroResult<string>> RemoveUserProjectMembership(Guid projectId, Guid userId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<string>> RemoveUserProjectMembership(Guid projectId, Guid userId, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

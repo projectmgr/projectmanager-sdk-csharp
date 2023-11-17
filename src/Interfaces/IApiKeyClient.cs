@@ -35,8 +35,9 @@ namespace ProjectManager.SDK.Interfaces
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Options for the API key to create</param>
-        Task<AstroResult<ApiKeyDto>> CreateApiKey(ApiKeyCreateDto body);
+        Task<AstroResult<ApiKeyDto>> CreateApiKey(ApiKeyCreateDto body, string xintegrationname = null);
 
         /// <summary>
         /// Returns a list of all API keys within the current workspace.
@@ -46,7 +47,8 @@ namespace ProjectManager.SDK.Interfaces
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
-        Task<AstroResult<ApiKeyDto[]>> ListApiKeys();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<ApiKeyDto[]>> ListApiKeys(string xintegrationname = null);
 
         /// <summary>
         /// This API call revokes all existing API keys in given workspace.  No existing keys will continue to work after this call completes.  We strongly encourage you to revoke a single API key at a time; this method should only be used if you need to rapidly halt access to your product for automated systems.
@@ -56,7 +58,8 @@ namespace ProjectManager.SDK.Interfaces
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
-        Task<AstroResult<string>> RevokeAllApiKeys();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> RevokeAllApiKeys(string xintegrationname = null);
 
         /// <summary>
         /// Revokes a single API key in the current workspace.
@@ -67,6 +70,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="id">The unique identifier of the API key to revoke</param>
-        Task<AstroResult<string>> RevokeAPIKey(Guid id);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> RevokeAPIKey(Guid id, string xintegrationname = null);
     }
 }

@@ -32,13 +32,15 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
-        Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type, string xintegrationname = null);
 
         /// <summary>
         /// Create or Update User Dashboard Settings
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">User dashboard settings object</param>
-        Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body);
+        Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body, string xintegrationname = null);
     }
 }

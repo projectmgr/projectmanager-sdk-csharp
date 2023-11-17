@@ -38,11 +38,6 @@ namespace ProjectManager.SDK.Models
         public string IntegrationShortId { get; set; }
 
         /// <summary>
-        /// Metadata for this IntegrationInstance
-        /// </summary>
-        public object Config { get; set; }
-
-        /// <summary>
         /// The unique identifier of the user who enabled this IntegrationInstance
         /// </summary>
         public Guid? EnabledBy { get; set; }
@@ -56,5 +51,20 @@ namespace ProjectManager.SDK.Models
         /// Timestamp when this record was most recently modified
         /// </summary>
         public DateTime? ModifyDate { get; set; }
+
+        /// <summary>
+        /// The id of the project manager project this instance is related to
+        /// </summary>
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// The identifier in the integration provider, could be a reference to a file, task, project.
+        /// </summary>
+        public string ProviderItemId { get; set; }
+
+        /// <summary>
+        /// The name of the item in the integration provider.
+        /// </summary>
+        public string ProviderItemName { get; set; }
     }
 }

@@ -34,7 +34,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of this Integration</param>
-        Task<AstroResult<IntegrationDto>> RetrieveIntegration(Guid integrationId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<IntegrationDto>> RetrieveIntegration(Guid integrationId, string xintegrationname = null);
 
         /// <summary>
         /// Enable a specific Integration for the current Workspace.
@@ -43,7 +44,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of the Integration to enable</param>
-        Task<AstroResult<IntegrationDto>> EnableIntegration(Guid integrationId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<IntegrationDto>> EnableIntegration(Guid integrationId, string xintegrationname = null);
 
         /// <summary>
         /// Disable a specific Integration for the current Workspace.
@@ -52,7 +54,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of the Integration to disable</param>
-        Task<AstroResult<string>> DisableIntegration(Guid integrationId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> DisableIntegration(Guid integrationId, string xintegrationname = null);
 
         /// <summary>
         /// Retrieves all Integrations for the current Workspace.
@@ -60,25 +63,7 @@ namespace ProjectManager.SDK.Interfaces
         /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
-        Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations();
-
-        /// <summary>
-        /// Adds a new Integration instance to a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationId">The unique identifier of the Integration to add to this Workspace</param>
-        /// <param name="body">The information about this Integration to add</param>
-        Task<AstroResult<NewIntegrationInstanceDto>> AddIntegrationInstance(Guid integrationId, CreateIntegrationInstanceDto body);
-
-        /// <summary>
-        /// Removes an existing Integration instance from a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationInstanceId">The unique identifier of the IntegrationInstance to remove from this Workspace</param>
-        Task<AstroResult<string>> RemoveIntegrationInstance(Guid integrationInstanceId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations(string xintegrationname = null);
     }
 }

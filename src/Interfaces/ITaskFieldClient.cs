@@ -34,7 +34,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskFields</param>
-        Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId, string xintegrationname = null);
 
         /// <summary>
         /// Creates a new TaskFields for a specific Project within your Workspace.
@@ -43,8 +44,9 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project within which to create this TaskField</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the TaskField to create</param>
-        Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body);
+        Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body, string xintegrationname = null);
 
         /// <summary>
         /// Deletes a TaskField for a specific Project within your Workspace.
@@ -54,7 +56,8 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that contains this TaskField</param>
         /// <param name="fieldId">The unique identifier of the TaskField to delete</param>
-        Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId, string xintegrationname = null);
 
         /// <summary>
         /// Retrieves the current TaskField value for a particular Task and TaskField.
@@ -64,7 +67,8 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier of the TaskField of the value to retrieve</param>
-        Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId, string xintegrationname = null);
 
         /// <summary>
         /// Replaces the current value of a TaskFields for a specific Task within your Workspace.
@@ -74,8 +78,9 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose value you wish to update</param>
         /// <param name="fieldId">The unique identifier of the TaskField whose value you wish to update</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new value for this TaskField for this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body);
+        Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body, string xintegrationname = null);
 
         /// <summary>
         /// Retrieves all TaskField values for a particular Task.
@@ -84,6 +89,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId, string xintegrationname = null);
     }
 }

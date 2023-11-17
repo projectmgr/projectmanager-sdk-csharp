@@ -44,13 +44,14 @@ namespace ProjectManager.SDK.Clients
         /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ProjectDto[]>> QueryProjects(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ProjectDto[]>> QueryProjects(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/projects";
             var options = new Dictionary<string, object>();
@@ -69,8 +70,9 @@ namespace ProjectManager.SDK.Clients
         /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the Project you wish to create</param>
-        public async Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body)
+        public async Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects";
             return await _client.Request<ProjectDto>(HttpMethod.Post, url, null, body, null);
@@ -83,7 +85,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve.</param>
-        public async Task<AstroResult<ProjectDto>> RetrieveProject(string projectId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectDto>> RetrieveProject(string projectId, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}";
             return await _client.Request<ProjectDto>(HttpMethod.Get, url, null, null, null);
@@ -98,8 +101,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body)
+        public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);

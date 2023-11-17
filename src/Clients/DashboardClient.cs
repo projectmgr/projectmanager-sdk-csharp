@@ -43,7 +43,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
-        public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type, string xintegrationname = null)
         {
             var url = $"/api/data/dashboards/settings/{type}";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null, null, null);
@@ -53,8 +54,9 @@ namespace ProjectManager.SDK.Clients
         /// Create or Update User Dashboard Settings
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">User dashboard settings object</param>
-        public async Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body)
+        public async Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/dashboards/settings";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Post, url, null, body, null);

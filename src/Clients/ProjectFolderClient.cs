@@ -44,7 +44,8 @@ namespace ProjectManager.SDK.Clients
         /// A ProjectFolder is a named storage location that can contain Projects.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders()
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders(string xintegrationname = null)
         {
             var url = $"/api/data/project-folders";
             return await _client.Request<ProjectFolderDto[]>(HttpMethod.Get, url, null, null, null);

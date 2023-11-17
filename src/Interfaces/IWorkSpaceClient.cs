@@ -33,7 +33,8 @@ namespace ProjectManager.SDK.Interfaces
         /// A single User may have access to multiple Workspaces, although they can only be logged on to one Workspace at a time.  This API lists all Workspaces to which the currently logged on user is entitled to access.  To determine which Workspace a user is currently logged on use the `/api/data/me` endpoint.
         ///
         /// </summary>
-        Task<AstroResult<WorkSpaceDto[]>> RetrieveWorkspaces();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<WorkSpaceDto[]>> RetrieveWorkspaces(string xintegrationname = null);
 
         /// <summary>
         /// Invite a specific user to join a Workspace to which the current user has administrator rights.
@@ -44,7 +45,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the user which will receive the invitation</param>
-        Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body);
+        Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body, string xintegrationname = null);
     }
 }

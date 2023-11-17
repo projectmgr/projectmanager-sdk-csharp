@@ -43,7 +43,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
-        public async Task<AstroResult<DiscussionDto[]>> RetrieveTaskComments(Guid taskId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<DiscussionDto[]>> RetrieveTaskComments(Guid taskId, string xintegrationname = null)
         {
             var url = $"/api/data/tasks/{taskId}/discussions";
             return await _client.Request<DiscussionDto[]>(HttpMethod.Get, url, null, null, null);
@@ -56,8 +57,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique ID number of the task being commented upon</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        public async Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body)
+        public async Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/tasks/{taskId}/discussions";
             return await _client.Request<DiscussionCreateResponseDto>(HttpMethod.Post, url, null, body, null);

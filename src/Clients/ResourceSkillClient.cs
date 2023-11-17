@@ -44,13 +44,14 @@ namespace ProjectManager.SDK.Clients
         /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceSkillDto[]>> RetrieveResourceSkills(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceSkillDto[]>> RetrieveResourceSkills(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources/skills";
             var options = new Dictionary<string, object>();
@@ -67,8 +68,9 @@ namespace ProjectManager.SDK.Clients
         /// Create a Resource Skill.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The name of the skill to create.</param>
-        public async Task<AstroResult<ResourceSkillDto>> CreateResourceSkill(CreateResourceSkillDto body)
+        public async Task<AstroResult<ResourceSkillDto>> CreateResourceSkill(CreateResourceSkillDto body, string xintegrationname = null)
         {
             var url = $"/api/data/resources/skills";
             return await _client.Request<ResourceSkillDto>(HttpMethod.Post, url, null, body, null);
@@ -79,8 +81,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="skillId">The id of the skill to update.</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The data of the skill to update.</param>
-        public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body)
+        public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body, string xintegrationname = null)
         {
             var url = $"/api/data/resources/skills/{skillId}";
             return await _client.Request<ResourceSkillDto>(HttpMethod.Put, url, null, body, null);
@@ -91,7 +94,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="resourceSkillId">The Id of the skill to be removed.</param>
-        public async Task<AstroResult<string>> DeleteResourceSkill(Guid resourceSkillId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<string>> DeleteResourceSkill(Guid resourceSkillId, string xintegrationname = null)
         {
             var url = $"/api/data/resources/skills/{resourceSkillId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

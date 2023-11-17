@@ -37,7 +37,8 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
         /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
-        Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null, string xintegrationname = null);
 
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.
@@ -48,7 +49,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to update</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information to change about the File and its location</param>
-        Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body);
+        Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body, string xintegrationname = null);
     }
 }

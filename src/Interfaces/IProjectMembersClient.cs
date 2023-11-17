@@ -31,7 +31,8 @@ namespace ProjectManager.SDK.Interfaces
         /// Returns a list of membership options for new projects.
         ///
         /// </summary>
-        Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers();
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers(string xintegrationname = null);
 
         /// <summary>
         /// Returns a list of membership options for existing members. Optionally include users who are not a member yet.
@@ -39,7 +40,8 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">Reference to the project</param>
         /// <param name="includeAllUsers">Set to true to include all users in the workspace</param>
-        Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null, string xintegrationname = null);
 
         /// <summary>
         /// Return the membership of a project for a user.
@@ -47,7 +49,8 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">Reference of Project</param>
         /// <param name="userId">Reference of User</param>
-        Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMemberShip(Guid projectId, Guid userId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMemberShip(Guid projectId, Guid userId, string xintegrationname = null);
 
         /// <summary>
         /// Creates a membership for a user in a project and assigns the user appropriate permissions
@@ -55,8 +58,9 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The permission to set</param>
-        Task<AstroResult<ProjectMemberDto>> CreateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body);
+        Task<AstroResult<ProjectMemberDto>> CreateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body, string xintegrationname = null);
 
         /// <summary>
         /// Update existing Project Access Control for user for project
@@ -64,8 +68,9 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The permission to update</param>
-        Task<AstroResult<ProjectMemberDto>> UpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body);
+        Task<AstroResult<ProjectMemberDto>> UpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body, string xintegrationname = null);
 
         /// <summary>
         /// Deletes Project Member
@@ -73,6 +78,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
-        Task<AstroResult<string>> RemoveUserProjectMembership(Guid projectId, Guid userId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> RemoveUserProjectMembership(Guid projectId, Guid userId, string xintegrationname = null);
     }
 }

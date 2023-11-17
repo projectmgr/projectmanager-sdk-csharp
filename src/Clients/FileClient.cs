@@ -48,7 +48,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
         /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
-        public async Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<string>> DownloadFile(Guid documentId, string type = null, string xintegrationname = null)
         {
             var url = $"/api/data/files/{documentId}/download";
             var options = new Dictionary<string, object>();
@@ -65,8 +66,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to update</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information to change about the File and its location</param>
-        public async Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body)
+        public async Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body, string xintegrationname = null)
         {
             var url = $"/api/data/files/{fileId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);

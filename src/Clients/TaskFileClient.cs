@@ -47,8 +47,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The reference to the task</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string filename)
+        public async Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string filename, string xintegrationname = null)
         {
             var url = $"/api/data/tasks/{taskId}/files";
             return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);

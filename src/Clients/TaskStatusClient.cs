@@ -45,7 +45,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskStatuses</param>
-        public async Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
             return await _client.Request<TaskStatusDto[]>(HttpMethod.Get, url, null, null, null);
@@ -58,8 +59,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the new TaskStatus level to create within this Project</param>
-        public async Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body)
+        public async Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
             return await _client.Request<TaskStatusDto>(HttpMethod.Post, url, null, body, null);
@@ -72,8 +74,9 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the existing TaskStatus level to update within this Project</param>
-        public async Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body)
+        public async Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
             return await _client.Request<TaskStatusDto>(HttpMethod.Put, url, null, body, null);
@@ -87,7 +90,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the TaskStatus level to delete</param>
         /// <param name="taskStatusId">The Id of the TaskStatus level to be removed.</param>
-        public async Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId)
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId, string xintegrationname = null)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses/{taskStatusId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

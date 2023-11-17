@@ -41,10 +41,11 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ProjectCustomers defined within your Workspace.
         ///
-        /// A ProjectCustomer is a code used to identify costs within your Projects.  Each ProjectCustomer has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
+        /// A ProjectCustomer is a code used to identify costs within your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
         ///
         /// </summary>
-        public async Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers()
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        public async Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers(string xintegrationname = null)
         {
             var url = $"/api/data/projects/customers";
             return await _client.Request<ProjectCustomerDto[]>(HttpMethod.Get, url, null, null, null);

@@ -33,34 +33,38 @@ namespace ProjectManager.SDK.Interfaces
         /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Create a Resource Team.
         ///
         /// </summary>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The name of the team to create.</param>
-        Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body);
+        Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body, string xintegrationname = null);
 
         /// <summary>
         /// The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
         ///
         /// </summary>
         /// <param name="resourceTeamId">The Id of the team to be removed.</param>
-        Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId);
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
+        Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId, string xintegrationname = null);
 
         /// <summary>
         /// Update a Resource Team.
         ///
         /// </summary>
         /// <param name="teamresourceId">The id of the resource team</param>
+        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The name of the team to Update.</param>
-        Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body);
+        Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body, string xintegrationname = null);
     }
 }

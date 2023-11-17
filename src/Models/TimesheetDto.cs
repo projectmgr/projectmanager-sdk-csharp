@@ -52,12 +52,17 @@ namespace ProjectManager.SDK.Models
         public decimal? Hours { get; set; }
 
         /// <summary>
-        /// associated tasks with time sheet
+        /// Date and time (in UTC) that this timesheet entry was last modified.
+        /// </summary>
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// The task associated with this timesheet entry
         /// </summary>
         public TimesheetTaskDto Task { get; set; }
 
         /// <summary>
-        /// associated projects with timesheet
+        /// The project associated with this timesheet entry
         /// </summary>
         public TimeSheetProjectDto Project { get; set; }
 

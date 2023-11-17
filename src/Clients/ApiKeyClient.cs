@@ -46,9 +46,8 @@ namespace ProjectManager.SDK.Clients
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Options for the API key to create</param>
-        public async Task<AstroResult<ApiKeyDto>> CreateApiKey(ApiKeyCreateDto body, string xintegrationname = null)
+        public async Task<AstroResult<ApiKeyDto>> CreateApiKey(ApiKeyCreateDto body)
         {
             var url = $"/api/data/api-keys";
             return await _client.Request<ApiKeyDto>(HttpMethod.Post, url, null, body, null);
@@ -62,8 +61,7 @@ namespace ProjectManager.SDK.Clients
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ApiKeyDto[]>> ListApiKeys(string xintegrationname = null)
+        public async Task<AstroResult<ApiKeyDto[]>> ListApiKeys()
         {
             var url = $"/api/data/api-keys";
             return await _client.Request<ApiKeyDto[]>(HttpMethod.Get, url, null, null, null);
@@ -77,8 +75,7 @@ namespace ProjectManager.SDK.Clients
         /// Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company&#39;s security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> RevokeAllApiKeys(string xintegrationname = null)
+        public async Task<AstroResult<string>> RevokeAllApiKeys()
         {
             var url = $"/api/data/api-keys/revoke-all";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -93,8 +90,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="id">The unique identifier of the API key to revoke</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> RevokeAPIKey(Guid id, string xintegrationname = null)
+        public async Task<AstroResult<string>> RevokeAPIKey(Guid id)
         {
             var url = $"/api/data/api-keys/{id}/revoke";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

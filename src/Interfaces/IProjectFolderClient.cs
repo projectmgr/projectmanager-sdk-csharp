@@ -33,7 +33,6 @@ namespace ProjectManager.SDK.Interfaces
         /// A ProjectFolder is a named storage location that can contain Projects.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders(string xintegrationname = null);
+        Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders();
     }
 }

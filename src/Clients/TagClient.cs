@@ -44,14 +44,13 @@ namespace ProjectManager.SDK.Clients
         /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TagDto[]>> QueryTags(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<TagDto[]>> QueryTags(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/tags";
             var options = new Dictionary<string, object>();
@@ -70,9 +69,8 @@ namespace ProjectManager.SDK.Clients
         /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information for the new Tag to create</param>
-        public async Task<AstroResult<TagDto>> CreateTag(TagCreateDto body, string xintegrationname = null)
+        public async Task<AstroResult<TagDto>> CreateTag(TagCreateDto body)
         {
             var url = $"/api/data/tags";
             return await _client.Request<TagDto>(HttpMethod.Post, url, null, body, null);
@@ -85,9 +83,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="tagId">The id of the tag</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information to update the tag</param>
-        public async Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body, string xintegrationname = null)
+        public async Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body)
         {
             var url = $"/api/data/tags/{tagId}";
             return await _client.Request<TagDto>(HttpMethod.Put, url, null, body, null);

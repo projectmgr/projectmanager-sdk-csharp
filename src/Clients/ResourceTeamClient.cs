@@ -44,14 +44,13 @@ namespace ProjectManager.SDK.Clients
         /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources/teams";
             var options = new Dictionary<string, object>();
@@ -68,9 +67,8 @@ namespace ProjectManager.SDK.Clients
         /// Create a Resource Team.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The name of the team to create.</param>
-        public async Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body, string xintegrationname = null)
+        public async Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body)
         {
             var url = $"/api/data/resources/teams";
             return await _client.Request<ResourceTeamDto>(HttpMethod.Post, url, null, body, null);
@@ -81,8 +79,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="resourceTeamId">The Id of the team to be removed.</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId, string xintegrationname = null)
+        public async Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId)
         {
             var url = $"/api/data/resources/teams/{resourceTeamId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -93,9 +90,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="teamresourceId">The id of the resource team</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The name of the team to Update.</param>
-        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body, string xintegrationname = null)
+        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body)
         {
             var url = $"/api/data/resources/teams/{teamresourceId}";
             return await _client.Request<ResourceTeamDto>(HttpMethod.Put, url, null, body, null);

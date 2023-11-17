@@ -44,8 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates(string xintegrationname = null)
+        public async Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates()
         {
             var url = $"/api/data/projects/templates";
             return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null, null, null);
@@ -57,8 +56,7 @@ namespace ProjectManager.SDK.Clients
         /// A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveTemplateCategories(string xintegrationname = null)
+        public async Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveTemplateCategories()
         {
             var url = $"/api/data/projects/templates/categories";
             return await _client.Request<ProjectTemplateCategoryDto[]>(HttpMethod.Get, url, null, null, null);

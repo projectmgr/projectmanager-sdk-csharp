@@ -45,9 +45,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignees will be replaced</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new list of TaskAssignees for this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
@@ -60,9 +59,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">List of Assignee data</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
@@ -75,9 +73,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">List of TaskAssignee records to remove</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);

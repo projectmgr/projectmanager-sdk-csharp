@@ -47,9 +47,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename, string xintegrationname = null)
+        public async Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename)
         {
             var url = $"/api/data/projects/{projectId}/files";
             return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);
@@ -67,9 +66,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename, string xintegrationname = null)
+        public async Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename)
         {
             var url = $"/api/data/projects/{projectId}/folders/{folderId}/files";
             return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);

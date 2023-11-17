@@ -44,9 +44,8 @@ namespace ProjectManager.SDK.Clients
         /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The details for the new Resource to create</param>
-        public async Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body, string xintegrationname = null)
+        public async Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body)
         {
             var url = $"/api/data/resources";
             return await _client.Request<ResourceDto>(HttpMethod.Post, url, null, body, null);
@@ -58,14 +57,13 @@ namespace ProjectManager.SDK.Clients
         /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceDto[]>> QueryResources(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceDto[]>> QueryResources(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources";
             var options = new Dictionary<string, object>();
@@ -85,9 +83,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="resourceId">The id of the resource</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information to update the resource</param>
-        public async Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body, string xintegrationname = null)
+        public async Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body)
         {
             var url = $"/api/data/resources/{resourceId}";
             return await _client.Request<ResourceDto>(HttpMethod.Put, url, null, body, null);
@@ -100,8 +97,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="resourceId">The id of the Resource</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId, string xintegrationname = null)
+        public async Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId)
         {
             var url = $"/api/data/resources/{resourceId}";
             return await _client.Request<ResourceDto>(HttpMethod.Get, url, null, null, null);

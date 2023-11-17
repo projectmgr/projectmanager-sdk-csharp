@@ -33,14 +33,13 @@ namespace ProjectManager.SDK.Interfaces
         /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<ProjectDto[]>> QueryProjects(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<ProjectDto[]>> QueryProjects(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Create a new project based on the details provided.
@@ -48,9 +47,8 @@ namespace ProjectManager.SDK.Interfaces
         /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the Project you wish to create</param>
-        Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body, string xintegrationname = null);
+        Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body);
 
         /// <summary>
         /// Retrieves a project based on its unique identifier.
@@ -59,8 +57,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve.</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ProjectDto>> RetrieveProject(string projectId, string xintegrationname = null);
+        Task<AstroResult<ProjectDto>> RetrieveProject(string projectId);
 
         /// <summary>
         /// Update an existing Project and replace the values of fields specified.
@@ -71,8 +68,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body, string xintegrationname = null);
+        Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body);
     }
 }

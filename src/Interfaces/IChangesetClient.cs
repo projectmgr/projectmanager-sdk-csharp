@@ -36,8 +36,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId, string xintegrationname = null);
+        Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId);
 
         /// <summary>
         /// Retrieve a Changeset by its unique ID. This endpoint waits for the Changeset to complete its processing prior to returning a result.
@@ -50,7 +49,6 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId, string xintegrationname = null);
+        Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId);
     }
 }

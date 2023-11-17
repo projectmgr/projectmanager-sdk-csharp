@@ -35,7 +35,6 @@ namespace ProjectManager.SDK.Interfaces
         /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities(string xintegrationname = null);
+        Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities();
     }
 }

@@ -45,8 +45,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskFields</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId, string xintegrationname = null)
+        public async Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
             return await _client.Request<GetTaskFieldsResponseDto[]>(HttpMethod.Get, url, null, null, null);
@@ -59,9 +58,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project within which to create this TaskField</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the TaskField to create</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
@@ -75,8 +73,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that contains this TaskField</param>
         /// <param name="fieldId">The unique identifier of the TaskField to delete</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId, string xintegrationname = null)
+        public async Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields/{fieldId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -90,8 +87,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier of the TaskField of the value to retrieve</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId, string xintegrationname = null)
+        public async Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId)
         {
             var url = $"/api/data/tasks/{taskId}/fields/{fieldId}";
             return await _client.Request<TaskFieldsValueResponseDto>(HttpMethod.Get, url, null, null, null);
@@ -105,9 +101,8 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose value you wish to update</param>
         /// <param name="fieldId">The unique identifier of the TaskField whose value you wish to update</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new value for this TaskField for this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body)
         {
             var url = $"/api/data/tasks/{taskId}/fields/{fieldId}";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
@@ -120,8 +115,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId, string xintegrationname = null)
+        public async Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/fields";
             return await _client.Request<TaskFieldsValueResponseDto[]>(HttpMethod.Get, url, null, null, null);

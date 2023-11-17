@@ -34,8 +34,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskStatuses</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId, string xintegrationname = null);
+        Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId);
 
         /// <summary>
         /// Creates a new TaskStatus level for a specific Project within your Workspace.
@@ -44,9 +43,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the new TaskStatus level to create within this Project</param>
-        Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body, string xintegrationname = null);
+        Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body);
 
         /// <summary>
         /// Updates an existing TaskStatus level for a specific Project within your Workspace.
@@ -55,9 +53,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the existing TaskStatus level to update within this Project</param>
-        Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body, string xintegrationname = null);
+        Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body);
 
         /// <summary>
         /// The endpoint is used to delete a TaskStatus.
@@ -67,7 +64,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the TaskStatus level to delete</param>
         /// <param name="taskStatusId">The Id of the TaskStatus level to be removed.</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId, string xintegrationname = null);
+        Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId);
     }
 }

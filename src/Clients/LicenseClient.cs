@@ -44,8 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<LicenseDto[]>> RetrieveLicenses(string xintegrationname = null)
+        public async Task<AstroResult<LicenseDto[]>> RetrieveLicenses()
         {
             var url = $"/api/data/license";
             return await _client.Request<LicenseDto[]>(HttpMethod.Get, url, null, null, null);
@@ -58,8 +57,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="bundleSku">Information about the SKU you wish to add to your Workspace</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku, string xintegrationname = null)
+        public async Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku)
         {
             var url = $"/api/data/license/{bundleSku}/try";
             return await _client.Request<LicenseDto[]>(HttpMethod.Post, url, null, null, null);

@@ -44,14 +44,13 @@ namespace ProjectManager.SDK.Clients
         /// A Task is an individual element of work that must be performed to complete a Project.  A Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to indicate whether they have a dependency or a connection.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TaskDto[]>> QueryTasks(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<TaskDto[]>> QueryTasks(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/tasks";
             var options = new Dictionary<string, object>();
@@ -71,8 +70,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier or short ID of the Task to retrieve</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<TaskDetailsDto>> RetrieveTask(string taskId, string xintegrationname = null)
+        public async Task<AstroResult<TaskDetailsDto>> RetrieveTask(string taskId)
         {
             var url = $"/api/data/tasks/{taskId}";
             return await _client.Request<TaskDetailsDto>(HttpMethod.Get, url, null, null, null);
@@ -89,9 +87,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to update</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">All non-null fields in this object will replace existing data in the Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> UpdateTask(Guid taskId, TaskUpdateDto body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> UpdateTask(Guid taskId, TaskUpdateDto body)
         {
             var url = $"/api/data/tasks/{taskId}";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
@@ -106,8 +103,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">Unique identifier of the Task to delete</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTask(Guid taskId, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> DeleteTask(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, null, null);
@@ -120,9 +116,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that will contain this Task</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new Task to create</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateTask(Guid projectId, TaskCreateDto body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateTask(Guid projectId, TaskCreateDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
@@ -136,8 +131,7 @@ namespace ProjectManager.SDK.Clients
         /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<TaskPriorityDto[]>> RetrieveTaskPriorities(string xintegrationname = null)
+        public async Task<AstroResult<TaskPriorityDto[]>> RetrieveTaskPriorities()
         {
             var url = $"/api/data/tasks/priorities";
             return await _client.Request<TaskPriorityDto[]>(HttpMethod.Get, url, null, null, null);
@@ -150,9 +144,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that will contain these Tasks</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The list of new Tasks to create</param>
-        public async Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/bulk";
             return await _client.Request<ChangeSetStatusDto[]>(HttpMethod.Post, url, null, body, null);
@@ -164,8 +157,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The task that will become the child</param>
         /// <param name="parentTaskId">The parent task</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> AddParentTask(Guid taskId, Guid parentTaskId, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> AddParentTask(Guid taskId, Guid parentTaskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, null, null);
@@ -177,8 +169,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The task that will become the child</param>
         /// <param name="parentTaskId">The parent task</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> UpdateParentTask(Guid taskId, Guid parentTaskId, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> UpdateParentTask(Guid taskId, Guid parentTaskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, null, null);
@@ -189,8 +180,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The child task</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId, string xintegrationname = null)
+        public async Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, null, null);

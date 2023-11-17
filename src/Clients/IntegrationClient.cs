@@ -45,8 +45,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of this Integration</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<IntegrationDto>> RetrieveIntegration(Guid integrationId, string xintegrationname = null)
+        public async Task<AstroResult<IntegrationDto>> RetrieveIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
             return await _client.Request<IntegrationDto>(HttpMethod.Get, url, null, null, null);
@@ -59,8 +58,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of the Integration to enable</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<IntegrationDto>> EnableIntegration(Guid integrationId, string xintegrationname = null)
+        public async Task<AstroResult<IntegrationDto>> EnableIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
             return await _client.Request<IntegrationDto>(HttpMethod.Post, url, null, null, null);
@@ -73,8 +71,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="integrationId">The unique identifier of the Integration to disable</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> DisableIntegration(Guid integrationId, string xintegrationname = null)
+        public async Task<AstroResult<string>> DisableIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -86,8 +83,7 @@ namespace ProjectManager.SDK.Clients
         /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations(string xintegrationname = null)
+        public async Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations()
         {
             var url = $"/api/data/integrations";
             return await _client.Request<IntegrationDto[]>(HttpMethod.Get, url, null, null, null);

@@ -34,9 +34,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will replace TaskTags</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The replacement list of TaskTags for this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body);
 
         /// <summary>
         /// Add one or more new TaskTags to a Task.
@@ -45,9 +44,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will add TaskTags</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new TaskTags to add to this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> AddTaskTagtoTask(Guid taskId, NameDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> AddTaskTagtoTask(Guid taskId, NameDto[] body);
 
         /// <summary>
         /// Removes one or more existing TaskTags from a Task.
@@ -56,8 +54,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will remove existing TaskTags</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The TaskTags to remove from this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagfromTask(Guid taskId, NameDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagfromTask(Guid taskId, NameDto[] body);
     }
 }

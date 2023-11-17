@@ -44,8 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<IntegrationProviderDto[]>> ListProviders(string xintegrationname = null)
+        public async Task<AstroResult<IntegrationProviderDto[]>> ListProviders()
         {
             var url = $"/api/data/integrations/providers";
             return await _client.Request<IntegrationProviderDto[]>(HttpMethod.Get, url, null, null, null);
@@ -58,8 +57,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId, string xintegrationname = null)
+        public async Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
             return await _client.Request<ConnectionSchemaDto>(HttpMethod.Post, url, null, null, null);
@@ -70,9 +68,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Specify the auth status</param>
-        public async Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body, string xintegrationname = null)
+        public async Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
@@ -83,8 +80,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> DeactivateIntegrationProvider(Guid providerId, string xintegrationname = null)
+        public async Task<AstroResult<string>> DeactivateIntegrationProvider(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -97,8 +93,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId, string xintegrationname = null)
+        public async Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
             return await _client.Request<DirectLinkDto>(HttpMethod.Post, url, null, null, null);
@@ -109,9 +104,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Specify the auth status</param>
-        public async Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body, string xintegrationname = null)
+        public async Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);

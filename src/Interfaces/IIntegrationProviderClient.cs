@@ -33,8 +33,7 @@ namespace ProjectManager.SDK.Interfaces
         /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<IntegrationProviderDto[]>> ListProviders(string xintegrationname = null);
+        Task<AstroResult<IntegrationProviderDto[]>> ListProviders();
 
         /// <summary>
         /// Activates an Integration Provider and retrieves authentication information about a specific IntegrationProvider.
@@ -43,25 +42,22 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId, string xintegrationname = null);
+        Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId);
 
         /// <summary>
         /// Allows you to update the auth status of the provider specific connection.
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Specify the auth status</param>
-        Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body, string xintegrationname = null);
+        Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body);
 
         /// <summary>
         /// Allows you to deactivate an integration provider
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<string>> DeactivateIntegrationProvider(Guid providerId, string xintegrationname = null);
+        Task<AstroResult<string>> DeactivateIntegrationProvider(Guid providerId);
 
         /// <summary>
         /// Retrieves user authentication information about a specific IntegrationProvider.
@@ -70,16 +66,14 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId, string xintegrationname = null);
+        Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId);
 
         /// <summary>
         /// Allows you to update the auth status of the provider specific user connection.
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Specify the auth status</param>
-        Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body, string xintegrationname = null);
+        Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body);
     }
 }

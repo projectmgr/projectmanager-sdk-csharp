@@ -35,9 +35,8 @@ namespace ProjectManager.SDK.Interfaces
         /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadHomeFile(string filename, string xintegrationname = null);
+        Task<AstroResult<FileDto>> UploadHomeFile(string filename);
 
         /// <summary>
         /// Uploads a file to a specific folder on your Home Files page.
@@ -50,8 +49,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string filename, string xintegrationname = null);
+        Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string filename);
     }
 }

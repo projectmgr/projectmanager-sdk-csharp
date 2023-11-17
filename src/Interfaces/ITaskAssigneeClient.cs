@@ -34,9 +34,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignees will be replaced</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The new list of TaskAssignees for this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
         /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their allocation level to the correct amount.
@@ -45,9 +44,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">List of Assignee data</param>
-        Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
         /// Remove one or more TaskAssignees from a Task.
@@ -56,8 +54,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">List of TaskAssignee records to remove</param>
-        Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body, string xintegrationname = null);
+        Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body);
     }
 }

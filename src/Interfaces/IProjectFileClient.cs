@@ -36,9 +36,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename, string xintegrationname = null);
+        Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename);
 
         /// <summary>
         /// Uploads a file to a specific folder on the Files page within the project that you specify.
@@ -52,8 +51,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename, string xintegrationname = null);
+        Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename);
     }
 }

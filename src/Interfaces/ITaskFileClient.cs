@@ -36,8 +36,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The reference to the task</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string filename, string xintegrationname = null);
+        Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string filename);
     }
 }

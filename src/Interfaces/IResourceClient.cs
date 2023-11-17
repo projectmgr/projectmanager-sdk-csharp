@@ -33,9 +33,8 @@ namespace ProjectManager.SDK.Interfaces
         /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The details for the new Resource to create</param>
-        Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body, string xintegrationname = null);
+        Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body);
 
         /// <summary>
         /// Retrieve a list of Resources that match an [OData formatted query](https://www.odata.org/).
@@ -43,14 +42,13 @@ namespace ProjectManager.SDK.Interfaces
         /// A Resource represents a person, material, or tool that is used within your Projects. When you attach a Resources to more than one Task, the software will schedule the usage of your Resource so that it is not allocated to more than one Task at the same time. The users in your Workspace are also considered Resources.  To invite a new User to your Workspace, create a new Resource for that user.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<ResourceDto[]>> QueryResources(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<ResourceDto[]>> QueryResources(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Updates an existing Resource based on information you provide.
@@ -59,9 +57,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="resourceId">The id of the resource</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information to update the resource</param>
-        Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body, string xintegrationname = null);
+        Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body);
 
         /// <summary>
         /// Retrieve the Resource matching the specified unique ID.
@@ -70,7 +67,6 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="resourceId">The id of the Resource</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId, string xintegrationname = null);
+        Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId);
     }
 }

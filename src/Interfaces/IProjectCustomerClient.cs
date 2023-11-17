@@ -33,7 +33,6 @@ namespace ProjectManager.SDK.Interfaces
         /// A ProjectCustomer is a code used to identify costs within your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers(string xintegrationname = null);
+        Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers();
     }
 }

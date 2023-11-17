@@ -31,9 +31,8 @@ namespace ProjectManager.SDK.Interfaces
         /// Creates new time entry for given resource on given day.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Payload</param>
-        Task<AstroResult<TimesheetResponseDto>> Createtimeentry(TimesheetCreateRequestDto body, string xintegrationname = null);
+        Task<AstroResult<TimesheetResponseDto>> Createtimeentry(TimesheetCreateRequestDto body);
 
         /// <summary>
         /// Retrieve a list of TimeSheets that match an [OData formatted query](https://www.odata.org/).
@@ -41,37 +40,33 @@ namespace ProjectManager.SDK.Interfaces
         /// Time Sheets is a list of times per task
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Delete time entry by id.
         ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<string>> Deletetimeentry(Guid timesheetId, string xintegrationname = null);
+        Task<AstroResult<string>> Deletetimeentry(Guid timesheetId);
 
         /// <summary>
         /// Updates a time entry by its unique identifier.
         ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">payload</param>
-        Task<AstroResult<TimesheetResponseDto>> Updatetimeentry(Guid timesheetId, TimesheetUpdateRequestDto body, string xintegrationname = null);
+        Task<AstroResult<TimesheetResponseDto>> Updatetimeentry(Guid timesheetId, TimesheetUpdateRequestDto body);
 
         /// <summary>
         /// Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime(string xintegrationname = null);
+        Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime();
     }
 }

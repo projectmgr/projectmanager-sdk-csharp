@@ -33,14 +33,13 @@ namespace ProjectManager.SDK.Interfaces
         /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<TagDto[]>> QueryTags(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<TagDto[]>> QueryTags(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Creates a new Tag based on information you provide.
@@ -48,9 +47,8 @@ namespace ProjectManager.SDK.Interfaces
         /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information for the new Tag to create</param>
-        Task<AstroResult<TagDto>> CreateTag(TagCreateDto body, string xintegrationname = null);
+        Task<AstroResult<TagDto>> CreateTag(TagCreateDto body);
 
         /// <summary>
         /// Updates an existing Tag based on information you provide.
@@ -59,8 +57,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="tagId">The id of the tag</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">The information to update the tag</param>
-        Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body, string xintegrationname = null);
+        Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body);
     }
 }

@@ -44,8 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// A single User may have access to multiple Workspaces, although they can only be logged on to one Workspace at a time.  This API lists all Workspaces to which the currently logged on user is entitled to access.  To determine which Workspace a user is currently logged on use the `/api/data/me` endpoint.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<WorkSpaceDto[]>> RetrieveWorkspaces(string xintegrationname = null)
+        public async Task<AstroResult<WorkSpaceDto[]>> RetrieveWorkspaces()
         {
             var url = $"/api/data/workspaces";
             return await _client.Request<WorkSpaceDto[]>(HttpMethod.Get, url, null, null, null);
@@ -60,9 +59,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Information about the user which will receive the invitation</param>
-        public async Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body, string xintegrationname = null)
+        public async Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body)
         {
             var url = $"/api/data/workspaces/{organizationId}/join";
             return await _client.Request<string>(HttpMethod.Post, url, null, body, null);

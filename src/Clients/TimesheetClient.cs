@@ -42,9 +42,8 @@ namespace ProjectManager.SDK.Clients
         /// Creates new time entry for given resource on given day.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">Payload</param>
-        public async Task<AstroResult<TimesheetResponseDto>> Createtimeentry(TimesheetCreateRequestDto body, string xintegrationname = null)
+        public async Task<AstroResult<TimesheetResponseDto>> Createtimeentry(TimesheetCreateRequestDto body)
         {
             var url = $"/api/data/timesheets";
             return await _client.Request<TimesheetResponseDto>(HttpMethod.Post, url, null, body, null);
@@ -56,14 +55,13 @@ namespace ProjectManager.SDK.Clients
         /// Time Sheets is a list of times per task
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(string xintegrationname = null, int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/timesheets";
             var options = new Dictionary<string, object>();
@@ -81,8 +79,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<string>> Deletetimeentry(Guid timesheetId, string xintegrationname = null)
+        public async Task<AstroResult<string>> Deletetimeentry(Guid timesheetId)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -93,9 +90,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
         /// <param name="body">payload</param>
-        public async Task<AstroResult<TimesheetResponseDto>> Updatetimeentry(Guid timesheetId, TimesheetUpdateRequestDto body, string xintegrationname = null)
+        public async Task<AstroResult<TimesheetResponseDto>> Updatetimeentry(Guid timesheetId, TimesheetUpdateRequestDto body)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
             return await _client.Request<TimesheetResponseDto>(HttpMethod.Put, url, null, body, null);
@@ -105,8 +101,7 @@ namespace ProjectManager.SDK.Clients
         /// Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime(string xintegrationname = null)
+        public async Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime()
         {
             var url = $"/api/data/timesheets/admin-tasks";
             return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null, null, null);

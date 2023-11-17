@@ -44,8 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
-        /// <param name="xintegrationname">The name of the calling system passed along as a header parameter</param>
-        public async Task<AstroResult<IntegrationCategoryDto[]>> RetrieveProviderCategories(string xintegrationname = null)
+        public async Task<AstroResult<IntegrationCategoryDto[]>> RetrieveProviderCategories()
         {
             var url = $"/api/data/integrations/categories";
             return await _client.Request<IntegrationCategoryDto[]>(HttpMethod.Get, url, null, null, null);

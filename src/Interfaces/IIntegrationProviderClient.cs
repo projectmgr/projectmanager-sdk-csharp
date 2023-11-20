@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        Task<AstroResult<DirectLinkDto>> ActivateIntegrationProvider(Guid providerId);
+        Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId);
 
         /// <summary>
         /// Allows you to update the auth status of the provider specific connection.
@@ -50,7 +50,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
         /// <param name="body">Specify the auth status</param>
-        Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationStatusDto body);
+        Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body);
 
         /// <summary>
         /// Allows you to deactivate an integration provider

@@ -77,7 +77,7 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Updates a new Tag based on information you provide.
+        /// Updates an existing Tag based on information you provide.
         ///
         /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
         ///

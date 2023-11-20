@@ -63,5 +63,20 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="fieldId">The unique identifier of this ProjectField</param>
         /// <param name="body">The new information for this ProjectField</param>
         Task<AstroResult<string>> UpdateProjectField(Guid projectId, Guid fieldId, UpdateProjectFieldValueDto body);
+
+        /// <summary>
+        /// Retrieves the current ProjectField value for a particular Project and ProjectField.
+        ///
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
+        /// <param name="fieldId">The unique identifier of the ProjectField of the value to retrieve</param>
+        Task<AstroResult<ProjectFieldsValueResponseDto>> RetrieveProjectFieldValue(Guid projectId, Guid fieldId);
+
+        /// <summary>
+        /// Retrieves all ProjectField values for a particular Project.
+        ///
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project for which we want ProjectField values</param>
+        Task<AstroResult<ProjectFieldsValueResponseDto[]>> RetrieveAllProjectFieldValues(Guid projectId);
     }
 }

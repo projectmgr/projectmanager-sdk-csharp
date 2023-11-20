@@ -76,5 +76,10 @@ namespace ProjectManager.SDK.Models
         /// The list of available Integrations for this Provider.
         /// </summary>
         public IntegrationDto[] Integrations { get; set; }
+
+        /// <summary>
+        /// The list of available AuthSetup for this Provider.
+        /// </summary>
+        public IntegrationAuthSetupDto AuthSetup { get; set; }
     }
 }

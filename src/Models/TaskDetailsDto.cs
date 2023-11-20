@@ -157,5 +157,10 @@ namespace ProjectManager.SDK.Models
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
         public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// Task fields array with values
+        /// </summary>
+        public object Fields { get; set; }
     }
 }

@@ -21,21 +21,29 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
-    /// define TaskFields for any integration purpose that is important to your business.  Each
-    /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
-    /// for each Task inside this Project.
+    /// A Project Field is a custom field defined within your Workspace for each Project. Each
+    /// Project Field has a data type as well as options in how it is handled.
     /// </summary>
-    public class CreateTaskFieldRequestDto : ApiModel
+    public class ProjectFieldsValueResponseDto : ApiModel
     {
 
         /// <summary>
-        /// The name of the TaskField
+        /// The unique identifier of this Project Field.
+        /// </summary>
+        public Guid? Id { get; set; }
+
+        /// <summary>
+        /// The value currently set for this Project Field.
+        /// </summary>
+        public string Value { get; set; }
+
+        /// <summary>
+        /// The name of this Project Field.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The type of this TaskField.  Valid types are the following:
+        /// The type of this Project Field.  Valid types are the following:
         /// * Text
         /// * Number
         /// * Date
@@ -44,10 +52,5 @@ namespace ProjectManager.SDK.Models
         /// * Dropdown
         /// </summary>
         public string Type { get; set; }
-
-        /// <summary>
-        /// The short Id of this field - human readable identity
-        /// </summary>
-        public string ShortId { get; set; }
     }
 }

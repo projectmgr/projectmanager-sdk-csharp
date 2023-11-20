@@ -20,16 +20,15 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// The Integrations API is intended for use by ProjectManager and its business
-    /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-    /// </summary>
-    public class NewIntegrationInstanceDto : ApiModel
+    public class ODataFunctionImportInfo : ApiModel
     {
 
-        /// <summary>
-        /// The unique identifier of the newly created IntegrationInstance.
-        /// </summary>
-        public Guid? Id { get; set; }
+        public ODataTypeAnnotation TypeAnnotation { get; set; }
+
+        public string Url { get; set; }
+
+        public string Name { get; set; }
+
+        public string Title { get; set; }
     }
 }

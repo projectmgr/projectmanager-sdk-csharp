@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>97.0.2178</version>
+		<version>98.0.2363</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,14 +14,21 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 97.0.2178
+            # Patch notes for 98.0.2363
             
-            These patch notes summarize the changes from version 96.0.2123.
+            These patch notes summarize the changes from version 97.0.2178.
             
-            Added 3 new APIs:
-            * Task.AddParentTask (POST /api/data/tasks/{taskId}/parent/{parentTaskId})
-            * Task.UpdateParentTask (PUT /api/data/tasks/{taskId}/parent/{parentTaskId})
-            * Task.RemoveParentTask (DELETE /api/data/tasks/{taskId}/parent)
+            Added 2 new APIs:
+            * ProjectField.RetrieveProjectFieldValue (GET /api/data/projects/{projectId}/fields/{fieldId})
+            * ProjectField.RetrieveAllProjectFieldValues (GET /api/data/projects/{projectId}/fields)
+            
+            Changes to existing APIs:
+            * IntegrationProvider.UpdateIntegrationProvider changed [body].Value.DataType from AuthenticationDto to AuthenticationStatusDto
+            * IntegrationProvider.UpdateIntegrationProvider changed [body].Value.DataTypeRef from /docs/authenticationdto to /docs/authenticationstatusdto
+            
+            Deprecated 2 old APIs:
+            * Integration.AddIntegrationInstance
+            * Integration.RemoveIntegrationInstance
             
 
         </releaseNotes>

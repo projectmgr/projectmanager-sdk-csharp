@@ -217,5 +217,10 @@ namespace ProjectManager.SDK.Models
         /// The planned effort (in minutes) for this Task.
         /// </summary>
         public int? PlannedEffort { get; set; }
+
+        /// <summary>
+        /// Task fields array with values
+        /// </summary>
+        public TaskFieldDto[] Fields { get; set; }
     }
 }

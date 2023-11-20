@@ -88,32 +88,5 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/integrations";
             return await _client.Request<IntegrationDto[]>(HttpMethod.Get, url, null, null, null);
         }
-
-        /// <summary>
-        /// Adds a new Integration instance to a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationId">The unique identifier of the Integration to add to this Workspace</param>
-        /// <param name="body">The information about this Integration to add</param>
-        public async Task<AstroResult<NewIntegrationInstanceDto>> AddIntegrationInstance(Guid integrationId, CreateIntegrationInstanceDto body)
-        {
-            var url = $"/api/data/integrations/{integrationId}/instance";
-            return await _client.Request<NewIntegrationInstanceDto>(HttpMethod.Post, url, null, body, null);
-        }
-
-        /// <summary>
-        /// Removes an existing Integration instance from a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationInstanceId">The unique identifier of the IntegrationInstance to remove from this Workspace</param>
-        public async Task<AstroResult<string>> RemoveIntegrationInstance(Guid integrationInstanceId)
-        {
-            var url = $"/api/data/integrations/instances/{integrationInstanceId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
-        }
     }
 }

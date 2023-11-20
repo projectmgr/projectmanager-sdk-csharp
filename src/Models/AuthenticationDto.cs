@@ -21,15 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Integrations API is intended for use by ProjectManager and its business
-    /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+    /// Set the connection status of an integration
     /// </summary>
-    public class CreateIntegrationInstanceDto : ApiModel
+    public class AuthenticationDto : ApiModel
     {
 
         /// <summary>
-        /// Extra metadata required by this Integration Instance.
+        /// Set to true if the connection was successful. False is not supported right now.
         /// </summary>
-        public object Config { get; set; }
+        public bool? Connected { get; set; }
+
+        /// <summary>
+        /// Authenication scheme
+        /// </summary>
+        public object AuthScheme { get; set; }
     }
 }

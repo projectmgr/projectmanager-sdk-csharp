@@ -90,5 +90,28 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
+
+        /// <summary>
+        /// Retrieves the current ProjectField value for a particular Project and ProjectField.
+        ///
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
+        /// <param name="fieldId">The unique identifier of the ProjectField of the value to retrieve</param>
+        public async Task<AstroResult<ProjectFieldsValueResponseDto>> RetrieveProjectFieldValue(Guid projectId, Guid fieldId)
+        {
+            var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
+            return await _client.Request<ProjectFieldsValueResponseDto>(HttpMethod.Get, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Retrieves all ProjectField values for a particular Project.
+        ///
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project for which we want ProjectField values</param>
+        public async Task<AstroResult<ProjectFieldsValueResponseDto[]>> RetrieveAllProjectFieldValues(Guid projectId)
+        {
+            var url = $"/api/data/projects/{projectId}/fields";
+            return await _client.Request<ProjectFieldsValueResponseDto[]>(HttpMethod.Get, url, null, null, null);
+        }
     }
 }

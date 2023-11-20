@@ -28,7 +28,7 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Retrieve all defined ChargeCodes that can be used when creating Tasks.
+        /// Retrieve all defined ChargeCodes that can be used when creating Projects.
         ///
         /// A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
         ///

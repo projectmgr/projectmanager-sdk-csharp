@@ -61,24 +61,5 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations();
-
-        /// <summary>
-        /// Adds a new Integration instance to a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationId">The unique identifier of the Integration to add to this Workspace</param>
-        /// <param name="body">The information about this Integration to add</param>
-        Task<AstroResult<NewIntegrationInstanceDto>> AddIntegrationInstance(Guid integrationId, CreateIntegrationInstanceDto body);
-
-        /// <summary>
-        /// Removes an existing Integration instance from a Workspace.
-        ///
-        /// The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
-        /// </summary>
-        /// <param name="integrationInstanceId">The unique identifier of the IntegrationInstance to remove from this Workspace</param>
-        Task<AstroResult<string>> RemoveIntegrationInstance(Guid integrationInstanceId);
     }
 }

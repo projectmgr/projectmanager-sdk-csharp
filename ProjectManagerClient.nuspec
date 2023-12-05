@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>99.0.2541</version>
+		<version>99.0.2548</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,7 +14,7 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 99.0.2541
+            # Patch notes for 99.0.2548
             
             These patch notes summarize the changes from version 98.0.2363.
             
@@ -25,6 +25,120 @@
             Renamed 2 old APIs:
             * Renamed 'ProjectField.UpdateProjectField' to 'ProjectField.UpdateProjectFieldValue'
             * Renamed 'ProjectMembers.RetrieveUserProjectMemberShip' to 'ProjectMembers.RetrieveUserProjectMembership'
+            
+            Changes to existing APIs:
+            * ApiKey.CreateApiKey removed header parameter `x-integration-name`
+            * ApiKey.ListApiKeys removed header parameter `x-integration-name`
+            * ApiKey.RevokeAllApiKeys removed header parameter `x-integration-name`
+            * ApiKey.RevokeAPIKey removed header parameter `x-integration-name`
+            * Changeset.RetrieveChangeset removed header parameter `x-integration-name`
+            * Changeset.RetrieveCompletedChangeset removed header parameter `x-integration-name`
+            * Dashboard.RetrieveDashboardUserSettings removed header parameter `x-integration-name`
+            * Dashboard.CreateorUpdateUserDashboardSettings removed header parameter `x-integration-name`
+            * Discussion.RetrieveTaskComments removed header parameter `x-integration-name`
+            * Discussion.CreateTaskComments removed header parameter `x-integration-name`
+            * File.DownloadFile removed header parameter `x-integration-name`
+            * File.DownloadaThumbnailImage removed header parameter `x-integration-name`
+            * File.UpdateFile removed header parameter `x-integration-name`
+            * HomeFile.UploadHomeFile removed header parameter `x-integration-name`
+            * HomeFile.UploadHomeFileToFolder removed header parameter `x-integration-name`
+            * Integration.RetrieveIntegration removed header parameter `x-integration-name`
+            * Integration.EnableIntegration removed header parameter `x-integration-name`
+            * Integration.DisableIntegration removed header parameter `x-integration-name`
+            * Integration.RetrieveAllIntegrations removed header parameter `x-integration-name`
+            * IntegrationCategory.RetrieveProviderCategories removed header parameter `x-integration-name`
+            * IntegrationProvider.ListProviders removed header parameter `x-integration-name`
+            * IntegrationProvider.ActivateIntegrationProvider removed header parameter `x-integration-name`
+            * IntegrationProvider.UpdateIntegrationProvider removed header parameter `x-integration-name`
+            * IntegrationProvider.DeactivateIntegrationProvider removed header parameter `x-integration-name`
+            * IntegrationProvider.CreateUserIntegrationProviderConnection removed header parameter `x-integration-name`
+            * IntegrationProvider.UpdateUserIntegrationProviderConnection removed header parameter `x-integration-name`
+            * License.RetrieveLicenses removed header parameter `x-integration-name`
+            * License.AddLicense removed header parameter `x-integration-name`
+            * Me.RetrieveMe removed header parameter `x-integration-name`
+            * Project.QueryProjects removed header parameter `x-integration-name`
+            * Project.CreateProject removed header parameter `x-integration-name`
+            * Project.RetrieveProject removed header parameter `x-integration-name`
+            * Project.UpdateProject removed header parameter `x-integration-name`
+            * ProjectChargeCode.RetrieveChargeCodes removed header parameter `x-integration-name`
+            * ProjectCustomer.RetrieveProjectCustomers removed header parameter `x-integration-name`
+            * ProjectField.RetrieveProjectFields removed header parameter `x-integration-name`
+            * ProjectField.CreateProjectField removed header parameter `x-integration-name`
+            * ProjectField.DeleteProjectField added path parameter `fieldId`
+            * ProjectField.DeleteProjectField removed header parameter `x-integration-name`
+            * ProjectField.DeleteProjectField removed body parameter `body`
+            * ProjectField.UpdateProjectFieldValue changed [fieldId].Value.DataType from string to uuid
+            * ProjectField.UpdateProjectFieldValue removed header parameter `x-integration-name`
+            * ProjectField.RetrieveProjectFieldValue changed [fieldId].Value.DataType from string to uuid
+            * ProjectField.RetrieveProjectFieldValue removed header parameter `x-integration-name`
+            * ProjectField.RetrieveAllProjectFieldValues removed header parameter `x-integration-name`
+            * ProjectFile.UploadProjectFile removed header parameter `x-integration-name`
+            * ProjectFile.UploadProjectFileToFolder removed header parameter `x-integration-name`
+            * ProjectFolder.RetrieveProjectFolders removed header parameter `x-integration-name`
+            * ProjectMembers.RetrieveNewProjectMembers removed header parameter `x-integration-name`
+            * ProjectMembers.RetrieveProjectMembers removed header parameter `x-integration-name`
+            * ProjectMembers.RetrieveUserProjectMembership removed header parameter `x-integration-name`
+            * ProjectMembers.CreateUserProjectMembership removed header parameter `x-integration-name`
+            * ProjectMembers.UpdateUserProjectMembership removed header parameter `x-integration-name`
+            * ProjectMembers.RemoveUserProjectMembership removed header parameter `x-integration-name`
+            * ProjectPriority.RetrieveProjectPriorities removed header parameter `x-integration-name`
+            * ProjectStatus.RetrieveProjectStatuses removed header parameter `x-integration-name`
+            * ProjectTemplate.RetrieveProjectTemplates removed header parameter `x-integration-name`
+            * ProjectTemplate.RetrieveTemplateCategories removed header parameter `x-integration-name`
+            * Resource.CreateResource removed header parameter `x-integration-name`
+            * Resource.QueryResources removed header parameter `x-integration-name`
+            * Resource.UpdateResource removed header parameter `x-integration-name`
+            * Resource.RetrieveResource removed header parameter `x-integration-name`
+            * ResourceSkill.RetrieveResourceSkills removed header parameter `x-integration-name`
+            * ResourceSkill.CreateResourceSkill removed header parameter `x-integration-name`
+            * ResourceSkill.UpdateResourceSkill removed header parameter `x-integration-name`
+            * ResourceSkill.DeleteResourceSkill removed header parameter `x-integration-name`
+            * ResourceTeam.RetrieveResourceTeams removed header parameter `x-integration-name`
+            * ResourceTeam.CreateResourceTeam removed header parameter `x-integration-name`
+            * ResourceTeam.DeleteResourceTeam removed header parameter `x-integration-name`
+            * ResourceTeam.UpdateResourceTeam removed header parameter `x-integration-name`
+            * Tag.QueryTags removed header parameter `x-integration-name`
+            * Tag.CreateTag removed header parameter `x-integration-name`
+            * Tag.UpdateTag removed header parameter `x-integration-name`
+            * Task.QueryTasks removed header parameter `x-integration-name`
+            * Task.RetrieveTask removed header parameter `x-integration-name`
+            * Task.UpdateTask removed header parameter `x-integration-name`
+            * Task.DeleteTask removed header parameter `x-integration-name`
+            * Task.CreateTask removed header parameter `x-integration-name`
+            * Task.RetrieveTaskPriorities removed header parameter `x-integration-name`
+            * Task.CreateManyTasks removed header parameter `x-integration-name`
+            * Task.AddParentTask removed header parameter `x-integration-name`
+            * Task.UpdateParentTask removed header parameter `x-integration-name`
+            * Task.RemoveParentTask removed header parameter `x-integration-name`
+            * TaskAssignee.ReplaceTaskAssignees removed header parameter `x-integration-name`
+            * TaskAssignee.CreateOrUpdateTaskAssignee removed header parameter `x-integration-name`
+            * TaskAssignee.DeleteTaskAssignees removed header parameter `x-integration-name`
+            * TaskField.RetrieveTaskFields removed header parameter `x-integration-name`
+            * TaskField.CreateTaskField changed [body].Value.DataType from CreateTaskFieldDto to CreateTaskFieldRequestDto
+            * TaskField.CreateTaskField changed [body].Value.DataTypeRef from /docs/createtaskfielddto to /docs/createtaskfieldrequestdto
+            * TaskField.CreateTaskField removed header parameter `x-integration-name`
+            * TaskField.DeleteTaskField removed header parameter `x-integration-name`
+            * TaskField.RetrieveAllTaskFieldValues removed header parameter `x-integration-name`
+            * TaskField.RetrieveTaskFieldValue removed header parameter `x-integration-name`
+            * TaskField.UpdateTaskFieldValue removed header parameter `x-integration-name`
+            * TaskFile.UploadTaskFile removed header parameter `x-integration-name`
+            * TaskStatus.RetrieveTaskStatuses removed header parameter `x-integration-name`
+            * TaskStatus.CreateTaskStatus removed header parameter `x-integration-name`
+            * TaskStatus.UpdateTaskStatus removed header parameter `x-integration-name`
+            * TaskStatus.DeleteTaskStatus removed header parameter `x-integration-name`
+            * TaskTag.ReplaceTaskTags removed header parameter `x-integration-name`
+            * TaskTag.AddTaskTagtoTask removed header parameter `x-integration-name`
+            * TaskTag.RemoveTaskTagfromTask removed header parameter `x-integration-name`
+            * Teams.RetrievezipfileforTeamsIntegrations removed header parameter `x-integration-name`
+            * Timesheet.Createtimeentry removed header parameter `x-integration-name`
+            * Timesheet.QueryTimeSheets removed header parameter `x-integration-name`
+            * Timesheet.Deletetimeentry removed header parameter `x-integration-name`
+            * Timesheet.Updatetimeentry removed header parameter `x-integration-name`
+            * Timesheet.Returnsactiveadmintasksthatareusedtoreporttime removed header parameter `x-integration-name`
+            * UserRole.RetrieveUserRoles removed header parameter `x-integration-name`
+            * WorkSpace.RetrieveWorkspaces removed header parameter `x-integration-name`
+            * WorkSpace.InvitetoWorkspace removed header parameter `x-integration-name`
+            
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2023</copyright>

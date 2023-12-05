@@ -21,12 +21,9 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
-    /// define TaskFields for any integration purpose that is important to your business.  Each
-    /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
-    /// for each Task inside this Project.
+    /// A model that contains the value for a TaskField.
     /// </summary>
-    public class TaskFieldsValueResponseDto : ApiModel
+    public class TaskFieldValueDto : ApiModel
     {
 
         /// <summary>
@@ -35,24 +32,28 @@ namespace ProjectManager.SDK.Models
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The value currently set for this TaskField for this Task.
+        /// The unique Short Id of this TaskField.
+        /// </summary>
+        public string ShortId { get; set; }
+
+        /// <summary>
+        /// The value currently set for this TaskFieldValue.
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
-        /// The name of this TaskField.
+        /// Date and time (in UTC) that this TaskField was created.
         /// </summary>
-        public string Name { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
-        /// The type of this TaskField.  Valid types are the following:
-        /// * Text
-        /// * Number
-        /// * Date
-        /// * Checkbox
-        /// * Currency
-        /// * Dropdown
+        /// Date and time (in UTC) that this TaskField was last modified.
         /// </summary>
-        public string Type { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// The Task to which this Value belongs.
+        /// </summary>
+        public TaskFieldValueTaskDto Task { get; set; }
     }
 }

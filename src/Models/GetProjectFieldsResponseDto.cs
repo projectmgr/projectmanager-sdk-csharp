@@ -77,5 +77,10 @@ namespace ProjectManager.SDK.Models
         /// list.
         /// </summary>
         public string[] Options { get; set; }
+
+        /// <summary>
+        /// The short Id of this field - human readable identity
+        /// </summary>
+        public string ShortId { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>98.0.2363</version>
+		<version>99.0.2541</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,22 +14,17 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 98.0.2363
+            # Patch notes for 99.0.2541
             
-            These patch notes summarize the changes from version 97.0.2178.
+            These patch notes summarize the changes from version 98.0.2363.
             
             Added 2 new APIs:
-            * ProjectField.RetrieveProjectFieldValue (GET /api/data/projects/{projectId}/fields/{fieldId})
-            * ProjectField.RetrieveAllProjectFieldValues (GET /api/data/projects/{projectId}/fields)
+            * TaskField.QueryTaskFields (GET /api/data/projects/tasks/fields)
+            * TaskField.QueryTaskFieldValues (GET /api/data/tasks/fields/values)
             
-            Changes to existing APIs:
-            * IntegrationProvider.UpdateIntegrationProvider changed [body].Value.DataType from AuthenticationDto to AuthenticationStatusDto
-            * IntegrationProvider.UpdateIntegrationProvider changed [body].Value.DataTypeRef from /docs/authenticationdto to /docs/authenticationstatusdto
-            
-            Deprecated 2 old APIs:
-            * Integration.AddIntegrationInstance
-            * Integration.RemoveIntegrationInstance
-            
+            Renamed 2 old APIs:
+            * Renamed 'ProjectField.UpdateProjectField' to 'ProjectField.UpdateProjectFieldValue'
+            * Renamed 'ProjectMembers.RetrieveUserProjectMemberShip' to 'ProjectMembers.RetrieveUserProjectMembership'
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2023</copyright>

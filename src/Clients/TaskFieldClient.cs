@@ -45,24 +45,49 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskFields</param>
-        public async Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId)
+        public async Task<AstroResult<TaskFieldDto[]>> RetrieveTaskFields(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
-            return await _client.Request<GetTaskFieldsResponseDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
-        /// Creates a new TaskFields for a specific Project within your Workspace.
+        /// Creates a new TaskField for a specific Project within your Workspace.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project within which to create this TaskField</param>
         /// <param name="body">Information about the TaskField to create</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
+        }
+
+        /// <summary>
+        /// Retrieve a list of TaskFields that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside a Project.
+        ///
+        /// </summary>
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        public async Task<AstroResult<TaskFieldDto[]>> QueryTaskFields(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        {
+            var url = $"/api/data/projects/tasks/fields";
+            var options = new Dictionary<string, object>();
+            if (top != null) { options["$top"] = top; }
+            if (skip != null) { options["$skip"] = skip; }
+            if (filter != null) { options["$filter"] = filter; }
+            if (select != null) { options["$select"] = select; }
+            if (orderby != null) { options["$orderby"] = orderby; }
+            if (expand != null) { options["$expand"] = expand; }
+            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, options, null, null);
         }
 
         /// <summary>
@@ -80,6 +105,44 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Retrieves all TaskField values for a particular Task.
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
+        ///
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
+        public async Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/fields/values";
+            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, null, null, null);
+        }
+
+        /// <summary>
+        /// Retrieve a list of TaskFieldValues that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
+        ///
+        /// </summary>
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        public async Task<AstroResult<TaskFieldValueDto[]>> QueryTaskFieldValues(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        {
+            var url = $"/api/data/tasks/fields/values";
+            var options = new Dictionary<string, object>();
+            if (top != null) { options["$top"] = top; }
+            if (skip != null) { options["$skip"] = skip; }
+            if (filter != null) { options["$filter"] = filter; }
+            if (select != null) { options["$select"] = select; }
+            if (orderby != null) { options["$orderby"] = orderby; }
+            if (expand != null) { options["$expand"] = expand; }
+            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, options, null, null);
+        }
+
+        /// <summary>
         /// Retrieves the current TaskField value for a particular Task and TaskField.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
@@ -87,14 +150,14 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier of the TaskField of the value to retrieve</param>
-        public async Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId)
+        public async Task<AstroResult<TaskFieldValueDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId)
         {
-            var url = $"/api/data/tasks/{taskId}/fields/{fieldId}";
-            return await _client.Request<TaskFieldsValueResponseDto>(HttpMethod.Get, url, null, null, null);
+            var url = $"/api/data/tasks/{taskId}/fields/{fieldId}/values";
+            return await _client.Request<TaskFieldValueDto>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
-        /// Replaces the current value of a TaskFields for a specific Task within your Workspace.
+        /// Replaces the current value of a TaskField for a specific Task within your Workspace.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
         ///
@@ -104,21 +167,8 @@ namespace ProjectManager.SDK.Clients
         /// <param name="body">The new value for this TaskField for this Task</param>
         public async Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body)
         {
-            var url = $"/api/data/tasks/{taskId}/fields/{fieldId}";
+            var url = $"/api/data/tasks/{taskId}/fields/{fieldId}/values";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
-        }
-
-        /// <summary>
-        /// Retrieves all TaskField values for a particular Task.
-        ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
-        /// </summary>
-        /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        public async Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId)
-        {
-            var url = $"/api/data/tasks/{taskId}/fields";
-            return await _client.Request<TaskFieldsValueResponseDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

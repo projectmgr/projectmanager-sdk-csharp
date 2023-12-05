@@ -21,34 +21,52 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// TODO - What is this?
+    /// Information about a currently logged in user.
+    ///
+    /// You can call the RetrieveMe API to gather information about the current user.
     /// </summary>
     public class WorkSpaceUserInfoDto : ApiModel
     {
 
         /// <summary>
-        /// TODO - What is this?
+        /// A collection of shortcut links for the currently logged in Workspace.
         /// </summary>
         public WorkSpaceLinksDto Links { get; set; }
 
         /// <summary>
-        /// TODO - What is this?
+        /// The email address of the currently logged in user.
         /// </summary>
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// TODO - What is this?
+        /// The unique identity of the currently logged in user.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// TODO - What is this?
+        /// The full name of the currently logged in user.
         /// </summary>
         public string FullName { get; set; }
 
         /// <summary>
-        /// TODO - What is this?
+        /// The name of the Workspace that the current user has logged onto.  For most companies, the workspace
+        /// name will be the name of the business.
         /// </summary>
         public string WorkSpaceName { get; set; }
+
+        /// <summary>
+        /// The user&#39;s role within the current Workspace.
+        /// </summary>
+        public string RoleName { get; set; }
+
+        /// <summary>
+        /// True if this user is considered a global administrator of the current Workspace.
+        /// </summary>
+        public bool? IsGlobalAdmin { get; set; }
+
+        /// <summary>
+        /// True if this user is considered an account administrator of the current Workspace.
+        /// </summary>
+        public bool? IsAccountAdministrator { get; set; }
     }
 }

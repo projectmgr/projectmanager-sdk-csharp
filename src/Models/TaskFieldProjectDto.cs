@@ -21,19 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A shortcut link within the currently logged in Workspace.
+    /// The TaskFieldProject is a summary of the Project that this TaskField relates to.
     /// </summary>
-    public class WorkSpaceLinksDto : ApiModel
+    public class TaskFieldProjectDto : ApiModel
     {
 
         /// <summary>
-        /// The name of the project for this link.
+        /// The unique identifier of this Project.
         /// </summary>
-        public string Project { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
-        /// This is the link to the api for this business.  Some endpoints may need this value.
+        /// The ShortId of this Project.
         /// </summary>
-        public string WorkSpaceApi { get; set; }
+        public string ShortId { get; set; }
+
+        /// <summary>
+        /// The common name of this Project.
+        /// </summary>
+        public string Name { get; set; }
     }
 }

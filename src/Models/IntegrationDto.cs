@@ -79,5 +79,10 @@ namespace ProjectManager.SDK.Models
         /// True if the user has authenticated
         /// </summary>
         public bool? Authenticated { get; set; }
+
+        /// <summary>
+        /// True if the integration is auto-enabled
+        /// </summary>
+        public bool? AutoEnabled { get; set; }
     }
 }

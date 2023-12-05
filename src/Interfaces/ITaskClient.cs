@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier or short ID of the Task to retrieve</param>
-        Task<AstroResult<TaskDetailsDto>> RetrieveTask(string taskId);
+        Task<AstroResult<TaskDto>> RetrieveTask(string taskId);
 
         /// <summary>
         /// Update an existing Task and replace the values of fields specified.

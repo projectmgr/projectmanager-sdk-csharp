@@ -70,5 +70,10 @@ namespace ProjectManager.SDK.Models
         /// The resource associated with this timesheet entry
         /// </summary>
         public TimesheetResourceDto Resource { get; set; }
+
+        /// <summary>
+        /// The administration type associated with this timesheet entry
+        /// </summary>
+        public TimesheetAdminTypeDto AdminType { get; set; }
     }
 }

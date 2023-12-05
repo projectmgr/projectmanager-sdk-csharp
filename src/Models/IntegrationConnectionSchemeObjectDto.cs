@@ -21,19 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A shortcut link within the currently logged in Workspace.
+    /// Master Connection Scheme for Providers
     /// </summary>
-    public class WorkSpaceLinksDto : ApiModel
+    public class IntegrationConnectionSchemeObjectDto : ApiModel
     {
 
         /// <summary>
-        /// The name of the project for this link.
+        /// The value of the property
         /// </summary>
-        public string Project { get; set; }
+        public string Value { get; set; }
 
         /// <summary>
-        /// This is the link to the api for this business.  Some endpoints may need this value.
+        /// The type of the property
         /// </summary>
-        public string WorkSpaceApi { get; set; }
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Send to the client true/false
+        /// </summary>
+        public bool? SendToClient { get; set; }
     }
 }

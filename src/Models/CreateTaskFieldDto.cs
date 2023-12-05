@@ -26,16 +26,11 @@ namespace ProjectManager.SDK.Models
     /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
     /// for each Task inside this Project.
     /// </summary>
-    public class GetTaskFieldsResponseDto : ApiModel
+    public class CreateTaskFieldDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this TaskField
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this TaskField
+        /// The name of the TaskField
         /// </summary>
         public string Name { get; set; }
 
@@ -46,13 +41,8 @@ namespace ProjectManager.SDK.Models
         /// * Date
         /// * Checkbox
         /// * Currency
-        /// * Dropdown
-        ///
-        /// Attempting to create a field with any Type other than these will
-        /// return an error.
-        ///
-        /// For Dropdown TaskFields, specify the list of choices in the `Options`
-        /// field.
+        /// * DropdownSingle
+        /// * DropdownMulti
         /// </summary>
         public string Type { get; set; }
 
@@ -65,5 +55,10 @@ namespace ProjectManager.SDK.Models
         /// list.
         /// </summary>
         public string[] Options { get; set; }
+
+        /// <summary>
+        /// The short Id of this field - human readable identity
+        /// </summary>
+        public string ShortId { get; set; }
     }
 }

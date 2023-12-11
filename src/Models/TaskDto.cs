@@ -221,6 +221,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Task fields array with values
         /// </summary>
-        public TaskFieldDto[] Fields { get; set; }
+        public TaskFieldValueDto[] Fields { get; set; }
     }
 }

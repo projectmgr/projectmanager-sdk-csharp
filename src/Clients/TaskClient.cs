@@ -70,10 +70,10 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier or short ID of the Task to retrieve</param>
-        public async Task<AstroResult<TaskDetailsDto>> RetrieveTask(string taskId)
+        public async Task<AstroResult<TaskDto>> RetrieveTask(string taskId)
         {
             var url = $"/api/data/tasks/{taskId}";
-            return await _client.Request<TaskDetailsDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskDto>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>

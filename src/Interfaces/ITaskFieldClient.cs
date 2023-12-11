@@ -34,17 +34,31 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskFields</param>
-        Task<AstroResult<GetTaskFieldsResponseDto[]>> RetrieveTaskFields(Guid projectId);
+        Task<AstroResult<TaskFieldDto[]>> RetrieveTaskFields(Guid projectId);
 
         /// <summary>
-        /// Creates a new TaskFields for a specific Project within your Workspace.
+        /// Creates a new TaskField for a specific Project within your Workspace.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project within which to create this TaskField</param>
         /// <param name="body">Information about the TaskField to create</param>
-        Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldRequestDto body);
+        Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldDto body);
+
+        /// <summary>
+        /// Retrieve a list of TaskFields that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside a Project.
+        ///
+        /// </summary>
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        Task<AstroResult<TaskFieldDto[]>> QueryTaskFields(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Deletes a TaskField for a specific Project within your Workspace.
@@ -57,6 +71,29 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId);
 
         /// <summary>
+        /// Retrieves all TaskField values for a particular Task.
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
+        ///
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
+        Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId);
+
+        /// <summary>
+        /// Retrieve a list of TaskFieldValues that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
+        ///
+        /// </summary>
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="select">Specify which properties should be returned</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        Task<AstroResult<TaskFieldValueDto[]>> QueryTaskFieldValues(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+
+        /// <summary>
         /// Retrieves the current TaskField value for a particular Task and TaskField.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
@@ -64,10 +101,10 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier of the TaskField of the value to retrieve</param>
-        Task<AstroResult<TaskFieldsValueResponseDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId);
+        Task<AstroResult<TaskFieldValueDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId);
 
         /// <summary>
-        /// Replaces the current value of a TaskFields for a specific Task within your Workspace.
+        /// Replaces the current value of a TaskField for a specific Task within your Workspace.
         ///
         /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
         ///
@@ -76,14 +113,5 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="fieldId">The unique identifier of the TaskField whose value you wish to update</param>
         /// <param name="body">The new value for this TaskField for this Task</param>
         Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body);
-
-        /// <summary>
-        /// Retrieves all TaskField values for a particular Task.
-        ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
-        /// </summary>
-        /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        Task<AstroResult<TaskFieldsValueResponseDto[]>> RetrieveAllTaskFieldValues(Guid taskId);
     }
 }

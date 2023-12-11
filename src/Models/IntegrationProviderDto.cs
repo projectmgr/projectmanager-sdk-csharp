@@ -81,5 +81,10 @@ namespace ProjectManager.SDK.Models
         /// The list of available AuthSetup for this Provider.
         /// </summary>
         public IntegrationAuthSetupDto AuthSetup { get; set; }
+
+        /// <summary>
+        /// Flag whether user/workspace needs to be setup in Workato
+        /// </summary>
+        public bool? CreateInWorkato { get; set; }
     }
 }

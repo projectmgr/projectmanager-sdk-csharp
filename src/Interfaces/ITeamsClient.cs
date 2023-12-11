@@ -22,17 +22,17 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to ProjectCustomer
+    /// API methods related to Teams
     /// </summary>
-    public interface IProjectCustomerClient
+    public interface ITeamsClient
     {
 
         /// <summary>
-        /// Retrieves all ProjectCustomers defined within your Workspace.
+        /// Retrieves zip file for teams integrations.
         ///
-        /// A ProjectCustomer is a code used to identify customers associated with your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
-        ///
+        /// The Teams API is intended for use by ProjectManager and its business development partners.  Please
+        /// contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
-        Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers();
+        Task<AstroResult<byte[]>> RetrievezipfileforTeamsIntegrations();
     }
 }

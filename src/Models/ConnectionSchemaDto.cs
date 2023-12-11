@@ -27,6 +27,11 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
+        /// Whether or not the Integration Provider is connected.
+        /// </summary>
+        public bool? Connected { get; set; }
+
+        /// <summary>
         /// The URL to use to authenticate with the Integration Provider.
         /// </summary>
         public string Url { get; set; }

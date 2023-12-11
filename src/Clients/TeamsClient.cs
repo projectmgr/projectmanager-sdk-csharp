@@ -24,30 +24,30 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to ProjectCustomer
+    /// API methods related to Teams
     /// </summary>
-    public class ProjectCustomerClient : IProjectCustomerClient
+    public class TeamsClient : ITeamsClient
     {
         private readonly ProjectManagerClient _client;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ProjectCustomerClient(ProjectManagerClient client)
+        public TeamsClient(ProjectManagerClient client)
         {
             _client = client;
         }
 
         /// <summary>
-        /// Retrieves all ProjectCustomers defined within your Workspace.
+        /// Retrieves zip file for teams integrations.
         ///
-        /// A ProjectCustomer is a code used to identify customers associated with your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
-        ///
+        /// The Teams API is intended for use by ProjectManager and its business development partners.  Please
+        /// contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
-        public async Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers()
+        public async Task<AstroResult<byte[]>> RetrievezipfileforTeamsIntegrations()
         {
-            var url = $"/api/data/projects/customers";
-            return await _client.Request<ProjectCustomerDto[]>(HttpMethod.Get, url, null, null, null);
+            var url = $"/api/data/integrations/teams/application";
+            return await _client.Request<byte[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

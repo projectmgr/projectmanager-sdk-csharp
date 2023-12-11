@@ -21,8 +21,8 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Project Field is a custom field defined within your Workspace for each Project. Each
-    /// Project Field has a data type as well as options in how it is handled.
+    /// A ProjectField is a custom field defined within your Workspace for each Project. Each
+    /// ProjectField has a data type as well as options in how it is handled.
     /// </summary>
     public class ProjectFieldsValueResponseDto : ApiModel
     {
@@ -52,5 +52,20 @@ namespace ProjectManager.SDK.Models
         /// * Dropdown
         /// </summary>
         public string Type { get; set; }
+
+        /// <summary>
+        /// The short Id of this field - human readable identity
+        /// </summary>
+        public string ShortId { get; set; }
+
+        /// <summary>
+        /// Date and time (in UTC) that this TaskField was created.
+        /// </summary>
+        public DateTime? CreatedDate { get; set; }
+
+        /// <summary>
+        /// Date and time (in UTC) that this TaskField was last modified.
+        /// </summary>
+        public DateTime? ModifiedDate { get; set; }
     }
 }

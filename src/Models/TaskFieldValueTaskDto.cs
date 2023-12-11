@@ -21,21 +21,23 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
-    /// for any integration purpose that is important to your business.  Each ProjectField has a data
-    /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
-    /// within your Workspace.
+    /// The TaskFieldTask is a summary of the Task that this TaskFieldValue relates to.
     /// </summary>
-    public class DeleteProjectFieldDto : ApiModel
+    public class TaskFieldValueTaskDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of the ProjectField being deleted
+        /// The unique identifier of this Task.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of the ProjectField being deleted
+        /// The unique Short Id of this Task.
+        /// </summary>
+        public string ShortId { get; set; }
+
+        /// <summary>
+        /// The common name of this Task.
         /// </summary>
         public string Name { get; set; }
     }

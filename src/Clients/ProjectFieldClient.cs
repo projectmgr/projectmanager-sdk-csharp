@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -99,10 +99,10 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier or short ID of the ProjectField of the value to retrieve</param>
-        public async Task<AstroResult<ProjectFieldsValueResponseDto>> RetrieveProjectFieldValue(Guid projectId, string fieldId)
+        public async Task<AstroResult<ProjectFieldValueDto>> RetrieveProjectFieldValue(Guid projectId, string fieldId)
         {
             var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
-            return await _client.Request<ProjectFieldsValueResponseDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldValueDto>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
@@ -112,10 +112,10 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for which we want ProjectField values</param>
-        public async Task<AstroResult<ProjectFieldsValueResponseDto[]>> RetrieveAllProjectFieldValues(Guid projectId)
+        public async Task<AstroResult<ProjectFieldValueDto[]>> RetrieveAllProjectFieldValues(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/fields";
-            return await _client.Request<ProjectFieldsValueResponseDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldValueDto[]>(HttpMethod.Get, url, null, null, null);
         }
     }
 }

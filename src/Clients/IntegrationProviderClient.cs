@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -66,6 +66,8 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Allows you to update the auth status of the provider specific connection.
         ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+        ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
         /// <param name="body">Specify the auth status</param>
@@ -76,7 +78,9 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Allows you to deactivate an integration provider
+        /// Allows you to deactivate an integration provider.
+        ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
@@ -91,6 +95,8 @@ namespace ProjectManager.SDK.Clients
         ///
         /// This connection can be used for requests to Providers that require specific user data.
         ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+        ///
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
         public async Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId)
@@ -101,6 +107,8 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Allows you to update the auth status of the provider specific user connection.
+        ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         ///
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>

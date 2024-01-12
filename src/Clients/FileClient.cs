@@ -54,12 +54,12 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
         /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
-        public async Task<AstroResult<byte>> DownloadFile(Guid documentId, string type = null)
+        public async Task<AstroResult<byte[]>> DownloadFile(Guid documentId, string type = null)
         {
             var url = $"/api/data/files/{documentId}/download";
             var options = new Dictionary<string, object>();
             if (type != null) { options["type"] = type; }
-            return await _client.Request<byte>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<byte[]>(HttpMethod.Get, url, options, null, null);
         }
 
         /// <summary>
@@ -76,10 +76,10 @@ namespace ProjectManager.SDK.Clients
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document for which to download the thumbnail.</param>
-        public async Task<AstroResult<byte>> DownloadaThumbnailImage(Guid documentId)
+        public async Task<AstroResult<byte[]>> DownloadaThumbnailImage(Guid documentId)
         {
             var url = $"/api/data/files/{documentId}/thumbnail";
-            return await _client.Request<byte>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<byte[]>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>

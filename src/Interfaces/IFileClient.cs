@@ -43,7 +43,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
         /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
-        Task<AstroResult<byte>> DownloadFile(Guid documentId, string type = null);
+        Task<AstroResult<byte[]>> DownloadFile(Guid documentId, string type = null);
 
         /// <summary>
         /// Downloads a thumbnail image associated with a document that was previously uploaded to ProjectManager.com.
@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Interfaces
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document for which to download the thumbnail.</param>
-        Task<AstroResult<byte>> DownloadaThumbnailImage(Guid documentId);
+        Task<AstroResult<byte[]>> DownloadaThumbnailImage(Guid documentId);
 
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.

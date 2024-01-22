@@ -75,5 +75,14 @@ namespace ProjectManager.SDK.Models
         /// The administration type associated with this timesheet entry
         /// </summary>
         public TimesheetAdminTypeDto AdminType { get; set; }
+
+        /// <summary>
+        /// The list of files associated with this Timesheet, if any.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public TimesheetFileDto[] Files { get; set; }
     }
 }

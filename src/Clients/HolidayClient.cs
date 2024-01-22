@@ -45,17 +45,15 @@ namespace ProjectManager.SDK.Clients
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/resource";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
             if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
             return await _client.Request<ResourceHolidayDto[]>(HttpMethod.Get, url, options, null, null);
@@ -68,17 +66,15 @@ namespace ProjectManager.SDK.Clients
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/country";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
             if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
             return await _client.Request<CountryHolidayDto[]>(HttpMethod.Get, url, options, null, null);
@@ -91,17 +87,15 @@ namespace ProjectManager.SDK.Clients
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/global";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
             if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
             return await _client.Request<GlobalHolidayDto[]>(HttpMethod.Get, url, options, null, null);

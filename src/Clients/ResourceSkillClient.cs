@@ -47,17 +47,15 @@ namespace ProjectManager.SDK.Clients
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceSkillDto[]>> RetrieveResourceSkills(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceSkillDto[]>> RetrieveResourceSkills(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources/skills";
             var options = new Dictionary<string, object>();
             if (top != null) { options["$top"] = top; }
             if (skip != null) { options["$skip"] = skip; }
             if (filter != null) { options["$filter"] = filter; }
-            if (select != null) { options["$select"] = select; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
             return await _client.Request<ResourceSkillDto[]>(HttpMethod.Get, url, options, null, null);

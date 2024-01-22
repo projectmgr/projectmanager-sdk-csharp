@@ -118,5 +118,18 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
+
+        /// <summary>
+        /// Allows you to disconnect the provider specific user connection.
+        ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+        ///
+        /// </summary>
+        /// <param name="providerId">The identifier to the provider</param>
+        public async Task<AstroResult<string>> DisconnectUserIntegrationProviderConnection(Guid providerId)
+        {
+            var url = $"/api/data/integrations/providers/{providerId}/user-connection";
+            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+        }
     }
 }

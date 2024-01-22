@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    101.0.2818
+ * @version    102.0.2886
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -147,6 +147,10 @@ namespace ProjectManager.SDK
         /// API methods related to TaskFile
         /// </summary>
         ITaskFileClient TaskFile { get; }
+        /// <summary>
+        /// API methods related to TaskMetadata
+        /// </summary>
+        ITaskMetadataClient TaskMetadata { get; }
         /// <summary>
         /// API methods related to TaskStatus
         /// </summary>

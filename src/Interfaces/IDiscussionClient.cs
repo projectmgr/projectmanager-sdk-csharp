@@ -32,7 +32,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
-        Task<AstroResult<DiscussionDto[]>> RetrieveTaskComments(Guid taskId);
+        Task<AstroResult<DiscussionCommentDto[]>> RetrieveTaskComments(Guid taskId);
 
         /// <summary>
         /// Adds a Markdown-formatted comment to a task.
@@ -42,6 +42,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique ID number of the task being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body);
+        Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCommentCreateDto body);
     }
 }

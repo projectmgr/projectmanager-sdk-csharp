@@ -230,5 +230,14 @@ namespace ProjectManager.SDK.Models
         /// Project fields array with values
         /// </summary>
         public ProjectFieldValueDto[] FieldValues { get; set; }
+
+        /// <summary>
+        /// The list of files associated with this Project, if any.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public ProjectFileDto[] Files { get; set; }
     }
 }

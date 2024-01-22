@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>101.0.2818</version>
+		<version>102.0.2886</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,16 +14,33 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 101.0.2818
+            # Patch notes for 102.0.2886
             
             These patch notes summarize the changes from version 99.0.2550.
             
-            Added 5 new APIs:
+            Added 9 new APIs:
             * File.Deletefile (DELETE /api/data/files/{fileId})
             * Holiday.Queryresourceholidays (GET /api/data/holidays/resource)
             * Holiday.Querycountryholidays (GET /api/data/holidays/country)
             * Holiday.Queryglobalholidays (GET /api/data/holidays/global)
+            * IntegrationProvider.DisconnectUserIntegrationProviderConnection (DELETE /api/data/integrations/providers/{providerId}/user-connection)
             * NptFiles.UploadFileToNonProjectTasks (POST /api/data/non-project-tasks/{taskId}/files)
+            * TaskMetadata.AddMetadata (PUT /api/data/tasks/{taskId}/metadata)
+            * TaskMetadata.Gettaskmetadata (GET /api/data/tasks/{taskId}/metadata)
+            * TaskMetadata.GettasksbyprojectIDandforeignkeyID (GET /api/data/projects/{projectId}/tasks/metadata)
+            
+            Changes to existing APIs:
+            * Discussion.CreateTaskComments changed [body].Value.DataType from DiscussionCommentCreateDto to DiscussionCreateDto
+            * Discussion.CreateTaskComments changed [body].Value.DataTypeRef from /docs/discussioncommentcreatedto to /docs/discussioncreatedto
+            * Project.QueryProjects removed query parameter `$select`
+            * Resource.QueryResources removed query parameter `$select`
+            * ResourceSkill.RetrieveResourceSkills removed query parameter `$select`
+            * ResourceTeam.RetrieveResourceTeams removed query parameter `$select`
+            * Tag.QueryTags removed query parameter `$select`
+            * Task.QueryTasks removed query parameter `$select`
+            * TaskField.QueryTaskFields removed query parameter `$select`
+            * TaskField.QueryTaskFieldValues removed query parameter `$select`
+            * Timesheet.QueryTimeSheets removed query parameter `$select`
             
 
         </releaseNotes>

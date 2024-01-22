@@ -34,10 +34,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Retrieve a list of country holidays that match an [OData formatted query](https://www.odata.org/).
@@ -46,10 +45,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Retrieve a list of global holidays that match an [OData formatted query](https://www.odata.org/).
@@ -58,9 +56,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="select">Specify which properties should be returned</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string select = null, string orderby = null, string expand = null);
+        Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
     }
 }

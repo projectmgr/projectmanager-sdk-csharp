@@ -26,8 +26,13 @@ namespace ProjectManager.SDK.Models
     /// and users should be aware that HTML embedding is not permitted due to the risk of cross-site
     /// attacks and other embedding challenges.
     /// </summary>
-    public class DiscussionDto : ApiModel
+    public class DiscussionCommentDto : ApiModel
     {
+
+        /// <summary>
+        /// The unique ID of the discussion comment.
+        /// </summary>
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The text of the comment to add to the discussion, in Markdown format.
@@ -37,11 +42,6 @@ namespace ProjectManager.SDK.Models
         /// attacks and other embedding challenges.
         /// </summary>
         public string Text { get; set; }
-
-        /// <summary>
-        /// The unique ID of the discussion comment.
-        /// </summary>
-        public Guid? DiscussionCommentId { get; set; }
 
         /// <summary>
         /// The unique ID of the resource that wrote this comment.
@@ -68,5 +68,14 @@ namespace ProjectManager.SDK.Models
         /// be null if no emoji reactions have been recorded on this discussion comment.
         /// </summary>
         public DiscussionEmoji[] Emoji { get; set; }
+
+        /// <summary>
+        /// The list of files associated with this Comment, if any.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public DiscussionCommentFileDto[] Files { get; set; }
     }
 }

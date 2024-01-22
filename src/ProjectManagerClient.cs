@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    101.0.2818
+ * @version    102.0.2886
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "101.0.2818";
+        public const string SdkVersion = "102.0.2886";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -205,6 +205,11 @@ namespace ProjectManager.SDK
         public ITaskFileClient TaskFile { get; }
 
         /// <summary>
+        /// API methods related to TaskMetadata
+        /// </summary>
+        public ITaskMetadataClient TaskMetadata { get; }
+
+        /// <summary>
         /// API methods related to TaskStatus
         /// </summary>
         public ITaskStatusClient TaskStatus { get; }
@@ -282,6 +287,7 @@ namespace ProjectManager.SDK
             TaskAssignee = new TaskAssigneeClient(this);
             TaskField = new TaskFieldClient(this);
             TaskFile = new TaskFileClient(this);
+            TaskMetadata = new TaskMetadataClient(this);
             TaskStatus = new TaskStatusClient(this);
             TaskTag = new TaskTagClient(this);
             Teams = new TeamsClient(this);

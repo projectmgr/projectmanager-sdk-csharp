@@ -83,5 +83,14 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="providerId">The identifier to the provider</param>
         /// <param name="body">Specify the auth status</param>
         Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body);
+
+        /// <summary>
+        /// Allows you to disconnect the provider specific user connection.
+        ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+        ///
+        /// </summary>
+        /// <param name="providerId">The identifier to the provider</param>
+        Task<AstroResult<string>> DisconnectUserIntegrationProviderConnection(Guid providerId);
     }
 }

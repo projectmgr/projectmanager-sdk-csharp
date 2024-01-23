@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -34,37 +34,37 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// If specified this file belongs to a project. The value is the id of  this project
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// If specified, the file has been associated with this task.
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Taskid { get; set; }
 
         /// <summary>
         /// The reference for who uploaded the file
         /// </summary>
-        public Guid? OwnerId { get; set; }
+        public Guid? Ownerid { get; set; }
 
         /// <summary>
         /// The UTC time the file was created.
         /// </summary>
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? Createddate { get; set; }
 
         /// <summary>
         /// A reference to the folder
         /// </summary>
-        public Guid? FolderId { get; set; }
+        public Guid? Folderid { get; set; }
 
         /// <summary>
         /// The type of the file
         /// </summary>
-        public string FileType { get; set; }
+        public string Filetype { get; set; }
 
         /// <summary>
         /// A user friendly label for the file type
         /// </summary>
-        public string FileTypeLabel { get; set; }
+        public string Filetypelabel { get; set; }
 
         /// <summary>
         /// Size of the file in bytes
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Path to download the file
         /// </summary>
-        public string DownloadPath { get; set; }
+        public string Downloadpath { get; set; }
 
         /// <summary>
         /// Is the file in the trash can
@@ -94,6 +94,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Id of owner of parent entity
         /// </summary>
-        public Guid? EntityOwnerId { get; set; }
+        public Guid? Entityownerid { get; set; }
     }
 }

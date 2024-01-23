@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will replace TaskTags</param>
         /// <param name="body">The replacement list of TaskTags for this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTasktags(Guid taskId, NameDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will add TaskTags</param>
         /// <param name="body">The new TaskTags to add to this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> AddTaskTagtoTask(Guid taskId, NameDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> AddTasktagToTask(Guid taskId, NameDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will remove existing TaskTags</param>
         /// <param name="body">The TaskTags to remove from this Task</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagfromTask(Guid taskId, NameDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> RemoveTasktagFromTask(Guid taskId, NameDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);

@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -33,6 +33,6 @@ namespace ProjectManager.SDK.Interfaces
         /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39; UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
         ///
         /// </summary>
-        Task<AstroResult<UserRoleDto[]>> RetrieveUserRoles();
+        Task<AstroResult<UserRoleDto[]>> RetrieveUserroles();
     }
 }

@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -54,7 +54,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">User dashboard settings object</param>
-        public async Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body)
+        public async Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body)
         {
             var url = $"/api/data/dashboards/settings";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Post, url, null, body, null);

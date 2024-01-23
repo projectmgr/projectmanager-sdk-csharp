@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -45,6 +45,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
         /// <param name="body">Information about the user which will receive the invitation</param>
-        Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body);
+        Task<AstroResult<string>> InviteToWorkspace(string organizationId, WorkSpaceJoinDto body);
     }
 }

@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -34,22 +34,22 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// associated task id
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Taskid { get; set; }
 
         /// <summary>
         /// associated project id
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// resource id time entry entered
         /// </summary>
-        public Guid? ResourceId { get; set; }
+        public Guid? Resourceid { get; set; }
 
         /// <summary>
         /// admin task id
         /// </summary>
-        public Guid? TimesheetAdminTypeId { get; set; }
+        public Guid? Timesheetadmintypeid { get; set; }
 
         /// <summary>
         /// Date of time entry

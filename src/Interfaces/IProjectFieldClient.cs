@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The unique identifier of the Project that contains this ProjectField</param>
         /// <param name="fieldId">The unique identifier or short ID of this ProjectField</param>
         /// <param name="body">The new information for this ProjectField</param>
-        Task<AstroResult<string>> UpdateProjectFieldValue(Guid projectId, string fieldId, UpdateProjectFieldValueDto body);
+        Task<AstroResult<string>> UpdateProjectfieldValue(Guid projectId, string fieldId, UpdateProjectFieldValueDto body);
 
         /// <summary>
         /// Retrieves the current ProjectField value for a particular Project and ProjectField.
@@ -72,7 +72,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier or short ID of the ProjectField of the value to retrieve</param>
-        Task<AstroResult<ProjectFieldsValueResponseDto>> RetrieveProjectFieldValue(Guid projectId, string fieldId);
+        Task<AstroResult<ProjectFieldValueDto>> RetrieveProjectfieldValue(Guid projectId, string fieldId);
 
         /// <summary>
         /// Retrieves all ProjectField values for a particular Project.
@@ -81,6 +81,6 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for which we want ProjectField values</param>
-        Task<AstroResult<ProjectFieldsValueResponseDto[]>> RetrieveAllProjectFieldValues(Guid projectId);
+        Task<AstroResult<ProjectFieldValueDto[]>> RetrieveAllProjectfieldValues(Guid projectId);
     }
 }

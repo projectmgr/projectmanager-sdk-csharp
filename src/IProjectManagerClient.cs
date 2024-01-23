@@ -1,15 +1,15 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
- * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    99.0.2548
+ * @copyright  2023-2024 ProjectManager.com, Inc.
+ * @version    102.0.2886
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -44,6 +44,10 @@ namespace ProjectManager.SDK
         /// </summary>
         IFileClient File { get; }
         /// <summary>
+        /// API methods related to Holiday
+        /// </summary>
+        IHolidayClient Holiday { get; }
+        /// <summary>
         /// API methods related to HomeFile
         /// </summary>
         IHomeFileClient HomeFile { get; }
@@ -67,6 +71,10 @@ namespace ProjectManager.SDK
         /// API methods related to Me
         /// </summary>
         IMeClient Me { get; }
+        /// <summary>
+        /// API methods related to NptFiles
+        /// </summary>
+        INptFilesClient NptFiles { get; }
         /// <summary>
         /// API methods related to Project
         /// </summary>
@@ -139,6 +147,10 @@ namespace ProjectManager.SDK
         /// API methods related to TaskFile
         /// </summary>
         ITaskFileClient TaskFile { get; }
+        /// <summary>
+        /// API methods related to TaskMetadata
+        /// </summary>
+        ITaskMetadataClient TaskMetadata { get; }
         /// <summary>
         /// API methods related to TaskStatus
         /// </summary>

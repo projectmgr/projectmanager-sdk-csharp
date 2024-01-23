@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
         /// <param name="body">Information about the new TaskStatus level to create within this Project</param>
-        Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body);
+        Task<AstroResult<TaskStatusDto>> CreateTaskstatus(Guid projectId, TaskStatusCreateDto body);
 
         /// <summary>
         /// Updates an existing TaskStatus level for a specific Project within your Workspace.
@@ -54,7 +54,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
         /// <param name="body">Information about the existing TaskStatus level to update within this Project</param>
-        Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body);
+        Task<AstroResult<TaskStatusDto>> UpdateTaskstatus(Guid projectId, TaskStatusUpdateDto body);
 
         /// <summary>
         /// The endpoint is used to delete a TaskStatus.
@@ -64,6 +64,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for the TaskStatus level to delete</param>
         /// <param name="taskStatusId">The Id of the TaskStatus level to be removed.</param>
-        Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId);
+        Task<AstroResult<string>> DeleteTaskstatus(Guid projectId, Guid taskStatusId);
     }
 }

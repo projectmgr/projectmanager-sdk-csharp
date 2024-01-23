@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The preview image path for this ProjectTemplate.
         /// </summary>
-        public string PreviewImage { get; set; }
+        public string Previewimage { get; set; }
 
         /// <summary>
         /// The overall order of this ProjectTemplate.
@@ -75,11 +75,11 @@ namespace ProjectManager.SDK.Models
         /// Custom templates are Templates that have been created from existing
         /// Project definitions.
         /// </summary>
-        public bool? IsCustom { get; set; }
+        public bool? Iscustom { get; set; }
 
         /// <summary>
         /// The web default view of the template.
         /// </summary>
-        public string DefaultView { get; set; }
+        public string Defaultview { get; set; }
     }
 }

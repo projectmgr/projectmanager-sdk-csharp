@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -40,14 +40,14 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string FirstName { get; set; }
+        public string Firstname { get; set; }
 
         /// <summary>
         /// The last name of the person Resource.
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string LastName { get; set; }
+        public string Lastname { get; set; }
 
         /// <summary>
         /// The email address of this Resource.

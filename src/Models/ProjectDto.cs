@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Models
         /// name can be edited in the Project Settings page within the application
         /// and can be any text you wish.
         /// </summary>
-        public string ShortCode { get; set; }
+        public string Shortcode { get; set; }
 
         /// <summary>
         /// A short identifier that uniquely identifies this Project within your Workspace
@@ -63,7 +63,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This code is automatically assigned for you and cannot be changed.
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// If this Project is grouped within a ProjectFolder, this contains the ProjectFolder information.
@@ -82,7 +82,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string StartDate { get; set; }
+        public string Startdate { get; set; }
 
         /// <summary>
         /// The latest planned or actual finish date of tasks on the project.
@@ -91,7 +91,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string EndDate { get; set; }
+        public string Enddate { get; set; }
 
         /// <summary>
         /// The target planned completion date for this Project, or null if one has
@@ -100,7 +100,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string TargetDate { get; set; }
+        public string Targetdate { get; set; }
 
         /// <summary>
         /// A calculated field of the estimated date on which this Project is
@@ -112,7 +112,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string PlannedStartDate { get; set; }
+        public string Plannedstartdate { get; set; }
 
         /// <summary>
         /// A calculated field of the estimated date on which this Project is
@@ -124,7 +124,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string PlannedFinishDate { get; set; }
+        public string Plannedfinishdate { get; set; }
 
         /// <summary>
         /// A calculated field of the actual date on which this Project started.
@@ -135,7 +135,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string ActualStartDate { get; set; }
+        public string Actualstartdate { get; set; }
 
         /// <summary>
         /// A calculated field of the actual date on which this Project finished.
@@ -146,7 +146,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string ActualFinishDate { get; set; }
+        public string Actualfinishdate { get; set; }
 
         /// <summary>
         /// The ProjectPriority level of this Project, if defined.
@@ -156,7 +156,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The ChargeCode of this Project, if defined.
         /// </summary>
-        public ProjectChargeCodeDto ChargeCode { get; set; }
+        public ProjectChargeCodeDto Chargecode { get; set; }
 
         /// <summary>
         /// Information about the manager of this project, if one has been assigned.
@@ -178,7 +178,7 @@ namespace ProjectManager.SDK.Models
         /// if an assignee working on this Project does not have an hourly rate configured
         /// in their profile.
         /// </summary>
-        public decimal? HourlyRate { get; set; }
+        public decimal? Hourlyrate { get; set; }
 
         /// <summary>
         /// Contains an optional status update for Projects that can be used to summarize
@@ -186,7 +186,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// You can edit the StatusUpdate field on the Portfolio page of the application.
         /// </summary>
-        public string StatusUpdate { get; set; }
+        public string Statusupdate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when the Project was most recently modified.
@@ -194,7 +194,7 @@ namespace ProjectManager.SDK.Models
         /// This field is automatically determined by the system when this Project is modified
         /// and cannot be directly changed by the user.
         /// </summary>
-        public DateTime? ModifyDate { get; set; }
+        public DateTime? Modifydate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when the Project was created.
@@ -202,18 +202,24 @@ namespace ProjectManager.SDK.Models
         /// This field is automatically determined by the system when this Project is created
         /// and cannot be changed by the user.
         /// </summary>
-        public DateTime? CreateDate { get; set; }
+        public DateTime? Createdate { get; set; }
 
         /// <summary>
         /// True if this Project is a template that will be reused as a framework
         /// for future Projects.
         /// </summary>
-        public bool? IsTemplate { get; set; }
+        public bool? Istemplate { get; set; }
 
         /// <summary>
         /// True if this Project is marked as favorite for current user
         /// </summary>
         public bool? Favorite { get; set; }
+
+        /// <summary>
+        /// The TemplateId that this project was created from.
+        /// Will be null if no template was selected at project creation.
+        /// </summary>
+        public Guid? Creationtemplateid { get; set; }
 
         /// <summary>
         /// The members of the project
@@ -223,6 +229,15 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Project fields array with values
         /// </summary>
-        public object Fields { get; set; }
+        public ProjectFieldValueDto[] Fieldvalues { get; set; }
+
+        /// <summary>
+        /// The list of files associated with this Project, if any.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public ProjectFileDto[] Files { get; set; }
     }
 }

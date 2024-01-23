@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -43,10 +43,10 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
-        public async Task<AstroResult<DiscussionDto[]>> RetrieveTaskComments(Guid taskId)
+        public async Task<AstroResult<DiscussionCommentDto[]>> RetrieveTaskComments(Guid taskId)
         {
-            var url = $"/api/data/tasks/{taskId}/discussions";
-            return await _client.Request<DiscussionDto[]>(HttpMethod.Get, url, null, null, null);
+            var url = $"/api/data/tasks/{taskId}/comments";
+            return await _client.Request<DiscussionCommentDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique ID number of the task being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        public async Task<AstroResult<DiscussionCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCreateDto body)
+        public async Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateTaskComments(Guid taskId, DiscussionCommentCreateDto body)
         {
-            var url = $"/api/data/tasks/{taskId}/discussions";
-            return await _client.Request<DiscussionCreateResponseDto>(HttpMethod.Post, url, null, body, null);
+            var url = $"/api/data/tasks/{taskId}/comments";
+            return await _client.Request<DiscussionCommentCreateResponseDto>(HttpMethod.Post, url, null, body, null);
         }
     }
 }

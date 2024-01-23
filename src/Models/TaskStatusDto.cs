@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -36,7 +36,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the Project to which this TaskStatus belongs.
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// The name of this TaskStatus.
@@ -52,6 +52,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// True if a Task in this TaskStatus is considered done.
         /// </summary>
-        public bool? IsDone { get; set; }
+        public bool? Isdone { get; set; }
     }
 }

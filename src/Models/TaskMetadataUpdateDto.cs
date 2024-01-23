@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -20,15 +20,15 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    public class ODataFunctionImportInfo : ApiModel
+    /// <summary>
+    /// Task Metadata DTO
+    /// </summary>
+    public class TaskMetadataUpdateDto : ApiModel
     {
 
-        public ODataTypeAnnotation TypeAnnotation { get; set; }
-
-        public string Url { get; set; }
-
-        public string Name { get; set; }
-
-        public string Title { get; set; }
+        /// <summary>
+        /// Customer or system metadata
+        /// </summary>
+        public object Data { get; set; }
     }
 }

@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -51,7 +51,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// True if this TaskAssignee is currently active with the Project.
         /// </summary>
-        public bool? IsActive { get; set; }
+        public bool? Isactive { get; set; }
 
         /// <summary>
         /// The color that will be used to represent this TaskAssignee visually.
@@ -67,25 +67,35 @@ namespace ProjectManager.SDK.Models
         ///
         /// For personnel TaskAssignees only.
         /// </summary>
-        public string FirstName { get; set; }
+        public string Firstname { get; set; }
 
         /// <summary>
         /// The last or family name of this TaskAssignee.
         ///
         /// For personnel TaskAssignees only.
         /// </summary>
-        public string LastName { get; set; }
+        public string Lastname { get; set; }
 
         /// <summary>
         /// A shortened version of the name of this TaskAssignee.  This is used in areas
         /// where the Initials are too short but the full name is too long.
         /// </summary>
-        public string ShortName { get; set; }
+        public string Shortname { get; set; }
 
         /// <summary>
         /// A link to an Avatar for this TaskAssignee.  Avatars are small images or representations
         /// that can be used to visually identify this TaskAssignee at a glance.
         /// </summary>
-        public string AvatarUrl { get; set; }
+        public string Avatarurl { get; set; }
+
+        /// <summary>
+        /// The email address for the resource. It can be empty if the resource does not have a login.
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
+        /// The allocated effort (in minutes) for this Task and Assignee.
+        /// </summary>
+        public int? Allocatedeffort { get; set; }
     }
 }

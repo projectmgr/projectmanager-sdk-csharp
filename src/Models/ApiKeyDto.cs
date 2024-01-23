@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Created by user id
         /// </summary>
-        public Guid? CreatedBy { get; set; }
+        public Guid? Createdby { get; set; }
 
         /// <summary>
         /// Expires date
@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Bearer Key
         /// </summary>
-        public string ApiKey { get; set; }
+        public string Apikey { get; set; }
 
         /// <summary>
         /// Name of token

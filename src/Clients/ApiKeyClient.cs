@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -90,7 +90,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="id">The unique identifier of the API key to revoke</param>
-        public async Task<AstroResult<string>> RevokeAPIKey(Guid id)
+        public async Task<AstroResult<string>> RevokeApiKey(Guid id)
         {
             var url = $"/api/data/api-keys/{id}/revoke";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

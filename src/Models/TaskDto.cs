@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the Project to which this Task belongs.
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// The list of assignees who are to work on this Task, if any.
@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Models
         /// A short ID that can be used to refer to this Task.  This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// The common name of this Task.
@@ -94,7 +94,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string PlannedStartDate { get; set; }
+        public string Plannedstartdate { get; set; }
 
         /// <summary>
         /// The date when work on this Task is expected to complete.
@@ -111,7 +111,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string PlannedFinishDate { get; set; }
+        public string Plannedfinishdate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -128,7 +128,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string ActualStartDate { get; set; }
+        public string Actualstartdate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work was completed on this Task.
@@ -145,17 +145,17 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string ActualFinishDate { get; set; }
+        public string Actualfinishdate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was most recently modified.
         /// </summary>
-        public DateTime? ModifyDate { get; set; }
+        public DateTime? Modifydate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was created.
         /// </summary>
-        public DateTime? CreateDate { get; set; }
+        public DateTime? Createdate { get; set; }
 
         /// <summary>
         /// The numerical percentage, from 0-100, representing the percentage completion
@@ -165,7 +165,7 @@ namespace ProjectManager.SDK.Models
         /// This value can be edited manually in the Gantt chart view of the application,
         /// or can be selected on the Task Detail page within the Kanban board.
         /// </summary>
-        public int? PercentComplete { get; set; }
+        public int? Percentcomplete { get; set; }
 
         /// <summary>
         /// True if this Task is the parent of multiple Tasks underneath it.  A parent Task
@@ -175,12 +175,12 @@ namespace ProjectManager.SDK.Models
         /// You can create a summary Task in the Gantt chart view of the application by
         /// adding child tasks underneath a parent Task.
         /// </summary>
-        public bool? IsSummary { get; set; }
+        public bool? Issummary { get; set; }
 
         /// <summary>
         /// Return the priority of a task
         /// </summary>
-        public int? PriorityId { get; set; }
+        public int? Priorityid { get; set; }
 
         /// <summary>
         /// The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
@@ -201,26 +201,35 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The actual cost of this Task to date, if known.
         /// </summary>
-        public decimal? ActualCost { get; set; }
+        public decimal? Actualcost { get; set; }
 
         /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
-        public decimal? PlannedCost { get; set; }
+        public decimal? Plannedcost { get; set; }
 
         /// <summary>
         /// The planned duration (in minutes) for this Task.
         /// </summary>
-        public int? PlannedDuration { get; set; }
+        public int? Plannedduration { get; set; }
 
         /// <summary>
         /// The planned effort (in minutes) for this Task.
         /// </summary>
-        public int? PlannedEffort { get; set; }
+        public int? Plannedeffort { get; set; }
 
         /// <summary>
         /// Task fields array with values
         /// </summary>
-        public TaskFieldValueDto[] Fields { get; set; }
+        public TaskFieldValueDto[] Fieldvalues { get; set; }
+
+        /// <summary>
+        /// The list of files associated with this Task, if any.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public TaskFileDto[] Files { get; set; }
     }
 }

@@ -1,13 +1,13 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -69,7 +69,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The short Id of this TaskField - human readable identity
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// The Project to which this TaskField belongs.
@@ -79,11 +79,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Date and time (in UTC) that this TaskField was created.
         /// </summary>
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? Createddate { get; set; }
 
         /// <summary>
         /// Date and time (in UTC) that this TaskField was last modified.
         /// </summary>
-        public DateTime? ModifiedDate { get; set; }
+        public DateTime? Modifieddate { get; set; }
     }
 }

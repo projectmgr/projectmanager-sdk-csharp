@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
         /// <param name="body">List of Assignee data</param>
-        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
+        public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskassignee(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);

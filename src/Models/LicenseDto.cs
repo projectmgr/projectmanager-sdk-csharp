@@ -35,12 +35,12 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The SKU code of this License, used for billing purposes.
         /// </summary>
-        public string LicenseSku { get; set; }
+        public string Licensesku { get; set; }
 
         /// <summary>
         /// The SKU code of the bundle of this License, used for billing purposes.
         /// </summary>
-        public string BundleSku { get; set; }
+        public string Bundlesku { get; set; }
 
         /// <summary>
         /// True if this license is optional.

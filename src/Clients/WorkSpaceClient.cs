@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
         /// <param name="body">Information about the user which will receive the invitation</param>
-        public async Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body)
+        public async Task<AstroResult<string>> InviteToWorkspace(string organizationId, WorkSpaceJoinDto body)
         {
             var url = $"/api/data/workspaces/{organizationId}/join";
             return await _client.Request<string>(HttpMethod.Post, url, null, body, null);

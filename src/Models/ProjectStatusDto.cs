@@ -41,6 +41,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Is this a deleted status
         /// </summary>
-        public bool? IsDeleted { get; set; }
+        public bool? Isdeleted { get; set; }
     }
 }

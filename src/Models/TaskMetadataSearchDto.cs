@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Project ID
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// Customer or system metadata

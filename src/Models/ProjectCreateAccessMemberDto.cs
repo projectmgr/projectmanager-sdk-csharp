@@ -29,7 +29,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Member&#39;s id
         /// </summary>
-        public Guid? UserId { get; set; }
+        public Guid? Userid { get; set; }
 
         /// <summary>
         /// Member&#39;s role in the project

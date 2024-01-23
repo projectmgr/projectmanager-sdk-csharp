@@ -29,16 +29,16 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Master Connection for provider
         /// </summary>
-        public string MasterConnection { get; set; }
+        public string Masterconnection { get; set; }
 
         /// <summary>
         /// UserConnection for Provider.
         /// </summary>
-        public string UserConnection { get; set; }
+        public string Userconnection { get; set; }
 
         /// <summary>
         /// Master Connection scheme for Provider.
         /// </summary>
-        public object MasterConnectionSchema { get; set; }
+        public object Masterconnectionschema { get; set; }
     }
 }

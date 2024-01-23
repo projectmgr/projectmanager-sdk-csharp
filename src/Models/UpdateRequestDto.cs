@@ -40,11 +40,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// To assign this File to a Task, specify the TaskId here.
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Taskid { get; set; }
 
         /// <summary>
         /// To move this File to a new Folder, specify the Folder&#39;s unique identifier here.
         /// </summary>
-        public Guid? FolderId { get; set; }
+        public Guid? Folderid { get; set; }
     }
 }

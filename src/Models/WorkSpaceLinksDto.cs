@@ -34,6 +34,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// This is the link to the api for this business.  Some endpoints may need this value.
         /// </summary>
-        public string WorkSpaceApi { get; set; }
+        public string Workspaceapi { get; set; }
     }
 }

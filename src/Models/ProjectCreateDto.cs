@@ -44,46 +44,46 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the folder of this project, or null if not assigned.
         /// </summary>
-        public Guid? FolderId { get; set; }
+        public Guid? Folderid { get; set; }
 
         /// <summary>
         /// If you wish to grant access to this Project to a selected list of people during creation,
         /// provide a list of ProjectMembers here.  If you do not specify anyone, this Project will
         /// be available to only yourself.
         /// </summary>
-        public ProjectCreateAccessDto ProjectAccess { get; set; }
+        public ProjectCreateAccessDto Projectaccess { get; set; }
 
         /// <summary>
         /// The unique identifier of the customer for this project, or null if not customer specific
         /// </summary>
-        public Guid? CustomerId { get; set; }
+        public Guid? Customerid { get; set; }
 
         /// <summary>
         /// The unique identifier of the manager of this project, or null if not assigned.
         /// </summary>
-        public Guid? ManagerId { get; set; }
+        public Guid? Managerid { get; set; }
 
         /// <summary>
         /// The unique identifier of the ChargeCode for this Project, if one has been selected.
         /// </summary>
-        public Guid? ChargeCodeId { get; set; }
+        public Guid? Chargecodeid { get; set; }
 
         /// <summary>
         /// The ProjectStatus chosen for this Project, if one has been selected.
         /// </summary>
-        public Guid? StatusId { get; set; }
+        public Guid? Statusid { get; set; }
 
         /// <summary>
         /// The ProjectPriority level of this Project, if one has been selected.
         /// </summary>
-        public Guid? PriorityId { get; set; }
+        public Guid? Priorityid { get; set; }
 
         /// <summary>
         /// The default hourly rate for work on this Project.  This rate will be used
         /// if an assignee working on this Project does not have an hourly rate configured
         /// in their profile.
         /// </summary>
-        public decimal? HourlyRate { get; set; }
+        public decimal? Hourlyrate { get; set; }
 
         /// <summary>
         /// The proposed budget for this Project.
@@ -96,7 +96,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// You can edit the StatusUpdate field on the Portfolio page of the application.
         /// </summary>
-        public string StatusUpdate { get; set; }
+        public string Statusupdate { get; set; }
 
         /// <summary>
         /// True if this Project is a template that will be reused as a framework
@@ -119,7 +119,7 @@ namespace ProjectManager.SDK.Models
         /// This field does not support custom templates.  You must choose from a list of
         /// ProjectManager-supplied templates.
         /// </summary>
-        public Guid? TemplateId { get; set; }
+        public Guid? Templateid { get; set; }
 
         /// <summary>
         /// The target planned completion date for this Project, or null if one has
@@ -128,7 +128,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string TargetDate { get; set; }
+        public string Targetdate { get; set; }
 
         /// <summary>
         /// True if this Project is marked as favorite for current user

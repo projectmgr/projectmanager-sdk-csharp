@@ -35,14 +35,14 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string FirstName { get; set; }
+        public string Firstname { get; set; }
 
         /// <summary>
         /// The last name of the person Resource.
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string LastName { get; set; }
+        public string Lastname { get; set; }
 
         /// <summary>
         /// The email address of this Resource.
@@ -52,7 +52,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The basic hourly rate for this Resource.
         /// </summary>
-        public decimal? HourlyRate { get; set; }
+        public decimal? Hourlyrate { get; set; }
 
         /// <summary>
         /// The phone number associated with this Resource.
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Models
         /// A text field indicating the country in which this Resource is located.
         /// This value must be one of the following: US, NZ, AU.
         /// </summary>
-        public string CountryCode { get; set; }
+        public string Countrycode { get; set; }
 
         /// <summary>
         /// Free-form text notes about this Resource.  You may use this field to store extra
@@ -87,16 +87,16 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public Guid? RoleId { get; set; }
+        public Guid? Roleid { get; set; }
 
         /// <summary>
         /// The list of ResourceTeams to which this Resource belongs.
         /// </summary>
-        public Guid[] TeamIds { get; set; }
+        public Guid[] Teamids { get; set; }
 
         /// <summary>
         /// The list of ResourceSkills possessed by this Resource.
         /// </summary>
-        public Guid[] SkillIds { get; set; }
+        public Guid[] Skillids { get; set; }
     }
 }

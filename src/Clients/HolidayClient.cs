@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceHolidayDto[]>> QueryResourceHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/resource";
             var options = new Dictionary<string, object>();
@@ -68,7 +68,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<CountryHolidayDto[]>> QueryCountryHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/country";
             var options = new Dictionary<string, object>();
@@ -89,7 +89,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<GlobalHolidayDto[]>> QueryGlobalHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/holidays/global";
             var options = new Dictionary<string, object>();

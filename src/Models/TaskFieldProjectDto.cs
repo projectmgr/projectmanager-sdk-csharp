@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The ShortId of this Project.
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// The common name of this Project.

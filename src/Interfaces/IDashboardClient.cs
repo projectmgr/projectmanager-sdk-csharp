@@ -39,6 +39,6 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="body">User dashboard settings object</param>
-        Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body);
+        Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body);
     }
 }

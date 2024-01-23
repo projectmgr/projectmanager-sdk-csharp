@@ -32,7 +32,7 @@ namespace ProjectManager.SDK.Models
         /// A short ID that can be used to refer to this Task.  This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// The common name of this Task.

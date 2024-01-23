@@ -54,7 +54,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Date and time (in UTC) that this timesheet entry was last modified.
         /// </summary>
-        public DateTime? ModifiedDate { get; set; }
+        public DateTime? Modifieddate { get; set; }
 
         /// <summary>
         /// The task associated with this timesheet entry
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The administration type associated with this timesheet entry
         /// </summary>
-        public TimesheetAdminTypeDto AdminType { get; set; }
+        public TimesheetAdminTypeDto Admintype { get; set; }
 
         /// <summary>
         /// The list of files associated with this Timesheet, if any.

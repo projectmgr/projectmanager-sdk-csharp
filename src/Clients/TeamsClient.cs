@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// The Teams API is intended for use by ProjectManager and its business development partners.  Please
         /// contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
-        public async Task<AstroResult<byte[]>> RetrievezipfileforTeamsIntegrations()
+        public async Task<AstroResult<byte[]>> RetrieveZipFileForTeamsIntegrations()
         {
             var url = $"/api/data/integrations/teams/application";
             return await _client.Request<byte[]>(HttpMethod.Get, url, null, null, null);

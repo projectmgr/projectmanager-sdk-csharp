@@ -31,6 +31,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the BusinessUser to invite to this Workspace.
         /// </summary>
-        public Guid? BusinessUserId { get; set; }
+        public Guid? Businessuserid { get; set; }
     }
 }

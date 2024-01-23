@@ -76,7 +76,7 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId);
+        Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskfieldValues(Guid taskId);
 
         /// <summary>
         /// Retrieve a list of TaskFieldValues that match an [OData formatted query](https://www.odata.org/).

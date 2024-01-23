@@ -39,6 +39,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Send to the client true/false
         /// </summary>
-        public bool? SendToClient { get; set; }
+        public bool? Sendtoclient { get; set; }
     }
 }

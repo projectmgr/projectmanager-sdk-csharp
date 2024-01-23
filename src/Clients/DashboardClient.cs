@@ -54,7 +54,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">User dashboard settings object</param>
-        public async Task<AstroResult<DashboardSettingDto>> CreateorUpdateUserDashboardSettings(DashboardSettingCreateDto body)
+        public async Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body)
         {
             var url = $"/api/data/dashboards/settings";
             return await _client.Request<DashboardSettingDto>(HttpMethod.Post, url, null, body, null);

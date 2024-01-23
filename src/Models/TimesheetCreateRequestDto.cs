@@ -41,17 +41,17 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Task id that time reported to
         /// </summary>
-        public Guid? TaskId { get; set; }
+        public Guid? Taskid { get; set; }
 
         /// <summary>
         /// Admin task id that time reportsed to
         /// </summary>
-        public Guid? AdminTypeId { get; set; }
+        public Guid? Admintypeid { get; set; }
 
         /// <summary>
         /// Resource id that time reported to
         /// </summary>
-        public Guid? ResourceId { get; set; }
+        public Guid? Resourceid { get; set; }
 
         /// <summary>
         /// Notes

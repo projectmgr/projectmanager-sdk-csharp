@@ -67,6 +67,6 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// </summary>
         /// <param name="id">The unique identifier of the API key to revoke</param>
-        Task<AstroResult<string>> RevokeAPIKey(Guid id);
+        Task<AstroResult<string>> RevokeApiKey(Guid id);
     }
 }

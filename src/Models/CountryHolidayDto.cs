@@ -41,6 +41,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Country id holiday associated to
         /// </summary>
-        public int? CountryId { get; set; }
+        public int? Countryid { get; set; }
     }
 }

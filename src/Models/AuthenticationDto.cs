@@ -34,6 +34,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Authenication scheme
         /// </summary>
-        public object AuthScheme { get; set; }
+        public object Authscheme { get; set; }
     }
 }

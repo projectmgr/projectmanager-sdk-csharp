@@ -37,8 +37,6 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="body">The metadata</param>
         Task<AstroResult<string>> AddMetadata(Guid taskId, TaskMetadataUpdateDto body, bool? isSystem = null, bool? isOverride = null);
 
-        Task<AstroResult<StringObjectDictionary>> Gettaskmetadata(Guid taskId, bool? isSystem = null);
-
-        Task<AstroResult<TaskMetadataSearchDto[]>> GettasksbyprojectIDandforeignkeyID(Guid projectId, string foreignKey = null, bool? isSystem = null);
+        Task<AstroResult<TaskMetadataSearchDto[]>> GetTasksByProjectIdAndForeignKeyId(Guid projectId, string foreignKey = null, bool? isSystem = null);
     }
 }

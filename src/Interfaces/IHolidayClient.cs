@@ -36,7 +36,7 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<ResourceHolidayDto[]>> Queryresourceholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
+        Task<AstroResult<ResourceHolidayDto[]>> QueryResourceHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Retrieve a list of country holidays that match an [OData formatted query](https://www.odata.org/).
@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<CountryHolidayDto[]>> Querycountryholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
+        Task<AstroResult<CountryHolidayDto[]>> QueryCountryHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Retrieve a list of global holidays that match an [OData formatted query](https://www.odata.org/).
@@ -58,6 +58,6 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<GlobalHolidayDto[]>> Queryglobalholidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
+        Task<AstroResult<GlobalHolidayDto[]>> QueryGlobalHolidays(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
     }
 }

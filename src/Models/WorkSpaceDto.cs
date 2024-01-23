@@ -41,23 +41,23 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique DNS domain of this Workspace.
         /// </summary>
-        public string CustomProductDomain { get; set; }
+        public string Customproductdomain { get; set; }
 
         /// <summary>
         /// TODO - What is this value?
         /// </summary>
-        public Guid? CustomerId { get; set; }
+        public Guid? Customerid { get; set; }
 
         /// <summary>
         /// This value is set to true if the user who retrieves this Workspace object via an API call is
         /// the owner of this Workspace.
         /// </summary>
-        public bool? IsOwner { get; set; }
+        public bool? Isowner { get; set; }
 
         /// <summary>
         /// The organization code used for authentication systems for this Workspace.
         /// </summary>
-        public string OrganizationId { get; set; }
+        public string Organizationid { get; set; }
 
         /// <summary>
         /// The RGB color in the format `#RRGGBB` for this Workspace.
@@ -67,26 +67,26 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The role of the current user within this Workspace.
         /// </summary>
-        public string RoleName { get; set; }
+        public string Rolename { get; set; }
 
         /// <summary>
         /// The timestamp when the Workspace was created.
         /// </summary>
-        public DateTime? RegisterDate { get; set; }
+        public DateTime? Registerdate { get; set; }
 
         /// <summary>
         /// True if the user has accepted an invitation to this Workspace.
         /// </summary>
-        public bool? IsInviteAccepted { get; set; }
+        public bool? Isinviteaccepted { get; set; }
 
         /// <summary>
         /// The unique identifier of the BusinessUser that is the owner of this Workspace.
         /// </summary>
-        public Guid? BusinessUserId { get; set; }
+        public Guid? Businessuserid { get; set; }
 
         /// <summary>
         /// True if this Workspace has an active subscription; false if this is a free trial.
         /// </summary>
-        public bool? IsPaid { get; set; }
+        public bool? Ispaid { get; set; }
     }
 }

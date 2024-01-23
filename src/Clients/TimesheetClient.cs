@@ -43,7 +43,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="body">Payload</param>
-        public async Task<AstroResult<TimesheetResponseDto>> Createtimeentry(TimesheetCreateRequestDto body)
+        public async Task<AstroResult<TimesheetResponseDto>> CreateTimeEntry(TimesheetCreateRequestDto body)
         {
             var url = $"/api/data/timesheets";
             return await _client.Request<TimesheetResponseDto>(HttpMethod.Post, url, null, body, null);
@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<TimesheetDto[]>> QueryTimesheets(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/timesheets";
             var options = new Dictionary<string, object>();
@@ -77,7 +77,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
-        public async Task<AstroResult<string>> Deletetimeentry(Guid timesheetId)
+        public async Task<AstroResult<string>> DeleteTimeEntry(Guid timesheetId)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
@@ -89,7 +89,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
         /// <param name="body">payload</param>
-        public async Task<AstroResult<TimesheetResponseDto>> Updatetimeentry(Guid timesheetId, TimesheetUpdateRequestDto body)
+        public async Task<AstroResult<TimesheetResponseDto>> UpdateTimeEntry(Guid timesheetId, TimesheetUpdateRequestDto body)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
             return await _client.Request<TimesheetResponseDto>(HttpMethod.Put, url, null, body, null);
@@ -99,7 +99,7 @@ namespace ProjectManager.SDK.Clients
         /// Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
         ///
         /// </summary>
-        public async Task<AstroResult<TimesheetAdminTypeDto[]>> Returnsactiveadmintasksthatareusedtoreporttime()
+        public async Task<AstroResult<TimesheetAdminTypeDto[]>> ReturnsActiveAdminTasksThatAreUsedToReportTime()
         {
             var url = $"/api/data/timesheets/admin-tasks";
             return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null, null, null);

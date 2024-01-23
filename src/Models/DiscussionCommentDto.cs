@@ -46,22 +46,22 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique ID of the resource that wrote this comment.
         /// </summary>
-        public Guid? AuthorId { get; set; }
+        public Guid? Authorid { get; set; }
 
         /// <summary>
         /// The unique ID of the resource that wrote this comment.
         /// </summary>
-        public string AuthorName { get; set; }
+        public string Authorname { get; set; }
 
         /// <summary>
         /// The timestamp when the comment was created.
         /// </summary>
-        public DateTime? CreateDate { get; set; }
+        public DateTime? Createdate { get; set; }
 
         /// <summary>
         /// The timestamp when the comment was modified, if it is different from the create date.
         /// </summary>
-        public DateTime? ModifyDate { get; set; }
+        public DateTime? Modifydate { get; set; }
 
         /// <summary>
         /// The list of emoji reactions to this discussion comment, if any.  This object will

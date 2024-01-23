@@ -45,6 +45,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
         /// <param name="body">Information about the user which will receive the invitation</param>
-        Task<AstroResult<string>> InvitetoWorkspace(string organizationId, WorkSpaceJoinDto body);
+        Task<AstroResult<string>> InviteToWorkspace(string organizationId, WorkSpaceJoinDto body);
     }
 }

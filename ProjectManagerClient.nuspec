@@ -9,7 +9,7 @@
 		<license type="file">docs/LICENSE</license>
 		<projectUrl>https://github.com/projectmgr/projectmanager-sdk-csharp</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Software development kit for the ProjectManager.com API. for DotNet</description>
+		<description> for DotNet</description>
 		<icon>docs/logo.png</icon>
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
@@ -18,16 +18,15 @@
             
             These patch notes summarize the changes from version 99.0.2550.
             
-            Added 9 new APIs:
-            * File.Deletefile (DELETE /api/data/files/{fileId})
-            * Holiday.Queryresourceholidays (GET /api/data/holidays/resource)
-            * Holiday.Querycountryholidays (GET /api/data/holidays/country)
-            * Holiday.Queryglobalholidays (GET /api/data/holidays/global)
+            Added 8 new APIs:
+            * File.DeleteFile (DELETE /api/data/files/{fileId})
+            * Holiday.QueryResourceHolidays (GET /api/data/holidays/resource)
+            * Holiday.QueryCountryHolidays (GET /api/data/holidays/country)
+            * Holiday.QueryGlobalHolidays (GET /api/data/holidays/global)
             * IntegrationProvider.DisconnectUserIntegrationProviderConnection (DELETE /api/data/integrations/providers/{providerId}/user-connection)
             * NptFiles.UploadFileToNonProjectTasks (POST /api/data/non-project-tasks/{taskId}/files)
             * TaskMetadata.AddMetadata (PUT /api/data/tasks/{taskId}/metadata)
-            * TaskMetadata.Gettaskmetadata (GET /api/data/tasks/{taskId}/metadata)
-            * TaskMetadata.GettasksbyprojectIDandforeignkeyID (GET /api/data/projects/{projectId}/tasks/metadata)
+            * TaskMetadata.GetTasksByProjectIdAndForeignKeyId (GET /api/data/projects/{projectId}/tasks/metadata)
             
             Changes to existing APIs:
             * Discussion.CreateTaskComments changed [body].Value.DataType from DiscussionCommentCreateDto to DiscussionCreateDto
@@ -40,12 +39,12 @@
             * Task.QueryTasks removed query parameter `$select`
             * TaskField.QueryTaskFields removed query parameter `$select`
             * TaskField.QueryTaskFieldValues removed query parameter `$select`
-            * Timesheet.QueryTimeSheets removed query parameter `$select`
+            * Timesheet.QueryTimesheets removed query parameter `$select`
             
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2024</copyright>
-    	<tags>projectmanager project management task tracking projects tasks</tags>
+    	<tags></tags>
 		<repository type="git" url="https://github.com/projectmgr/projectmanager-sdk-csharp" />
 		<dependencies>
 			<group targetFramework=".NETStandard2.0">

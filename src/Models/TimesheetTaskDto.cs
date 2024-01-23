@@ -36,13 +36,13 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the Project to which this Task belongs.
         /// </summary>
-        public Guid? ProjectId { get; set; }
+        public Guid? Projectid { get; set; }
 
         /// <summary>
         /// A short ID that can be used to refer to this Task.  This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
-        public string ShortId { get; set; }
+        public string Shortid { get; set; }
 
         /// <summary>
         /// The common name of this Task.
@@ -67,7 +67,7 @@ namespace ProjectManager.SDK.Models
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
         /// </summary>
-        public DateTime? PlannedStartDate { get; set; }
+        public DateTime? Plannedstartdate { get; set; }
 
         /// <summary>
         /// The date when work on this Task is expected to complete.
@@ -82,7 +82,7 @@ namespace ProjectManager.SDK.Models
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
         /// </summary>
-        public DateTime? PlannedFinishDate { get; set; }
+        public DateTime? Plannedfinishdate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -97,7 +97,7 @@ namespace ProjectManager.SDK.Models
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
         /// </summary>
-        public DateTime? ActualStartDate { get; set; }
+        public DateTime? Actualstartdate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work was completed on this Task.
@@ -112,17 +112,17 @@ namespace ProjectManager.SDK.Models
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
         /// </summary>
-        public DateTime? ActualFinishDate { get; set; }
+        public DateTime? Actualfinishdate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was most recently modified.
         /// </summary>
-        public DateTime? ModifyDate { get; set; }
+        public DateTime? Modifydate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was created.
         /// </summary>
-        public DateTime? CreateDate { get; set; }
+        public DateTime? Createdate { get; set; }
 
         /// <summary>
         /// The numerical percentage, from 0-100, representing the percentage completion
@@ -132,7 +132,7 @@ namespace ProjectManager.SDK.Models
         /// This value can be edited manually in the Gantt chart view of the application,
         /// or can be selected on the Task Detail page within the Kanban board.
         /// </summary>
-        public int? PercentComplete { get; set; }
+        public int? Percentcomplete { get; set; }
 
         /// <summary>
         /// True if this Task is the parent of multiple Tasks underneath it.  A parent Task
@@ -142,12 +142,12 @@ namespace ProjectManager.SDK.Models
         /// You can create a summary Task in the Gantt chart view of the application by
         /// adding child tasks underneath a parent Task.
         /// </summary>
-        public bool? IsSummary { get; set; }
+        public bool? Issummary { get; set; }
 
         /// <summary>
         /// Return the priority of a task
         /// </summary>
-        public int? PriorityId { get; set; }
+        public int? Priorityid { get; set; }
 
         /// <summary>
         /// The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
@@ -168,11 +168,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The actual cost of this Task to date, if known.
         /// </summary>
-        public decimal? ActualCost { get; set; }
+        public decimal? Actualcost { get; set; }
 
         /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
-        public decimal? PlannedCost { get; set; }
+        public decimal? Plannedcost { get; set; }
     }
 }

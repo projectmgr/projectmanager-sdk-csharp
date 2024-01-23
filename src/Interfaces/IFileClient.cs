@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Interfaces
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document for which to download the thumbnail.</param>
-        Task<AstroResult<byte[]>> DownloadaThumbnailImage(Guid documentId);
+        Task<AstroResult<byte[]>> DownloadAThumbnailImage(Guid documentId);
 
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.
@@ -83,6 +83,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to delete</param>
         /// <param name="hard">Param indicates that file should be hard deleted</param>
-        Task<AstroResult<string>> Deletefile(Guid fileId, bool? hard = null);
+        Task<AstroResult<string>> DeleteFile(Guid fileId, bool? hard = null);
     }
 }

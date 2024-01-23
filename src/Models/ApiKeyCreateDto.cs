@@ -29,6 +29,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Name of token
         /// </summary>
-        public string TokenName { get; set; }
+        public string Tokenname { get; set; }
     }
 }

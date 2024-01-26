@@ -19,6 +19,9 @@ using System;
 
 namespace ProjectManager.SDK
 {
+    /// <summary>
+    /// Information about an API error received from ProjectManager.com
+    /// </summary>
     public class AstroError
     {
                 

@@ -20,6 +20,9 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
+    /// <summary>
+    /// Project File
+    /// </summary>
     public class ProjectFileDto : ApiModel
     {
 

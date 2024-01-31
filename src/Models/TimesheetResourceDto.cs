@@ -40,14 +40,14 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// The last name of the person Resource.
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         /// <summary>
         /// The email address of this Resource.

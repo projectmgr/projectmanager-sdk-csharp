@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique Short Id of this Project Field.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// The name of this Project Field.
@@ -60,11 +60,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Date and time (in UTC) that this TaskField was created.
         /// </summary>
-        public DateTime? Createddate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Date and time (in UTC) that this TaskField was last modified.
         /// </summary>
-        public DateTime? Modifieddate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
     }
 }

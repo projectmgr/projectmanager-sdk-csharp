@@ -40,7 +40,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// A short ID that uniquely identifies this Provider.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// A short summary of this Provider and their service.
@@ -55,12 +55,12 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// A list of available license SKUs for this Provider.
         /// </summary>
-        public string[] Licenseskus { get; set; }
+        public string[] LicenseSkus { get; set; }
 
         /// <summary>
         /// A list of category IDs that this Provider exists within.
         /// </summary>
-        public string[] Categoryshortids { get; set; }
+        public string[] CategoryShortIds { get; set; }
 
         /// <summary>
         /// True if this Provider is available for use.
@@ -80,11 +80,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The list of available AuthSetup for this Provider.
         /// </summary>
-        public IntegrationAuthSetupDto Authsetup { get; set; }
+        public IntegrationAuthSetupDto AuthSetup { get; set; }
 
         /// <summary>
         /// Flag whether user/workspace needs to be setup in Workato
         /// </summary>
-        public bool? Createinworkato { get; set; }
+        public bool? CreateInWorkato { get; set; }
     }
 }

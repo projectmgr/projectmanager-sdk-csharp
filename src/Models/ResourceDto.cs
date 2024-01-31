@@ -40,14 +40,14 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// The last name of the person Resource.
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         /// <summary>
         /// If this Resource is a person who can log on to ProjectManager.com, this value should be the email address of the
@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The basic hourly rate for this Resource.
         /// </summary>
-        public decimal? Hourlyrate { get; set; }
+        public decimal? HourlyRate { get; set; }
 
         /// <summary>
         /// The phone number associated with this Resource.
@@ -112,7 +112,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// Applies to personnel Resources only.
         /// </summary>
-        public DateTime? Onlinedatetime { get; set; }
+        public DateTime? OnlineDateTime { get; set; }
 
         /// <summary>
         /// The Role privileges associated with this Resource.
@@ -128,6 +128,6 @@ namespace ProjectManager.SDK.Models
         /// For personnel Resources, setting this value to False will make this user unable
         /// to access this Workspace.
         /// </summary>
-        public bool? Isactive { get; set; }
+        public bool? IsActive { get; set; }
     }
 }

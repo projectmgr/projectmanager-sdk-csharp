@@ -45,7 +45,7 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        Task<AstroResult<TimesheetDto[]>> QueryTimesheets(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
+        Task<AstroResult<TimesheetDto[]>> QueryTimeSheets(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null);
 
         /// <summary>
         /// Delete time entry by id.

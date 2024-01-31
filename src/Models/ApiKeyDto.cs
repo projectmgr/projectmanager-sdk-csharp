@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Created by user id
         /// </summary>
-        public Guid? Createdby { get; set; }
+        public Guid? CreatedBy { get; set; }
 
         /// <summary>
         /// Expires date
@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Bearer Key
         /// </summary>
-        public string Apikey { get; set; }
+        public string ApiKey { get; set; }
 
         /// <summary>
         /// Name of token

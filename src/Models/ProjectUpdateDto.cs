@@ -48,48 +48,48 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Targetdate { get; set; }
+        public string TargetDate { get; set; }
 
         /// <summary>
         /// To move this Project into a ProjectFolder, set this to the unique identifier of the
         /// ProjectFolder.
         /// </summary>
-        public Guid? Folderid { get; set; }
+        public Guid? FolderId { get; set; }
 
         /// <summary>
         /// To assign this Project to a ProjectCustomer, set this to the unique identifier of the
         /// ProjectCustomer.
         /// </summary>
-        public Guid? Customerid { get; set; }
+        public Guid? CustomerId { get; set; }
 
         /// <summary>
         /// To assign this Project to a ProjectManager, set this to the unique identifier of the
         /// ProjectManager.
         /// </summary>
-        public Guid? Managerid { get; set; }
+        public Guid? ManagerId { get; set; }
 
         /// <summary>
         /// To set the ChargeCode for this Project, set this to the unique identifier of the
         /// ChargeCode to use for this Project.
         /// </summary>
-        public Guid? Chargecodeid { get; set; }
+        public Guid? ChargeCodeId { get; set; }
 
         /// <summary>
         /// To change the ProjectStatus of this Project, set this to the unique identifier of the
         /// ProjectStatus.
         /// </summary>
-        public Guid? Statusid { get; set; }
+        public Guid? StatusId { get; set; }
 
         /// <summary>
         /// To change the ProjectPriority of this Project, set this to the unique identifier of the
         /// ProjectPriority.
         /// </summary>
-        public Guid? Priorityid { get; set; }
+        public Guid? PriorityId { get; set; }
 
         /// <summary>
         /// To change the hourly rate of this Project, set this to the new amount.
         /// </summary>
-        public decimal? Hourlyrate { get; set; }
+        public decimal? HourlyRate { get; set; }
 
         /// <summary>
         /// To change the budget of this Project, set this to the new amount.
@@ -99,7 +99,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// To update the Project&#39;s status text, set this to the new status text.
         /// </summary>
-        public string Statusupdate { get; set; }
+        public string StatusUpdate { get; set; }
 
         /// <summary>
         /// Mark this project as favorite for the logged in user.

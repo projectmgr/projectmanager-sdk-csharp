@@ -39,6 +39,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// This class contains the AuthScheme to use to authenticate with the Integration Provider.
         /// </summary>
-        public object Authscheme { get; set; }
+        public object AuthScheme { get; set; }
     }
 }

@@ -34,37 +34,37 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// If specified this file belongs to a project. The value is the id of  this project
         /// </summary>
-        public Guid? Projectid { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// If specified, the file has been associated with this task.
         /// </summary>
-        public Guid? Taskid { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
         /// The reference for who uploaded the file
         /// </summary>
-        public Guid? Ownerid { get; set; }
+        public Guid? OwnerId { get; set; }
 
         /// <summary>
         /// The UTC time the file was created.
         /// </summary>
-        public DateTime? Createddate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// A reference to the folder
         /// </summary>
-        public Guid? Folderid { get; set; }
+        public Guid? FolderId { get; set; }
 
         /// <summary>
         /// The type of the file
         /// </summary>
-        public string Filetype { get; set; }
+        public string FileType { get; set; }
 
         /// <summary>
         /// A user friendly label for the file type
         /// </summary>
-        public string Filetypelabel { get; set; }
+        public string FileTypeLabel { get; set; }
 
         /// <summary>
         /// Size of the file in bytes
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Path to download the file
         /// </summary>
-        public string Downloadpath { get; set; }
+        public string DownloadPath { get; set; }
 
         /// <summary>
         /// Is the file in the trash can
@@ -94,6 +94,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Id of owner of parent entity
         /// </summary>
-        public Guid? Entityownerid { get; set; }
+        public Guid? EntityOwnerId { get; set; }
     }
 }

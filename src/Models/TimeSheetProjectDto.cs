@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Models
         /// name can be edited in the Project Settings page within the application
         /// and can be any text you wish.
         /// </summary>
-        public string Shortcode { get; set; }
+        public string ShortCode { get; set; }
 
         /// <summary>
         /// A short identifier that uniquely identifies this Project within your Workspace
@@ -62,28 +62,28 @@ namespace ProjectManager.SDK.Models
         ///
         /// This code is automatically assigned for you and cannot be changed.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// The earliest planned or actual start date of tasks on the project.
         ///
         /// This field is calculated automatically and cannot be changed.
         /// </summary>
-        public DateTime? Startdate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// The latest planned or actual finish date of tasks on the project.
         ///
         /// This field is calculated automatically and cannot be changed.
         /// </summary>
-        public DateTime? Enddate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// The target planned completion date for this Project, or null if one has
         /// not been selected.  This value can be updated in the Project Settings
         /// page or the Portfolio Project page within the application.
         /// </summary>
-        public DateTime? Targetdate { get; set; }
+        public DateTime? TargetDate { get; set; }
 
         /// <summary>
         /// The proposed budget for this Project.
@@ -95,7 +95,7 @@ namespace ProjectManager.SDK.Models
         /// if an assignee working on this Project does not have an hourly rate configured
         /// in their profile.
         /// </summary>
-        public decimal? Hourlyrate { get; set; }
+        public decimal? HourlyRate { get; set; }
 
         /// <summary>
         /// Contains an optional status update for Projects that can be used to summarize
@@ -103,22 +103,22 @@ namespace ProjectManager.SDK.Models
         ///
         /// You can edit the StatusUpdate field on the Portfolio page of the application.
         /// </summary>
-        public string Statusupdate { get; set; }
+        public string StatusUpdate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when the Project was most recently modified.
         /// </summary>
-        public DateTime? Modifydate { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when the Project was created.
         /// </summary>
-        public DateTime? Createdate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// True if this Project is a template that will be reused as a framework
         /// for future Projects.
         /// </summary>
-        public bool? Istemplate { get; set; }
+        public bool? IsTemplate { get; set; }
     }
 }

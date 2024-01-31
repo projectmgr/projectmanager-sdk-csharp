@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The preview image path for this ProjectTemplate.
         /// </summary>
-        public string Previewimage { get; set; }
+        public string PreviewImage { get; set; }
 
         /// <summary>
         /// The overall order of this ProjectTemplate.
@@ -75,11 +75,11 @@ namespace ProjectManager.SDK.Models
         /// Custom templates are Templates that have been created from existing
         /// Project definitions.
         /// </summary>
-        public bool? Iscustom { get; set; }
+        public bool? IsCustom { get; set; }
 
         /// <summary>
         /// The web default view of the template.
         /// </summary>
-        public string Defaultview { get; set; }
+        public string DefaultView { get; set; }
     }
 }

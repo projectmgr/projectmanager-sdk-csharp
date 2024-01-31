@@ -20,9 +20,6 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// A file attached to a timesheet
-    /// </summary>
     public class TimesheetFileDto : ApiModel
     {
 

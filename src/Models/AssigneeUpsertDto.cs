@@ -36,6 +36,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The new amount of effort to assign for this Resource. This value is measured in minutes.
         /// </summary>
-        public int? Assignedeffort { get; set; }
+        public int? AssignedEffort { get; set; }
     }
 }

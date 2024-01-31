@@ -90,7 +90,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="id">The unique identifier of the API key to revoke</param>
-        public async Task<AstroResult<string>> RevokeApiKey(Guid id)
+        public async Task<AstroResult<string>> RevokeAPIKey(Guid id)
         {
             var url = $"/api/data/api-keys/{id}/revoke";
             return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);

@@ -46,17 +46,17 @@ namespace ProjectManager.SDK.Models
         /// This value can be edited manually in the Gantt chart view of the application,
         /// or can be selected on the Task Detail page within the Kanban board.
         /// </summary>
-        public int? Percentcomplete { get; set; }
+        public int? PercentComplete { get; set; }
 
         /// <summary>
         /// The TaskStatus assigned to this Task.
         /// </summary>
-        public Guid? Statusid { get; set; }
+        public Guid? StatusId { get; set; }
 
         /// <summary>
         /// The unique identifier of the TaskPriority
         /// </summary>
-        public int? Priorityid { get; set; }
+        public int? PriorityId { get; set; }
 
         /// <summary>
         /// The date when work on this Task is planned to begin.
@@ -73,7 +73,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Plannedstartdate { get; set; }
+        public string PlannedStartDate { get; set; }
 
         /// <summary>
         /// The date when work on this Task is expected to complete.
@@ -90,22 +90,22 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Plannedfinishdate { get; set; }
+        public string PlannedFinishDate { get; set; }
 
         /// <summary>
         /// The planned duration (in minutes) for this Task.  Cannot be negative.
         /// </summary>
-        public int? Plannedduration { get; set; }
+        public int? PlannedDuration { get; set; }
 
         /// <summary>
         /// The planned effort (in minutes) for this Task.  Cannot be negative.
         /// </summary>
-        public int? Plannedeffort { get; set; }
+        public int? PlannedEffort { get; set; }
 
         /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
-        public decimal? Plannedcost { get; set; }
+        public decimal? PlannedCost { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -122,12 +122,12 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Actualstartdate { get; set; }
+        public string ActualStartDate { get; set; }
 
         /// <summary>
         /// If set, this represents the actual tracked cost for this Task.
         /// </summary>
-        public decimal? Actualcost { get; set; }
+        public decimal? ActualCost { get; set; }
 
         /// <summary>
         /// Color theme definition for this task.

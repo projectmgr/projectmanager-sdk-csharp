@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Avatar URL
         /// </summary>
-        public string Avatarurl { get; set; }
+        public string AvatarUrl { get; set; }
 
         /// <summary>
         /// The current permission of the user
@@ -61,6 +61,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Specifies the permissions that you can set against the project member. This changes based on who is logged in and the role they have.
         /// </summary>
-        public PermissionOptionsDto Permissionoptions { get; set; }
+        public PermissionOptionsDto PermissionOptions { get; set; }
     }
 }

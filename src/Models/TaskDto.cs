@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the Project to which this Task belongs.
         /// </summary>
-        public Guid? Projectid { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// The list of assignees who are to work on this Task, if any.
@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Models
         /// A short ID that can be used to refer to this Task.  This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// The common name of this Task.
@@ -94,7 +94,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Plannedstartdate { get; set; }
+        public string PlannedStartDate { get; set; }
 
         /// <summary>
         /// The date when work on this Task is expected to complete.
@@ -111,7 +111,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Plannedfinishdate { get; set; }
+        public string PlannedFinishDate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -128,7 +128,7 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Actualstartdate { get; set; }
+        public string ActualStartDate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work was completed on this Task.
@@ -145,17 +145,17 @@ namespace ProjectManager.SDK.Models
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public string Actualfinishdate { get; set; }
+        public string ActualFinishDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was most recently modified.
         /// </summary>
-        public DateTime? Modifydate { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was created.
         /// </summary>
-        public DateTime? Createdate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// The numerical percentage, from 0-100, representing the percentage completion
@@ -165,7 +165,7 @@ namespace ProjectManager.SDK.Models
         /// This value can be edited manually in the Gantt chart view of the application,
         /// or can be selected on the Task Detail page within the Kanban board.
         /// </summary>
-        public int? Percentcomplete { get; set; }
+        public int? PercentComplete { get; set; }
 
         /// <summary>
         /// True if this Task is the parent of multiple Tasks underneath it.  A parent Task
@@ -175,12 +175,12 @@ namespace ProjectManager.SDK.Models
         /// You can create a summary Task in the Gantt chart view of the application by
         /// adding child tasks underneath a parent Task.
         /// </summary>
-        public bool? Issummary { get; set; }
+        public bool? IsSummary { get; set; }
 
         /// <summary>
         /// Return the priority of a task
         /// </summary>
-        public int? Priorityid { get; set; }
+        public int? PriorityId { get; set; }
 
         /// <summary>
         /// The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
@@ -201,27 +201,27 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The actual cost of this Task to date, if known.
         /// </summary>
-        public decimal? Actualcost { get; set; }
+        public decimal? ActualCost { get; set; }
 
         /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
-        public decimal? Plannedcost { get; set; }
+        public decimal? PlannedCost { get; set; }
 
         /// <summary>
         /// The planned duration (in minutes) for this Task.
         /// </summary>
-        public int? Plannedduration { get; set; }
+        public int? PlannedDuration { get; set; }
 
         /// <summary>
         /// The planned effort (in minutes) for this Task.
         /// </summary>
-        public int? Plannedeffort { get; set; }
+        public int? PlannedEffort { get; set; }
 
         /// <summary>
         /// Task fields array with values
         /// </summary>
-        public TaskFieldValueDto[] Fieldvalues { get; set; }
+        public TaskFieldValueDto[] FieldValues { get; set; }
 
         /// <summary>
         /// The list of files associated with this Task, if any.

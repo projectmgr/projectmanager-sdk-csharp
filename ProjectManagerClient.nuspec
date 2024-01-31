@@ -24,6 +24,9 @@
             
             Deprecated 1 old APIs:
             * TaskMetadata.GetTaskMetadata
+			
+			Fixed capitalization for data schema models and API methods - the previous build caused some items
+			to be incorrectly lowercased when they were already in PascalCase form.
             
 
         </releaseNotes>

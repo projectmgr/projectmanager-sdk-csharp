@@ -20,9 +20,6 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// A file attached to a project and task
-    /// </summary>
     public class ProjectFileTaskDto : ApiModel
     {
 
@@ -35,7 +32,7 @@ namespace ProjectManager.SDK.Models
         /// A short ID that can be used to refer to this Task.  This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// The common name of this Task.

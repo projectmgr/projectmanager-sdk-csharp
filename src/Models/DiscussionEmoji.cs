@@ -34,6 +34,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The list of user IDs of the users who tagged these emoji
         /// </summary>
-        public Guid[] Userids { get; set; }
+        public Guid[] UserIds { get; set; }
     }
 }

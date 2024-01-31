@@ -32,6 +32,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the discussion comment created.
         /// </summary>
-        public Guid? Discussioncommentid { get; set; }
+        public Guid? DiscussionCommentId { get; set; }
     }
 }

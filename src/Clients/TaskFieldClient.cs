@@ -109,7 +109,7 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
-        public async Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskfieldValues(Guid taskId)
+        public async Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/fields/values";
             return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, null, null, null);

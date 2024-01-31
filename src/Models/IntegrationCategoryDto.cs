@@ -39,11 +39,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// A short identifier that uniquely identifies this Integration Category.
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// A list of short identifiers for Integrations available within this Integration Category.
         /// </summary>
-        public string[] Integrationshortids { get; set; }
+        public string[] IntegrationShortIds { get; set; }
     }
 }

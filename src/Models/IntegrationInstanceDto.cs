@@ -35,36 +35,36 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// A short ID that uniquely identifies this IntegrationInstance
         /// </summary>
-        public string Integrationshortid { get; set; }
+        public string IntegrationShortId { get; set; }
 
         /// <summary>
         /// The unique identifier of the user who enabled this IntegrationInstance
         /// </summary>
-        public Guid? Enabledby { get; set; }
+        public Guid? EnabledBy { get; set; }
 
         /// <summary>
         /// Timestamp when this record was created
         /// </summary>
-        public DateTime? Createdate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// Timestamp when this record was most recently modified
         /// </summary>
-        public DateTime? Modifydate { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
         /// <summary>
         /// The id of the project manager project this instance is related to
         /// </summary>
-        public Guid? Projectid { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// The identifier in the integration provider, could be a reference to a file, task, project.
         /// </summary>
-        public string Provideritemid { get; set; }
+        public string ProviderItemId { get; set; }
 
         /// <summary>
         /// The name of the item in the integration provider.
         /// </summary>
-        public string Provideritemname { get; set; }
+        public string ProviderItemName { get; set; }
     }
 }

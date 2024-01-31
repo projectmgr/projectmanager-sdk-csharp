@@ -34,22 +34,22 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// associated task id
         /// </summary>
-        public Guid? Taskid { get; set; }
+        public Guid? TaskId { get; set; }
 
         /// <summary>
         /// associated project id
         /// </summary>
-        public Guid? Projectid { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// resource id time entry entered
         /// </summary>
-        public Guid? Resourceid { get; set; }
+        public Guid? ResourceId { get; set; }
 
         /// <summary>
         /// admin task id
         /// </summary>
-        public Guid? Timesheetadmintypeid { get; set; }
+        public Guid? TimesheetAdminTypeId { get; set; }
 
         /// <summary>
         /// Date of time entry

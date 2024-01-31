@@ -102,5 +102,21 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}";
             return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
         }
+
+        /// <summary>
+        /// Delete a project based on the details provided.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
+        ///
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project to delete</param>
+        /// <param name="hardDelete">Hard delete project true or false</param>
+        public async Task<AstroResult<string>> DeleteProject(Guid projectId, bool? hardDelete = null)
+        {
+            var url = $"/api/data/projects/{projectId}";
+            var options = new Dictionary<string, object>();
+            if (hardDelete != null) { options["hardDelete"] = hardDelete; }
+            return await _client.Request<string>(HttpMethod.Delete, url, options, null, null);
+        }
     }
 }

@@ -45,11 +45,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The timestamp in UTC when this object was created.
         /// </summary>
-        public DateTime? Createdate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this object was last modified.
         /// </summary>
-        public DateTime? Modifydate { get; set; }
+        public DateTime? ModifyDate { get; set; }
     }
 }

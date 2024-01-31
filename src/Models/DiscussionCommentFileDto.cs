@@ -20,9 +20,6 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// Discussion comment file
-    /// </summary>
     public class DiscussionCommentFileDto : ApiModel
     {
 

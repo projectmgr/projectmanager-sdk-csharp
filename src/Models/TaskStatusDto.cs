@@ -36,7 +36,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of the Project to which this TaskStatus belongs.
         /// </summary>
-        public Guid? Projectid { get; set; }
+        public Guid? ProjectId { get; set; }
 
         /// <summary>
         /// The name of this TaskStatus.
@@ -52,6 +52,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// True if a Task in this TaskStatus is considered done.
         /// </summary>
-        public bool? Isdone { get; set; }
+        public bool? IsDone { get; set; }
     }
 }

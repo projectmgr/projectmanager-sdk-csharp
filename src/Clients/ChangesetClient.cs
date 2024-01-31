@@ -69,5 +69,23 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/changesets/{changeSetId}/poll";
             return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
         }
+
+        /// <summary>
+        /// Retrieve Changesets by Project ID
+        ///
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="version"></param>
+        /// <param name="page"></param>
+        /// <param name="take"></param>
+        public async Task<AstroResult<ChangeSetResponseDto[]>> RetrieveChangesetsByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null)
+        {
+            var url = $"/api/data/changesets/{projectId}/changesets";
+            var options = new Dictionary<string, object>();
+            if (version != null) { options["version"] = version; }
+            if (page != null) { options["page"] = page; }
+            if (take != null) { options["take"] = take; }
+            return await _client.Request<ChangeSetResponseDto[]>(HttpMethod.Get, url, options, null, null);
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The entity type of the Field, either `projects` or `tasks`.
         /// </summary>
-        public string Entitytype { get; set; }
+        public string EntityType { get; set; }
 
         /// <summary>
         /// A list of options for use of this Field.  This is only valid if
@@ -81,6 +81,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The short Id of this field - human readable identity
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
     }
 }

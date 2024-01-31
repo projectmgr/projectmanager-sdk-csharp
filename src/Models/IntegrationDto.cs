@@ -45,7 +45,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// A short ID that uniquely identifies this Integration
         /// </summary>
-        public string Shortid { get; set; }
+        public string ShortId { get; set; }
 
         /// <summary>
         /// True if this Integration allows multiple Instances.
@@ -53,7 +53,7 @@ namespace ProjectManager.SDK.Models
         /// An example of a multi-Instance Integration is one that can be connected to many
         /// different folders or channels within a remote application.
         /// </summary>
-        public bool? Ismultiinstance { get; set; }
+        public bool? IsMultiInstance { get; set; }
 
         /// <summary>
         /// Extra configuration metadata for this Instance.
@@ -63,7 +63,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The list of SKUS for this Integration.
         /// </summary>
-        public string[] Licenseskus { get; set; }
+        public string[] LicenseSkus { get; set; }
 
         /// <summary>
         /// For multi-Instance Integrations, this contains the list of IntegrationInstances.
@@ -83,6 +83,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// True if the integration is auto-enabled
         /// </summary>
-        public bool? Autoenabled { get; set; }
+        public bool? AutoEnabled { get; set; }
     }
 }

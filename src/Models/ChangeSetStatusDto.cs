@@ -29,7 +29,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of this Changeset
         /// </summary>
-        public Guid? Changesetid { get; set; }
+        public Guid? ChangeSetId { get; set; }
 
         /// <summary>
         /// The unique identifier of the entity affected by this Changeset.  For example, if this

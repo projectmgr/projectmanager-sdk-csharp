@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
         /// <param name="body">List of Assignee data</param>
-        Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskassignee(Guid taskId, AssigneeUpsertDto[] body);
+        Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
         /// Remove one or more TaskAssignees from a Task.

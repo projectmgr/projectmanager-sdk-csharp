@@ -51,7 +51,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// True if this TaskAssignee is currently active with the Project.
         /// </summary>
-        public bool? Isactive { get; set; }
+        public bool? IsActive { get; set; }
 
         /// <summary>
         /// The color that will be used to represent this TaskAssignee visually.
@@ -67,26 +67,26 @@ namespace ProjectManager.SDK.Models
         ///
         /// For personnel TaskAssignees only.
         /// </summary>
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// The last or family name of this TaskAssignee.
         ///
         /// For personnel TaskAssignees only.
         /// </summary>
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         /// <summary>
         /// A shortened version of the name of this TaskAssignee.  This is used in areas
         /// where the Initials are too short but the full name is too long.
         /// </summary>
-        public string Shortname { get; set; }
+        public string ShortName { get; set; }
 
         /// <summary>
         /// A link to an Avatar for this TaskAssignee.  Avatars are small images or representations
         /// that can be used to visually identify this TaskAssignee at a glance.
         /// </summary>
-        public string Avatarurl { get; set; }
+        public string AvatarUrl { get; set; }
 
         /// <summary>
         /// The email address for the resource. It can be empty if the resource does not have a login.
@@ -96,6 +96,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The allocated effort (in minutes) for this Task and Assignee.
         /// </summary>
-        public int? Allocatedeffort { get; set; }
+        public int? AllocatedEffort { get; set; }
     }
 }

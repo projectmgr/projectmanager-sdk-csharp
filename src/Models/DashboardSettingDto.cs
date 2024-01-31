@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// User ID
         /// </summary>
-        public Guid? Userid { get; set; }
+        public Guid? UserId { get; set; }
 
         /// <summary>
         /// Either custom or one of DashboardType enum
@@ -44,6 +44,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// React grid layout configuration
         /// </summary>
-        public ReactGridLayoutDto Reactgridlayout { get; set; }
+        public ReactGridLayoutDto ReactGridLayout { get; set; }
     }
 }

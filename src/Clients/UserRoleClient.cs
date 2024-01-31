@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Clients
         /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39; UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
         ///
         /// </summary>
-        public async Task<AstroResult<UserRoleDto[]>> RetrieveUserroles()
+        public async Task<AstroResult<UserRoleDto[]>> RetrieveUserRoles()
         {
             var url = $"/api/data/users/roles";
             return await _client.Request<UserRoleDto[]>(HttpMethod.Get, url, null, null, null);

@@ -41,6 +41,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Resource id holoday associated to
         /// </summary>
-        public Guid? Resourceid { get; set; }
+        public Guid? ResourceId { get; set; }
     }
 }

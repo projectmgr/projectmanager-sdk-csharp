@@ -44,6 +44,6 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Avatar&#39;s url
         /// </summary>
-        public string Avatarurl { get; set; }
+        public string AvatarUrl { get; set; }
     }
 }

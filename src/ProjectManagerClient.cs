@@ -47,7 +47,6 @@ namespace ProjectManager.SDK
         
         private string _appName;
         private string _bearerToken;
-        private string _apiKey;
     
         /// <summary>
         /// API methods related to ApiKey
@@ -243,9 +242,9 @@ namespace ProjectManager.SDK
         /// <summary>
         /// Internal constructor for the client. You should always begin with `WithEnvironment()` or `WithCustomEnvironment`.
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="baseEndpoint">The ProjectManager endpoint to contact</param>
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
-        private ProjectManagerClient(string url, HttpClientHandler clientHandler)
+        private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
         {
             // Add support for HTTP compression
             var handler = clientHandler ?? new HttpClientHandler();
@@ -255,7 +254,7 @@ namespace ProjectManager.SDK
             // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
             _client = new HttpClient(handler);
             
-            _apiUrl = url;
+            _apiUrl = baseEndpoint.ToString();
             ApiKey = new ApiKeyClient(this);
             Changeset = new ChangesetClient(this);
             Dashboard = new DashboardClient(this);
@@ -314,7 +313,7 @@ namespace ProjectManager.SDK
             switch (env)
             {
                 case "production":
-                    return new ProjectManagerClient("https://api.projectmanager.com", clientHandler);
+                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), clientHandler);
             }
     
             throw new InvalidOperationException($"Unknown environment: {env}");
@@ -325,12 +324,12 @@ namespace ProjectManager.SDK
         /// an API gateway.  Please be careful when using this mode.
         /// You should prefer to use `WithEnvironment()` instead wherever possible.
         /// </summary>
-        /// <param name="url">The custom URL to use for this client</param>
+        /// <param name="customEndpoint">The custom endpoint to use for this client</param>
         /// <param name="clientHandler">Optional handler to set specific settings for the HTTP client</param>
         /// <returns>The API client to use</returns>
-        public static ProjectManagerClient WithCustomEnvironment(string url, HttpClientHandler clientHandler = null)
+        public static ProjectManagerClient WithCustomEnvironment(Uri customEndpoint, HttpClientHandler clientHandler = null)
         {
-            return new ProjectManagerClient(url, clientHandler);
+            return new ProjectManagerClient(customEndpoint, clientHandler);
         }
         
         /// <summary>
@@ -354,7 +353,6 @@ namespace ProjectManager.SDK
         public ProjectManagerClient WithBearerToken(string token)
         {
             _bearerToken = token;
-            _apiKey = null;
             return this;
         }
     
@@ -367,7 +365,6 @@ namespace ProjectManager.SDK
         /// <returns></returns>
         public ProjectManagerClient WithApiKey(string apiKey)
         {
-            _apiKey = apiKey;
             _bearerToken = null;
             return this;
         }
@@ -402,10 +399,6 @@ namespace ProjectManager.SDK
             if (!string.IsNullOrWhiteSpace(_bearerToken))
             {
                 request.Headers.Add("Authorization", "Bearer " + _bearerToken);
-            }
-            else if (!string.IsNullOrWhiteSpace(_apiKey))
-            {
-                request.Headers.Add("Api-Key", _apiKey);
             }
     
             // Construct the request URI and query string

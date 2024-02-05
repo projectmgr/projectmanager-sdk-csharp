@@ -330,6 +330,11 @@ namespace ProjectManager.SDK
         /// <returns>The API client to use</returns>
         public static ProjectManagerClient WithCustomEnvironment(string url, HttpClientHandler clientHandler = null)
         {
+            if (!url.StartsWith("https://"))
+            {
+                throw new InvalidOperationException("Invalid custom environment url. Please ensure the environment url starts with 'https://'");
+            }
+
             return new ProjectManagerClient(url, clientHandler);
         }
         

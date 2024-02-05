@@ -355,20 +355,7 @@ namespace ProjectManager.SDK
             _bearerToken = token;
             return this;
         }
-    
-        /// <summary>
-        /// Configures this API client to use an API Key.
-        ///
-        /// 
-        /// </summary>
-        /// <param name="apiKey">The API key to use for this API session</param>
-        /// <returns></returns>
-        public ProjectManagerClient WithApiKey(string apiKey)
-        {
-            _bearerToken = null;
-            return this;
-        }
-    
+        
         /// <summary>
         /// Make a request using this API client
         /// </summary>

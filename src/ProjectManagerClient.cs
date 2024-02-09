@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    102.0.2949
+ * @version    103.0.3003
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "102.0.2949";
+        public const string SdkVersion = "103.0.3003";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -242,7 +242,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// Internal constructor for the client. You should always begin with `WithEnvironment()` or `WithCustomEnvironment`.
         /// </summary>
-        /// <param name="baseEndpoint">The ProjectManager endpoint to contact</param>
+        /// <param name="baseEndpoint">The API endpoint to contact</param>
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
         private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
         {
@@ -253,7 +253,6 @@ namespace ProjectManager.SDK
             // We intentionally use a single HttpClient object for the lifetime of this API connection.
             // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
             _client = new HttpClient(handler);
-            
             _apiUrl = baseEndpoint.ToString();
             ApiKey = new ApiKeyClient(this);
             Changeset = new ChangesetClient(this);
@@ -310,7 +309,7 @@ namespace ProjectManager.SDK
         /// <returns>The API client to use</returns>
         public static ProjectManagerClient WithEnvironment(string env, HttpClientHandler clientHandler = null)
         {
-            switch (env)
+            switch (env)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             {
                 case "production":
                     return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), clientHandler);
@@ -355,7 +354,7 @@ namespace ProjectManager.SDK
             _bearerToken = token;
             return this;
         }
-        
+    
         /// <summary>
         /// Make a request using this API client
         /// </summary>

@@ -46,5 +46,14 @@ namespace ProjectManager.SDK.Models
         /// To expand this field, specify the name of this field in the `$expand` parameter.
         /// </summary>
         public ProjectFileTaskDto Task { get; set; }
+
+        /// <summary>
+        /// The folder that this file relates to.
+        ///
+        /// This field will be present when you fetch a single object.
+        /// When you query for multiple objects, this field is not included in results by default.
+        /// To expand this field, specify the name of this field in the `$expand` parameter.
+        /// </summary>
+        public ProjectFileFolderDto Folder { get; set; }
     }
 }

@@ -246,6 +246,12 @@ namespace ProjectManager.SDK
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
         private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
         {
+            // Throw error if not HTTPS
+            if (baseEndpoint.Scheme != "https")
+            {
+                throw new InvalidOperationException("Invalid environment url. Please ensure the environment url starts with 'https://'");
+            }
+
             // Add support for HTTP compression
             var handler = clientHandler ?? new HttpClientHandler();
             handler.AutomaticDecompression = DecompressionMethods.GZip;

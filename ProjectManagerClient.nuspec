@@ -14,16 +14,16 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 103.0.3003
-            
-            These patch notes summarize the changes from version 102.0.2886.
-            
-            Added 2 new APIs:
-            * Changeset.RetrieveChangesetsByProjectID (GET /api/data/projects/{projectId}/changesets)
-            * Project.DeleteProject (DELETE /api/data/projects/{projectId})
-            
-            Deprecated 1 old APIs:
-            * TaskMetadata.GetTaskMetadata
+# Patch notes for 103.0.3003
+
+These patch notes summarize the changes from version 102.0.2886.
+
+Added 2 new APIs:
+* Changeset.RetrieveChangesetsByProjectID (GET /api/data/projects/{projectId}/changesets)
+* Project.DeleteProject (DELETE /api/data/projects/{projectId})
+
+Deprecated 1 old APIs:
+* TaskMetadata.GetTaskMetadata
             
 
         </releaseNotes>

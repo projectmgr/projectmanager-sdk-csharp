@@ -75,11 +75,6 @@ namespace ProjectManager.SDK.Models
         public DateTime? RegisterDate { get; set; }
 
         /// <summary>
-        /// True if the user has accepted an invitation to this Workspace.
-        /// </summary>
-        public bool? IsInviteAccepted { get; set; }
-
-        /// <summary>
         /// The unique identifier of the BusinessUser that is the owner of this Workspace.
         /// </summary>
         public Guid? BusinessUserId { get; set; }

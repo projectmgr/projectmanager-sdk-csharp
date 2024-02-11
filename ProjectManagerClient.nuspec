@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>102.0.2949</version>
+		<version>103.0.3003</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,19 +14,16 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 102.0.2949
-            
-            These patch notes summarize the changes from version 102.0.2886.
-            
-            Added 2 new APIs:
-            * Changeset.RetrieveChangesetsByProjectID (GET /api/data/changesets/{projectId}/changesets)
-            * Project.DeleteProject (DELETE /api/data/projects/{projectId})
-            
-            Deprecated 1 old APIs:
-            * TaskMetadata.GetTaskMetadata
-			
-			Fixed capitalization for data schema models and API methods - the previous build caused some items
-			to be incorrectly lowercased when they were already in PascalCase form.
+# Patch notes for 103.0.3003
+
+These patch notes summarize the changes from version 102.0.2886.
+
+Added 2 new APIs:
+* Changeset.RetrieveChangesetsByProjectID (GET /api/data/projects/{projectId}/changesets)
+* Project.DeleteProject (DELETE /api/data/projects/{projectId})
+
+Deprecated 1 old APIs:
+* TaskMetadata.GetTaskMetadata
             
 
         </releaseNotes>

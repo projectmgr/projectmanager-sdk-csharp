@@ -80,7 +80,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="take"></param>
         public async Task<AstroResult<ChangeSetResponseDto[]>> RetrieveChangesetsByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null)
         {
-            var url = $"/api/data/changesets/{projectId}/changesets";
+            var url = $"/api/data/projects/{projectId}/changesets";
             var options = new Dictionary<string, object>();
             if (version != null) { options["version"] = version; }
             if (page != null) { options["page"] = page; }

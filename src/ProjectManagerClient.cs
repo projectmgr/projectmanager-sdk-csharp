@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    103.0.3003
+ * @version    104.0.3086
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "103.0.3003";
+        public const string SdkVersion = "104.0.3086";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -246,12 +246,6 @@ namespace ProjectManager.SDK
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
         private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
         {
-            // Throw error if not HTTPS
-            if (baseEndpoint.Scheme != "https")
-            {
-                throw new InvalidOperationException("Invalid environment url. Please ensure the environment url starts with 'https://'");
-            }
-
             // Add support for HTTP compression
             var handler = clientHandler ?? new HttpClientHandler();
             handler.AutomaticDecompression = DecompressionMethods.GZip;

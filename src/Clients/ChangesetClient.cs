@@ -47,10 +47,10 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveChangeset(Guid changeSetId)
+        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangesetStatus(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}";
-            return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
@@ -64,28 +64,28 @@ namespace ProjectManager.SDK.Clients
         ///
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ChangesetGetResponseDto>> RetrieveCompletedChangeset(Guid changeSetId)
+        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangesetStatus(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}/poll";
-            return await _client.Request<ChangesetGetResponseDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
-        /// Retrieve Changesets by Project ID
+        /// Retrieve specific Project Changes by Project ID
         ///
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="version"></param>
         /// <param name="page"></param>
         /// <param name="take"></param>
-        public async Task<AstroResult<ChangeSetResponseDto[]>> RetrieveChangesetsByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null)
+        public async Task<AstroResult<ProjectChangeDto[]>> RetrieveProjectChangesByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null)
         {
-            var url = $"/api/data/projects/{projectId}/changesets";
+            var url = $"/api/data/projects/{projectId}/changes";
             var options = new Dictionary<string, object>();
             if (version != null) { options["version"] = version; }
             if (page != null) { options["page"] = page; }
             if (take != null) { options["take"] = take; }
-            return await _client.Request<ChangeSetResponseDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ProjectChangeDto[]>(HttpMethod.Get, url, options, null, null);
         }
     }
 }

@@ -21,20 +21,20 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The project task change set
+    /// The specific change action made against a project
     /// </summary>
-    public class ChangeSetResponseDto : ApiModel
+    public class ProjectChangeDto : ApiModel
     {
 
         /// <summary>
-        /// Project Changeset ID
-        /// </summary>
-        public int? ProjectChangeSetId { get; set; }
-
-        /// <summary>
-        /// The unique identifier of this Changeset
+        /// Project Change ID
         /// </summary>
         public Guid? Id { get; set; }
+
+        /// <summary>
+        /// Workspace ID
+        /// </summary>
+        public Guid? BusinessId { get; set; }
 
         /// <summary>
         /// Project ID
@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Models
         public Guid? ProjectId { get; set; }
 
         /// <summary>
-        /// Task version
+        /// Version of this Project Change
         /// </summary>
         public int? Version { get; set; }
 
@@ -57,53 +57,18 @@ namespace ProjectManager.SDK.Models
         public DateTime? CreateDate { get; set; }
 
         /// <summary>
-        /// Change set action
-        /// </summary>
-        public string Actions { get; set; }
-
-        /// <summary>
-        /// Change set in json string
-        /// </summary>
-        public string ChangeSets { get; set; }
-
-        /// <summary>
         /// Processed date
         /// </summary>
         public DateTime? ProcessDate { get; set; }
 
         /// <summary>
-        /// If process was successful
+        /// The status of the Project Change
         /// </summary>
-        public bool? Success { get; set; }
+        public int? Status { get; set; }
 
         /// <summary>
-        /// Error message
+        /// Project Change as JSON data
         /// </summary>
-        public string Exception { get; set; }
-
-        /// <summary>
-        /// UI ID
-        /// </summary>
-        public Guid? ClientId { get; set; }
-
-        /// <summary>
-        /// Changeset JSON data
-        /// </summary>
-        public string JsonData { get; set; }
-
-        /// <summary>
-        /// Is change set from UNDO
-        /// </summary>
-        public bool? IsUndo { get; set; }
-
-        /// <summary>
-        /// The state of the changeset
-        /// </summary>
-        public int? State { get; set; }
-
-        /// <summary>
-        /// Business ID
-        /// </summary>
-        public Guid? BusinessId { get; set; }
+        public object ChangeData { get; set; }
     }
 }

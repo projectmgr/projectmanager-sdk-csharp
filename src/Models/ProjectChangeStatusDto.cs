@@ -21,27 +21,27 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Changeset is an individual edit that has been made to a project.  Since multiple users can
-    /// edit a project at the same time, individual Changesets are applied in a sequential fashion. If
-    /// a Changeset causes a conflict or cannot be applied, it will be rejected.  You can examine a
-    /// Changeset to determine its conflict resolution status.
+    /// A ProjectChange is an individual edit that has been made to a project.  Since multiple users
+    /// can edit a project at the same time, individual ProjectChanges are applied in a sequential
+    /// fashion. If a ProjectChange causes a conflict or cannot be applied, it will be rejected.
+    /// You can examine a ProjectChange to determine its conflict resolution status.
     /// </summary>
-    public class ChangesetGetResponseDto : ApiModel
+    public class ProjectChangeStatusDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this Changeset.
+        /// The unique identifier of this ProjectChange.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// True if this Changeset was successfully applied.  If the Changeset has not been applied,
-        /// this value is null.
+        /// True if this ProjectChange was successfully applied.  If the ProjectChange has not been
+        /// applied, this value is null.
         /// </summary>
         public bool? Success { get; set; }
 
         /// <summary>
-        /// A status flag that indicates the progress of the Changeset through resolution.
+        /// A status flag that indicates the progress of the ProjectChange through resolution.
         ///
         /// For a list of values, see `StateValues`.
         /// </summary>

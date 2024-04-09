@@ -166,13 +166,33 @@ namespace ProjectManager.SDK.Models
         public string Color { get; set; }
 
         /// <summary>
-        /// The actual cost of this Task to date, if known.
+        /// The actual cost of this Task, if known.
         /// </summary>
         public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// The actual resource cost of this Task
+        /// </summary>
+        public decimal? ActualResourceCost { get; set; }
+
+        /// <summary>
+        /// The actual effort (in minutes) of this task, if known.
+        /// </summary>
+        public int? ActualEffort { get; set; }
 
         /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
         public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// The planned resource cost of this Task
+        /// </summary>
+        public decimal? PlannedResourceCost { get; set; }
+
+        /// <summary>
+        /// The planned effort (in minutes) of this task, if known.
+        /// </summary>
+        public int? PlannedEffort { get; set; }
     }
 }

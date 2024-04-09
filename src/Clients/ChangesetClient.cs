@@ -69,23 +69,5 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/changesets/{changeSetId}/poll";
             return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null, null, null);
         }
-
-        /// <summary>
-        /// Retrieve specific Project Changes by Project ID
-        ///
-        /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="version"></param>
-        /// <param name="page"></param>
-        /// <param name="take"></param>
-        public async Task<AstroResult<ProjectChangeDto[]>> RetrieveProjectChangesByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null)
-        {
-            var url = $"/api/data/projects/{projectId}/changes";
-            var options = new Dictionary<string, object>();
-            if (version != null) { options["version"] = version; }
-            if (page != null) { options["page"] = page; }
-            if (take != null) { options["take"] = take; }
-            return await _client.Request<ProjectChangeDto[]>(HttpMethod.Get, url, options, null, null);
-        }
     }
 }

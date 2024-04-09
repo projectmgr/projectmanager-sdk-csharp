@@ -44,7 +44,7 @@ namespace ProjectManager.SDK.Models
         public Guid? TaskId { get; set; }
 
         /// <summary>
-        /// Admin task id that time reportsed to
+        /// Admin task id that time reported to
         /// </summary>
         public Guid? AdminTypeId { get; set; }
 

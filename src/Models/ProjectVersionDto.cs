@@ -20,55 +20,57 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// The specific change action made against a project
-    /// </summary>
-    public class ProjectChangeDto : ApiModel
+    public class ProjectVersionDto : ApiModel
     {
 
         /// <summary>
-        /// Project Change ID
+        /// The unique identifier of the project version.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// Workspace ID
-        /// </summary>
-        public Guid? BusinessId { get; set; }
-
-        /// <summary>
-        /// Project ID
-        /// </summary>
-        public Guid? ProjectId { get; set; }
-
-        /// <summary>
-        /// Version of this Project Change
+        /// Version of the Project
         /// </summary>
         public int? Version { get; set; }
 
         /// <summary>
-        /// Created by GUID
+        /// the initials of the user
         /// </summary>
-        public Guid? CreateBy { get; set; }
+        public string Initials { get; set; }
 
         /// <summary>
-        /// Created date
+        /// The display name of the user
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Avatar URL
+        /// </summary>
+        public string AvatarUrl { get; set; }
+
+        /// <summary>
+        /// The color for their avatar
+        /// </summary>
+        public string Color { get; set; }
+
+        /// <summary>
+        /// Version datetime
         /// </summary>
         public DateTime? CreateDate { get; set; }
 
         /// <summary>
-        /// Processed date
+        /// The unique identifier of user who created backup
         /// </summary>
-        public DateTime? ProcessDate { get; set; }
+        public Guid? UserId { get; set; }
 
         /// <summary>
-        /// The status of the Project Change
+        /// The group version belongs to
         /// </summary>
-        public int? Status { get; set; }
+        public Guid? GroupId { get; set; }
 
         /// <summary>
-        /// Project Change as JSON data
+        /// Subset of the changes related to this ProjectVersion
         /// </summary>
-        public object ChangeData { get; set; }
+        public ProjectVersionChangeDataDto ChangeData { get; set; }
     }
 }

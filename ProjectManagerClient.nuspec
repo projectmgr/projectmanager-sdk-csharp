@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>104.0.3086</version>
+		<version>107.0.3368</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,18 +14,12 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 104.0.3086
+            # Patch notes for 107.0.3368
             
-            These patch notes summarize the changes from version 103.0.3003.
+            These patch notes summarize the changes from version 104.0.3086.
             
-            Added 1 new APIs:
-            * Changeset.RetrieveProjectChangesByProjectID (GET /api/data/projects/{projectId}/changes)
-            
-            Renamed 2 old APIs:
-            * Renamed 'Changeset.RetrieveChangeset' to 'Changeset.RetrieveChangesetStatus'
-            * Renamed 'Changeset.RetrieveCompletedChangeset' to 'Changeset.RetrieveCompletedChangesetStatus'
-            
-            Deprecated 1 old APIs:
+            Deprecated 2 old APIs:
+            * Changeset.RetrieveProjectChangesByProjectID
             * TaskMetadata.GetTaskMetadata
             
 

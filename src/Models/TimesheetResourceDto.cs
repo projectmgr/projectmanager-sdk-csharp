@@ -53,5 +53,10 @@ namespace ProjectManager.SDK.Models
         /// The email address of this Resource.
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// The default hourly rate of the resource.
+        /// </summary>
+        public decimal? HourlyRate { get; set; }
     }
 }

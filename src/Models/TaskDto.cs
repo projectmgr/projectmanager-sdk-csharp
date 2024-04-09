@@ -148,6 +148,11 @@ namespace ProjectManager.SDK.Models
         public string ActualFinishDate { get; set; }
 
         /// <summary>
+        /// The actual effort (in minutes) for this Task.
+        /// </summary>
+        public int? ActualEffort { get; set; }
+
+        /// <summary>
         /// The timestamp in UTC when this Task was most recently modified.
         /// </summary>
         public DateTime? ModifyDate { get; set; }
@@ -204,9 +209,19 @@ namespace ProjectManager.SDK.Models
         public decimal? ActualCost { get; set; }
 
         /// <summary>
+        /// The actual resource cost of this Task
+        /// </summary>
+        public decimal? ActualResourceCost { get; set; }
+
+        /// <summary>
         /// The planned cost for this Task.  Cannot be negative.
         /// </summary>
         public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// The planned resource cost of this Task
+        /// </summary>
+        public decimal? PlannedResourceCost { get; set; }
 
         /// <summary>
         /// The planned duration (in minutes) for this Task.

@@ -50,15 +50,5 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
         Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangesetStatus(Guid changeSetId);
-
-        /// <summary>
-        /// Retrieve specific Project Changes by Project ID
-        ///
-        /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="version"></param>
-        /// <param name="page"></param>
-        /// <param name="take"></param>
-        Task<AstroResult<ProjectChangeDto[]>> RetrieveProjectChangesByProjectID(Guid projectId, int? version = null, int? page = null, int? take = null);
     }
 }

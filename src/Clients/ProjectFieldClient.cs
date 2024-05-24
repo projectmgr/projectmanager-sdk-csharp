@@ -41,8 +41,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ProjectFields defined within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         public async Task<AstroResult<GetProjectFieldsResponseDto[]>> RetrieveProjectFields()
         {
@@ -53,8 +55,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Creates a new ProjectField within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         /// <param name="body">Information about the ProjectField to create</param>
         public async Task<AstroResult<CreateProjectFieldResponseDto>> CreateProjectField(CreateProjectFieldDto body)
@@ -66,8 +70,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Deletes an existing ProjectField within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         /// <param name="fieldId">The unique identifier or short ID of this ProjectField</param>
         public async Task<AstroResult<string>> DeleteProjectField(string fieldId)
@@ -79,8 +85,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Replaces the current value of a ProjectField for a specific Project within your Workspace.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that contains this ProjectField</param>
         /// <param name="fieldId">The unique identifier or short ID of this ProjectField</param>
@@ -94,8 +102,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves the current ProjectField value for a particular Project and ProjectField.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier or short ID of the ProjectField of the value to retrieve</param>
@@ -108,8 +118,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ProjectField values for a particular Project.
         ///
-        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
-        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project for which we want ProjectField values</param>
         public async Task<AstroResult<ProjectFieldValueDto[]>> RetrieveAllProjectFieldValues(Guid projectId)

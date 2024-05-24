@@ -30,8 +30,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves the list of available IntegrationProvider categories.
         ///
-        /// An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
-        ///
+        /// An IntegrationProvider is the name of an external application or service that can be connected to
+        /// ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business
+        /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
         Task<AstroResult<IntegrationCategoryDto[]>> RetrieveProviderCategories();
     }

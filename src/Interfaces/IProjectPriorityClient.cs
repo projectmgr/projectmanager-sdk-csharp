@@ -30,10 +30,12 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves all ProjectPriorities defined within your Workspace.
         ///
-        /// A ProjectPriority is a named priority level used by your business to determine how to decide which Projects are the most important.  You can name your ProjectPriority levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
+        /// A ProjectPriority is a named priority level used by your business to determine how to decide
+        /// which Projects are the most important.  You can name your ProjectPriority levels anything you like
+        /// and you can reorganize the order of the ProjectPriority levels at any time.
         ///
-        /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
-        ///
+        /// Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even
+        /// if they may have similar names, they are different objects and must be tracked separately.
         /// </summary>
         Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities();
     }

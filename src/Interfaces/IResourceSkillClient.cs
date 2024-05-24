@@ -30,8 +30,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves all ResourceSkills defined within your Workspace.
         ///
-        /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
-        ///
+        /// A ResourceSkill is a capability possessed by a Resource that can be used to distinguish
+        /// different classes of Resources suitable for use by a Task.  You can specify that a Task
+        /// requires a Resource with a particular set of ResourceSkills and then allocate Resources
+        /// based on whether or not they have the suitable ResourceSkills.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -42,14 +44,12 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Create a Resource Skill.
-        ///
         /// </summary>
         /// <param name="body">The name of the skill to create.</param>
         Task<AstroResult<ResourceSkillDto>> CreateResourceSkill(CreateResourceSkillDto body);
 
         /// <summary>
         /// Update a Resource Skill.
-        ///
         /// </summary>
         /// <param name="skillId">The id of the skill to update.</param>
         /// <param name="body">The data of the skill to update.</param>
@@ -57,7 +57,6 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// The endpoint is used to delete a resource skill. Users assigned to this skill will no longer be assigned thereafter.
-        ///
         /// </summary>
         /// <param name="resourceSkillId">The Id of the skill to be removed.</param>
         Task<AstroResult<string>> DeleteResourceSkill(Guid resourceSkillId);

@@ -40,7 +40,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Returns user dashboard settings
-        ///
         /// </summary>
         /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
         public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type)
@@ -51,7 +50,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Create or Update User Dashboard Settings
-        ///
         /// </summary>
         /// <param name="body">User dashboard settings object</param>
         public async Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body)

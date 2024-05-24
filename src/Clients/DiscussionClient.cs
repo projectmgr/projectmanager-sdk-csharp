@@ -40,7 +40,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Retrieve all comments written about a task
-        ///
         /// </summary>
         /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
         public async Task<AstroResult<DiscussionCommentDto[]>> RetrieveTaskComments(Guid taskId)
@@ -52,8 +51,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Adds a Markdown-formatted comment to a task.
         ///
-        /// Tasks can have discussions attached to them.  These discussions can include text with simple formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/) and users should be aware that HTML embedding is not permitted due to the risk of cross-site attacks and other embedding challenges.
-        ///
+        /// Tasks can have discussions attached to them.  These discussions can include text with simple
+        /// formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/)
+        /// and users should be aware that HTML embedding is not permitted due to the risk of cross-site
+        /// attacks and other embedding challenges.
         /// </summary>
         /// <param name="taskId">The unique ID number of the task being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>

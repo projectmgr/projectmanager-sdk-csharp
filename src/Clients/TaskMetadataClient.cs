@@ -40,7 +40,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Adds a metadata to a task
-        ///
         /// </summary>
         /// <param name="taskId">Task ID</param>
         /// <param name="isSystem">If metadata is for system or customer, isSystem = true is only of ProjectManager</param>

@@ -30,8 +30,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves all TaskFields defined for a specific Project within your Workspace.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to retrieve TaskFields</param>
         Task<AstroResult<TaskFieldDto[]>> RetrieveTaskFields(Guid projectId);
@@ -39,8 +41,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Creates a new TaskField for a specific Project within your Workspace.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project within which to create this TaskField</param>
         /// <param name="body">Information about the TaskField to create</param>
@@ -49,8 +53,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieve a list of TaskFields that match an [OData formatted query](https://www.odata.org/).
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside a Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside a Project.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -62,8 +68,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Deletes a TaskField for a specific Project within your Workspace.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project that contains this TaskField</param>
         /// <param name="fieldId">The unique identifier of the TaskField to delete</param>
@@ -72,8 +80,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves all TaskField values for a particular Task.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we want TaskField values</param>
         Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId);
@@ -81,8 +91,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieve a list of TaskFieldValues that match an [OData formatted query](https://www.odata.org/).
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -94,8 +106,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves the current TaskField value for a particular Task and TaskField.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier of the TaskField of the value to retrieve</param>
@@ -104,8 +118,10 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Replaces the current value of a TaskField for a specific Task within your Workspace.
         ///
-        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
-        ///
+        /// A TaskField is a custom field defined within your Workspace for a specific Project.  You can
+        /// define TaskFields for any integration purpose that is important to your business.  Each
+        /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
+        /// for each Task inside this Project.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose value you wish to update</param>
         /// <param name="fieldId">The unique identifier of the TaskField whose value you wish to update</param>

@@ -64,22 +64,25 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Updates information about a File uploaded to your Workspace.
         ///
-        /// ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace
+        /// such as a Project, a Task, or Home.  Files are maintained separately based on the location
+        /// where the file was stored.
         ///
-        /// When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+        /// When you upload a File, please allow a few moments for the File to be processed and verified.
+        /// ProjectManager may reject File uploads that contain problems such as malware. Once a File has
+        /// completed the upload the process, you may retrieve it using the DownloadFile API.
         ///
         /// This API returns a JSON response indicating success or failure.
-        ///
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to update</param>
         /// <param name="body">Information to change about the File and its location</param>
         Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body);
 
         /// <summary>
-        /// In case of soft delete moves file to trash folder. For hard delete completely deletes file&#39;s metadata from pm database as well as from amazon storage
+        /// In case of soft delete moves file to trash folder. For hard delete completely deletes
+        /// file&#39;s metadata from pm database as well as from amazon storage
         ///
         /// This API returns a JSON response indicating success or failure.
-        ///
         /// </summary>
         /// <param name="fileId">The unique identifier of the File to delete</param>
         /// <param name="hard">Param indicates that file should be hard deleted</param>

@@ -44,6 +44,7 @@ namespace ProjectManager.SDK
         public const string NotStarted = "NotStarted";
         public const string InProgress = "InProgress";
         public const string Success = "Success";
+        public const string Discard = "Discard";
         public const string Fail = "Fail";
     }
 }

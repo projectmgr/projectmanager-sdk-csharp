@@ -30,8 +30,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieve a list of Tags that match an [OData formatted query](https://www.odata.org/).
         ///
-        /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
-        ///
+        /// A Tag is a named categorization you can use to distinguish objects from each other.
+        /// Tags each have a unique identifier, a name, and a color.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -43,8 +43,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Creates a new Tag based on information you provide.
         ///
-        /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
-        ///
+        /// A Tag is a named categorization you can use to distinguish objects from each other.
+        /// Tags each have a unique identifier, a name, and a color.
         /// </summary>
         /// <param name="body">The information for the new Tag to create</param>
         Task<AstroResult<TagDto>> CreateTag(TagCreateDto body);
@@ -52,8 +52,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Updates an existing Tag based on information you provide.
         ///
-        /// A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
-        ///
+        /// A Tag is a named categorization you can use to distinguish objects from each other.
+        /// Tags each have a unique identifier, a name, and a color.
         /// </summary>
         /// <param name="tagId">The id of the tag</param>
         /// <param name="body">The information to update the tag</param>

@@ -30,20 +30,24 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Replace all TaskAssignees on a Task with new TaskAssignees.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate how much of their time will be allocated to this Task.
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+        /// to a Task and designate how much of their time will be allocated to this Task.
         ///
-        /// In the request body, id is the id of the Resource you would like to assign to the Task, and assignedEffort is the amount of time that Resource is expected to spend on the task. assignedEffort should be entered in minutes.
-        ///
+        /// In the request body, id is the id of the Resource you would like to assign to the Task, and
+        /// assignedEffort is the amount of time that Resource is expected to spend on the task. assignedEffort
+        /// should be entered in minutes.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignees will be replaced</param>
         /// <param name="body">The new list of TaskAssignees for this Task</param>
         Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body);
 
         /// <summary>
-        /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their allocation level to the correct amount.
+        /// Adds or updates a TaskAssignee to a Task.  If the TaskAssignee is already assigned to the Task, update
+        /// their allocation.  If the TaskAssignee is not yet assigned to the Task, assign them and set their
+        /// allocation level to the correct amount.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
-        ///
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+        /// to a Task and designate what proportion of their time will be allocated to this Task.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task to add or update an assignment</param>
         /// <param name="body">List of Assignee data</param>
@@ -52,8 +56,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Remove one or more TaskAssignees from a Task.
         ///
-        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
-        ///
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+        /// to a Task and designate what proportion of their time will be allocated to this Task.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
         /// <param name="body">List of TaskAssignee records to remove</param>

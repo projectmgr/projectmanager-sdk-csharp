@@ -41,8 +41,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieve information about the current licenses possessed by this Workspace.
         ///
-        /// Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
-        ///
+        /// Licenses contain information about your current subscription level and features that have
+        /// been enabled on your Workspace.  To modify the License information, please log on to the
+        /// ProjectManager.com application and use the Account | Editions screen to review or update
+        /// your Licenses.
         /// </summary>
         public async Task<AstroResult<LicenseDto[]>> RetrieveLicenses()
         {
@@ -53,8 +55,10 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Adds a new License to the current Workspace.
         ///
-        /// Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
-        ///
+        /// Licenses contain information about your current subscription level and features that have
+        /// been enabled on your Workspace.  To modify the License information, please log on to the
+        /// ProjectManager.com application and use the Account | Editions screen to review or update
+        /// your Licenses.
         /// </summary>
         /// <param name="bundleSku">Information about the SKU you wish to add to your Workspace</param>
         public async Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku)

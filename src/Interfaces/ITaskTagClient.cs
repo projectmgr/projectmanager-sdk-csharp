@@ -30,8 +30,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Replaces the existing TaskTags on a Task with a newly provided list of TaskTags.
         ///
-        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
-        ///
+        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
+        /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
+        /// classify your Tasks and prioritize work.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will replace TaskTags</param>
         /// <param name="body">The replacement list of TaskTags for this Task</param>
@@ -40,8 +41,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Add one or more new TaskTags to a Task.
         ///
-        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
-        ///
+        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
+        /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
+        /// classify your Tasks and prioritize work.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will add TaskTags</param>
         /// <param name="body">The new TaskTags to add to this Task</param>
@@ -50,8 +52,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Removes one or more existing TaskTags from a Task.
         ///
-        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
-        ///
+        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
+        /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
+        /// classify your Tasks and prioritize work.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will remove existing TaskTags</param>
         /// <param name="body">The TaskTags to remove from this Task</param>

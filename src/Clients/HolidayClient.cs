@@ -40,7 +40,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Retrieve a list of resource holidays that match an [OData formatted query](https://www.odata.org/).
-        ///
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -61,7 +60,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Retrieve a list of country holidays that match an [OData formatted query](https://www.odata.org/).
-        ///
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -82,7 +80,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Retrieve a list of global holidays that match an [OData formatted query](https://www.odata.org/).
-        ///
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>

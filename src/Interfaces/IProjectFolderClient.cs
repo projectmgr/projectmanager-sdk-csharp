@@ -31,7 +31,6 @@ namespace ProjectManager.SDK.Interfaces
         /// Retrieves all ProjectFolders defined within your Workspace.
         ///
         /// A ProjectFolder is a named storage location that can contain Projects.
-        ///
         /// </summary>
         Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders();
     }

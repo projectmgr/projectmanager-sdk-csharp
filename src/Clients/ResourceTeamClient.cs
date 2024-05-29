@@ -41,8 +41,9 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Retrieves all ResourceTeams defined within your Workspace that match an [OData formatted query](https://www.odata.org/).
         ///
-        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
-        ///
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+        /// in a manner consistent with your business needs.  You can assign Resources to be members
+        /// of zero, one, or many ResourceTeams.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -63,7 +64,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Create a Resource Team.
-        ///
         /// </summary>
         /// <param name="body">The name of the team to create.</param>
         public async Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body)
@@ -74,7 +74,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
-        ///
         /// </summary>
         /// <param name="resourceTeamId">The Id of the team to be removed.</param>
         public async Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId)
@@ -85,7 +84,6 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Update a Resource Team.
-        ///
         /// </summary>
         /// <param name="teamresourceId">The id of the resource team</param>
         /// <param name="body">The name of the team to Update.</param>

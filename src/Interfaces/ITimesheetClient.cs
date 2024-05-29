@@ -29,7 +29,6 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Creates new time entry for given resource on given day.
-        ///
         /// </summary>
         /// <param name="body">Payload</param>
         Task<AstroResult<TimesheetResponseDto>> CreateTimeEntry(TimesheetCreateRequestDto body);
@@ -38,7 +37,6 @@ namespace ProjectManager.SDK.Interfaces
         /// Retrieve a list of TimeSheets that match an [OData formatted query](https://www.odata.org/).
         ///
         /// Time Sheets is a list of times per task
-        ///
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
@@ -49,14 +47,12 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Delete time entry by id.
-        ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
         Task<AstroResult<string>> DeleteTimeEntry(Guid timesheetId);
 
         /// <summary>
         /// Updates a time entry by its unique identifier.
-        ///
         /// </summary>
         /// <param name="timesheetId">time entry id</param>
         /// <param name="body">payload</param>
@@ -64,7 +60,6 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
-        ///
         /// </summary>
         Task<AstroResult<TimesheetAdminTypeDto[]>> ReturnsActiveAdminTasksThatAreUsedToReportTime();
     }

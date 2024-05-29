@@ -29,14 +29,12 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Returns user dashboard settings
-        ///
         /// </summary>
         /// <param name="type">The dashboard type that is not custom. For a list of values, see `DashboardTypeValues`.</param>
         Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type);
 
         /// <summary>
         /// Create or Update User Dashboard Settings
-        ///
         /// </summary>
         /// <param name="body">User dashboard settings object</param>
         Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body);

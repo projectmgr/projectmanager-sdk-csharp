@@ -30,8 +30,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Retrieves the list of UserRoles defined within this Workspace.
         ///
-        /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39; UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
-        ///
+        /// A UserRole is a name for a privilege level granted to a specific User.  The &#39;Global Admin&#39;
+        /// UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed.
+        /// You can choose which UserRole applies to a User within your Workspace.
         /// </summary>
         Task<AstroResult<UserRoleDto[]>> RetrieveUserRoles();
     }

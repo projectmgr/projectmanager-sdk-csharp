@@ -134,5 +134,10 @@ namespace ProjectManager.SDK.Models
         /// True if this Project is marked as favorite for current user
         /// </summary>
         public bool? Favorite { get; set; }
+
+        /// <summary>
+        /// Create default task status upfront
+        /// </summary>
+        public TaskStatusCreateDto[] TaskStatusCreate { get; set; }
     }
 }

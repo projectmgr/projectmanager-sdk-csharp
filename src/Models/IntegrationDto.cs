@@ -84,5 +84,10 @@ namespace ProjectManager.SDK.Models
         /// True if the integration is auto-enabled
         /// </summary>
         public bool? AutoEnabled { get; set; }
+
+        /// <summary>
+        /// No Admin Permission
+        /// </summary>
+        public bool? NoAdminPermission { get; set; }
     }
 }

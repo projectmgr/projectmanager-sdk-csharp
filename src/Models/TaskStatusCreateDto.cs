@@ -43,5 +43,11 @@ namespace ProjectManager.SDK.Models
         /// needs of your business.
         /// </summary>
         public int? Order { get; set; }
+
+        /// <summary>
+        /// A numerical value that can be used to sort TaskStatus values according to the
+        /// needs of your business.
+        /// </summary>
+        public bool? IsDone { get; set; }
     }
 }

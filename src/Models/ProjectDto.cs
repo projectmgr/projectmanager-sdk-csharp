@@ -239,5 +239,10 @@ namespace ProjectManager.SDK.Models
         /// To expand this field, specify the name of this field in the `$expand` parameter.
         /// </summary>
         public ProjectFileDto[] Files { get; set; }
+
+        /// <summary>
+        /// The percentage of the project tasks completed
+        /// </summary>
+        public int? PercentComplete { get; set; }
     }
 }

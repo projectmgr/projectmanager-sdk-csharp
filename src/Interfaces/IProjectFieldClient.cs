@@ -35,7 +35,7 @@ namespace ProjectManager.SDK.Interfaces
         /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
         /// within your Workspace.
         /// </summary>
-        Task<AstroResult<GetProjectFieldsResponseDto[]>> RetrieveProjectFields();
+        Task<AstroResult<ProjectFieldDto[]>> RetrieveProjectFields();
 
         /// <summary>
         /// Creates a new ProjectField within your Workspace.
@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Interfaces
         /// within your Workspace.
         /// </summary>
         /// <param name="body">Information about the ProjectField to create</param>
-        Task<AstroResult<CreateProjectFieldResponseDto>> CreateProjectField(CreateProjectFieldDto body);
+        Task<AstroResult<ProjectFieldDto>> CreateProjectField(ProjectFieldCreateDto body);
 
         /// <summary>
         /// Deletes an existing ProjectField within your Workspace.

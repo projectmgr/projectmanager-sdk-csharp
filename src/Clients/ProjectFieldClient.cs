@@ -46,10 +46,10 @@ namespace ProjectManager.SDK.Clients
         /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
         /// within your Workspace.
         /// </summary>
-        public async Task<AstroResult<GetProjectFieldsResponseDto[]>> RetrieveProjectFields()
+        public async Task<AstroResult<ProjectFieldDto[]>> RetrieveProjectFields()
         {
             var url = $"/api/data/projects/fields";
-            return await _client.Request<GetProjectFieldsResponseDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldDto[]>(HttpMethod.Get, url, null, null, null);
         }
 
         /// <summary>
@@ -61,10 +61,10 @@ namespace ProjectManager.SDK.Clients
         /// within your Workspace.
         /// </summary>
         /// <param name="body">Information about the ProjectField to create</param>
-        public async Task<AstroResult<CreateProjectFieldResponseDto>> CreateProjectField(CreateProjectFieldDto body)
+        public async Task<AstroResult<ProjectFieldDto>> CreateProjectField(ProjectFieldCreateDto body)
         {
             var url = $"/api/data/projects/fields";
-            return await _client.Request<CreateProjectFieldResponseDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.Request<ProjectFieldDto>(HttpMethod.Post, url, null, body, null);
         }
 
         /// <summary>

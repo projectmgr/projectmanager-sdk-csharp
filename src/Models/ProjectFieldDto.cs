@@ -34,7 +34,7 @@ namespace ProjectManager.SDK.Models
     /// TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
     /// for each Task inside this Project.
     /// </summary>
-    public class GetProjectFieldsResponseDto : ApiModel
+    public class ProjectFieldDto : ApiModel
     {
 
         /// <summary>

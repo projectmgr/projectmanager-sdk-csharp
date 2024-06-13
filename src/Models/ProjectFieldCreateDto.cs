@@ -26,7 +26,7 @@ namespace ProjectManager.SDK.Models
     /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
     /// within your Workspace.
     /// </summary>
-    public class CreateProjectFieldDto : ApiModel
+    public class ProjectFieldCreateDto : ApiModel
     {
 
         /// <summary>
@@ -35,19 +35,22 @@ namespace ProjectManager.SDK.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The type of the Field.  Valid types are the following:
-        /// * Text
-        /// * Number
-        /// * Date
-        /// * Currency
-        /// * Dropdown
+        /// The type of the Field.
         ///
         /// Attempting to create a field with any Type other than these will
         /// return an error.
         ///
-        /// For Dropdown Field, specify the list of choices in the `Options`
+        /// For Dropdown Field types, specify the list of choices in the `Options`
         /// field.
-        /// TODO - This object needs to support a list of options, in case dropdown is selected
+        ///
+        ///  Valid options are:
+        ///  * string
+        ///  * number
+        ///  * date
+        ///  * bool
+        ///  * currency
+        ///  * dropdown-single
+        ///  * dropdown-multi
         /// </summary>
         public string Type { get; set; }
 
@@ -55,5 +58,15 @@ namespace ProjectManager.SDK.Models
         /// The short Id of this field - human readable identity
         /// </summary>
         public string ShortId { get; set; }
+
+        /// <summary>
+        /// A list of options for use of this ProjectField.  This is only valid if
+        /// the `Type` value is set to `Dropdown`.
+        ///
+        /// When a custom TaskField of type `DropDown` is shown to a user in the
+        /// application, they will be able to choose one of the `Options` in this
+        /// list.
+        /// </summary>
+        public string[] Options { get; set; }
     }
 }

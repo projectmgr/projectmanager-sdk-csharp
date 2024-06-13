@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>110.0.3705</version>
+		<version>112.0.3856</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,9 +14,13 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 110.0.3705
+            # Patch notes for 112.0.3856
             
-            These patch notes summarize the changes from version 107.0.3368.
+            These patch notes summarize the changes from version 110.0.3705.
+            
+            Changes to existing APIs:
+            * ProjectField.CreateProjectField changed [body].Value.DataType from ProjectFieldCreateDto to CreateProjectFieldDto
+            * ProjectField.CreateProjectField changed [body].Value.DataTypeRef from /docs/projectfieldcreatedto to /docs/createprojectfielddto
             
             Deprecated 1 old APIs:
             * TaskMetadata.GetTaskMetadata

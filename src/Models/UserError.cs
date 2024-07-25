@@ -20,17 +20,11 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    public class ProjectVersionChangeDataDto : ApiModel
+    public class UserError : ApiModel
     {
 
-        public string Type { get; set; }
+        public string Email { get; set; }
 
-        public string Method { get; set; }
-
-        public string Property { get; set; }
-
-        public string Value { get; set; }
-
-        public int? RestoreVersion { get; set; }
+        public string Reason { get; set; }
     }
 }

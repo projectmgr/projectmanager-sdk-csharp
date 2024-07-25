@@ -100,5 +100,17 @@ namespace ProjectManager.SDK.Models
         /// The list of ResourceSkills possessed by this Resource.
         /// </summary>
         public Guid[] SkillIds { get; set; }
+
+        /// <summary>
+        /// Active/Inactive the Resource.
+        /// </summary>
+        public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// The Approver Id associated with this Resource.
+        ///
+        /// Applies to personnel Resources only.
+        /// </summary>
+        public Guid? ApproverId { get; set; }
     }
 }

@@ -20,17 +20,15 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    public class ProjectVersionChangeDataDto : ApiModel
+    /// <summary>
+    /// Represents an export queue object. Use this ID to check the status of the export.
+    /// </summary>
+    public class ExportDto : ApiModel
     {
 
-        public string Type { get; set; }
-
-        public string Method { get; set; }
-
-        public string Property { get; set; }
-
-        public string Value { get; set; }
-
-        public int? RestoreVersion { get; set; }
+        /// <summary>
+        /// Id of the export
+        /// </summary>
+        public Guid? Id { get; set; }
     }
 }

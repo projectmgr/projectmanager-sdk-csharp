@@ -129,5 +129,25 @@ namespace ProjectManager.SDK.Models
         /// to access this Workspace.
         /// </summary>
         public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// The date this resource was created
+        /// </summary>
+        public DateTime? CreatedDate { get; set; }
+
+        /// <summary>
+        /// Set to a unique identifier of the user who created this Resource.
+        /// </summary>
+        public Guid? CreatedBy { get; set; }
+
+        /// <summary>
+        /// The date this resource was last modified
+        /// </summary>
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Set to a unique identifier of the user who last modified this Resource.
+        /// </summary>
+        public Guid? ModifiedBy { get; set; }
     }
 }

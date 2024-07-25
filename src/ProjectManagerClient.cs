@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    112.0.3856
+ * @version    114.0.4169
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "112.0.3856";
+        public const string SdkVersion = "114.0.4169";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -107,6 +107,11 @@ namespace ProjectManager.SDK
         /// API methods related to Me
         /// </summary>
         public IMeClient Me { get; }
+
+        /// <summary>
+        /// API methods related to Notification
+        /// </summary>
+        public INotificationClient Notification { get; }
 
         /// <summary>
         /// API methods related to NptFiles
@@ -266,6 +271,7 @@ namespace ProjectManager.SDK
             IntegrationProvider = new IntegrationProviderClient(this);
             License = new LicenseClient(this);
             Me = new MeClient(this);
+            Notification = new NotificationClient(this);
             NptFiles = new NptFilesClient(this);
             Project = new ProjectClient(this);
             ProjectChargeCode = new ProjectChargeCodeClient(this);

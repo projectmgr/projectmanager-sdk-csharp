@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    112.0.3856
+ * @version    114.0.4169
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -71,6 +71,10 @@ namespace ProjectManager.SDK
         /// API methods related to Me
         /// </summary>
         IMeClient Me { get; }
+        /// <summary>
+        /// API methods related to Notification
+        /// </summary>
+        INotificationClient Notification { get; }
         /// <summary>
         /// API methods related to NptFiles
         /// </summary>

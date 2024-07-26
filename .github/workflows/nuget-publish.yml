@@ -26,12 +26,14 @@ jobs:
         run: dotnet build -c Release
 
       - name: Setup Nuget
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: nuget/setup-nuget@v2
         with:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           nuget-version: "5.x"
 
       - name: Run Nuget pack
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: nuget pack ProjectManagerClient.nuspec
 
       - name: Push generated package to GitHub registry

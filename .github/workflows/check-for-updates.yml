@@ -28,11 +28,11 @@ jobs:
 
       - name: Determine patch notes, if any
         id: patch-notes
-        run: SdkGenerator get-patch-notes -p ./sdk-config.json
+        run: SdkGenerator get-patch-notes -p ./sdk-config.json >> "$GITHUB_OUTPUT"
 
       - name: Determine release name, if any
         id: pr-name
-        run: SdkGenerator get-release-name -p ./sdk-config.json
+        run: SdkGenerator get-release-name -p ./sdk-config.json >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
         id: cpr

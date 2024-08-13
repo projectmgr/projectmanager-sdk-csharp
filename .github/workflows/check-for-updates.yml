@@ -37,16 +37,9 @@ jobs:
             echo EOF
           } >> $GITHUB_OUTPUT
           
-      - name: Check Outputs
-        run: |
-          echo 'patch-notes: '
-          echo ${{ steps.patch-notes.outputs.patchnotes }}
-          
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: ${{ steps.patch-notes.outputs.patchnotes }}
-          title: ${{ steps.patch-notes.outputs.releasename }}
-
-          
+          title: ${{ steps.patch-notes.outputs.releasename }}          

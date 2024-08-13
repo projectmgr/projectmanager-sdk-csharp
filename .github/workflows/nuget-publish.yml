@@ -3,6 +3,8 @@ name: NuGet Publish
 on:
   push:
     branches: [main]
+    paths:
+      - ./*.nuspec
   pull_request:
     branches: [main]
 

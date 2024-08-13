@@ -35,7 +35,12 @@ jobs:
             echo 'patchnotes<<EOF'
             SdkGenerator get-patch-notes -p ./sdk-config.json
             echo EOF
-          } >> "$GITHUB_OUTPUT"
+          } >> $GITHUB_OUTPUT
+          
+      - name: Check Outputs
+        run: |
+          echo 'patch-notes: '
+          echo ${{ steps.patch-notes.outputs.patchnotes }}
           
       - name: Create Pull Request
         id: cpr

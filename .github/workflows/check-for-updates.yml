@@ -29,11 +29,14 @@ jobs:
       - name: Gather information
         id: patch-notes
         run: |
-          patchnotes=$(SdkGenerator get-patch-notes -p ./sdk-config.json)
           releasename=$(SdkGenerator get-release-name -p ./sdk-config.json)
-          echo "patchnotes<<THIS-IS-A-DELIMITER $patchnotes THIS-IS-A-DELIMITER" >> $GITHUB_OUTPUT
           echo "releasename=$releasename" >> $GITHUB_OUTPUT
-
+          {
+            echo 'patchnotes<<EOF'
+            SdkGenerator get-patch-notes -p ./sdk-config.json
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+          
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6

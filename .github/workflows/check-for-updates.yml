@@ -23,15 +23,22 @@ jobs:
       - name: Add the SDK Generator
         run: dotnet tool install SdkGenerator --global
 
-      - name: Run dotnet pack
+      - name: Pull the latest OpenAPI file and generate the SDK
         run: SdkGenerator build -p ./sdk-config.json
+
+      - name: Determine patch notes, if any
+        id: patch-notes
+        run: SdkGenerator get-patch-notes -p ./sdk-config.json
+
+      - name: Determine release name, if any
+        id: pr-name
+        run: SdkGenerator get-release-name -p ./sdk-config.json
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
-      - name: Check outputs
-        if: ${{ steps.cpr.outputs.pull-request-number }}
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+        with:
+          commit-message: ${{ steps.patch-notes.outputs }}
+          title: ${{ steps.pr-name.outputs }}
+
           

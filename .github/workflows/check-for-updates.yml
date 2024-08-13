@@ -31,6 +31,7 @@ jobs:
         run: |
           releasename=$(SdkGenerator get-release-name -p ./sdk-config.json)
           echo "releasename=$releasename" >> $GITHUB_OUTPUT
+          echo "branchname=sdkgenerator-${releasename// /-}" >> $GITHUB_OUTPUT
           {
             echo 'patchnotes<<EOF'
             SdkGenerator get-patch-notes -p ./sdk-config.json
@@ -42,4 +43,5 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: ${{ steps.patch-notes.outputs.patchnotes }}
-          title: ${{ steps.patch-notes.outputs.releasename }}          
+          title: ${{ steps.patch-notes.outputs.releasename }}
+          branch: ${{ steps.patch-notes.outputs.branchname }}

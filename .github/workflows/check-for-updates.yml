@@ -26,19 +26,19 @@ jobs:
       - name: Pull the latest OpenAPI file and generate the SDK
         run: SdkGenerator build -p ./sdk-config.json
 
-      - name: Determine patch notes, if any
+      - name: Gather information
         id: patch-notes
-        run: SdkGenerator get-patch-notes -p ./sdk-config.json >> "$GITHUB_OUTPUT"
-
-      - name: Determine release name, if any
-        id: pr-name
-        run: SdkGenerator get-release-name -p ./sdk-config.json >> "$GITHUB_OUTPUT"
+        run: |
+          patchnotes=$(SdkGenerator get-patch-notes -p ./sdk-config.json)
+          releasename=$(SdkGenerator get-release-name -p ./sdk-config.json)
+          echo "patchnotes<<THIS-IS-A-DELIMITER $patchnotes THIS-IS-A-DELIMITER" >> $GITHUB_OUTPUT
+          echo "releasename=$releasename" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: ${{ steps.patch-notes.outputs }}
-          title: ${{ steps.pr-name.outputs }}
+          commit-message: ${{ steps.patch-notes.outputs.patchnotes }}
+          title: ${{ steps.patch-notes.outputs.releasename }}
 
           

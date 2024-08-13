@@ -30,6 +30,11 @@ namespace ProjectManager.SDK.Models
     public class ResourcesCreateDto : ApiModel
     {
 
+        /// <summary>
+        /// When creating a user they will also be added to the projectIds specified. If null or empty the user will be invited but no access will be given to any projects.
+        /// </summary>
+        public Guid[] ProjectIds { get; set; }
+
         public ResourceCreateDto[] Users { get; set; }
     }
 }

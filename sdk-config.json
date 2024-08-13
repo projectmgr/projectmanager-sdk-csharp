@@ -1,0 +1,48 @@
+{
+    "CompanyName": "ProjectManager.com",
+    "AuthorName": "ProjectManager.com",
+    "AuthorEmail": "support@projectmanager.com",
+    "ProjectName": "ProjectManager API",
+    "CopyrightHolder": "ProjectManager.com, Inc.",
+    "ProjectStartYear": 2023,
+    "SwaggerUrl": "https://api.projectmanager.com/api/swagger/ProjectManager.com,%20Inc%20API/swagger.json",
+    "Environments": [
+        {
+            "Name": "production",
+            "Url": "https://api.projectmanager.com",
+            "Default": null
+        }
+    ],
+    "SwaggerSchemaFolder": "swagger",
+    "GenericSuffixes": [
+        "AstroResult"
+    ],
+    "IgnoredParameters": [
+        {
+            "Name": "X-Integration-Name",
+            "Location": "Header"
+        }
+    ],
+    "IgnoredEndpoints": [
+        "Get Task Metadata",
+        "TaskMetadata.GetTaskMetadata"
+    ],
+    "SemverMode": 3,
+    "Keywords": "projectmanager project management task tracking projects tasks",
+    "Description": "Software development kit for the ProjectManager.com API.",
+    "AuthenticationHelp": "",
+    "ReleaseNotes": "https://learn.projectmanager.com/latest-releases",
+    "VersionNumberUrl": "https://api.projectmanager.com/api/swagger/ProjectManager.com,%20Inc%20API/swagger.json",
+    "VersionNumberRegex": "version\": \"(.*)\"",
+    "CSharp": {
+        "ModuleName": "ProjectManager.SDK",
+        "ClassName": "ProjectManagerClient",
+        "ResponseClass": "AstroResult",
+        "Namespace": "ProjectManager.SDK",
+        "GithubUrl": "https://github.com/projectmgr/projectmanager-sdk-csharp",
+        "HandwrittenClasses": [
+            "AstroResult",
+            "AstroError"
+        ]
+    }
+}

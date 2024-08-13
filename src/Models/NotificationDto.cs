@@ -31,17 +31,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of this notification
         /// </summary>
-        public Guid? NotificationId { get; set; }
-
-        /// <summary>
-        /// The unique identifier of the workspace for this notification
-        /// </summary>
-        public Guid? BusinessId { get; set; }
-
-        /// <summary>
-        /// The unique identifier of the recipient of this notification
-        /// </summary>
-        public Guid? UserId { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The unique identifier of the sender of this notification

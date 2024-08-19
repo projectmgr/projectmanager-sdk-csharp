@@ -1,8 +1,8 @@
 name: Check for OpenAPI updates
 
 on:
-  # schedule:
-  #   - cron: "0 0 * * 0" # Run once per week
+  schedule:
+    - cron: "0 0 * * 0" # Run once per week
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,5 +43,6 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: ${{ steps.patch-notes.outputs.patchnotes }}
+          body: ${{ steps.patch-notes.outputs.patchnotes }}
           title: ${{ steps.patch-notes.outputs.releasename }}
           branch: ${{ steps.patch-notes.outputs.branchname }}

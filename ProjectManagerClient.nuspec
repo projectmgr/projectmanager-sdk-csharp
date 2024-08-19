@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>115.0.4328</version>
+		<version>115.0.4330</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,9 +14,9 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 115.0.4328
+            # Patch notes for 115.0.4330
             
-            These patch notes summarize the changes from version 114.0.4169.
+            These patch notes summarize the changes from version 114.0.4166.
             
             Changes to data models:
             * NotificationDto: Added new field `id`
@@ -31,9 +31,6 @@
             * RiskExportSettingsDto: Added new field `assignees`
             * RiskExportSettingsDto: Added new field `tags`
             * TaskDto: Added new field `theme`
-            
-            Deprecated 1 old APIs:
-            * TaskMetadata.GetTaskMetadata
             
 
         </releaseNotes>

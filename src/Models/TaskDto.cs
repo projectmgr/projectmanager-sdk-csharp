@@ -199,9 +199,18 @@ namespace ProjectManager.SDK.Models
         public string Wbs { get; set; }
 
         /// <summary>
-        /// Task Color as set in the Gantt
+        /// The hexadecimal RRGGBB Task Color as set in the Gantt.  This value is read-only; to set this value,
+        /// change the `Theme` field.
         /// </summary>
         public string Color { get; set; }
+
+        /// <summary>
+        /// Color theme definition for this Task.
+        ///
+        /// eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+        /// LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+        /// </summary>
+        public string Theme { get; set; }
 
         /// <summary>
         /// The actual cost of this Task to date, if known.

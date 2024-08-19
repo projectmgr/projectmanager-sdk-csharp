@@ -35,7 +35,7 @@ namespace ProjectManager.SDK.Models
         /// Format to export to, currently csv and excel are supported
         ///
         ///  Valid options are:
-        ///  * csv
+        ///  * Csv
         ///  * excel
         /// </summary>
         public string Format { get; set; }
@@ -73,5 +73,35 @@ namespace ProjectManager.SDK.Models
         ///  * desc
         /// </summary>
         public string OrderDirection { get; set; }
+
+        /// <summary>
+        /// Timezone offset in minutes
+        /// </summary>
+        public int? TimeZoneOffset { get; set; }
+
+        /// <summary>
+        /// Specify the due date filter for the export. If left null, no due date filter will be applied
+        /// </summary>
+        public ExportDueDateFilterDto DueDateFilter { get; set; }
+
+        /// <summary>
+        /// Specify the priority filter for the export. If left null, no priority filter will be applied
+        /// </summary>
+        public ExportPriorityFilterDto PriorityFilter { get; set; }
+
+        /// <summary>
+        /// Specify the progress filter for the export. If left null, no progress filter will be applied
+        /// </summary>
+        public RiskExportProgressFilterDto ProgressFilter { get; set; }
+
+        /// <summary>
+        /// A list of resourceIds to filter the risks by assignees. If left null or empty this will be ignored
+        /// </summary>
+        public Guid[] Assignees { get; set; }
+
+        /// <summary>
+        /// A list of tagIds to filter the risks by tags. If left null or empty this will be ignored
+        /// </summary>
+        public Guid[] Tags { get; set; }
     }
 }

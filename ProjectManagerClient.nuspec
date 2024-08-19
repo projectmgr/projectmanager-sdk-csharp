@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>114.0.4169</version>
+		<version>115.0.4328</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,20 +14,23 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 114.0.4169
+            # Patch notes for 115.0.4328
             
-            These patch notes summarize the changes from version 112.0.3856.
+            These patch notes summarize the changes from version 114.0.4169.
             
-            Added 9 new APIs:
-            * Notification.RetrieveNotifications (GET /api/data/notifications)
-            * Notification.NotificationCount (GET /api/data/notifications/count)
-            * Notification.UnreadNotificationCount (GET /api/data/notifications/unreadcount)
-            * Notification.DeleteAllNotifications (DELETE /api/data/notifications/deleteall)
-            * Notification.MarkNotificationRead (POST /api/data/notifications/{id}/markread)
-            * Notification.ReadAllNotifications (POST /api/data/notifications/markallread)
-            * Notification.DeleteNotification (DELETE /api/data/notifications/delete/{id})
-            * Notification.MarkNotificationUnread (POST /api/data/notifications/{id}/markunread)
-            * Resource.CreateManyResources (POST /api/data/resources/bulk)
+            Changes to data models:
+            * NotificationDto: Added new field `id`
+            * NotificationDto: Removed field `notificationId`
+            * NotificationDto: Removed field `businessId`
+            * NotificationDto: Removed field `userId`
+            * ResourcesCreateDto: Added new field `projectIds`
+            * RiskExportSettingsDto: Added new field `timeZoneOffset`
+            * RiskExportSettingsDto: Added new field `dueDateFilter`
+            * RiskExportSettingsDto: Added new field `priorityFilter`
+            * RiskExportSettingsDto: Added new field `progressFilter`
+            * RiskExportSettingsDto: Added new field `assignees`
+            * RiskExportSettingsDto: Added new field `tags`
+            * TaskDto: Added new field `theme`
             
             Deprecated 1 old APIs:
             * TaskMetadata.GetTaskMetadata

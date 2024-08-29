@@ -360,19 +360,59 @@ namespace ProjectManager.SDK
             _bearerToken = token;
             return this;
         }
-    
+
+        /// <summary>
+        /// Upload a file attachment using this API client
+        /// </summary>
+        /// <param name="method">The HTTP method to send</param>
+        /// <param name="path">The URL path fragment relative to this environment</param>
+        /// <param name="query">The list of parameters and options to send</param>
+        /// <param name="fileBytes">The contents of the file attachment to upload</param>
+        /// <param name="fileName">The name to provide with the file attachment</param>
+        /// <typeparam name="T">The type of the expected response</typeparam>
+        /// <returns>The response object including success/failure codes and error messages as appropriate</returns>
+        public async Task<AstroResult<T>> RequestWithFile<T>(HttpMethod method, string path,
+            Dictionary<string, object> query, byte[] fileBytes, string fileName) where T : class
+        {
+            var fileContent = new ByteArrayContent(fileBytes);
+            var form = new MultipartFormDataContent(Guid.NewGuid().ToString());
+            form.Add(fileContent, "file", fileName);
+            return await InternalRequest<T>(method, path, query, form);
+        }
+
+        /// <summary>
+        /// Make a request while sending a body using this API client
+        /// </summary>
+        /// <param name="method">The HTTP method to send</param>
+        /// <param name="path">The URL path fragment relative to this environment</param>
+        /// <param name="query">The list of parameters and options to send</param>
+        /// <param name="body">The request body to serialize and send as JSON text</param>
+        /// <typeparam name="T">The type of the expected response</typeparam>
+        /// <returns>The response object including success/failure codes and error messages as appropriate</returns>
+        public async Task<AstroResult<T>> RequestWithBody<T>(HttpMethod method, string path,
+            Dictionary<string, object> query, object body) where T : class
+        {
+            var jsonText = JsonSerializer.Serialize(body, _options);
+            var content = new StringContent(jsonText, Encoding.UTF8, "application/json");
+            return await InternalRequest<T>(method, path, query, content);
+        }
+
         /// <summary>
         /// Make a request using this API client
         /// </summary>
         /// <param name="method">The HTTP method to send</param>
         /// <param name="path">The URL path fragment relative to this environment</param>
         /// <param name="query">The list of parameters and options to send</param>
-        /// <param name="body">The request body to send</param>
-        /// <param name="filename">The filename of a file attachment to upload</param>
         /// <typeparam name="T">The type of the expected response</typeparam>
         /// <returns>The response object including success/failure codes and error messages as appropriate</returns>
         public async Task<AstroResult<T>> Request<T>(HttpMethod method, string path,
-            Dictionary<string, object> query, object body, string filename) where T: class
+            Dictionary<string, object> query) where T : class
+        {
+            return await InternalRequest<T>(method, path, query, null);
+        }
+        
+        private async Task<AstroResult<T>> InternalRequest<T>(HttpMethod method, string path,
+            Dictionary<string, object> query, HttpContent content) where T : class
         {
             var sw = new Stopwatch();
             sw.Start();
@@ -413,19 +453,7 @@ namespace ProjectManager.SDK
             request.RequestUri = uriBuilder.Uri;
     
             // Add request body content, if any
-            if (body != null)
-            {
-                var content = JsonSerializer.Serialize(body, _options);
-                request.Content = new StringContent(content, Encoding.UTF8, "application/json");
-            }
-            else if (filename != null)
-            {
-                var bytesFile = System.IO.File.ReadAllBytes(filename);
-                var fileContent = new ByteArrayContent(bytesFile);
-                var form = new MultipartFormDataContent(Guid.NewGuid().ToString());
-                form.Add(fileContent, "file", Path.GetFileName(filename));
-                request.Content = form;
-            }
+            request.Content = content;
             
             // Send the request and convert the response into a success or failure
             using (var response = await _client.SendAsync(request))

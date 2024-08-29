@@ -47,6 +47,7 @@ namespace ProjectManager.SDK
         
         private string _appName;
         private string _bearerToken;
+        private string _machineName;
     
         /// <summary>
         /// API methods related to ApiKey
@@ -338,7 +339,8 @@ namespace ProjectManager.SDK
         }
         
         /// <summary>
-        /// Set the application name
+        /// Configure this SDK client to set an application name which will be sent with each API call for debugging
+        /// purposes.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -349,9 +351,19 @@ namespace ProjectManager.SDK
         }
     
         /// <summary>
+        /// Configure this SDK client to set a machine name which will be sent with each API call for debugging
+        /// purposes.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public ProjectManagerClient WithMachineName(string name)
+        {
+            _machineName = name;
+            return this;
+        }
+    
+        /// <summary>
         /// Configure this API client to use a JWT bearer token.
-        ///
-        /// 
         /// </summary>
         /// <param name="token">The JWT bearer token to use for this API session</param>
         /// <returns></returns>
@@ -421,7 +433,11 @@ namespace ProjectManager.SDK
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("SdkName", "DotNet");
             request.Headers.Add("SdkVersion", SdkVersion);
-            request.Headers.Add("MachineName", Environment.MachineName);
+            if (_machineName != null)
+            {
+                request.Headers.Add("MachineName", _machineName);
+            }
+
             if (_appName != null)
             {
                 request.Headers.Add("ApplicationName", _appName);

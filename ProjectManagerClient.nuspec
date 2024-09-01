@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>115.0.4330</version>
+		<version>116.0.4391</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,23 +14,18 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 115.0.4330
+            # Patch notes for 116.0.4391
             
-            These patch notes summarize the changes from version 114.0.4166.
+            These patch notes summarize the changes from version 115.0.4330.
+            
+            Added 1 new APIs:
+            * Resource.ResendInviteEmail (GET /api/data/resources/{resourceId}/resendinvite)
             
             Changes to data models:
-            * NotificationDto: Added new field `id`
-            * NotificationDto: Removed field `notificationId`
-            * NotificationDto: Removed field `businessId`
-            * NotificationDto: Removed field `userId`
-            * ResourcesCreateDto: Added new field `projectIds`
-            * RiskExportSettingsDto: Added new field `timeZoneOffset`
-            * RiskExportSettingsDto: Added new field `dueDateFilter`
-            * RiskExportSettingsDto: Added new field `priorityFilter`
-            * RiskExportSettingsDto: Added new field `progressFilter`
-            * RiskExportSettingsDto: Added new field `assignees`
-            * RiskExportSettingsDto: Added new field `tags`
-            * TaskDto: Added new field `theme`
+            * TimesheetDto: Added new field `resourceId`
+            * TimesheetDto: Added new field `taskId`
+            * TimesheetDto: Added new field `projectId`
+            * UserError: Added new field `statusCode`
             
 
         </releaseNotes>

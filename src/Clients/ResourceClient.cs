@@ -128,5 +128,19 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/resources/bulk";
             return await _client.Request<ResourcesDto>(HttpMethod.Post, url, null, body, null);
         }
+
+        /// <summary>
+        /// Resend Invite Email to a Resource within your Workspace.
+        ///
+        /// When you create a Resource that is a person, ProjectManager sends that person an email inviting them to join
+        /// your Workspace.  If that email is accidentally deleted or sent to a spam folder, you can request this email
+        /// be sent again using this API.
+        /// </summary>
+        /// <param name="resourceId">The unique identifier of the Resource to send an invitation email</param>
+        public async Task<AstroResult<string>> ResendInviteEmail(Guid resourceId)
+        {
+            var url = $"/api/data/resources/{resourceId}/resendinvite";
+            return await _client.Request<string>(HttpMethod.Get, url, null, null, null);
+        }
     }
 }

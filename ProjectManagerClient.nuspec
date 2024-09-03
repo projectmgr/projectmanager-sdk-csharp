@@ -14,22 +14,22 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-# Patch notes for 117.0.4438
-
-These patch notes summarize the changes from version 115.0.4330.
-
-Added 1 new APIs:
-* Resource.ResendInviteEmail (GET /api/data/resources/{resourceId}/resendinvite)
-
-Changes to data models:
-* ResourceCreateDto: Added new field `colorName`
-* ResourceDto: Added new field `colorName`
-* ResourceDto: Added new field `color`
-* ResourceUpdateDto: Added new field `colorName`
-* TimesheetDto: Added new field `resourceId`
-* TimesheetDto: Added new field `taskId`
-* TimesheetDto: Added new field `projectId`
-* UserError: Added new field `statusCode`
+            # Patch notes for 117.0.4438
+            
+            These patch notes summarize the changes from version 115.0.4330.
+            
+            Added 1 new APIs:
+            * Resource.ResendInviteEmail (GET /api/data/resources/{resourceId}/resendinvite)
+            
+            Changes to data models:
+            * ResourceCreateDto: Added new field `colorName`
+            * ResourceDto: Added new field `colorName`
+            * ResourceDto: Added new field `color`
+            * ResourceUpdateDto: Added new field `colorName`
+            * TimesheetDto: Added new field `resourceId`
+            * TimesheetDto: Added new field `taskId`
+            * TimesheetDto: Added new field `projectId`
+            * UserError: Added new field `statusCode`
             
 
         </releaseNotes>

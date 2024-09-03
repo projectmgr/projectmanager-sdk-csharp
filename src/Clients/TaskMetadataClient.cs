@@ -51,7 +51,7 @@ namespace ProjectManager.SDK.Clients
             var options = new Dictionary<string, object>();
             if (isSystem != null) { options["isSystem"] = isSystem; }
             if (isOverride != null) { options["isOverride"] = isOverride; }
-            return await _client.Request<string>(HttpMethod.Put, url, options, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, options, body);
         }
 
         public async Task<AstroResult<TaskMetadataSearchDto[]>> GetTasksByProjectIDAndForeignKeyID(Guid projectId, string foreignKey = null, bool? isSystem = null)
@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Clients
             var options = new Dictionary<string, object>();
             if (foreignKey != null) { options["foreignKey"] = foreignKey; }
             if (isSystem != null) { options["isSystem"] = isSystem; }
-            return await _client.Request<TaskMetadataSearchDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TaskMetadataSearchDto[]>(HttpMethod.Get, url, options);
         }
     }
 }

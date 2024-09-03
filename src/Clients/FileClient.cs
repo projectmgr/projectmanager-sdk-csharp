@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/files/{documentId}/download";
             var options = new Dictionary<string, object>();
             if (type != null) { options["type"] = type; }
-            return await _client.Request<byte[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<byte[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<byte[]>> DownloadAThumbnailImage(Guid documentId)
         {
             var url = $"/api/data/files/{documentId}/thumbnail";
-            return await _client.Request<byte[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<byte[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> UpdateFile(Guid fileId, UpdateRequestDto body)
         {
             var url = $"/api/data/files/{fileId}";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/files/{fileId}";
             var options = new Dictionary<string, object>();
             if (hard != null) { options["hard"] = hard; }
-            return await _client.Request<string>(HttpMethod.Delete, url, options, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, options);
         }
     }
 }

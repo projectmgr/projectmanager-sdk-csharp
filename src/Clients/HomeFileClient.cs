@@ -51,11 +51,11 @@ namespace ProjectManager.SDK.Clients
         ///
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadHomeFile(string filename)
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        public async Task<AstroResult<FileDto>> UploadHomeFile(string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/home/files";
-            return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);
+            return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace ProjectManager.SDK.Clients
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string filename)
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        public async Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/home/folders/{folderId}/files";
-            return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);
+            return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
     }
 }

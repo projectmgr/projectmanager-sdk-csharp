@@ -56,7 +56,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ApiKeyDto>> CreateApiKey(ApiKeyCreateDto body)
         {
             var url = $"/api/data/api-keys";
-            return await _client.Request<ApiKeyDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ApiKeyDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ApiKeyDto[]>> ListApiKeys()
         {
             var url = $"/api/data/api-keys";
-            return await _client.Request<ApiKeyDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ApiKeyDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> RevokeAllApiKeys()
         {
             var url = $"/api/data/api-keys/revoke-all";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> RevokeAPIKey(Guid id)
         {
             var url = $"/api/data/api-keys/{id}/revoke";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }
 }

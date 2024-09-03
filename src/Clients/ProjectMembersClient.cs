@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers()
         {
             var url = $"/api/data/projects/members";
-            return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}/members";
             var options = new Dictionary<string, object>();
             if (includeAllUsers != null) { options["includeAllUsers"] = includeAllUsers; }
-            return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ProjectMemberDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMembership(Guid projectId, Guid userId)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
-            return await _client.Request<ProjectMemberDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectMemberDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectMemberDto>> CreateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
-            return await _client.Request<ProjectMemberDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ProjectMemberDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectMemberDto>> UpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
-            return await _client.Request<ProjectMemberDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ProjectMemberDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> RemoveUserProjectMembership(Guid projectId, Guid userId)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }
 }

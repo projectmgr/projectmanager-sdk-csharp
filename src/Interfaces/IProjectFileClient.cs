@@ -41,8 +41,8 @@ namespace ProjectManager.SDK.Interfaces
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string filename);
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string fileName, byte[] fileBytes);
 
         /// <summary>
         /// Uploads a file to a specific folder on the Files page within the project that you specify.
@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string filename);
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string fileName, byte[] fileBytes);
     }
 }

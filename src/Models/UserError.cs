@@ -27,6 +27,6 @@ namespace ProjectManager.SDK.Models
 
         public string Reason { get; set; }
 
-        public HttpStatusCode StatusCode { get; set; }
+        public string StatusCode { get; set; }
     }
 }

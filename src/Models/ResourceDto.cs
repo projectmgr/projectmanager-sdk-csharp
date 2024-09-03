@@ -149,5 +149,17 @@ namespace ProjectManager.SDK.Models
         /// Set to a unique identifier of the user who last modified this Resource.
         /// </summary>
         public Guid? ModifiedBy { get; set; }
+
+        /// <summary>
+        /// Collaboration Color for this resource.
+        ///
+        /// eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+        /// </summary>
+        public string ColorName { get; set; }
+
+        /// <summary>
+        /// Read only Hex code of the ColorName
+        /// </summary>
+        public string Color { get; set; }
     }
 }

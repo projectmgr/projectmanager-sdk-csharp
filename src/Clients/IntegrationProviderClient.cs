@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<IntegrationProviderDto[]>> ListProviders()
         {
             var url = $"/api/data/integrations/providers";
-            return await _client.Request<IntegrationProviderDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<IntegrationProviderDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ConnectionSchemaDto>> ActivateIntegrationProvider(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
-            return await _client.Request<ConnectionSchemaDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<ConnectionSchemaDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> UpdateIntegrationProvider(Guid providerId, AuthenticationDto body)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeactivateIntegrationProvider(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
-            return await _client.Request<DirectLinkDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<DirectLinkDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DisconnectUserIntegrationProviderConnection(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }
 }

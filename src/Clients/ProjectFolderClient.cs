@@ -46,7 +46,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders()
         {
             var url = $"/api/data/project-folders";
-            return await _client.Request<ProjectFolderDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFolderDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TimesheetResponseDto>> CreateTimeEntry(TimesheetCreateRequestDto body)
         {
             var url = $"/api/data/timesheets";
-            return await _client.Request<TimesheetResponseDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<TimesheetResponseDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TimesheetDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TimesheetDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteTimeEntry(Guid timesheetId)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TimesheetResponseDto>> UpdateTimeEntry(Guid timesheetId, TimesheetUpdateRequestDto body)
         {
             var url = $"/api/data/timesheets/{timesheetId}";
-            return await _client.Request<TimesheetResponseDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<TimesheetResponseDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TimesheetAdminTypeDto[]>> ReturnsActiveAdminTasksThatAreUsedToReportTime()
         {
             var url = $"/api/data/timesheets/admin-tasks";
-            return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

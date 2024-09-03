@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectTemplateDto[]>> RetrieveProjectTemplates()
         {
             var url = $"/api/data/projects/templates";
-            return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectTemplateDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectTemplateCategoryDto[]>> RetrieveTemplateCategories()
         {
             var url = $"/api/data/projects/templates/categories";
-            return await _client.Request<ProjectTemplateCategoryDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectTemplateCategoryDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

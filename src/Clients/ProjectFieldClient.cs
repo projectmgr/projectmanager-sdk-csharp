@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectFieldDto[]>> RetrieveProjectFields()
         {
             var url = $"/api/data/projects/fields";
-            return await _client.Request<ProjectFieldDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectFieldDto>> CreateProjectField(ProjectFieldCreateDto body)
         {
             var url = $"/api/data/projects/fields";
-            return await _client.Request<ProjectFieldDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ProjectFieldDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteProjectField(string fieldId)
         {
             var url = $"/api/data/projects/fields/{fieldId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> UpdateProjectFieldValue(Guid projectId, string fieldId, UpdateProjectFieldValueDto body)
         {
             var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectFieldValueDto>> RetrieveProjectFieldValue(Guid projectId, string fieldId)
         {
             var url = $"/api/data/projects/{projectId}/fields/{fieldId}";
-            return await _client.Request<ProjectFieldValueDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldValueDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectFieldValueDto[]>> RetrieveAllProjectFieldValues(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/fields";
-            return await _client.Request<ProjectFieldValueDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectFieldValueDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

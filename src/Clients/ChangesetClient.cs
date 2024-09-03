@@ -55,7 +55,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangesetStatus(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}";
-            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangesetStatus(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}/poll";
-            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null);
         }
     }
 }

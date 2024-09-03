@@ -98,5 +98,12 @@ namespace ProjectManager.SDK.Models
         /// The list of ResourceSkills possessed by this Resource.
         /// </summary>
         public Guid[] SkillIds { get; set; }
+
+        /// <summary>
+        /// Collaboration Color for this resource.
+        ///
+        /// eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+        /// </summary>
+        public string ColorName { get; set; }
     }
 }

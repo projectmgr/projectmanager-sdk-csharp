@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<WorkSpaceDto[]>> RetrieveWorkspaces()
         {
             var url = $"/api/data/workspaces";
-            return await _client.Request<WorkSpaceDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<WorkSpaceDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> InviteToWorkspace(string organizationId, WorkSpaceJoinDto body)
         {
             var url = $"/api/data/workspaces/{organizationId}/join";
-            return await _client.Request<string>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Post, url, null, body);
         }
     }
 }

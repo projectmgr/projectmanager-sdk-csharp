@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<ResourceSkillDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ResourceSkillDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourceSkillDto>> CreateResourceSkill(CreateResourceSkillDto body)
         {
             var url = $"/api/data/resources/skills";
-            return await _client.Request<ResourceSkillDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ResourceSkillDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body)
         {
             var url = $"/api/data/resources/skills/{skillId}";
-            return await _client.Request<ResourceSkillDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ResourceSkillDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteResourceSkill(Guid resourceSkillId)
         {
             var url = $"/api/data/resources/skills/{resourceSkillId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }
 }

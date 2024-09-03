@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskStatusDto[]>> RetrieveTaskStatuses(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
-            return await _client.Request<TaskStatusDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskStatusDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskStatusDto>> CreateTaskStatus(Guid projectId, TaskStatusCreateDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
-            return await _client.Request<TaskStatusDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<TaskStatusDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses";
-            return await _client.Request<TaskStatusDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<TaskStatusDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/statuses/{taskStatusId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }
 }

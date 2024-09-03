@@ -53,7 +53,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskAssignees(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> CreateOrUpdateTaskAssignee(Guid taskId, AssigneeUpsertDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body)
         {
             var url = $"/api/data/tasks/{taskId}/assignees";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body);
         }
     }
 }

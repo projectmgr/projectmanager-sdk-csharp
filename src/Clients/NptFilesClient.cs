@@ -52,11 +52,11 @@ namespace ProjectManager.SDK.Clients
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
         /// <param name="taskId">The reference to the task</param>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        public async Task<AstroResult<FileDto>> UploadFileToNonProjectTasks(Guid taskId, string filename)
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        public async Task<AstroResult<FileDto>> UploadFileToNonProjectTasks(Guid taskId, string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/non-project-tasks/{taskId}/files";
-            return await _client.Request<FileDto>(HttpMethod.Post, url, null, null, filename);
+            return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
     }
 }

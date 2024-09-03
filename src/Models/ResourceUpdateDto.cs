@@ -112,5 +112,12 @@ namespace ProjectManager.SDK.Models
         /// Applies to personnel Resources only.
         /// </summary>
         public Guid? ApproverId { get; set; }
+
+        /// <summary>
+        /// Collaboration Color for this resource.
+        ///
+        /// eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+        /// </summary>
+        public string ColorName { get; set; }
     }
 }

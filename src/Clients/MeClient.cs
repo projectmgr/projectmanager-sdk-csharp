@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<WorkSpaceUserInfoDto>> RetrieveMe()
         {
             var url = $"/api/data/me";
-            return await _client.Request<WorkSpaceUserInfoDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<WorkSpaceUserInfoDto>(HttpMethod.Get, url, null);
         }
     }
 }

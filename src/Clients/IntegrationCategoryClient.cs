@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<IntegrationCategoryDto[]>> RetrieveProviderCategories()
         {
             var url = $"/api/data/integrations/categories";
-            return await _client.Request<IntegrationCategoryDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<IntegrationCategoryDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

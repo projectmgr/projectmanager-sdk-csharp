@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TaskDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TaskDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskDto>> RetrieveTask(string taskId)
         {
             var url = $"/api/data/tasks/{taskId}";
-            return await _client.Request<TaskDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> UpdateTask(Guid taskId, TaskUpdateDto body)
         {
             var url = $"/api/data/tasks/{taskId}";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> DeleteTask(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> CreateTask(Guid projectId, TaskCreateDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskPriorityDto[]>> RetrieveTaskPriorities()
         {
             var url = $"/api/data/tasks/priorities";
-            return await _client.Request<TaskPriorityDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskPriorityDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto[]>> CreateManyTasks(Guid projectId, TaskCreateDto[] body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/bulk";
-            return await _client.Request<ChangeSetStatusDto[]>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto[]>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> AddParentTask(Guid taskId, Guid parentTaskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> UpdateParentTask(Guid taskId, Guid parentTaskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent/{parentTaskId}";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, null, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/parent";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null);
         }
     }
 }

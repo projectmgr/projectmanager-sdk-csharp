@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<UserRoleDto[]>> RetrieveUserRoles()
         {
             var url = $"/api/data/users/roles";
-            return await _client.Request<UserRoleDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<UserRoleDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

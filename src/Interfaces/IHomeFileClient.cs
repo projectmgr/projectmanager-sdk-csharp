@@ -40,8 +40,8 @@ namespace ProjectManager.SDK.Interfaces
         ///
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadHomeFile(string filename);
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        Task<AstroResult<FileDto>> UploadHomeFile(string fileName, byte[] fileBytes);
 
         /// <summary>
         /// Uploads a file to a specific folder on your Home Files page.
@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Interfaces
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
-        /// <param name="filename">The full path of a file to upload to the API</param>
-        Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string filename);
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string fileName, byte[] fileBytes);
     }
 }

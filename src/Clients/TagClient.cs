@@ -58,7 +58,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TagDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TagDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TagDto>> CreateTag(TagCreateDto body)
         {
             var url = $"/api/data/tags";
-            return await _client.Request<TagDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<TagDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body)
         {
             var url = $"/api/data/tags/{tagId}";
-            return await _client.Request<TagDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<TagDto>(HttpMethod.Put, url, null, body);
         }
     }
 }

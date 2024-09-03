@@ -54,7 +54,7 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/notifications";
             var options = new Dictionary<string, object>();
             if (lastId != null) { options["lastId"] = lastId; }
-            return await _client.Request<NotificationResponseDto>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<NotificationResponseDto>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<NotificationTotalCountDto>> NotificationCount()
         {
             var url = $"/api/data/notifications/count";
-            return await _client.Request<NotificationTotalCountDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<NotificationTotalCountDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<NotificationUnreadCountDto>> UnreadNotificationCount()
         {
             var url = $"/api/data/notifications/unreadcount";
-            return await _client.Request<NotificationUnreadCountDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<NotificationUnreadCountDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteAllNotifications()
         {
             var url = $"/api/data/notifications/deleteall";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<NotificationTimestampDto>> MarkNotificationRead(Guid id)
         {
             var url = $"/api/data/notifications/{id}/markread";
-            return await _client.Request<NotificationTimestampDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<NotificationTimestampDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<NotificationTimestampDto>> ReadAllNotifications()
         {
             var url = $"/api/data/notifications/markallread";
-            return await _client.Request<NotificationTimestampDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<NotificationTimestampDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteNotification(Guid id)
         {
             var url = $"/api/data/notifications/delete/{id}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> MarkNotificationUnread(Guid id)
         {
             var url = $"/api/data/notifications/{id}/markunread";
-            return await _client.Request<string>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Post, url, null);
         }
     }
 }

@@ -49,7 +49,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<LicenseDto[]>> RetrieveLicenses()
         {
             var url = $"/api/data/license";
-            return await _client.Request<LicenseDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<LicenseDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<LicenseDto[]>> AddLicense(string bundleSku)
         {
             var url = $"/api/data/license/{bundleSku}/try";
-            return await _client.Request<LicenseDto[]>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<LicenseDto[]>(HttpMethod.Post, url, null);
         }
     }
 }

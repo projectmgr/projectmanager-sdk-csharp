@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    115.0.4330
+ * @version    117.0.4438
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "115.0.4330";
+        public const string SdkVersion = "117.0.4438";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -349,7 +349,7 @@ namespace ProjectManager.SDK
             _appName = name;
             return this;
         }
-    
+        
         /// <summary>
         /// Configure this SDK client to set a machine name which will be sent with each API call for debugging
         /// purposes.
@@ -361,9 +361,11 @@ namespace ProjectManager.SDK
             _machineName = name;
             return this;
         }
-    
+
         /// <summary>
         /// Configure this API client to use a JWT bearer token.
+        ///
+        /// 
         /// </summary>
         /// <param name="token">The JWT bearer token to use for this API session</param>
         /// <returns></returns>
@@ -372,7 +374,7 @@ namespace ProjectManager.SDK
             _bearerToken = token;
             return this;
         }
-
+    
         /// <summary>
         /// Upload a file attachment using this API client
         /// </summary>
@@ -433,6 +435,7 @@ namespace ProjectManager.SDK
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("SdkName", "DotNet");
             request.Headers.Add("SdkVersion", SdkVersion);
+
             if (_machineName != null)
             {
                 request.Headers.Add("MachineName", _machineName);
@@ -467,8 +470,6 @@ namespace ProjectManager.SDK
             }
             uriBuilder.Query = sb.ToString();
             request.RequestUri = uriBuilder.Uri;
-    
-            // Add request body content, if any
             request.Content = content;
             
             // Send the request and convert the response into a success or failure

@@ -26,5 +26,7 @@ namespace ProjectManager.SDK.Models
         public string Email { get; set; }
 
         public string Reason { get; set; }
+
+        public string StatusCode { get; set; }
     }
 }

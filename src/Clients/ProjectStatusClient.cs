@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses()
         {
             var url = $"/api/data/projects/statuses";
-            return await _client.Request<ProjectStatusDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectStatusDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

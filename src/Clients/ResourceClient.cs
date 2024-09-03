@@ -51,7 +51,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourceDto>> CreateResource(ResourceCreateDto body)
         {
             var url = $"/api/data/resources";
-            return await _client.Request<ResourceDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ResourceDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<ResourceDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ResourceDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourceDto>> UpdateResource(Guid resourceId, ResourceUpdateDto body)
         {
             var url = $"/api/data/resources/{resourceId}";
-            return await _client.Request<ResourceDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ResourceDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId)
         {
             var url = $"/api/data/resources/{resourceId}";
-            return await _client.Request<ResourceDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ResourceDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -126,7 +126,21 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ResourcesDto>> CreateManyResources(ResourcesCreateDto body)
         {
             var url = $"/api/data/resources/bulk";
-            return await _client.Request<ResourcesDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ResourcesDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
+        /// Resend Invite Email to a Resource within your Workspace.
+        ///
+        /// When you create a Resource that is a person, ProjectManager sends that person an email inviting them to join
+        /// your Workspace.  If that email is accidentally deleted or sent to a spam folder, you can request this email
+        /// be sent again using this API.
+        /// </summary>
+        /// <param name="resourceId">The unique identifier of the Resource to send an invitation email</param>
+        public async Task<AstroResult<string>> ResendInviteEmail(Guid resourceId)
+        {
+            var url = $"/api/data/resources/{resourceId}/resendinvite";
+            return await _client.Request<string>(HttpMethod.Get, url, null);
         }
     }
 }

@@ -50,7 +50,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskFieldDto[]>> RetrieveTaskFields(Guid projectId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
-            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> CreateTaskField(Guid projectId, CreateTaskFieldDto body)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TaskFieldDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DeleteTaskField(Guid projectId, Guid fieldId)
         {
             var url = $"/api/data/projects/{projectId}/tasks/fields/{fieldId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskFieldValueDto[]>> RetrieveAllTaskFieldValues(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/fields/values";
-            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<TaskFieldValueDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<TaskFieldValueDto>> RetrieveTaskFieldValue(Guid taskId, Guid fieldId)
         {
             var url = $"/api/data/tasks/{taskId}/fields/{fieldId}/values";
-            return await _client.Request<TaskFieldValueDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<TaskFieldValueDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ChangeSetStatusDto>> UpdateTaskFieldValue(Guid taskId, Guid fieldId, UpdateTaskFieldValueDto body)
         {
             var url = $"/api/data/tasks/{taskId}/fields/{fieldId}/values";
-            return await _client.Request<ChangeSetStatusDto>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Put, url, null, body);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<IntegrationDto>> RetrieveIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
-            return await _client.Request<IntegrationDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<IntegrationDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<IntegrationDto>> EnableIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
-            return await _client.Request<IntegrationDto>(HttpMethod.Post, url, null, null, null);
+            return await _client.Request<IntegrationDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> DisableIntegration(Guid integrationId)
         {
             var url = $"/api/data/integrations/{integrationId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations()
         {
             var url = $"/api/data/integrations";
-            return await _client.Request<IntegrationDto[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<IntegrationDto[]>(HttpMethod.Get, url, null);
         }
     }
 }

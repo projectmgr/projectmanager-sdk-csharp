@@ -21,33 +21,55 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Created Time entry response data
+    /// A Timesheet entry is a single record that contains information about time spent by a person on a task.  Each
+    /// Timesheet entry object contains information about one task/day/person combination.  A fully completed Timesheet
+    /// will often contain multiple records for the same date range which must be combined to produce a finished
+    /// Timesheet.
     /// </summary>
     public class TimesheetDto : ApiModel
     {
 
         /// <summary>
-        /// TimesheetId
+        /// A unique identifier of a timesheet data entry
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// Date of time entry
+        /// The unique identifier of the resource who is preparing this Timesheet.  You can filter on this value to measure
+        /// the total work performed by this specific Resource.
+        /// </summary>
+        public Guid? ResourceId { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the task worked on for this Timesheet.  You can filter on this value to measure the
+        /// total work performed against a specific Task.
+        /// </summary>
+        public Guid? TaskId { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the project worked on for this Timesheet.  You can filter on this value to measure the
+        /// total work performed against a specific Project.
+        /// </summary>
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// The date of this time entry record.  You can filter on this value to obtain Timesheet data for a specific date
+        /// range.
         /// </summary>
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// Notes
+        /// Notes associated with this Timesheet, if any
         /// </summary>
         public string Notes { get; set; }
 
         /// <summary>
-        /// Shows if timesheet approved
+        /// True if this Timesheet was approved by a person with the role of a Timesheet approver
         /// </summary>
         public bool? Approved { get; set; }
 
         /// <summary>
-        /// Total Hours
+        /// Total Hours spent on this Task by this Resource on this specific Date
         /// </summary>
         public decimal? Hours { get; set; }
 

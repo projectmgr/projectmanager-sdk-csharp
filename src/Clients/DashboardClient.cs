@@ -45,7 +45,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<DashboardSettingDto>> RetrieveDashboardUserSettings(string type)
         {
             var url = $"/api/data/dashboards/settings/{type}";
-            return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<DashboardSettingDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<DashboardSettingDto>> CreateOrUpdateUserDashboardSettings(DashboardSettingCreateDto body)
         {
             var url = $"/api/data/dashboards/settings";
-            return await _client.Request<DashboardSettingDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<DashboardSettingDto>(HttpMethod.Post, url, null, body);
         }
     }
 }

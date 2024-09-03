@@ -55,7 +55,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<ResourceHolidayDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ResourceHolidayDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<CountryHolidayDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<CountryHolidayDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<GlobalHolidayDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<GlobalHolidayDto[]>(HttpMethod.Get, url, options);
         }
     }
 }

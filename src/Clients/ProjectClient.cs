@@ -59,7 +59,7 @@ namespace ProjectManager.SDK.Clients
             if (filter != null) { options["$filter"] = filter; }
             if (orderby != null) { options["$orderby"] = orderby; }
             if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<ProjectDto[]>(HttpMethod.Get, url, options, null, null);
+            return await _client.Request<ProjectDto[]>(HttpMethod.Get, url, options);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectDto>> CreateProject(ProjectCreateDto body)
         {
             var url = $"/api/data/projects";
-            return await _client.Request<ProjectDto>(HttpMethod.Post, url, null, body, null);
+            return await _client.RequestWithBody<ProjectDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<ProjectDto>> RetrieveProject(string projectId)
         {
             var url = $"/api/data/projects/{projectId}";
-            return await _client.Request<ProjectDto>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<ProjectDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body)
         {
             var url = $"/api/data/projects/{projectId}";
-            return await _client.Request<string>(HttpMethod.Put, url, null, body, null);
+            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}";
             var options = new Dictionary<string, object>();
             if (hardDelete != null) { options["hardDelete"] = hardDelete; }
-            return await _client.Request<string>(HttpMethod.Delete, url, options, null, null);
+            return await _client.Request<string>(HttpMethod.Delete, url, options);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Clients
         public async Task<AstroResult<byte[]>> RetrieveZipFileForTeamsIntegrations()
         {
             var url = $"/api/data/integrations/teams/application";
-            return await _client.Request<byte[]>(HttpMethod.Get, url, null, null, null);
+            return await _client.Request<byte[]>(HttpMethod.Get, url, null);
         }
     }
 }

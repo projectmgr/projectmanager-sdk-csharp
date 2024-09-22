@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>117.0.4438</version>
+		<version>118.0.4556</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,16 +14,11 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 117.0.4438
+            # Patch notes for 118.0.4556
             
-            These patch notes summarize the changes from version 116.0.4391.
+            These patch notes summarize the changes from version 117.0.4438.
             
-            Changes to data models:
-            * ResourceCreateDto: Added new field `colorName`
-            * ResourceDto: Added new field `colorName`
-            * ResourceDto: Added new field `color`
-            * ResourceUpdateDto: Added new field `colorName`
-            
+            * Minor documentation changes, bugfixes, and performance improvements.
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2024</copyright>

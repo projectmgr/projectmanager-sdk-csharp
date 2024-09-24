@@ -249,16 +249,26 @@ namespace ProjectManager.SDK
         /// Internal constructor for the client. You should always begin with `WithEnvironment()` or `WithCustomEnvironment`.
         /// </summary>
         /// <param name="baseEndpoint">The API endpoint to contact</param>
+        /// <param name="client">HTTP Client, when null a new one will be constructed</param>
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
-        private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
+        private ProjectManagerClient(Uri baseEndpoint, HttpClient client, HttpClientHandler clientHandler)
         {
-            // Add support for HTTP compression
-            var handler = clientHandler ?? new HttpClientHandler();
-            handler.AutomaticDecompression = DecompressionMethods.GZip;
-            
-            // We intentionally use a single HttpClient object for the lifetime of this API connection.
-            // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
-            _client = new HttpClient(handler);
+            // If customer wants to use a custom client, let them
+            if (client != null)
+            {
+                _client = client;
+            }
+            else
+            {
+                // Add support for HTTP compression
+                var handler = clientHandler ?? new HttpClientHandler();
+                handler.AutomaticDecompression = DecompressionMethods.GZip;
+
+                // We intentionally use a single HttpClient object for the lifetime of this API connection.
+                // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
+                _client = new HttpClient(handler);
+            }
+
             _apiUrl = baseEndpoint.ToString();
             ApiKey = new ApiKeyClient(this);
             Changeset = new ChangesetClient(this);
@@ -319,7 +329,7 @@ namespace ProjectManager.SDK
             switch (env)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             {
                 case "production":
-                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), clientHandler);
+                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), null, clientHandler);
             }
     
             throw new InvalidOperationException($"Unknown environment: {env}");
@@ -333,9 +343,28 @@ namespace ProjectManager.SDK
         /// <param name="customEndpoint">The custom endpoint to use for this client</param>
         /// <param name="clientHandler">Optional handler to set specific settings for the HTTP client</param>
         /// <returns>The API client to use</returns>
-        public static ProjectManagerClient WithCustomEnvironment(Uri customEndpoint, HttpClientHandler clientHandler = null)
+        public static ProjectManagerClient WithCustomEnvironment(Uri customEndpoint, HttpClientHandler clientHandler)
         {
-            return new ProjectManagerClient(customEndpoint, clientHandler);
+            return new ProjectManagerClient(customEndpoint, null, clientHandler);
+        }
+        
+        /// <summary>
+        /// Construct a client that uses a non-standard environment; this can be necessary when using proxy servers or
+        /// an API gateway.  Please be careful when using this mode.
+        /// You should prefer to use `WithEnvironment()` instead wherever possible.
+        /// </summary>
+        /// <param name="env">The named environment to use; should be "production"</param>
+        /// <param name="client">The HttpClient object to use</param>
+        /// <returns>The ProjectManager API client</returns>
+        public static ProjectManagerClient WithCustomHttpClient(string env, HttpClient client)
+        {
+            switch (env)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            {
+                case "production":
+                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), client, null);
+            }
+    
+            throw new InvalidOperationException($"Unknown environment: {env}");
         }
         
         /// <summary>

@@ -44,11 +44,6 @@ namespace ProjectManager.SDK.Models
         public string CustomProductDomain { get; set; }
 
         /// <summary>
-        /// TODO - What is this value?
-        /// </summary>
-        public Guid? CustomerId { get; set; }
-
-        /// <summary>
         /// This value is set to true if the user who retrieves this Workspace object via an API call is
         /// the owner of this Workspace.
         /// </summary>

@@ -20,6 +20,9 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
+    /// <summary>
+    /// Represents information about a Task that is relevant to a ProjectFile
+    /// </summary>
     public class ProjectFileTaskDto : ApiModel
     {
 

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    117.0.4438
+ * @version    119.0.4625
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -120,6 +120,10 @@ namespace ProjectManager.SDK
         /// </summary>
         IProjectTemplateClient ProjectTemplate { get; }
         /// <summary>
+        /// API methods related to ProjectVersion
+        /// </summary>
+        IProjectVersionClient ProjectVersion { get; }
+        /// <summary>
         /// API methods related to Resource
         /// </summary>
         IResourceClient Resource { get; }
@@ -131,6 +135,10 @@ namespace ProjectManager.SDK
         /// API methods related to ResourceTeam
         /// </summary>
         IResourceTeamClient ResourceTeam { get; }
+        /// <summary>
+        /// API methods related to Risk
+        /// </summary>
+        IRiskClient Risk { get; }
         /// <summary>
         /// API methods related to Tag
         /// </summary>

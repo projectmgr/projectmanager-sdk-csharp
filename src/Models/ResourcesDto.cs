@@ -21,6 +21,8 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
+    /// The Resources object represents the results of a bulk Resource creation API call.
+    ///
     /// A Resource represents a person, material, or tool that is used within your Projects.
     /// When you attach a Resources to more than one Task, the software will schedule the usage
     /// of your Resource so that it is not allocated to more than one Task at the same time.
@@ -30,8 +32,14 @@ namespace ProjectManager.SDK.Models
     public class ResourcesDto : ApiModel
     {
 
+        /// <summary>
+        /// The list of the Resources created by this API call.
+        /// </summary>
         public ResourceDto[] Resources { get; set; }
 
+        /// <summary>
+        /// The list of errors that occurred for Resources that could not be created.
+        /// </summary>
         public UserError[] Errors { get; set; }
     }
 }

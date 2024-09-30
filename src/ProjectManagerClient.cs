@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    117.0.4438
+ * @version    119.0.4625
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "117.0.4438";
+        public const string SdkVersion = "119.0.4625";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -170,6 +170,11 @@ namespace ProjectManager.SDK
         public IProjectTemplateClient ProjectTemplate { get; }
 
         /// <summary>
+        /// API methods related to ProjectVersion
+        /// </summary>
+        public IProjectVersionClient ProjectVersion { get; }
+
+        /// <summary>
         /// API methods related to Resource
         /// </summary>
         public IResourceClient Resource { get; }
@@ -183,6 +188,11 @@ namespace ProjectManager.SDK
         /// API methods related to ResourceTeam
         /// </summary>
         public IResourceTeamClient ResourceTeam { get; }
+
+        /// <summary>
+        /// API methods related to Risk
+        /// </summary>
+        public IRiskClient Risk { get; }
 
         /// <summary>
         /// API methods related to Tag
@@ -284,9 +294,11 @@ namespace ProjectManager.SDK
             ProjectPriority = new ProjectPriorityClient(this);
             ProjectStatus = new ProjectStatusClient(this);
             ProjectTemplate = new ProjectTemplateClient(this);
+            ProjectVersion = new ProjectVersionClient(this);
             Resource = new ResourceClient(this);
             ResourceSkill = new ResourceSkillClient(this);
             ResourceTeam = new ResourceTeamClient(this);
+            Risk = new RiskClient(this);
             Tag = new TagClient(this);
             Task = new TaskClient(this);
             TaskAssignee = new TaskAssigneeClient(this);

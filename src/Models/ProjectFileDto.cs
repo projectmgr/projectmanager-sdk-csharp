@@ -20,6 +20,10 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
+    /// <summary>
+    /// The ProjectFile represents an attached file that is connected to a Project
+    /// and can be retrieved for download.
+    /// </summary>
     public class ProjectFileDto : ApiModel
     {
 

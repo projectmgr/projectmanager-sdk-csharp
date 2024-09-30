@@ -361,9 +361,10 @@ namespace ProjectManager.SDK
         }
         
         /// <summary>
-        /// Construct a client that uses a non-standard environment; this can be necessary when using proxy servers or
-        /// an API gateway.  Please be careful when using this mode.
-        /// You should prefer to use `WithEnvironment()` instead wherever possible.
+        /// Construct a client that uses a custom HTTP Client object.  You can use this method to implement your own
+        /// patterns for HttpClient tracking, usage, or to implement a mocked HTTP client during testing.
+        /// Note that for performance reasons your HttpClient should support connection pooling (to avoid unnecessary
+        /// delays in SSL validation) and you should also support GZip encoding.
         /// </summary>
         /// <param name="env">The named environment to use; should be "production"</param>
         /// <param name="client">The HttpClient object to use</param>

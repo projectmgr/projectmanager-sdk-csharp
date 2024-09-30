@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>117.0.4438</version>
+		<version>119.0.4625</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,15 +14,23 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 117.0.4438
+            # Patch notes for 119.0.4625
             
-            These patch notes summarize the changes from version 116.0.4391.
+            These patch notes summarize the changes from version 117.0.4438.
+            
+            Added 5 new APIs:
+            * ProjectVersion.RetrieveProjectVersions (GET /api/data/projects/{projectId}/versions)
+            * ProjectVersion.DownloadMSProjectXml (GET /api/data/projects/{projectChangeId}/version/download)
+            * ProjectVersion.RestoreProjectVersion (POST /api/data/projects/{projectId}/version/{version}/restore)
+            * ProjectVersion.CopyProjectVersion (POST /api/data/projects/{projectId}/version/{version}/copy)
+            * Risk.CreateRiskExport (POST /api/data/projects/{projectId}/risks/export)
+            
+            Renamed 1 old APIs:
+            * Renamed 'TaskMetadata.GetTasksByProjectIDAndForeignKeyID' to 'TaskMetadata.TaskMetadataSearch'
             
             Changes to data models:
-            * ResourceCreateDto: Added new field `colorName`
-            * ResourceDto: Added new field `colorName`
-            * ResourceDto: Added new field `color`
-            * ResourceUpdateDto: Added new field `colorName`
+            * TaskDto: Added new field `isLocked`
+            * TaskDto: Added new field `isMilestone`
             
 
         </releaseNotes>

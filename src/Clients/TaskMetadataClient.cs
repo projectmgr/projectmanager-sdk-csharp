@@ -54,7 +54,13 @@ namespace ProjectManager.SDK.Clients
             return await _client.RequestWithBody<string>(HttpMethod.Put, url, options, body);
         }
 
-        public async Task<AstroResult<TaskMetadataSearchDto[]>> GetTasksByProjectIDAndForeignKeyID(Guid projectId, string foreignKey = null, bool? isSystem = null)
+        /// <summary>
+        /// Get tasks by project ID and foreign key ID
+        /// </summary>
+        /// <param name="foreignKey">Foreign Key ID</param>
+        /// <param name="projectId">Project ID</param>
+        /// <param name="isSystem">If metadata is for system or customer, isSystem = true is only of ProjectManager</param>
+        public async Task<AstroResult<TaskMetadataSearchDto[]>> TaskMetadataSearch(Guid projectId, string foreignKey = null, bool? isSystem = null)
         {
             var url = $"/api/data/projects/{projectId}/tasks/metadata";
             var options = new Dictionary<string, object>();

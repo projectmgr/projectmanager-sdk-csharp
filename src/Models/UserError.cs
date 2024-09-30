@@ -20,13 +20,26 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
+    /// <summary>
+    /// Represents an individual error for a specific Resource that could not be created in the context
+    /// of a bulk Resource creation API call.
+    /// </summary>
     public class UserError : ApiModel
     {
 
+        /// <summary>
+        /// The email of the Resource that could not be created
+        /// </summary>
         public string Email { get; set; }
 
+        /// <summary>
+        /// A description of the reason this Resource could not be created
+        /// </summary>
         public string Reason { get; set; }
 
+        /// <summary>
+        /// A status code explaining the category of reason this Resource could not be created
+        /// </summary>
         public string StatusCode { get; set; }
     }
 }

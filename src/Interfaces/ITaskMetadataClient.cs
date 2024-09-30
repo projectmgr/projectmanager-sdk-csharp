@@ -36,6 +36,12 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="body">The metadata</param>
         Task<AstroResult<string>> AddMetadata(Guid taskId, TaskMetadataUpdateDto body, bool? isSystem = null, bool? isOverride = null);
 
-        Task<AstroResult<TaskMetadataSearchDto[]>> GetTasksByProjectIDAndForeignKeyID(Guid projectId, string foreignKey = null, bool? isSystem = null);
+        /// <summary>
+        /// Get tasks by project ID and foreign key ID
+        /// </summary>
+        /// <param name="foreignKey">Foreign Key ID</param>
+        /// <param name="projectId">Project ID</param>
+        /// <param name="isSystem">If metadata is for system or customer, isSystem = true is only of ProjectManager</param>
+        Task<AstroResult<TaskMetadataSearchDto[]>> TaskMetadataSearch(Guid projectId, string foreignKey = null, bool? isSystem = null);
     }
 }

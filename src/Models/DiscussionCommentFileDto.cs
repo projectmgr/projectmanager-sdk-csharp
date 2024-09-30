@@ -20,6 +20,10 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
+    /// <summary>
+    /// The DiscussionCommentFile represents a file that has been attached to a discussion
+    /// and is available for download.
+    /// </summary>
     public class DiscussionCommentFileDto : ApiModel
     {
 
@@ -34,7 +38,7 @@ namespace ProjectManager.SDK.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The url of the file which can be used for downloading
+        /// The url of the DownloadFile API to retrieve this file
         /// </summary>
         public string Url { get; set; }
     }

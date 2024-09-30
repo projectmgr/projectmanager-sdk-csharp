@@ -51,6 +51,9 @@ namespace ProjectManager.SDK.Models
         /// </summary>
         public string ProjectName { get; set; }
 
+        /// <summary>
+        /// Name of the task this notification is related to
+        /// </summary>
         public string TaskName { get; set; }
 
         /// <summary>

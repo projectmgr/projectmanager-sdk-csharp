@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    117.0.4438
+ * @version    119.0.4625
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "117.0.4438";
+        public const string SdkVersion = "119.0.4625";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -170,6 +170,11 @@ namespace ProjectManager.SDK
         public IProjectTemplateClient ProjectTemplate { get; }
 
         /// <summary>
+        /// API methods related to ProjectVersion
+        /// </summary>
+        public IProjectVersionClient ProjectVersion { get; }
+
+        /// <summary>
         /// API methods related to Resource
         /// </summary>
         public IResourceClient Resource { get; }
@@ -183,6 +188,11 @@ namespace ProjectManager.SDK
         /// API methods related to ResourceTeam
         /// </summary>
         public IResourceTeamClient ResourceTeam { get; }
+
+        /// <summary>
+        /// API methods related to Risk
+        /// </summary>
+        public IRiskClient Risk { get; }
 
         /// <summary>
         /// API methods related to Tag
@@ -249,16 +259,26 @@ namespace ProjectManager.SDK
         /// Internal constructor for the client. You should always begin with `WithEnvironment()` or `WithCustomEnvironment`.
         /// </summary>
         /// <param name="baseEndpoint">The API endpoint to contact</param>
+        /// <param name="client">HTTP Client, when null a new one will be constructed</param>
         /// <param name="clientHandler">Handler for the HTTP client, when null the default handler will be used</param>
-        private ProjectManagerClient(Uri baseEndpoint, HttpClientHandler clientHandler)
+        private ProjectManagerClient(Uri baseEndpoint, HttpClient client, HttpClientHandler clientHandler)
         {
-            // Add support for HTTP compression
-            var handler = clientHandler ?? new HttpClientHandler();
-            handler.AutomaticDecompression = DecompressionMethods.GZip;
-            
-            // We intentionally use a single HttpClient object for the lifetime of this API connection.
-            // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
-            _client = new HttpClient(handler);
+            // If customer wants to use a custom client, let them
+            if (client != null)
+            {
+                _client = client;
+            }
+            else
+            {
+                // Add support for HTTP compression
+                var handler = clientHandler ?? new HttpClientHandler();
+                handler.AutomaticDecompression = DecompressionMethods.GZip;
+
+                // We intentionally use a single HttpClient object for the lifetime of this API connection.
+                // Best practices: https://bytedev.medium.com/net-core-httpclient-best-practices-4c1b20e32c6
+                _client = new HttpClient(handler);
+            }
+
             _apiUrl = baseEndpoint.ToString();
             ApiKey = new ApiKeyClient(this);
             Changeset = new ChangesetClient(this);
@@ -284,9 +304,11 @@ namespace ProjectManager.SDK
             ProjectPriority = new ProjectPriorityClient(this);
             ProjectStatus = new ProjectStatusClient(this);
             ProjectTemplate = new ProjectTemplateClient(this);
+            ProjectVersion = new ProjectVersionClient(this);
             Resource = new ResourceClient(this);
             ResourceSkill = new ResourceSkillClient(this);
             ResourceTeam = new ResourceTeamClient(this);
+            Risk = new RiskClient(this);
             Tag = new TagClient(this);
             Task = new TaskClient(this);
             TaskAssignee = new TaskAssigneeClient(this);
@@ -319,7 +341,7 @@ namespace ProjectManager.SDK
             switch (env)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             {
                 case "production":
-                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), clientHandler);
+                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), null, clientHandler);
             }
     
             throw new InvalidOperationException($"Unknown environment: {env}");
@@ -333,11 +355,31 @@ namespace ProjectManager.SDK
         /// <param name="customEndpoint">The custom endpoint to use for this client</param>
         /// <param name="clientHandler">Optional handler to set specific settings for the HTTP client</param>
         /// <returns>The API client to use</returns>
-        public static ProjectManagerClient WithCustomEnvironment(Uri customEndpoint, HttpClientHandler clientHandler = null)
+        public static ProjectManagerClient WithCustomEnvironment(Uri customEndpoint, HttpClientHandler clientHandler)
         {
-            return new ProjectManagerClient(customEndpoint, clientHandler);
+            return new ProjectManagerClient(customEndpoint, null, clientHandler);
         }
         
+        /// <summary>
+        /// Construct a client that uses a custom HTTP Client object.  You can use this method to implement your own
+        /// patterns for HttpClient tracking, usage, or to implement a mocked HTTP client during testing.
+        /// Note that for performance reasons your HttpClient should support connection pooling (to avoid unnecessary
+        /// delays in SSL validation) and you should also support GZip encoding.
+        /// </summary>
+        /// <param name="env">The named environment to use; should be "production"</param>
+        /// <param name="client">The HttpClient object to use</param>
+        /// <returns>The API client to use</returns>
+        public static ProjectManagerClient WithCustomHttpClient(string env, HttpClient client)
+        {
+            switch (env)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            {
+                case "production":
+                    return new ProjectManagerClient(new Uri("https://api.projectmanager.com"), client, null);
+            }
+    
+            throw new InvalidOperationException($"Unknown environment: {env}");
+        }        
+
         /// <summary>
         /// Configure this SDK client to set an application name which will be sent with each API call for debugging
         /// purposes.

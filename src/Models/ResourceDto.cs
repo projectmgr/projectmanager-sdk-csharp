@@ -36,6 +36,11 @@ namespace ProjectManager.SDK.Models
         public Guid? Id { get; set; }
 
         /// <summary>
+        /// The resource initials.
+        /// </summary>
+        public string Initials { get; set; }
+
+        /// <summary>
         /// The first name of the person Resource.
         ///
         /// Applies to personnel Resources only.
@@ -161,5 +166,10 @@ namespace ProjectManager.SDK.Models
         /// Read only Hex code of the ColorName
         /// </summary>
         public string Color { get; set; }
+
+        /// <summary>
+        /// The resources avatar url, if any.
+        /// </summary>
+        public string AvatarUrl { get; set; }
     }
 }

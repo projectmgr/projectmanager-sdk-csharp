@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>119.0.4625</version>
+		<version>120.0.4689</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,7 +14,7 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 119.0.4625
+            # Patch notes for 120.0.4689
             
             These patch notes summarize the changes from version 117.0.4438.
             
@@ -29,6 +29,8 @@
             * Renamed 'TaskMetadata.GetTasksByProjectIDAndForeignKeyID' to 'TaskMetadata.TaskMetadataSearch'
             
             Changes to data models:
+            * ResourceDto: Added new field `initials`
+            * ResourceDto: Added new field `avatarUrl`
             * TaskDto: Added new field `isLocked`
             * TaskDto: Added new field `isMilestone`
             

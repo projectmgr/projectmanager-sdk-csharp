@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Files", "Other Files"
 		ProjectManagerClient.nuspec = ProjectManagerClient.nuspec
 		README.md = README.md
 		.github\workflows\nuget-publish.yml = .github\workflows\nuget-publish.yml
+		.github\workflows\update.yml = .github\workflows\update.yml
+		sdk-config.json = sdk-config.json
 	EndProjectSection
 EndProject
 Global

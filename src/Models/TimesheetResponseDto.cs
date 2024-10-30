@@ -70,5 +70,10 @@ namespace ProjectManager.SDK.Models
         /// Total Hours
         /// </summary>
         public decimal? Hours { get; set; }
+
+        /// <summary>
+        /// Total Minutes
+        /// </summary>
+        public int? Minutes { get; set; }
     }
 }

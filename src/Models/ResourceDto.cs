@@ -91,6 +91,11 @@ namespace ProjectManager.SDK.Models
         public string Country { get; set; }
 
         /// <summary>
+        /// Returns the name of the country
+        /// </summary>
+        public string CountryName { get; set; }
+
+        /// <summary>
         /// Free-form text notes about this Resource.  You may use this field to store extra
         /// information about the Resource.
         /// </summary>

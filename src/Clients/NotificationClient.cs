@@ -49,11 +49,17 @@ namespace ProjectManager.SDK.Clients
         /// using the parameter `lastId` of the oldest notification from each batch to fetch the next 500 notifications.
         /// </summary>
         /// <param name="lastId">To continue loading more notifications in a series of requests, provide the ID of the oldest notification from the currently loaded batch as the `lastId` parameter</param>
-        public async Task<AstroResult<NotificationResponseDto>> RetrieveNotifications(Guid? lastId = null)
+        /// <param name="senderId">Filter the notifications to only those sent by the user with the specified ID</param>
+        /// <param name="notificationTypes">Specifies the types of notifications to return. If not provided, all notifications will be returned.</param>
+        /// <param name="asFlatList">If set to true all notifications will be returned as a flat list, otherwise they will be grouped by parent in the same manner as displayed in the UI.</param>
+        public async Task<AstroResult<NotificationResponseDto>> RetrieveNotifications(Guid? lastId = null, Guid? senderId = null, string[] notificationTypes = null, bool? asFlatList = null)
         {
             var url = $"/api/data/notifications";
             var options = new Dictionary<string, object>();
             if (lastId != null) { options["lastId"] = lastId; }
+            if (senderId != null) { options["senderId"] = senderId; }
+            if (notificationTypes != null) { options["notificationTypes"] = notificationTypes; }
+            if (asFlatList != null) { options["asFlatList"] = asFlatList; }
             return await _client.Request<NotificationResponseDto>(HttpMethod.Get, url, options);
         }
 

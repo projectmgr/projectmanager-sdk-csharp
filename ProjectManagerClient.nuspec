@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>120.0.4689</version>
+		<version>121.0.4887</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,25 +14,34 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 120.0.4689
+            # Patch notes for 121.0.4887
             
-            These patch notes summarize the changes from version 117.0.4438.
+            These patch notes summarize the changes from version 120.0.4689.
             
-            Added 5 new APIs:
-            * ProjectVersion.RetrieveProjectVersions (GET /api/data/projects/{projectId}/versions)
-            * ProjectVersion.DownloadMSProjectXml (GET /api/data/projects/{projectChangeId}/version/download)
-            * ProjectVersion.RestoreProjectVersion (POST /api/data/projects/{projectId}/version/{version}/restore)
-            * ProjectVersion.CopyProjectVersion (POST /api/data/projects/{projectId}/version/{version}/copy)
-            * Risk.CreateRiskExport (POST /api/data/projects/{projectId}/risks/export)
+            Added 7 new APIs:
+            * Discussion.LikeAComment (POST /api/data/comments/{commentId}/like)
+            * Discussion.RemovesAThumbsupFromAComment (DELETE /api/data/comments/{commentId}/like)
+            * Discussion.RemoveAComment (DELETE /api/data/comments/{commentId})
+            * TaskTodo.GetTodosForATask (GET /api/data/tasks/{taskId}/todos)
+            * TaskTodo.CreateATodoForATask (POST /api/data/tasks/{taskId}/todos)
+            * TaskTodo.UpdateATodo (PUT /api/data/tasks/todos/{todoId})
+            * TaskTodo.DeleteATodo (DELETE /api/data/tasks/todos/{todoId})
             
-            Renamed 1 old APIs:
-            * Renamed 'TaskMetadata.GetTasksByProjectIDAndForeignKeyID' to 'TaskMetadata.TaskMetadataSearch'
+            Changes to existing APIs:
+            * Notification.RetrieveNotifications added query parameter `senderId`
+            * Notification.RetrieveNotifications added query parameter `notificationTypes`
+            * Notification.RetrieveNotifications added query parameter `asFlatList`
             
             Changes to data models:
-            * ResourceDto: Added new field `initials`
-            * ResourceDto: Added new field `avatarUrl`
-            * TaskDto: Added new field `isLocked`
-            * TaskDto: Added new field `isMilestone`
+            * ResourceDto: Added new field `countryName`
+            * TaskCreateDto: Added new field `isLocked`
+            * TaskCreateDto: Added new field `isMilestone`
+            * TaskUpdateDto: Added new field `isLocked`
+            * TaskUpdateDto: Added new field `isMilestone`
+            * TimesheetCreateRequestDto: Added new field `minutes`
+            * TimesheetDto: Added new field `minutes`
+            * TimesheetResponseDto: Added new field `minutes`
+            * TimesheetUpdateRequestDto: Added new field `minutes`
             
 
         </releaseNotes>

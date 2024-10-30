@@ -74,6 +74,11 @@ namespace ProjectManager.SDK.Models
         public decimal? Hours { get; set; }
 
         /// <summary>
+        /// Total minutes spent on this Task by this Resource on this specific Date
+        /// </summary>
+        public int? Minutes { get; set; }
+
+        /// <summary>
         /// Date and time (in UTC) that this timesheet entry was last modified.
         /// </summary>
         public DateTime? ModifiedDate { get; set; }

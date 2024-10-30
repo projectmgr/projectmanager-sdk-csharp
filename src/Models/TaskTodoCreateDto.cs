@@ -21,24 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Payload to update time entry
+    /// The properties for creating a TaskTodo.
     /// </summary>
-    public class TimesheetUpdateRequestDto : ApiModel
+    public class TaskTodoCreateDto : ApiModel
     {
 
         /// <summary>
-        /// Reported hours. If minutes is specified this property is ignored
+        /// The full description of this TaskTodo.
         /// </summary>
-        public decimal? Hours { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
-        /// Specify the time in minutes. This overrides the Hours property.
+        /// True if this TaskTodo is complete.
         /// </summary>
-        public int? Minutes { get; set; }
-
-        /// <summary>
-        /// Notes
-        /// </summary>
-        public string Notes { get; set; }
+        public bool? Complete { get; set; }
     }
 }

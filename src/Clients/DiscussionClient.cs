@@ -63,5 +63,35 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/{taskId}/comments";
             return await _client.RequestWithBody<DiscussionCommentCreateResponseDto>(HttpMethod.Post, url, null, body);
         }
+
+        /// <summary>
+        /// Puts a thumbsup on a comment
+        /// </summary>
+        /// <param name="commentId">the id of the comment</param>
+        public async Task<AstroResult<string>> LikeAComment(Guid commentId)
+        {
+            var url = $"/api/data/comments/{commentId}/like";
+            return await _client.Request<string>(HttpMethod.Post, url, null);
+        }
+
+        /// <summary>
+        /// Unlike a comment that was previously liked
+        /// </summary>
+        /// <param name="commentId">the id of the comment</param>
+        public async Task<AstroResult<string>> RemovesAThumbsupFromAComment(Guid commentId)
+        {
+            var url = $"/api/data/comments/{commentId}/like";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
+
+        /// <summary>
+        /// Removes a comment by it&#39;s id
+        /// </summary>
+        /// <param name="commentId">Remove a comment</param>
+        public async Task<AstroResult<string>> RemoveAComment(Guid commentId)
+        {
+            var url = $"/api/data/comments/{commentId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
     }
 }

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    120.0.4689
+ * @version    121.0.4887
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -171,6 +171,10 @@ namespace ProjectManager.SDK
         /// API methods related to TaskTag
         /// </summary>
         ITaskTagClient TaskTag { get; }
+        /// <summary>
+        /// API methods related to TaskTodo
+        /// </summary>
+        ITaskTodoClient TaskTodo { get; }
         /// <summary>
         /// API methods related to Teams
         /// </summary>

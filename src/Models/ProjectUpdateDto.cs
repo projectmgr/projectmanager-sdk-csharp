@@ -59,6 +59,8 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// To assign this Project to a ProjectCustomer, set this to the unique identifier of the
         /// ProjectCustomer.
+        ///
+        /// If set to an empty guid the Project will be unassigned from the current ProjectCustomer.
         /// </summary>
         public Guid? CustomerId { get; set; }
 

@@ -35,5 +35,24 @@ namespace ProjectManager.SDK.Interfaces
         /// Workspace and are shared among Projects.
         /// </summary>
         Task<AstroResult<ProjectCustomerDto[]>> RetrieveProjectCustomers();
+
+        /// <summary>
+        /// Create a project customer
+        /// </summary>
+        /// <param name="body">The data to create the customer</param>
+        Task<AstroResult<ProjectCustomerDto>> CreateProjectCustomer(ProjectCustomerCreateDto body);
+
+        /// <summary>
+        /// Updates a project customer
+        /// </summary>
+        /// <param name="customerId">The id of the customer to update</param>
+        /// <param name="body">The data to update</param>
+        Task<AstroResult<ProjectCustomerDto>> UpdateProjectCustomer(Guid customerId, ProjectCustomerCreateDto body);
+
+        /// <summary>
+        /// Delete a project customer. They will also be removed from any projects they were assigned too.
+        /// </summary>
+        /// <param name="customerId">The id of the customer to remove</param>
+        Task<AstroResult<string>> DeleteProjectCustomer(Guid customerId);
     }
 }

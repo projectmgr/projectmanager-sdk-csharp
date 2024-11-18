@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    121.0.4887
+ * @version    122.0.214
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 

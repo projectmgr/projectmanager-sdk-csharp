@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>122.0.214</version>
+		<version>123.0.222</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,15 +14,11 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 122.0.214
+            # Patch notes for 123.0.222
             
-            These patch notes summarize the changes from version 121.0.4887.
+            These patch notes summarize the changes from version 122.0.214.
             
-            Added 3 new APIs:
-            * ProjectCustomer.CreateProjectCustomer (POST /api/data/projects/customers)
-            * ProjectCustomer.UpdateProjectCustomer (PUT /api/data/projects/customers/{customerId})
-            * ProjectCustomer.DeleteProjectCustomer (DELETE /api/data/projects/customers/{customerId})
-            
+            * Minor documentation changes, bugfixes, and performance improvements.
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2024</copyright>

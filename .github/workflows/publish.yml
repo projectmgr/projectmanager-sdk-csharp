@@ -19,8 +19,6 @@ jobs:
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: "9.x"
 
       - name: Build solution and generate NuGet package
         run: dotnet build -c Release
@@ -30,7 +28,6 @@ jobs:
         uses: nuget/setup-nuget@v2
         with:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
-          nuget-version: "6.x"
 
       - name: Run Nuget pack
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

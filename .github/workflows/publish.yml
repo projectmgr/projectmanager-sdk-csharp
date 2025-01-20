@@ -19,6 +19,10 @@ jobs:
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.x
+            9.x
 
       - name: Build solution and generate NuGet package
         run: dotnet build -c Release

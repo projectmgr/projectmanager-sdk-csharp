@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>122.0.214</version>
+		<version>125.1.169</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,24 +14,22 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 122.0.214
+            # Patch notes for 125.1.169
             
-            These patch notes summarize the changes from version 121.0.4887.
+            These patch notes summarize the changes from version 122.0.214.
             
-            Added 3 new APIs:
-            * ProjectCustomer.CreateProjectCustomer (POST /api/data/projects/customers)
-            * ProjectCustomer.UpdateProjectCustomer (PUT /api/data/projects/customers/{customerId})
-            * ProjectCustomer.DeleteProjectCustomer (DELETE /api/data/projects/customers/{customerId})
+            Changes to data models:
+            * WorkSpaceUserInfoDto: Added new field `permissions`
             
 
         </releaseNotes>
-		<copyright>Copyright 2023 - 2024</copyright>
+		<copyright>Copyright 2023 - 2025</copyright>
     	<tags>projectmanager project management task tracking projects tasks</tags>
 		<repository type="git" url="https://github.com/projectmgr/projectmanager-sdk-csharp" />
 		<dependencies>
 			<group targetFramework=".NETStandard2.0">
 				<dependency id="System.Net.Http" version="4.3.4" />
-				<dependency id="System.Text.Json" version="6.0.2" />
+				<dependency id="System.Text.Json" version="9.0.0" />
 			</group>
 		</dependencies>
 	</metadata>

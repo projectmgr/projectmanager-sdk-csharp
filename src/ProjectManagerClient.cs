@@ -1,15 +1,15 @@
 /***
  * ProjectManager API for C#
  *
- * (c) 2023-2024 ProjectManager.com, Inc.
+ * (c) ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
- * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    122.0.214
+ * @copyright  ProjectManager.com, Inc.
+ * @version    125.1.169
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "122.0.214";
+        public const string SdkVersion = "125.1.169";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;

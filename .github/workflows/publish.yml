@@ -25,7 +25,7 @@ jobs:
 
       - name: Setup Nuget
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: nuget/setup-nuget@v2
+        uses: nuget/setup-nuget@v2.0.1
         with:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 

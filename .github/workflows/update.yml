@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.x"
+          dotnet-version: "9.x"
 
       - name: Add the SDK Generator
         run: dotnet tool install SdkGenerator --global

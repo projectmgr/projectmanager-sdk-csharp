@@ -27,16 +27,10 @@ jobs:
       - name: Build solution and generate NuGet package
         run: dotnet build -c Release
 
-      - name: Setup Nuget
+      - name: Run DotNet pack
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: nuget/setup-nuget@v2.0.1
-        with:
-          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
-
-      - name: Run Nuget pack
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: nuget pack ProjectManagerClient.nuspec
+        run: dotnet pack
 
       - name: Push generated package to GitHub registry
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: nuget push *.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push *.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{ secrets.NUGET_API_KEY }}

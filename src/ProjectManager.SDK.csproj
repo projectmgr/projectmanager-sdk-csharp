@@ -5,10 +5,38 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageReadmeFile>docs/README.md</PackageReadmeFile>
+        <Description>Software development kit for the ProjectManager.com API for DotNet</Description>
+        <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
+        <Copyright>Copyright 2021 - 2025</Copyright>
+        <PackageReleaseNotes>
+            # Patch notes for 125.1.169
+
+            These patch notes summarize the changes from version 122.0.214.
+
+            Changes to data models:
+            * WorkSpaceUserInfoDto: Added new field `permissions`
+        </PackageReleaseNotes>
+        <PackageIcon>docs/logo.png</PackageIcon>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Version>125.1.169</Version>
+        <Authors>ProjectManager.com</Authors>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None
+                Include="../README.md"
+                PackagePath="/docs"
+                Pack="true" />
+        <None
+                Include="../images/logo.png"
+                PackagePath="/docs"
+                Pack="true" />
     </ItemGroup>
 
 </Project>

@@ -34,6 +34,10 @@
                 PackagePath="/docs"
                 Pack="true" />
         <None
+                Include="../LICENSE"
+                PackagePath="/docs"
+                Pack="true" />
+        <None
                 Include="../images/logo.png"
                 PackagePath="/docs"
                 Pack="true" />

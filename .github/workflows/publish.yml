@@ -27,7 +27,7 @@ jobs:
       - name: Build solution and generate NuGet package
         run: dotnet build -c Release
 
-      - name: Run Nuget pack
+      - name: Run DotNet pack
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: dotnet pack
 

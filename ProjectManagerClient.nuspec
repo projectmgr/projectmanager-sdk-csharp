@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>ProjectManager.SDK</id>
+		<version>126.0.205</version>
+		<title>ProjectManager.SDK</title>
+		<authors>ProjectManager.com</authors>
+		<owners>ProjectManager.com, Inc.</owners>
+		<license type="file">docs/LICENSE</license>
+		<projectUrl>https://github.com/projectmgr/projectmanager-sdk-csharp</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Software development kit for the ProjectManager.com API. for DotNet</description>
+		<icon>docs/logo.png</icon>
+		<readme>docs/README.md</readme>
+		<summary>ProjectManager API for DotNet</summary>
+		<releaseNotes>
+            # Patch notes for 126.0.205
+            
+            These patch notes summarize the changes from version 125.1.169.
+            
+            Deprecated 1 old APIs:
+            * WorkSpace.InviteToWorkspace
+            
+
+        </releaseNotes>
+		<copyright>Copyright 2023 - 2025</copyright>
+    	<tags>projectmanager project management task tracking projects tasks</tags>
+		<repository type="git" url="https://github.com/projectmgr/projectmanager-sdk-csharp" />
+		<dependencies>
+			<group targetFramework=".NETStandard2.0">
+				<dependency id="System.Net.Http" version="4.3.4" />
+				<dependency id="System.Text.Json" version="9.0.0" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src=".\LICENSE" target="docs/LICENSE"/>
+		<file src=".\README.md" target="docs/README.md"/>
+		<file src=".\images\logo.png" target="docs/logo.png"/>
+		<file src="src\bin\Release\netstandard2.0\*" target="lib\netstandard20" />
+	</files>
+</package>

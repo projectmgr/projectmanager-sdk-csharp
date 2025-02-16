@@ -51,23 +51,5 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/workspaces";
             return await _client.Request<WorkSpaceDto[]>(HttpMethod.Get, url, null);
         }
-
-        /// <summary>
-        /// Invite a specific user to join a Workspace to which the current user has administrator rights.
-        ///
-        /// A single User may have access to multiple Workspaces, although they can only be logged on
-        /// to one Workspace at a time.  This API lists all Workspaces to which the currently logged on
-        /// user is entitled to access.  To determine which Workspace a user is currently logged on
-        /// use the `/api/data/me` endpoint.
-        ///
-        /// This API allows you to invite a specific  an invitation to join a specific Workspace.
-        /// </summary>
-        /// <param name="organizationId">The unique identifier of the Organization that you are inviting a User to joi</param>
-        /// <param name="body">Information about the user which will receive the invitation</param>
-        public async Task<AstroResult<string>> InviteToWorkspace(string organizationId, WorkSpaceJoinDto body)
-        {
-            var url = $"/api/data/workspaces/{organizationId}/join";
-            return await _client.RequestWithBody<string>(HttpMethod.Post, url, null, body);
-        }
     }
 }

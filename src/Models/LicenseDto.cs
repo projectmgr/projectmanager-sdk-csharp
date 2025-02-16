@@ -30,7 +30,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The unique identifier of this License.
         /// </summary>
-        public Guid? Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The SKU code of this License, used for billing purposes.
@@ -41,10 +41,5 @@ namespace ProjectManager.SDK.Models
         /// The SKU code of the bundle of this License, used for billing purposes.
         /// </summary>
         public string BundleSku { get; set; }
-
-        /// <summary>
-        /// True if this license is optional.
-        /// </summary>
-        public bool? Optional { get; set; }
     }
 }

@@ -21,25 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A License represents a subscription to a particular product or bundle of products
-    /// within ProjectManager.
+    /// Represents a state with its details.
     /// </summary>
-    public class LicenseDto : ApiModel
+    public class StateDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this License.
+        /// Gets or sets the unique identifier for the state.
         /// </summary>
-        public string Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
-        /// The SKU code of this License, used for billing purposes.
+        /// Gets or sets the code of the state.
         /// </summary>
-        public string LicenseSku { get; set; }
+        public string StateCode { get; set; }
 
         /// <summary>
-        /// The SKU code of the bundle of this License, used for billing purposes.
+        /// Gets or sets the name of the state.
         /// </summary>
-        public string BundleSku { get; set; }
+        public string Name { get; set; }
     }
 }

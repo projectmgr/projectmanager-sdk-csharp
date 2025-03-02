@@ -70,7 +70,11 @@ namespace ProjectManager.SDK.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// A description of the work to be performed in this Task.
+        /// This field contains the task&#39;s &quot;Note&quot; or &quot;Description&quot;, which is a description of the work to be done to complete the task.
+        ///
+        /// Within the ProjectManager application, you can use this field as follows:
+        /// * When in the Gantt view, select a task and click the &quot;Add Note&quot; button.
+        /// * When in the Board view, click on a task to open the task panel, then edit the &quot;Description&quot; field.
         /// </summary>
         public string Description { get; set; }
 

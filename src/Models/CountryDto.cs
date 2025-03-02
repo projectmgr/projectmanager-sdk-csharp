@@ -21,16 +21,20 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Workspace represents a single business subscription to the ProjectManager.com service.  You
-    /// can be a member of multiple Workspaces.  Each Workspace is completely separate from all other
-    /// Workspaces and a user cannot log in to multiple Workspaces at the same time.
+    /// Represents a country with its details.
     /// </summary>
-    public class WorkSpaceJoinDto : ApiModel
+    public class CountryDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of the BusinessUser to invite to this Workspace.
+        /// Gets or sets the unique identifier for the country. This should translate to the ISO2 code
+        /// for that country.
         /// </summary>
-        public Guid? BusinessUserId { get; set; }
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the country.
+        /// </summary>
+        public string Name { get; set; }
     }
 }

@@ -10,16 +10,16 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2021 - 2025</Copyright>
         <PackageReleaseNotes>
-            # Patch notes for 125.1.169
+            # Patch notes for 127.0.185
 
-            These patch notes summarize the changes from version 122.0.214.
+            These patch notes summarize the changes from version 125.1.169.
 
-            Changes to data models:
-            * WorkSpaceUserInfoDto: Added new field `permissions`
+            Deprecated 1 old APIs:
+            * WorkSpace.InviteToWorkspace
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Version>125.1.169</Version>
+        <version>127.0.185</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

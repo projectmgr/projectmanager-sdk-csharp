@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>127.0.185</version>
+		<version>128.0.112</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,13 +14,11 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 127.0.185
+            # Patch notes for 128.0.112
             
-            These patch notes summarize the changes from version 125.1.169.
+            These patch notes summarize the changes from version 127.0.185.
             
-            Deprecated 1 old APIs:
-            * WorkSpace.InviteToWorkspace
-            
+            * Minor documentation changes, bugfixes, and performance improvements.
 
         </releaseNotes>
 		<copyright>Copyright 2023 - 2025</copyright>

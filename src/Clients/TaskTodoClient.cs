@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Clients
         /// Retrieve a list of todos for a task
         /// </summary>
         /// <param name="taskId">the id of the task</param>
-        public async Task<AstroResult<TaskTodoDto[]>> GetTodosForATask(Guid taskId)
+        public async Task<AstroResult<TaskTodoDto[]>> GetTodos(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/todos";
             return await _client.Request<TaskTodoDto[]>(HttpMethod.Get, url, null);
@@ -53,7 +53,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="taskId">the id of the task</param>
         /// <param name="body">the data for creating a todo</param>
-        public async Task<AstroResult<TaskTodoDto>> CreateATodoForATask(Guid taskId, TaskTodoCreateDto body)
+        public async Task<AstroResult<TaskTodoDto>> CreateTodo(Guid taskId, TaskTodoCreateDto body)
         {
             var url = $"/api/data/tasks/{taskId}/todos";
             return await _client.RequestWithBody<TaskTodoDto>(HttpMethod.Post, url, null, body);
@@ -64,7 +64,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="todoId">the id of the task</param>
         /// <param name="body">the data for updating a todo</param>
-        public async Task<AstroResult<TaskTodoDto>> UpdateATodo(Guid todoId, TaskTodoUpdateDto body)
+        public async Task<AstroResult<TaskTodoDto>> UpdateTodo(Guid todoId, TaskTodoUpdateDto body)
         {
             var url = $"/api/data/tasks/todos/{todoId}";
             return await _client.RequestWithBody<TaskTodoDto>(HttpMethod.Put, url, null, body);
@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Clients
         /// Remove a todo
         /// </summary>
         /// <param name="todoId">the id of the todo</param>
-        public async Task<AstroResult<string>> DeleteATodo(Guid todoId)
+        public async Task<AstroResult<string>> DeleteTodo(Guid todoId)
         {
             var url = $"/api/data/tasks/todos/{todoId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);

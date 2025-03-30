@@ -78,12 +78,12 @@ namespace ProjectManager.SDK.Clients
         /// <param name="projectId">The unique identifier of the Project to copy</param>
         /// <param name="version">The version number of the Project to copy</param>
         /// <param name="timezoneOffset">If specified, sets the default timezone of the newly copied Project to this specified timezone</param>
-        public async Task<AstroResult<string>> CopyProjectVersion(Guid projectId, int version, int? timezoneOffset = null)
+        public async Task<AstroResult<ProjectRestoreProjectDto>> CopyProjectVersion(Guid projectId, int version, int? timezoneOffset = null)
         {
             var url = $"/api/data/projects/{projectId}/version/{version}/copy";
             var options = new Dictionary<string, object>();
             if (timezoneOffset != null) { options["timezoneOffset"] = timezoneOffset; }
-            return await _client.Request<string>(HttpMethod.Post, url, options);
+            return await _client.Request<ProjectRestoreProjectDto>(HttpMethod.Post, url, options);
         }
     }
 }

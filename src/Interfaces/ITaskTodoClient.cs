@@ -31,26 +31,26 @@ namespace ProjectManager.SDK.Interfaces
         /// Retrieve a list of todos for a task
         /// </summary>
         /// <param name="taskId">the id of the task</param>
-        Task<AstroResult<TaskTodoDto[]>> GetTodosForATask(Guid taskId);
+        Task<AstroResult<TaskTodoDto[]>> GetTodos(Guid taskId);
 
         /// <summary>
         /// Create a todo for a task
         /// </summary>
         /// <param name="taskId">the id of the task</param>
         /// <param name="body">the data for creating a todo</param>
-        Task<AstroResult<TaskTodoDto>> CreateATodoForATask(Guid taskId, TaskTodoCreateDto body);
+        Task<AstroResult<TaskTodoDto>> CreateTodo(Guid taskId, TaskTodoCreateDto body);
 
         /// <summary>
         /// Update a todo for a task
         /// </summary>
         /// <param name="todoId">the id of the task</param>
         /// <param name="body">the data for updating a todo</param>
-        Task<AstroResult<TaskTodoDto>> UpdateATodo(Guid todoId, TaskTodoUpdateDto body);
+        Task<AstroResult<TaskTodoDto>> UpdateTodo(Guid todoId, TaskTodoUpdateDto body);
 
         /// <summary>
         /// Remove a todo
         /// </summary>
         /// <param name="todoId">the id of the todo</param>
-        Task<AstroResult<string>> DeleteATodo(Guid todoId);
+        Task<AstroResult<string>> DeleteTodo(Guid todoId);
     }
 }

@@ -55,8 +55,10 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The date of this time entry record.  You can filter on this value to obtain Timesheet data for a specific date
         /// range.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public DateTime? Date { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
         /// Notes associated with this Timesheet, if any

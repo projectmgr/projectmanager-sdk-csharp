@@ -66,8 +66,10 @@ namespace ProjectManager.SDK.Models
         /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public DateTime? PlannedStartDate { get; set; }
+        public string PlannedStartDate { get; set; }
 
         /// <summary>
         /// The date when work on this Task is expected to complete.
@@ -81,8 +83,10 @@ namespace ProjectManager.SDK.Models
         /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public DateTime? PlannedFinishDate { get; set; }
+        public string PlannedFinishDate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -96,8 +100,10 @@ namespace ProjectManager.SDK.Models
         /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public DateTime? ActualStartDate { get; set; }
+        public string ActualStartDate { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work was completed on this Task.
@@ -111,8 +117,10 @@ namespace ProjectManager.SDK.Models
         /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
         /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
         /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public DateTime? ActualFinishDate { get; set; }
+        public string ActualFinishDate { get; set; }
 
         /// <summary>
         /// The timestamp in UTC when this Task was most recently modified.

@@ -36,5 +36,11 @@ namespace ProjectManager.SDK.Interfaces
         /// including its home URL, email address, user name, and workspace name.
         /// </summary>
         Task<AstroResult<WorkSpaceUserInfoDto>> RetrieveMe();
+
+        /// <summary>
+        /// Updates the logged in user avatar
+        /// </summary>
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        Task<AstroResult<string>> UpdateMyAvatar(string fileName, byte[] fileBytes);
     }
 }

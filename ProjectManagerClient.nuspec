@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>ProjectManager.SDK</id>
-		<version>127.0.185</version>
+		<version>129.0.113</version>
 		<title>ProjectManager.SDK</title>
 		<authors>ProjectManager.com</authors>
 		<owners>ProjectManager.com, Inc.</owners>
@@ -14,12 +14,26 @@
 		<readme>docs/README.md</readme>
 		<summary>ProjectManager API for DotNet</summary>
 		<releaseNotes>
-            # Patch notes for 127.0.185
+            # Patch notes for 129.0.113
             
-            These patch notes summarize the changes from version 125.1.169.
+            These patch notes summarize the changes from version 127.0.185.
+            
+            Added 6 new APIs:
+            * Me.UpdateMyAvatar (POST /api/data/me/avatar)
+            * Npt.GetNpt (GET /api/data/non-project-tasks/{nptId})
+            * Npt.UpdateNpt (PUT /api/data/non-project-tasks/{nptId})
+            * Npt.RemoveNpt (DELETE /api/data/non-project-tasks/{nptId})
+            * Npt.CreateNpt (POST /api/data/non-project-tasks)
+            * NptStatus.GetNptTaskStatuses (GET /api/data/non-project-tasks/statuses)
+            
+            Renamed 4 old APIs:
+            * Renamed 'TaskTodo.GetTodosForATask' to 'TaskTodo.GetTodos'
+            * Renamed 'TaskTodo.CreateATodoForATask' to 'TaskTodo.CreateTodo'
+            * Renamed 'TaskTodo.UpdateATodo' to 'TaskTodo.UpdateTodo'
+            * Renamed 'TaskTodo.DeleteATodo' to 'TaskTodo.DeleteTodo'
             
             Deprecated 1 old APIs:
-            * WorkSpace.InviteToWorkspace
+            * Changeset.RetrieveChangesetsByProjectID
             
 
         </releaseNotes>

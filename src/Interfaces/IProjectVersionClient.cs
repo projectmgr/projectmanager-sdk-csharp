@@ -55,6 +55,6 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The unique identifier of the Project to copy</param>
         /// <param name="version">The version number of the Project to copy</param>
         /// <param name="timezoneOffset">If specified, sets the default timezone of the newly copied Project to this specified timezone</param>
-        Task<AstroResult<string>> CopyProjectVersion(Guid projectId, int version, int? timezoneOffset = null);
+        Task<AstroResult<ProjectRestoreProjectDto>> CopyProjectVersion(Guid projectId, int version, int? timezoneOffset = null);
     }
 }

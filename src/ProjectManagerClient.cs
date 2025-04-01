@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    127.0.185
+ * @version    129.0.113
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "127.0.185";
+        public const string SdkVersion = "129.0.113";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -115,9 +115,19 @@ namespace ProjectManager.SDK
         public INotificationClient Notification { get; }
 
         /// <summary>
+        /// API methods related to Npt
+        /// </summary>
+        public INptClient Npt { get; }
+
+        /// <summary>
         /// API methods related to NptFiles
         /// </summary>
         public INptFilesClient NptFiles { get; }
+
+        /// <summary>
+        /// API methods related to NptStatus
+        /// </summary>
+        public INptStatusClient NptStatus { get; }
 
         /// <summary>
         /// API methods related to Project
@@ -298,7 +308,9 @@ namespace ProjectManager.SDK
             License = new LicenseClient(this);
             Me = new MeClient(this);
             Notification = new NotificationClient(this);
+            Npt = new NptClient(this);
             NptFiles = new NptFilesClient(this);
+            NptStatus = new NptStatusClient(this);
             Project = new ProjectClient(this);
             ProjectChargeCode = new ProjectChargeCodeClient(this);
             ProjectCustomer = new ProjectCustomerClient(this);

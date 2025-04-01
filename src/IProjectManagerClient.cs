@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    127.0.185
+ * @version    129.0.113
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -76,9 +76,17 @@ namespace ProjectManager.SDK
         /// </summary>
         INotificationClient Notification { get; }
         /// <summary>
+        /// API methods related to Npt
+        /// </summary>
+        INptClient Npt { get; }
+        /// <summary>
         /// API methods related to NptFiles
         /// </summary>
         INptFilesClient NptFiles { get; }
+        /// <summary>
+        /// API methods related to NptStatus
+        /// </summary>
+        INptStatusClient NptStatus { get; }
         /// <summary>
         /// API methods related to Project
         /// </summary>

@@ -51,5 +51,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/me";
             return await _client.Request<WorkSpaceUserInfoDto>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Updates the logged in user avatar
+        /// </summary>
+        /// <param name="fileName">The full path of a file to upload to the API</param>
+        public async Task<AstroResult<string>> UpdateMyAvatar(string fileName, byte[] fileBytes)
+        {
+            var url = $"/api/data/me/avatar";
+            return await _client.RequestWithFile<string>(HttpMethod.Post, url, null, fileBytes, fileName);
+        }
     }
 }

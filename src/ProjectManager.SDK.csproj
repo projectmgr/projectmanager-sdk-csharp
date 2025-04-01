@@ -10,16 +10,30 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2021 - 2025</Copyright>
         <PackageReleaseNotes>
-            # Patch notes for 127.0.185
-
-            These patch notes summarize the changes from version 125.1.169.
-
+            # Patch notes for 129.0.113
+            
+            These patch notes summarize the changes from version 127.0.185.
+            
+            Added 6 new APIs:
+            * Me.UpdateMyAvatar (POST /api/data/me/avatar)
+            * Npt.GetNpt (GET /api/data/non-project-tasks/{nptId})
+            * Npt.UpdateNpt (PUT /api/data/non-project-tasks/{nptId})
+            * Npt.RemoveNpt (DELETE /api/data/non-project-tasks/{nptId})
+            * Npt.CreateNpt (POST /api/data/non-project-tasks)
+            * NptStatus.GetNptTaskStatuses (GET /api/data/non-project-tasks/statuses)
+            
+            Renamed 4 old APIs:
+            * Renamed 'TaskTodo.GetTodosForATask' to 'TaskTodo.GetTodos'
+            * Renamed 'TaskTodo.CreateATodoForATask' to 'TaskTodo.CreateTodo'
+            * Renamed 'TaskTodo.UpdateATodo' to 'TaskTodo.UpdateTodo'
+            * Renamed 'TaskTodo.DeleteATodo' to 'TaskTodo.DeleteTodo'
+            
             Deprecated 1 old APIs:
-            * WorkSpace.InviteToWorkspace
+            * Changeset.RetrieveChangesetsByProjectID
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <version>127.0.185</version>
+		<version>129.0.113</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

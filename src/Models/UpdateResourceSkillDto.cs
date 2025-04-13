@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// The name of this Skill.
+        /// The name of this Skill, if specified it will be updated
         /// </summary>
         public string Name { get; set; }
     }

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    129.0.113
+ * @version    130.1.162
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -147,6 +147,10 @@ namespace ProjectManager.SDK
         /// API methods related to Risk
         /// </summary>
         IRiskClient Risk { get; }
+        /// <summary>
+        /// API methods related to RiskFile
+        /// </summary>
+        IRiskFileClient RiskFile { get; }
         /// <summary>
         /// API methods related to Tag
         /// </summary>

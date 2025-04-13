@@ -66,10 +66,10 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to restore</param>
         /// <param name="version">The version number to restore to</param>
-        public async Task<AstroResult<string>> RestoreProjectVersion(Guid projectId, int version)
+        public async Task<AstroResult<ProjectRestoreProjectDto>> RestoreProjectVersion(Guid projectId, int version)
         {
             var url = $"/api/data/projects/{projectId}/version/{version}/restore";
-            return await _client.Request<string>(HttpMethod.Post, url, null);
+            return await _client.Request<ProjectRestoreProjectDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>

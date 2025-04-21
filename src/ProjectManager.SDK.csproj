@@ -6,7 +6,7 @@
         <Nullable>disable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageReadmeFile>docs/README.md</PackageReadmeFile>
-        <Description>Software development kit for the ProjectManager.com API. for DotNet</Description>
+        <Description>Software development kit for the ProjectManager.com API for DotNet</Description>
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>

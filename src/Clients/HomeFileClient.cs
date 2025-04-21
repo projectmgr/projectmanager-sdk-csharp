@@ -52,6 +52,7 @@ namespace ProjectManager.SDK.Clients
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         public async Task<AstroResult<FileDto>> UploadHomeFile(string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/home/files";
@@ -75,6 +76,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         public async Task<AstroResult<FileDto>> UploadHomeFileToFolder(Guid folderId, string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/home/folders/{folderId}/files";

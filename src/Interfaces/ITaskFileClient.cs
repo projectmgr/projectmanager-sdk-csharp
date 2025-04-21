@@ -42,6 +42,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The reference to the task</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         Task<AstroResult<FileDto>> UploadTaskFile(Guid taskId, string fileName, byte[] fileBytes);
     }
 }

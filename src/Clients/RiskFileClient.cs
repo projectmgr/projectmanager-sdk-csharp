@@ -53,6 +53,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="riskId">The reference to the risk</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         public async Task<AstroResult<FileDto>> UploadRiskFile(Guid riskId, string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/risks/{riskId}/files";

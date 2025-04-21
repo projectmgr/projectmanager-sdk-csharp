@@ -29,7 +29,7 @@
     ],
     "SemverMode": 3,
     "Keywords": "projectmanager project management task tracking projects tasks",
-    "Description": "Software development kit for the ProjectManager.com API.",
+    "Description": "Software development kit for the ProjectManager.com API",
     "AuthenticationHelp": "",
     "ReleaseNotes": "https://learn.projectmanager.com/latest-releases",
     "VersionNumberUrl": "https://api.projectmanager.com/api/swagger/ProjectManager.com,%20Inc%20API/swagger.json",

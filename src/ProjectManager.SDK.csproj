@@ -8,32 +8,24 @@
         <PackageReadmeFile>docs/README.md</PackageReadmeFile>
         <Description>Software development kit for the ProjectManager.com API for DotNet</Description>
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
-        <Copyright>Copyright 2021 - 2025</Copyright>
+        <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-            # Patch notes for 129.0.113
-            
-            These patch notes summarize the changes from version 127.0.185.
-            
-            Added 6 new APIs:
-            * Me.UpdateMyAvatar (POST /api/data/me/avatar)
-            * Npt.GetNpt (GET /api/data/non-project-tasks/{nptId})
-            * Npt.UpdateNpt (PUT /api/data/non-project-tasks/{nptId})
-            * Npt.RemoveNpt (DELETE /api/data/non-project-tasks/{nptId})
-            * Npt.CreateNpt (POST /api/data/non-project-tasks)
-            * NptStatus.GetNptTaskStatuses (GET /api/data/non-project-tasks/statuses)
-            
-            Renamed 4 old APIs:
-            * Renamed 'TaskTodo.GetTodosForATask' to 'TaskTodo.GetTodos'
-            * Renamed 'TaskTodo.CreateATodoForATask' to 'TaskTodo.CreateTodo'
-            * Renamed 'TaskTodo.UpdateATodo' to 'TaskTodo.UpdateTodo'
-            * Renamed 'TaskTodo.DeleteATodo' to 'TaskTodo.DeleteTodo'
-            
-            Deprecated 1 old APIs:
-            * Changeset.RetrieveChangesetsByProjectID
+# Patch notes for 130.1.162
+
+These patch notes summarize the changes from version 129.0.113.
+
+Added 1 new APIs:
+* RiskFile.UploadRiskFile (POST /api/data/risks/{riskId}/files)
+
+Changes to data models:
+* ProjectCreateDto: Removed field `template`
+* ProjectUpdateDto: Added new field `template`
+
+
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>129.0.113</version>
+		<version>130.1.162</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

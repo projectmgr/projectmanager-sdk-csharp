@@ -107,5 +107,16 @@ namespace ProjectManager.SDK.Models
         /// Mark this project as favorite for the logged in user.
         /// </summary>
         public bool? Favorite { get; set; }
+
+        /// <summary>
+        /// True if this Project is a template that will be reused as a framework
+        /// for future Projects.
+        ///
+        /// You can save a Project as a template and reuse it in the future for creating
+        /// additional Projects.  If this Project is a template, set this to `true` and this
+        /// template will be available to choose from when creating a new Project within the
+        /// application.
+        /// </summary>
+        public bool? Template { get; set; }
     }
 }

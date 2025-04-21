@@ -42,6 +42,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The reference to the project</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         Task<AstroResult<FileDto>> UploadProjectFile(Guid projectId, string fileName, byte[] fileBytes);
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The reference to the project</param>
         /// <param name="folderId">The reference to the sub folder to put the file into</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         Task<AstroResult<FileDto>> UploadProjectFileToFolder(Guid projectId, Guid folderId, string fileName, byte[] fileBytes);
     }
 }

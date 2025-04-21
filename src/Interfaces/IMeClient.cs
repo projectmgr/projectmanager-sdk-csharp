@@ -41,6 +41,7 @@ namespace ProjectManager.SDK.Interfaces
         /// Updates the logged in user avatar
         /// </summary>
         /// <param name="fileName">The full path of a file to upload to the API</param>
+        /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         Task<AstroResult<string>> UpdateMyAvatar(string fileName, byte[] fileBytes);
     }
 }

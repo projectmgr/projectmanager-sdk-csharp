@@ -24,22 +24,22 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to NptFiles
+    /// API methods related to RiskFile
     /// </summary>
-    public class NptFilesClient : INptFilesClient
+    public class RiskFileClient : IRiskFileClient
     {
         private readonly ProjectManagerClient _client;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public NptFilesClient(ProjectManagerClient client)
+        public RiskFileClient(ProjectManagerClient client)
         {
             _client = client;
         }
 
         /// <summary>
-        /// Uploads a file to a non-project task.
+        /// Uploads a file to a risk.
         ///
         /// ProjectManager allows you to store Files connected to other elements of your Workspace
         /// such as a Project, a Task, or Home.  Files are maintained separately based on the location
@@ -51,12 +51,12 @@ namespace ProjectManager.SDK.Clients
         ///
         /// This API returns a JSON response indicating success or failure.
         /// </summary>
-        /// <param name="taskId">The reference to the task</param>
+        /// <param name="riskId">The reference to the risk</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
         /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
-        public async Task<AstroResult<FileDto>> UploadFileToNonProjectTasks(Guid taskId, string fileName, byte[] fileBytes)
+        public async Task<AstroResult<FileDto>> UploadRiskFile(Guid riskId, string fileName, byte[] fileBytes)
         {
-            var url = $"/api/data/non-project-tasks/{taskId}/files";
+            var url = $"/api/data/risks/{riskId}/files";
             return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
     }

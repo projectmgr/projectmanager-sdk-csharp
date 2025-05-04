@@ -38,5 +38,10 @@ namespace ProjectManager.SDK.Models
         /// The name of this ResourceSkill
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Set to true if this ResourceSkill is in use
+        /// </summary>
+        public bool? InUse { get; set; }
     }
 }

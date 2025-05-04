@@ -244,5 +244,10 @@ namespace ProjectManager.SDK.Models
         /// The percentage of the project tasks completed
         /// </summary>
         public int? PercentComplete { get; set; }
+
+        /// <summary>
+        /// True if allow actual dates to update planned dates
+        /// </summary>
+        public bool? UpdatePlannedWithActual { get; set; }
     }
 }

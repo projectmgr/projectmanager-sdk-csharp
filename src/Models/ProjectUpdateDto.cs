@@ -37,6 +37,11 @@ namespace ProjectManager.SDK.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// The short name of the Project.
+        /// </summary>
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// An optional description of the Project
         /// </summary>
         public string Description { get; set; }
@@ -118,5 +123,10 @@ namespace ProjectManager.SDK.Models
         /// application.
         /// </summary>
         public bool? Template { get; set; }
+
+        /// <summary>
+        /// True if allow actual dates to update planned dates
+        /// </summary>
+        public bool? UpdatePlannedWithActual { get; set; }
     }
 }

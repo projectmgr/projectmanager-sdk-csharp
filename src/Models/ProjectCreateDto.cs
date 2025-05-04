@@ -42,6 +42,11 @@ namespace ProjectManager.SDK.Models
         public string Description { get; set; }
 
         /// <summary>
+        /// An optional project short name. Up to 7 symbols
+        /// </summary>
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// The unique identifier of the folder of this project, or null if not assigned.
         /// </summary>
         public Guid? FolderId { get; set; }
@@ -125,8 +130,19 @@ namespace ProjectManager.SDK.Models
         public bool? Favorite { get; set; }
 
         /// <summary>
+        /// True if allow actual dates to update planned dates
+        /// </summary>
+        public bool? UpdatePlannedWithActual { get; set; }
+
+        /// <summary>
         /// Create default task status upfront
         /// </summary>
         public TaskStatusCreateDto[] TaskStatusCreate { get; set; }
+
+        /// <summary>
+        /// Working days for the project. If not specified, the workspace working days will be used.
+        /// This value can be set when the project is created but may not be updated afterwards.
+        /// </summary>
+        public ProjectWorkingDaysDto WorkingDays { get; set; }
     }
 }

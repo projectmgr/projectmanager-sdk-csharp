@@ -10,22 +10,24 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 130.1.162
+# Patch notes for 131.1.208
 
-These patch notes summarize the changes from version 129.0.113.
-
-Added 1 new APIs:
-* RiskFile.UploadRiskFile (POST /api/data/risks/{riskId}/files)
+These patch notes summarize the changes from version 130.1.162.
 
 Changes to data models:
-* ProjectCreateDto: Removed field `template`
-* ProjectUpdateDto: Added new field `template`
+* ProjectCreateDto: Added new field `shortName`
+* ProjectCreateDto: Added new field `updatePlannedWithActual`
+* ProjectCreateDto: Added new field `workingDays`
+* ProjectDto: Added new field `updatePlannedWithActual`
+* ProjectUpdateDto: Added new field `shortName`
+* ProjectUpdateDto: Added new field `updatePlannedWithActual`
+* ResourceSkillDto: Added new field `inUse`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>130.1.162</version>
+		<version>131.1.208</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

@@ -37,7 +37,7 @@ namespace ProjectManager.SDK.Interfaces
 
         /// <summary>
         /// Returns a list of users that are currently members of a specified project, as well as their current project security roles and available project security roles.
-        /// Optionally include users who are not currently members of the project, but who are available to be added.
+        /// Optionally include users who are not currently members of the project, but who can be added.
         ///
         /// A project member is a user who has access to a specific project. Project members are assigned a project security role, which controls the level of access they have to
         /// the project. Possible project security roles include manage, edit, collaborate, creator, and guest.
@@ -45,6 +45,19 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">Reference to the project</param>
         /// <param name="includeAllUsers">Set to true to include all users in the workspace</param>
         Task<AstroResult<ProjectMemberDto[]>> RetrieveProjectMembers(Guid projectId, bool? includeAllUsers = null);
+
+        /// <summary>
+        /// Updates the project access for a current member of a specified project
+        /// by giving the users a new project security role.
+        ///
+        /// A project member is a user who has access to a specific project.
+        /// Project members are assigned a project security role, which controls the level of access they have to
+        /// the project.
+        /// Possible project security roles include manage, edit, collaborate, creator, and guest.
+        /// </summary>
+        /// <param name="projectId">Reference to Project</param>
+        /// <param name="body">The permission to update</param>
+        Task<AstroResult<ProjectMemberDto>> UpdateAListOfUserProjectMembership(Guid projectId, ProjectMembersAccessDto body);
 
         /// <summary>
         /// Returns the project security role in a specified project for a current project member.
@@ -57,10 +70,13 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ProjectMemberDto>> RetrieveUserProjectMembership(Guid projectId, Guid userId);
 
         /// <summary>
-        /// Creates a membership for a user in a specified project, and assigns the user the appropriate project access based on the specified project security role.
+        /// Creates a membership for a user in a specified project
+        /// and assigns the user the appropriate project access based on the specified project security role.
         ///
-        /// A project member is a user who has access to a specific project. Project members are assigned a project security role, which controls the level of access they have to
-        /// the project. Possible project security roles include manage, edit, collaborate, creator, and guest.
+        /// A project member is a user who has access to a specific project.
+        /// Project members are assigned a project security role, which controls the level of access they have to
+        /// the project.
+        /// Possible project security roles include manage, edit, collaborate, creator, and guest.
         /// </summary>
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>

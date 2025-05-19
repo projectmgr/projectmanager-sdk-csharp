@@ -128,5 +128,10 @@ namespace ProjectManager.SDK.Models
         /// True if allow actual dates to update planned dates
         /// </summary>
         public bool? UpdatePlannedWithActual { get; set; }
+
+        /// <summary>
+        /// To update the project notes
+        /// </summary>
+        public string Notes { get; set; }
     }
 }

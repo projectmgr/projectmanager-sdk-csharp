@@ -52,7 +52,7 @@ namespace ProjectManager.SDK.Interfaces
         /// preserve this information, it cannot be recreated.
         ///
         /// Some best practices for working with API keys:
-        /// * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys
+        /// * An API key is valid for a two-year period after it is created.  We encourage you to rotate your API keys
         /// regularly according to your company&#39;s security policies.
         /// * You should create separate API keys for each system that works with your API.  If that API key is exposed
         /// or if that program needs to be shut down, you can revoke that one key and reissue it.

@@ -113,5 +113,10 @@ namespace ProjectManager.SDK.Models
         /// To expand this field, specify the name of this field in the `$expand` parameter.
         /// </summary>
         public TimesheetFileDto[] Files { get; set; }
+
+        /// <summary>
+        /// Indicates if the timesheet entry is copied from another week.
+        /// </summary>
+        public bool? IsCopied { get; set; }
     }
 }

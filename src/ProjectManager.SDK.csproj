@@ -10,21 +10,21 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 132.1.183
+# Patch notes for 133.1.136
 
-These patch notes summarize the changes from version 131.1.208.
-
-Added 1 new APIs:
-* ProjectMembers.UpdateAListOfUserProjectMembership (PUT /api/data/projects/{projectId}/members)
+These patch notes summarize the changes from version 132.1.183.
 
 Changes to data models:
-* ProjectUpdateDto: Added new field `notes`
+* TaskDto: Added new field `index`
+* TaskDto: Added new field `level`
+* TimesheetDto: Added new field `isCopied`
+* TimesheetResponseDto: Added new field `isCopied`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>132.1.183</version>
+		<version>133.1.136</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

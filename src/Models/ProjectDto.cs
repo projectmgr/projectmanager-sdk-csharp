@@ -61,7 +61,7 @@ namespace ProjectManager.SDK.Models
         /// in the form `https://pm.app.projectmanager.com/project/board/D16` - in this
         /// example, the `ShortId` is `D16`.
         ///
-        /// This code is automatically assigned for you and cannot be changed.
+        /// This code is assigned on creation and cannot be changed.
         /// </summary>
         public string ShortId { get; set; }
 

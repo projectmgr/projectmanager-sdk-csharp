@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     /// Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
     /// indicate whether they have a dependency or a connection.
     /// </summary>
-    public class TaskDto : ApiModel
+    public class TaskDetailsDto : ApiModel
     {
 
         /// <summary>
@@ -296,5 +296,10 @@ namespace ProjectManager.SDK.Models
         /// To expand this field, specify the name of this field in the `$expand` parameter.
         /// </summary>
         public TaskFileDto[] Files { get; set; }
+
+        /// <summary>
+        /// The parent task of this Task.
+        /// </summary>
+        public Guid? ParentTaskId { get; set; }
     }
 }

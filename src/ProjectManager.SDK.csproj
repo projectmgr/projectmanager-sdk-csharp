@@ -10,21 +10,24 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 133.1.136
+# Patch notes for 134.0.125
 
-These patch notes summarize the changes from version 132.1.183.
+These patch notes summarize the changes from version 133.1.136.
+
+Added 3 new APIs:
+* Timesheet.SubmitResourceTimeSheetForApproval (POST /api/data/timesheets/approvals)
+* Timesheet.ApproveResourceTimeSheetApprovalRequest (POST /api/data/timesheets/approvals/approve)
+* Timesheet.RejectResourceTimeSheetApprovalRequest (POST /api/data/timesheets/approvals/reject)
 
 Changes to data models:
-* TaskDto: Added new field `index`
-* TaskDto: Added new field `level`
-* TimesheetDto: Added new field `isCopied`
-* TimesheetResponseDto: Added new field `isCopied`
+* ProjectCreateDto: Added new field `shortId`
+* TaskDto: Added new field `actualDuration`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>133.1.136</version>
+		<version>134.0.125</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

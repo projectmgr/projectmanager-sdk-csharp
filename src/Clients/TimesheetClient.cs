@@ -99,5 +99,35 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/timesheets/admin-tasks";
             return await _client.Request<TimesheetAdminTypeDto[]>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Submit a timesheet for approval for a specific resource.
+        /// </summary>
+        /// <param name="body">The timesheet to be submitted for approval</param>
+        public async Task<AstroResult<TimeSheetApprovalResponseDto>> SubmitResourceTimeSheetForApproval(TimeSheetApprovalDto body)
+        {
+            var url = $"/api/data/timesheets/approvals";
+            return await _client.RequestWithBody<TimeSheetApprovalResponseDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
+        /// Approve a timesheet approval request
+        /// </summary>
+        /// <param name="body">The timesheet to approve</param>
+        public async Task<AstroResult<TimeSheetApprovalResponseDto>> ApproveResourceTimeSheetApprovalRequest(TimeSheetApprovalDto body)
+        {
+            var url = $"/api/data/timesheets/approvals/approve";
+            return await _client.RequestWithBody<TimeSheetApprovalResponseDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
+        /// Rejects a specific resource&#39;s timesheet approval request for a specific week.
+        /// </summary>
+        /// <param name="body">The data for rejecting the approval request</param>
+        public async Task<AstroResult<TimeSheetApprovalResponseDto>> RejectResourceTimeSheetApprovalRequest(TimeSheetApprovalRejectDto body)
+        {
+            var url = $"/api/data/timesheets/approvals/reject";
+            return await _client.RequestWithBody<TimeSheetApprovalResponseDto>(HttpMethod.Post, url, null, body);
+        }
     }
 }

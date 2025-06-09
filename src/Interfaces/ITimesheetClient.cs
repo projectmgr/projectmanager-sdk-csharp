@@ -62,5 +62,23 @@ namespace ProjectManager.SDK.Interfaces
         /// Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
         /// </summary>
         Task<AstroResult<TimesheetAdminTypeDto[]>> ReturnsActiveAdminTasksThatAreUsedToReportTime();
+
+        /// <summary>
+        /// Submit a timesheet for approval for a specific resource.
+        /// </summary>
+        /// <param name="body">The timesheet to be submitted for approval</param>
+        Task<AstroResult<TimeSheetApprovalResponseDto>> SubmitResourceTimeSheetForApproval(TimeSheetApprovalDto body);
+
+        /// <summary>
+        /// Approve a timesheet approval request
+        /// </summary>
+        /// <param name="body">The timesheet to approve</param>
+        Task<AstroResult<TimeSheetApprovalResponseDto>> ApproveResourceTimeSheetApprovalRequest(TimeSheetApprovalDto body);
+
+        /// <summary>
+        /// Rejects a specific resource&#39;s timesheet approval request for a specific week.
+        /// </summary>
+        /// <param name="body">The data for rejecting the approval request</param>
+        Task<AstroResult<TimeSheetApprovalResponseDto>> RejectResourceTimeSheetApprovalRequest(TimeSheetApprovalRejectDto body);
     }
 }

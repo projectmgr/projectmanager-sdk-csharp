@@ -42,10 +42,10 @@ namespace ProjectManager.SDK.Clients
         /// Gets a Npt
         /// </summary>
         /// <param name="nptId">the id of the npt</param>
-        public async Task<AstroResult<NptDto>> GetNpt(Guid nptId)
+        public async Task<AstroResult<NptDetailsDto>> GetNpt(string nptId)
         {
             var url = $"/api/data/non-project-tasks/{nptId}";
-            return await _client.Request<NptDto>(HttpMethod.Get, url, null);
+            return await _client.Request<NptDetailsDto>(HttpMethod.Get, url, null);
         }
 
         /// <summary>

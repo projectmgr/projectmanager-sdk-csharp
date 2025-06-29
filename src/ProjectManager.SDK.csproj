@@ -10,24 +10,25 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 134.0.125
+# Patch notes for 135.0.134
 
-These patch notes summarize the changes from version 133.1.136.
+These patch notes summarize the changes from version 134.0.125.
 
-Added 3 new APIs:
-* Timesheet.SubmitResourceTimeSheetForApproval (POST /api/data/timesheets/approvals)
-* Timesheet.ApproveResourceTimeSheetApprovalRequest (POST /api/data/timesheets/approvals/approve)
-* Timesheet.RejectResourceTimeSheetApprovalRequest (POST /api/data/timesheets/approvals/reject)
+Added 1 new APIs:
+* Risk.GetRiskList (GET /api/data/risks)
+
+Changes to existing APIs:
+* Npt.GetNpt changed [nptId].Value.DataType from string to uuid
 
 Changes to data models:
-* ProjectCreateDto: Added new field `shortId`
-* TaskDto: Added new field `actualDuration`
+* NptDto: Added new field `shortId`
+* TimesheetResponseDto: Added new field `lastUpdatedDate`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>134.0.125</version>
+		<version>135.0.134</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

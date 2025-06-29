@@ -31,7 +31,7 @@ namespace ProjectManager.SDK.Interfaces
         /// Gets a Npt
         /// </summary>
         /// <param name="nptId">the id of the npt</param>
-        Task<AstroResult<NptDto>> GetNpt(Guid nptId);
+        Task<AstroResult<NptDetailsDto>> GetNpt(string nptId);
 
         /// <summary>
         /// Update a Npt

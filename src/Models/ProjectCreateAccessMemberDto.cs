@@ -32,7 +32,13 @@ namespace ProjectManager.SDK.Models
         public Guid? UserId { get; set; }
 
         /// <summary>
-        /// Member&#39;s role in the project
+        /// Member&#39;s role in the project, if left empty the default role will be used
+        ///
+        /// For users with Access All Data permission, this will be set to `Manager`.
+        /// For guests, this will be set to `Guest`.
+        /// For all other users, this will be set to `Editor`.
+        ///
+        /// Valid values are: `Manager`, `Editor`, `Collaborate`, `Guest`.
         /// </summary>
         public string Permission { get; set; }
     }

@@ -21,24 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Data for rejecting a timesheet approval
+    /// User assigned to task or risk
     /// </summary>
-    public class TimeSheetApprovalRejectDto : ApiModel
+    public class AssignmentDto : ApiModel
     {
 
         /// <summary>
-        /// The id for the resource, if null it indicates the request is for the current logged-in user
+        /// Task or risk the user is assigned to
+        /// </summary>
+        public Guid? TaskId { get; set; }
+
+        /// <summary>
+        /// The task or risk project Id
+        /// </summary>
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Resource identifier
         /// </summary>
         public Guid? ResourceId { get; set; }
-
-        /// <summary>
-        /// The date of the week to which the timesheet applies
-        /// </summary>
-        public DateTime? Date { get; set; }
-
-        /// <summary>
-        /// The reason why the timesheet approval is being rejected
-        /// </summary>
-        public string Reason { get; set; }
     }
 }

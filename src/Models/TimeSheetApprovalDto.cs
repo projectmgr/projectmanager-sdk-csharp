@@ -27,7 +27,7 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// The resource whose timesheet is being approved
+        /// The id for the resource, if null it indicates the request is for the current logged-in user
         /// </summary>
         public Guid? ResourceId { get; set; }
 

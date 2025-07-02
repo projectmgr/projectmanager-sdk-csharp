@@ -25,7 +25,7 @@ namespace ProjectManager.SDK.Models
     ///
     /// NPT&#39;s are a lightweight version of a project task.
     /// </summary>
-    public class NptDto : ApiModel
+    public class NptDetailsDto : ApiModel
     {
 
         /// <summary>

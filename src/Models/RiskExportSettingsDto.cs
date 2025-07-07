@@ -62,6 +62,7 @@ namespace ProjectManager.SDK.Models
         ///  * tags
         ///  * description
         ///  * resolution
+        ///  * type
         /// </summary>
         public string OrderBy { get; set; }
 

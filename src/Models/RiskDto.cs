@@ -142,5 +142,15 @@ namespace ProjectManager.SDK.Models
         /// The number of comments added to the risk.
         /// </summary>
         public int? CommentsCount { get; set; }
+
+        /// <summary>
+        /// The id of the Risk Type
+        /// Risk = 1
+        /// Assumption = 2
+        /// Issue = 3
+        /// Dependency = 4
+        /// Change = 5
+        /// </summary>
+        public int? RiskTypeId { get; set; }
     }
 }

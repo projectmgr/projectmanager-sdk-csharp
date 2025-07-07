@@ -40,5 +40,10 @@ namespace ProjectManager.SDK.Models
         /// Notes
         /// </summary>
         public string Notes { get; set; }
+
+        /// <summary>
+        /// Document Ids
+        /// </summary>
+        public Guid[] DocumentIds { get; set; }
     }
 }

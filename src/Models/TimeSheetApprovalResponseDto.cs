@@ -27,6 +27,11 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
+        /// Date and time (in UTC) that this timesheet entry was last modified.
+        /// </summary>
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
         /// A list of pending timesheet approvals
         /// </summary>
         public PendingTimeSheetApprovalDto[] PendingApprovals { get; set; }

@@ -84,6 +84,11 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Is the last timesheet modified by the user
         /// </summary>
-        public string LastUpdatedDate { get; set; }
+        public DateTime? LastUpdatedDate { get; set; }
+
+        /// <summary>
+        /// Document Details
+        /// </summary>
+        public TimesheetFileResponseDto[] Documents { get; set; }
     }
 }

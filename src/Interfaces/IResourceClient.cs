@@ -81,6 +81,18 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId);
 
         /// <summary>
+        /// Deletes an existing Resource based on information you provide.
+        ///
+        /// A Resource represents a person, material, or tool used within your Projects.
+        /// When you attach a Resources to more than one Task, the software will schedule the usage
+        /// of your Resource so that it is not allocated to more than one Task at the same time.
+        /// The users in your Workspace are also considered Resources.  To invite a new User to your
+        /// Workspace, create a new Resource for that user.
+        /// </summary>
+        /// <param name="resourceId">The id of the resource</param>
+        Task<AstroResult<ResourceDto>> DeleteResource(Guid resourceId);
+
+        /// <summary>
         /// Create new Resources within your Workspace.
         ///
         /// A Resource represents a person, material, or tool that is used within your Projects.

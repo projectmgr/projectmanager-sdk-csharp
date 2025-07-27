@@ -10,21 +10,21 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 136.0.106
+# Patch notes for 137.0.201
 
-These patch notes summarize the changes from version 135.0.134.
+These patch notes summarize the changes from version 136.0.106.
 
-Changes to data models:
-* RiskDto: Added new field `riskTypeId`
-* TimeSheetApprovalResponseDto: Added new field `modifiedDate`
-* TimesheetResponseDto: Added new field `documents`
-* TimesheetUpdateRequestDto: Added new field `documentIds`
+Added 1 new APIs:
+* Resource.DeleteResource (DELETE /api/data/resources/{resourceId})
+
+Renamed 1 old APIs:
+* Renamed 'Risk.GetRiskList' to 'Risk.QueryRisks'
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>136.0.106</version>
+		<version>137.0.201</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

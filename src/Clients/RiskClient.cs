@@ -53,13 +53,16 @@ namespace ProjectManager.SDK.Clients
 
         /// <summary>
         /// Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
+        /// Assumptions, Issues, or Dependencies.
         /// </summary>
         /// <param name="top">The number of records to return</param>
         /// <param name="skip">Skips the given number of records and then returns $top records</param>
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<RiskDto[]>> GetRiskList(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<RiskDto[]>> QueryRisks(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/risks";
             var options = new Dictionary<string, object>();

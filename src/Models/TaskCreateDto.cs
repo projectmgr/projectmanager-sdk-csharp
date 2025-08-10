@@ -127,5 +127,10 @@ namespace ProjectManager.SDK.Models
         /// milestone is locked, it represents a fixed time within the project that can be used to relate to other tasks.
         /// </summary>
         public bool? IsMilestone { get; set; }
+
+        /// <summary>
+        /// ParentId
+        /// </summary>
+        public Guid? ParentId { get; set; }
     }
 }

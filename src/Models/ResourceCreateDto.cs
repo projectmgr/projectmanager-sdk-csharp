@@ -105,5 +105,10 @@ namespace ProjectManager.SDK.Models
         /// eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
         /// </summary>
         public string ColorName { get; set; }
+
+        /// <summary>
+        /// Language code for this Resource.
+        /// </summary>
+        public string Language { get; set; }
     }
 }

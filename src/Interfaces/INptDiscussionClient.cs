@@ -22,45 +22,45 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to Discussion
+    /// API methods related to NptDiscussion
     /// </summary>
-    public interface IDiscussionClient
+    public interface INptDiscussionClient
     {
 
         /// <summary>
-        /// Retrieve all comments written about a task
+        /// Retrieve all comments written about a Npt
         /// </summary>
-        /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
-        Task<AstroResult<DiscussionCommentDto[]>> RetrieveTaskComments(Guid taskId);
+        /// <param name="nptId">The unique ID number of the Npt to retrieve comments</param>
+        Task<AstroResult<DiscussionCommentDto[]>> RetrieveNptComments(Guid nptId);
 
         /// <summary>
-        /// Adds a Markdown-formatted comment to a task.
+        /// Adds a Markdown-formatted comment to a Npt.
         ///
-        /// Tasks can have discussions attached to them.  These discussions can include text with simple
+        /// Npts can have discussions attached to them.  These discussions can include text with simple
         /// formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/)
         /// and users should be aware that HTML embedding is not permitted due to the risk of cross-site
         /// attacks and other embedding challenges.
         /// </summary>
-        /// <param name="taskId">The unique ID number of the task being commented upon</param>
+        /// <param name="nptId">The unique ID number of the Npt being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateTaskComment(Guid taskId, DiscussionCommentCreateDto body);
+        Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateNptComments(Guid nptId, DiscussionCommentCreateDto body);
 
         /// <summary>
         /// Puts a thumbsup on a comment
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        Task<AstroResult<string>> LikeComment(Guid commentId);
+        Task<AstroResult<string>> LikeAComment(Guid commentId);
 
         /// <summary>
         /// Unlike a comment that was previously liked
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        Task<AstroResult<string>> UnlikeComment(Guid commentId);
+        Task<AstroResult<string>> RemovesAThumbsupFromAComment(Guid commentId);
 
         /// <summary>
         /// Removes a comment by it&#39;s id
         /// </summary>
         /// <param name="commentId">Remove a comment</param>
-        Task<AstroResult<string>> RemoveComment(Guid commentId);
+        Task<AstroResult<string>> RemoveAComment(Guid commentId);
     }
 }

@@ -59,5 +59,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/non-project-tasks/{taskId}/files";
             return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
+
+        /// <summary>
+        /// retrieves Npt files
+        /// </summary>
+        /// <param name="taskId">The reference to the Npt</param>
+        public async Task<AstroResult<TaskFileDto[]>> GetNptFiles(Guid taskId)
+        {
+            var url = $"/api/data/non-project-tasks/{taskId}/files";
+            return await _client.Request<TaskFileDto[]>(HttpMethod.Get, url, null);
+        }
     }
 }

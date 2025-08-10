@@ -59,5 +59,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/{taskId}/files";
             return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
+
+        /// <summary>
+        /// retrieves task files
+        /// </summary>
+        /// <param name="taskId">The reference to the task</param>
+        public async Task<AstroResult<TaskFileDto[]>> GetTaskFiles(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/files";
+            return await _client.Request<TaskFileDto[]>(HttpMethod.Get, url, null);
+        }
     }
 }

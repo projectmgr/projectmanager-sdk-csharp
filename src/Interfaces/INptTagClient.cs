@@ -22,9 +22,9 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Interfaces
 {
     /// <summary>
-    /// API methods related to TaskTag
+    /// API methods related to NptTag
     /// </summary>
-    public interface ITaskTagClient
+    public interface INptTagClient
     {
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will replace TaskTags</param>
         /// <param name="body">The replacement list of TaskTags for this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body);
+        Task<AstroResult<TaskTagDto[]>> ReplaceTaskTags(Guid taskId, NameDto[] body);
 
         /// <summary>
         /// Add one or more new TaskTags to a Task.
@@ -47,7 +47,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will add TaskTags</param>
         /// <param name="body">The new TaskTags to add to this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> AddTaskTagToTask(Guid taskId, NameDto[] body);
+        Task<AstroResult<TaskTagDto[]>> AddTaskTagToTask(Guid taskId, NameDto[] body);
 
         /// <summary>
         /// Removes one or more existing TaskTags from a Task.
@@ -58,7 +58,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will remove existing TaskTags</param>
         /// <param name="body">The TaskTags to remove from this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagFromTask(Guid taskId, NameDto[] body);
+        Task<AstroResult<string>> RemoveTaskTagFromTask(Guid taskId, NameDto[] body);
 
         /// <summary>
         /// Retrieve the existing TaskTags on a Task

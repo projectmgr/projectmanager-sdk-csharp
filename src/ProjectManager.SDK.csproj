@@ -10,21 +10,47 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 137.0.201
+# Patch notes for 138.1.170
 
-These patch notes summarize the changes from version 136.0.106.
+These patch notes summarize the changes from version 137.0.201.
 
-Added 1 new APIs:
-* Resource.DeleteResource (DELETE /api/data/resources/{resourceId})
+Added 16 new APIs:
+* NptDiscussion.RetrieveNptComments (GET /api/data/non-project-tasks/{nptId}/comments)
+* NptDiscussion.CreateNptComments (POST /api/data/non-project-tasks/{nptId}/comments)
+* NptDiscussion.LikeAComment (POST /api/data/non-project-tasks/comments/{commentId}/like)
+* NptDiscussion.RemovesAThumbsupFromAComment (DELETE /api/data/non-project-tasks/comments/{commentId}/like)
+* NptDiscussion.RemoveAComment (DELETE /api/data/non-project-tasks/comments/{commentId})
+* NptFiles.GetNptFiles (GET /api/data/non-project-tasks/{taskId}/files)
+* NptTag.ReplaceTaskTags (POST /api/data/non-project-tasks/{taskId}/tags)
+* NptTag.AddTaskTagToTask (PUT /api/data/non-project-tasks/{taskId}/tags)
+* NptTag.RemoveTaskTagFromTask (DELETE /api/data/non-project-tasks/{taskId}/tags)
+* NptTag.RetrieveTaskTags (GET /api/data/non-project-tasks/{taskId}/tags)
+* NptTodos.GetNptTodos (GET /api/data/non-project-tasks/{nptId}/todos)
+* NptTodos.CreateNptTodo (POST /api/data/non-project-tasks/{nptId}/todos)
+* NptTodos.UpdateANptTodo (PUT /api/data/non-project-tasks/todos/{todoId})
+* NptTodos.RemoveNptTodo (DELETE /api/data/non-project-tasks/todos/{todoId})
+* TaskFile.GetTaskFiles (GET /api/data/tasks/{taskId}/files)
+* TaskTag.RetrieveTaskTags (GET /api/data/tasks/{taskId}/tags)
 
-Renamed 1 old APIs:
-* Renamed 'Risk.GetRiskList' to 'Risk.QueryRisks'
+Renamed 4 old APIs:
+* Renamed 'Discussion.CreateTaskComments' to 'Discussion.CreateTaskComment'
+* Renamed 'Discussion.LikeAComment' to 'Discussion.LikeComment'
+* Renamed 'Discussion.RemovesAThumbsupFromAComment' to 'Discussion.UnlikeComment'
+* Renamed 'Discussion.RemoveAComment' to 'Discussion.RemoveComment'
+
+Changes to data models:
+* ProjectManagerDto: Added new field `color`
+* ResourceCreateDto: Added new field `language`
+* ResourceDto: Added new field `name`
+* ResourceDto: Added new field `language`
+* ResourceUpdateDto: Added new field `language`
+* TaskCreateDto: Added new field `parentId`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>137.0.201</version>
+		<version>138.1.170</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

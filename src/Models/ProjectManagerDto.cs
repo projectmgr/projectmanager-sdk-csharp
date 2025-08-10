@@ -45,5 +45,12 @@ namespace ProjectManager.SDK.Models
         /// Avatar&#39;s url
         /// </summary>
         public string AvatarUrl { get; set; }
+
+        /// <summary>
+        /// Collaboration Color for this resource.
+        ///
+        /// eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+        /// </summary>
+        public string Color { get; set; }
     }
 }

@@ -24,43 +24,43 @@ using ProjectManager.SDK.Models;
 namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to Discussion
+    /// API methods related to NptDiscussion
     /// </summary>
-    public class DiscussionClient : IDiscussionClient
+    public class NptDiscussionClient : INptDiscussionClient
     {
         private readonly ProjectManagerClient _client;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public DiscussionClient(ProjectManagerClient client)
+        public NptDiscussionClient(ProjectManagerClient client)
         {
             _client = client;
         }
 
         /// <summary>
-        /// Retrieve all comments written about a task
+        /// Retrieve all comments written about a Npt
         /// </summary>
-        /// <param name="taskId">The unique ID number of the task to retrieve comments</param>
-        public async Task<AstroResult<DiscussionCommentDto[]>> RetrieveTaskComments(Guid taskId)
+        /// <param name="nptId">The unique ID number of the Npt to retrieve comments</param>
+        public async Task<AstroResult<DiscussionCommentDto[]>> RetrieveNptComments(Guid nptId)
         {
-            var url = $"/api/data/tasks/{taskId}/comments";
+            var url = $"/api/data/non-project-tasks/{nptId}/comments";
             return await _client.Request<DiscussionCommentDto[]>(HttpMethod.Get, url, null);
         }
 
         /// <summary>
-        /// Adds a Markdown-formatted comment to a task.
+        /// Adds a Markdown-formatted comment to a Npt.
         ///
-        /// Tasks can have discussions attached to them.  These discussions can include text with simple
+        /// Npts can have discussions attached to them.  These discussions can include text with simple
         /// formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/)
         /// and users should be aware that HTML embedding is not permitted due to the risk of cross-site
         /// attacks and other embedding challenges.
         /// </summary>
-        /// <param name="taskId">The unique ID number of the task being commented upon</param>
+        /// <param name="nptId">The unique ID number of the Npt being commented upon</param>
         /// <param name="body">The Markdown-formatted text of the comment</param>
-        public async Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateTaskComment(Guid taskId, DiscussionCommentCreateDto body)
+        public async Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateNptComments(Guid nptId, DiscussionCommentCreateDto body)
         {
-            var url = $"/api/data/tasks/{taskId}/comments";
+            var url = $"/api/data/non-project-tasks/{nptId}/comments";
             return await _client.RequestWithBody<DiscussionCommentCreateResponseDto>(HttpMethod.Post, url, null, body);
         }
 
@@ -68,9 +68,9 @@ namespace ProjectManager.SDK.Clients
         /// Puts a thumbsup on a comment
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        public async Task<AstroResult<string>> LikeComment(Guid commentId)
+        public async Task<AstroResult<string>> LikeAComment(Guid commentId)
         {
-            var url = $"/api/data/comments/{commentId}/like";
+            var url = $"/api/data/non-project-tasks/comments/{commentId}/like";
             return await _client.Request<string>(HttpMethod.Post, url, null);
         }
 
@@ -78,9 +78,9 @@ namespace ProjectManager.SDK.Clients
         /// Unlike a comment that was previously liked
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        public async Task<AstroResult<string>> UnlikeComment(Guid commentId)
+        public async Task<AstroResult<string>> RemovesAThumbsupFromAComment(Guid commentId)
         {
-            var url = $"/api/data/comments/{commentId}/like";
+            var url = $"/api/data/non-project-tasks/comments/{commentId}/like";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
 
@@ -88,9 +88,9 @@ namespace ProjectManager.SDK.Clients
         /// Removes a comment by it&#39;s id
         /// </summary>
         /// <param name="commentId">Remove a comment</param>
-        public async Task<AstroResult<string>> RemoveComment(Guid commentId)
+        public async Task<AstroResult<string>> RemoveAComment(Guid commentId)
         {
-            var url = $"/api/data/comments/{commentId}";
+            var url = $"/api/data/non-project-tasks/comments/{commentId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
     }

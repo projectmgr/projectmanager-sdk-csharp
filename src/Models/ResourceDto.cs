@@ -41,6 +41,11 @@ namespace ProjectManager.SDK.Models
         public string Initials { get; set; }
 
         /// <summary>
+        /// The name of the Resource. Usually this is the same as the FirstName and LastName
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// The first name of the person Resource.
         ///
         /// Applies to personnel Resources only.
@@ -176,5 +181,10 @@ namespace ProjectManager.SDK.Models
         /// The resources avatar url, if any.
         /// </summary>
         public string AvatarUrl { get; set; }
+
+        /// <summary>
+        /// The language preference for this Resource, used for localization and communication.
+        /// </summary>
+        public string Language { get; set; }
     }
 }

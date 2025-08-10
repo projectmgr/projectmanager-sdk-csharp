@@ -82,5 +82,19 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/{taskId}/tags";
             return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body);
         }
+
+        /// <summary>
+        /// Retrieve the existing TaskTags on a Task
+        ///
+        /// A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many
+        /// TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you
+        /// classify your Tasks and prioritize work.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task for which we will retrieve TaskTags</param>
+        public async Task<AstroResult<TaskTagDto[]>> RetrieveTaskTags(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/tags";
+            return await _client.Request<TaskTagDto[]>(HttpMethod.Get, url, null);
+        }
     }
 }

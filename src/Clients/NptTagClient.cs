@@ -15,17 +15,28 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
+using ProjectManager.SDK.Interfaces;
 using ProjectManager.SDK.Models;
 
 
-namespace ProjectManager.SDK.Interfaces
+namespace ProjectManager.SDK.Clients
 {
     /// <summary>
-    /// API methods related to TaskTag
+    /// API methods related to NptTag
     /// </summary>
-    public interface ITaskTagClient
+    public class NptTagClient : INptTagClient
     {
+        private readonly ProjectManagerClient _client;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public NptTagClient(ProjectManagerClient client)
+        {
+            _client = client;
+        }
 
         /// <summary>
         /// Replaces the existing TaskTags on a Task with a newly provided list of TaskTags.
@@ -36,7 +47,11 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will replace TaskTags</param>
         /// <param name="body">The replacement list of TaskTags for this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> ReplaceTaskTags(Guid taskId, NameDto[] body);
+        public async Task<AstroResult<TaskTagDto[]>> ReplaceTaskTags(Guid taskId, NameDto[] body)
+        {
+            var url = $"/api/data/non-project-tasks/{taskId}/tags";
+            return await _client.RequestWithBody<TaskTagDto[]>(HttpMethod.Post, url, null, body);
+        }
 
         /// <summary>
         /// Add one or more new TaskTags to a Task.
@@ -47,7 +62,11 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will add TaskTags</param>
         /// <param name="body">The new TaskTags to add to this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> AddTaskTagToTask(Guid taskId, NameDto[] body);
+        public async Task<AstroResult<TaskTagDto[]>> AddTaskTagToTask(Guid taskId, NameDto[] body)
+        {
+            var url = $"/api/data/non-project-tasks/{taskId}/tags";
+            return await _client.RequestWithBody<TaskTagDto[]>(HttpMethod.Put, url, null, body);
+        }
 
         /// <summary>
         /// Removes one or more existing TaskTags from a Task.
@@ -58,7 +77,11 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will remove existing TaskTags</param>
         /// <param name="body">The TaskTags to remove from this Task</param>
-        Task<AstroResult<ChangeSetStatusDto>> RemoveTaskTagFromTask(Guid taskId, NameDto[] body);
+        public async Task<AstroResult<string>> RemoveTaskTagFromTask(Guid taskId, NameDto[] body)
+        {
+            var url = $"/api/data/non-project-tasks/{taskId}/tags";
+            return await _client.RequestWithBody<string>(HttpMethod.Delete, url, null, body);
+        }
 
         /// <summary>
         /// Retrieve the existing TaskTags on a Task
@@ -68,6 +91,10 @@ namespace ProjectManager.SDK.Interfaces
         /// classify your Tasks and prioritize work.
         /// </summary>
         /// <param name="taskId">The unique identifier of the Task for which we will retrieve TaskTags</param>
-        Task<AstroResult<TaskTagDto[]>> RetrieveTaskTags(Guid taskId);
+        public async Task<AstroResult<TaskTagDto[]>> RetrieveTaskTags(Guid taskId)
+        {
+            var url = $"/api/data/non-project-tasks/{taskId}/tags";
+            return await _client.Request<TaskTagDto[]>(HttpMethod.Get, url, null);
+        }
     }
 }

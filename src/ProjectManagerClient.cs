@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    137.0.201
+ * @version    138.1.170
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "137.0.201";
+        public const string SdkVersion = "138.1.170";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -120,6 +120,11 @@ namespace ProjectManager.SDK
         public INptClient Npt { get; }
 
         /// <summary>
+        /// API methods related to NptDiscussion
+        /// </summary>
+        public INptDiscussionClient NptDiscussion { get; }
+
+        /// <summary>
         /// API methods related to NptFiles
         /// </summary>
         public INptFilesClient NptFiles { get; }
@@ -128,6 +133,16 @@ namespace ProjectManager.SDK
         /// API methods related to NptStatus
         /// </summary>
         public INptStatusClient NptStatus { get; }
+
+        /// <summary>
+        /// API methods related to NptTag
+        /// </summary>
+        public INptTagClient NptTag { get; }
+
+        /// <summary>
+        /// API methods related to NptTodos
+        /// </summary>
+        public INptTodosClient NptTodos { get; }
 
         /// <summary>
         /// API methods related to Project
@@ -314,8 +329,11 @@ namespace ProjectManager.SDK
             Me = new MeClient(this);
             Notification = new NotificationClient(this);
             Npt = new NptClient(this);
+            NptDiscussion = new NptDiscussionClient(this);
             NptFiles = new NptFilesClient(this);
             NptStatus = new NptStatusClient(this);
+            NptTag = new NptTagClient(this);
+            NptTodos = new NptTodosClient(this);
             Project = new ProjectClient(this);
             ProjectChargeCode = new ProjectChargeCodeClient(this);
             ProjectCustomer = new ProjectCustomerClient(this);

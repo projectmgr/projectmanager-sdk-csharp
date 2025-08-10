@@ -44,5 +44,11 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="fileName">The full path of a file to upload to the API</param>
         /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
         Task<AstroResult<FileDto>> UploadFileToNonProjectTasks(Guid taskId, string fileName, byte[] fileBytes);
+
+        /// <summary>
+        /// retrieves Npt files
+        /// </summary>
+        /// <param name="taskId">The reference to the Npt</param>
+        Task<AstroResult<TaskFileDto[]>> GetNptFiles(Guid taskId);
     }
 }

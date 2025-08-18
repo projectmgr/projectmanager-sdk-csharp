@@ -49,6 +49,11 @@ namespace ProjectManager.SDK.Models
         public string FullName { get; set; }
 
         /// <summary>
+        /// The id of the workspace the user is currently logged into.
+        /// </summary>
+        public Guid? WorkSpaceId { get; set; }
+
+        /// <summary>
         /// The name of the Workspace that the current user has logged onto.  For most companies, the workspace
         /// name will be the name of the business.
         /// </summary>
@@ -73,5 +78,34 @@ namespace ProjectManager.SDK.Models
         /// Workspace Permissions that the user has within the current Workspace.
         /// </summary>
         public WorkSpacePermissionsDto Permissions { get; set; }
+
+        /// <summary>
+        /// The current account status of this WorkSpace. This can be one of four statuses:
+        ///  - Trial
+        ///  - Active
+        ///  - Cancelled
+        ///  - Expired
+        /// </summary>
+        public string WorkSpaceStatus { get; set; }
+
+        /// <summary>
+        /// This is true if the WorkSpace is in the Active or Trial state.
+        /// </summary>
+        public bool? WorkSpaceIsActive { get; set; }
+
+        /// <summary>
+        /// The name of the country that the current Workspace is located in.
+        /// </summary>
+        public string WorkSpaceCountry { get; set; }
+
+        /// <summary>
+        /// Returns the iso country code for the current workspace.
+        /// </summary>
+        public string WorkSpaceCountryCode { get; set; }
+
+        /// <summary>
+        /// The location of the user, which is a combination of city, state (US Only), and country.
+        /// </summary>
+        public string Location { get; set; }
     }
 }

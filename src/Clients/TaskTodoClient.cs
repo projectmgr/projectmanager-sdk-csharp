@@ -62,7 +62,7 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Update a todo for a task
         /// </summary>
-        /// <param name="todoId">the id of the task</param>
+        /// <param name="todoId">the id of the todo</param>
         /// <param name="body">the data for updating a todo</param>
         public async Task<AstroResult<TaskTodoDto>> UpdateTodo(Guid todoId, TaskTodoUpdateDto body)
         {

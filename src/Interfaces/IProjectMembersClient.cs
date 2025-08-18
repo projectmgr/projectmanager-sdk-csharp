@@ -36,6 +36,11 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ProjectMemberDto[]>> RetrieveNewProjectMembers();
 
         /// <summary>
+        /// Returns a list of project permissions the user is a member of
+        /// </summary>
+        Task<AstroResult<ProjectAccessDto[]>> RetrieveProjectsTheUserIsAMemberOf();
+
+        /// <summary>
         /// Returns a list of users that are currently members of a specified project, as well as their current project security roles and available project security roles.
         /// Optionally include users who are not currently members of the project, but who can be added.
         ///

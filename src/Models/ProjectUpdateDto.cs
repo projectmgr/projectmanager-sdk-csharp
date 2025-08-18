@@ -133,5 +133,12 @@ namespace ProjectManager.SDK.Models
         /// To update the project notes
         /// </summary>
         public string Notes { get; set; }
+
+        /// <summary>
+        /// An optional external reference identifier for this Project.
+        /// This value can be used to link the Project to records in external systems,
+        /// such as ERP, CRM, or other integrations.
+        /// </summary>
+        public string ExternalReferenceId { get; set; }
     }
 }

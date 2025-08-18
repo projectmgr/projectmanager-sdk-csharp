@@ -67,9 +67,68 @@ namespace ProjectManager.SDK.Models
         public string PlannedFinishDate { get; set; }
 
         /// <summary>
+        /// If set, this is the actual date when work began on the Task.
+        ///
+        /// This value contains only the date in year-month-day format.  For display, this
+        /// date will always be shown as this same year-month-day regardless of time zone.
+        /// For reporting purposes, this date is calculated against the official time zone
+        /// of the Workspace.
+        ///
+        /// For example: A Task has a planned completion date of July 5, 2023 in a Workspace
+        /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
+        /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
+        /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string ActualStartDate { get; set; }
+
+        /// <summary>
+        /// If set, this is the actual date when work was completed on this Task.
+        ///
+        /// This value contains only the date in year-month-day format.  For display, this
+        /// date will always be shown as this same year-month-day regardless of time zone.
+        /// For reporting purposes, this date is calculated against the official time zone
+        /// of the Workspace.
+        ///
+        /// For example: A Task has a planned completion date of July 5, 2023 in a Workspace
+        /// that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
+        /// savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
+        /// US Pacific time.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string ActualFinishDate { get; set; }
+
+        /// <summary>
         /// The actual effort (in minutes) for this Task.
         /// </summary>
         public int? ActualEffort { get; set; }
+
+        /// <summary>
+        /// The actual duration (in minutes) for this Task.
+        /// </summary>
+        public int? ActualDuration { get; set; }
+
+        /// <summary>
+        /// The actual cost of this Task to date, if known.
+        /// </summary>
+        public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// The planned cost for this Task.  Cannot be negative.
+        /// </summary>
+        public decimal? PlannedCost { get; set; }
+
+        /// <summary>
+        /// The planned duration (in minutes) for this Task.
+        /// </summary>
+        public int? PlannedDuration { get; set; }
+
+        /// <summary>
+        /// The planned effort (in minutes) for this Task.
+        /// </summary>
+        public int? PlannedEffort { get; set; }
 
         /// <summary>
         /// Return the priority of a task
@@ -101,5 +160,15 @@ namespace ProjectManager.SDK.Models
         /// guaranteed to be unique within your Workspace.
         /// </summary>
         public string ShortId { get; set; }
+
+        /// <summary>
+        /// The TaskTags that apply to this Task.
+        /// </summary>
+        public TaskTagDto[] Tags { get; set; }
+
+        /// <summary>
+        /// A list of TaskTodo items, which are sub-tasks within this Task.
+        /// </summary>
+        public TaskTodoDto[] Todos { get; set; }
     }
 }

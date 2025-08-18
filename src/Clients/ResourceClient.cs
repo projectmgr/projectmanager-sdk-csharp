@@ -158,5 +158,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/resources/{resourceId}/resendinvite";
             return await _client.Request<string>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Get Resource Avatar
+        /// </summary>
+        /// <param name="resourceId">The id of the resource</param>
+        public async Task<AstroResult<string>> GetResourceAvatar(Guid resourceId)
+        {
+            var url = $"/api/data/resources/{resourceId}/avatar";
+            return await _client.Request<string>(HttpMethod.Get, url, null);
+        }
     }
 }

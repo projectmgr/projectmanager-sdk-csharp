@@ -51,6 +51,15 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Returns a list of project permissions the user is a member of
+        /// </summary>
+        public async Task<AstroResult<ProjectAccessDto[]>> RetrieveProjectsTheUserIsAMemberOf()
+        {
+            var url = $"/api/data/projects/membership";
+            return await _client.Request<ProjectAccessDto[]>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
         /// Returns a list of users that are currently members of a specified project, as well as their current project security roles and available project security roles.
         /// Optionally include users who are not currently members of the project, but who can be added.
         ///

@@ -301,5 +301,15 @@ namespace ProjectManager.SDK.Models
         /// The parent task of this Task.
         /// </summary>
         public Guid? ParentTaskId { get; set; }
+
+        /// <summary>
+        /// The number of child tasks
+        /// </summary>
+        public int? ChildTaskCount { get; set; }
+
+        /// <summary>
+        /// The name for the parent task of this Task.
+        /// </summary>
+        public string ParentTaskName { get; set; }
     }
 }

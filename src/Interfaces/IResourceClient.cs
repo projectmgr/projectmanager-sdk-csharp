@@ -113,5 +113,11 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="resourceId">The unique identifier of the Resource to send an invitation email</param>
         Task<AstroResult<string>> ResendInviteEmail(Guid resourceId);
+
+        /// <summary>
+        /// Get Resource Avatar
+        /// </summary>
+        /// <param name="resourceId">The id of the resource</param>
+        Task<AstroResult<string>> GetResourceAvatar(Guid resourceId);
     }
 }

@@ -21,14 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// This class contains the URL to use to authenticate with the Integration Provider.
+    /// RecurringTaskChangeSetDetails
     /// </summary>
-    public class DirectLinkDto : ApiModel
+    public class RecurringTaskChangeSetDetails : ApiModel
     {
 
         /// <summary>
-        /// The URL to use to authenticate with the Integration Provider.
+        /// The created Task Ids
         /// </summary>
-        public string Url { get; set; }
+        public Guid[] TaskIds { get; set; }
     }
 }

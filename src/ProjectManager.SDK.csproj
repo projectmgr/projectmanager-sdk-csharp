@@ -10,54 +10,30 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 139.0.157
+# Patch notes for 141.1.156
 
-These patch notes summarize the changes from version 138.1.170.
+These patch notes summarize the changes from version 139.0.157.
 
-Added 2 new APIs:
-* ProjectMembers.RetrieveProjectsTheUserIsAMemberOf (GET /api/data/projects/membership)
-* Resource.GetResourceAvatar (GET /api/data/resources/{resourceId}/avatar)
+Added 6 new APIs:
+* Project.RestoreProject (PUT /api/data/projects/{projectId}/restore)
+* TaskRecurrency.CreateWeeklyRecurringTasks (POST /api/data/tasks/{taskId}/recurring/weekly)
+* TaskRecurrency.CreateMonthlyRecurringTasks (POST /api/data/tasks/{taskId}/recurring/monthly)
+* TaskRecurrency.CreateDailyRecurringTasks (POST /api/data/tasks/{taskId}/recurring/daily)
+* TaskRecurrency.CreateYearlyRecurringTasks (POST /api/data/tasks/{taskId}/recurring/yearly)
+* TaskRecurrency.DeleteRecurringTasks (DELETE /api/data/tasks/{taskId}/recurring/{option})
+
+Changes to existing APIs:
+* IntegrationProvider.UpdateUserIntegrationProviderConnection changed [body].Value.DataType from AuthenticationDto to AuthenticationStatusDto
+* IntegrationProvider.UpdateUserIntegrationProviderConnection changed [body].Value.DataTypeRef from /docs/authenticationdto to /docs/authenticationstatusdto
 
 Changes to data models:
-* NptDetailsDto: Added new field `actualStartDate`
-* NptDetailsDto: Added new field `actualFinishDate`
-* NptDetailsDto: Added new field `actualDuration`
-* NptDetailsDto: Added new field `actualCost`
-* NptDetailsDto: Added new field `plannedCost`
-* NptDetailsDto: Added new field `plannedDuration`
-* NptDetailsDto: Added new field `plannedEffort`
-* NptDetailsDto: Added new field `tags`
-* NptDetailsDto: Added new field `todos`
-* NptDto: Added new field `actualStartDate`
-* NptDto: Added new field `actualFinishDate`
-* NptDto: Added new field `actualDuration`
-* NptDto: Added new field `actualCost`
-* NptDto: Added new field `plannedCost`
-* NptDto: Added new field `plannedDuration`
-* NptDto: Added new field `plannedEffort`
-* NptDto: Added new field `tags`
-* NptDto: Added new field `todos`
-* NptUpdateDto: Added new field `actualStartDate`
-* NptUpdateDto: Added new field `actualFinishDate`
-* NptUpdateDto: Added new field `plannedCost`
-* NptUpdateDto: Added new field `actualCost`
-* ProjectCreateDto: Added new field `externalReferenceId`
-* ProjectDto: Added new field `externalReferenceId`
-* ProjectUpdateDto: Added new field `externalReferenceId`
-* TaskDetailsDto: Added new field `childTaskCount`
-* TaskDetailsDto: Added new field `parentTaskName`
-* WorkSpaceUserInfoDto: Added new field `workSpaceId`
-* WorkSpaceUserInfoDto: Added new field `workSpaceStatus`
-* WorkSpaceUserInfoDto: Added new field `workSpaceIsActive`
-* WorkSpaceUserInfoDto: Added new field `workSpaceCountry`
-* WorkSpaceUserInfoDto: Added new field `workSpaceCountryCode`
-* WorkSpaceUserInfoDto: Added new field `location`
+* ProjectCreateDto: Added new field `template`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>139.0.157</version>
+		<version>141.1.156</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

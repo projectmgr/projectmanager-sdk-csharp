@@ -132,6 +132,11 @@ namespace ProjectManager.SDK.Models
         public Guid? TemplateId { get; set; }
 
         /// <summary>
+        /// True if this Project is a Template project. Template projects can be used as
+        /// </summary>
+        public bool? Template { get; set; }
+
+        /// <summary>
         /// The target planned completion date for this Project, or null if one has
         /// not been selected.  This value can be updated in the Project Settings
         /// page or the Portfolio Project page within the application.

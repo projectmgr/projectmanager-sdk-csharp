@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    139.0.157
+ * @version    141.1.156
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "139.0.157";
+        public const string SdkVersion = "141.1.156";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -255,6 +255,11 @@ namespace ProjectManager.SDK
         public ITaskMetadataClient TaskMetadata { get; }
 
         /// <summary>
+        /// API methods related to TaskRecurrency
+        /// </summary>
+        public ITaskRecurrencyClient TaskRecurrency { get; }
+
+        /// <summary>
         /// API methods related to TaskStatus
         /// </summary>
         public ITaskStatusClient TaskStatus { get; }
@@ -356,6 +361,7 @@ namespace ProjectManager.SDK
             TaskField = new TaskFieldClient(this);
             TaskFile = new TaskFileClient(this);
             TaskMetadata = new TaskMetadataClient(this);
+            TaskRecurrency = new TaskRecurrencyClient(this);
             TaskStatus = new TaskStatusClient(this);
             TaskTag = new TaskTagClient(this);
             TaskTodo = new TaskTodoClient(this);

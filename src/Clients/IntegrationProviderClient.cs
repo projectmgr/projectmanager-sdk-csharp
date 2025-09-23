@@ -104,10 +104,10 @@ namespace ProjectManager.SDK.Clients
         /// development partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
         /// <param name="providerId">The unique identifier of the IntegrationProvider for which you are requesting authentication information</param>
-        public async Task<AstroResult<DirectLinkDto>> CreateUserIntegrationProviderConnection(Guid providerId)
+        public async Task<AstroResult<ConnectionSchemaDto>> CreateUserIntegrationProviderConnection(Guid providerId)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
-            return await _client.Request<DirectLinkDto>(HttpMethod.Post, url, null);
+            return await _client.Request<ConnectionSchemaDto>(HttpMethod.Post, url, null);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="providerId">The identifier to the provider</param>
         /// <param name="body">Specify the auth status</param>
-        public async Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationStatusDto body)
+        public async Task<AstroResult<string>> UpdateUserIntegrationProviderConnection(Guid providerId, AuthenticationDto body)
         {
             var url = $"/api/data/integrations/providers/{providerId}/user-connection";
             return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);

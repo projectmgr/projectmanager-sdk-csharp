@@ -125,5 +125,19 @@ namespace ProjectManager.SDK.Clients
             if (hardDelete != null) { options["hardDelete"] = hardDelete; }
             return await _client.Request<string>(HttpMethod.Delete, url, options);
         }
+
+        /// <summary>
+        /// Restore a soft deleted project based on its unique identifier.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project to delete</param>
+        public async Task<AstroResult<string>> RestoreProject(Guid projectId)
+        {
+            var url = $"/api/data/projects/{projectId}/restore";
+            return await _client.Request<string>(HttpMethod.Put, url, null);
+        }
     }
 }

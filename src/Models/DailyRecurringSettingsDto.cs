@@ -21,14 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Set the connection status of an integration
+    /// Settings for Daily Recurring Tasks
     /// </summary>
-    public class AuthenticationStatusDto : ApiModel
+    public class DailyRecurringSettingsDto : ApiModel
     {
 
         /// <summary>
-        /// Set to true if the connection was successful. False is not supported right now.
+        /// RecurringEndDate
         /// </summary>
-        public bool? Connected { get; set; }
+        public DateTime? RecurringEndDate { get; set; }
+
+        /// <summary>
+        /// EndAfterNumberOfOccurences
+        /// </summary>
+        public int? EndAfterNumberOfOccurences { get; set; }
+
+        /// <summary>
+        /// RepeatOnEveryNumberOfWeekDays
+        /// </summary>
+        public int? RepeatOnEveryNumberOfWeekDays { get; set; }
     }
 }

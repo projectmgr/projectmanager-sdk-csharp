@@ -86,5 +86,15 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The unique identifier of the Project to delete</param>
         /// <param name="hardDelete">Hard delete project true or false</param>
         Task<AstroResult<string>> DeleteProject(Guid projectId, bool? hardDelete = null);
+
+        /// <summary>
+        /// Restore a soft deleted project based on its unique identifier.
+        ///
+        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+        /// represent individual items of work that team members must complete.  The sum total of Tasks
+        /// within a Project represents the work to be completed for that Project.
+        /// </summary>
+        /// <param name="projectId">The unique identifier of the Project to delete</param>
+        Task<AstroResult<string>> RestoreProject(Guid projectId);
     }
 }

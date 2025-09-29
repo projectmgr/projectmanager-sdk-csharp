@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    141.1.156
+ * @version    142.0.226
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "141.1.156";
+        public const string SdkVersion = "142.0.226";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -128,6 +128,11 @@ namespace ProjectManager.SDK
         /// API methods related to NptFiles
         /// </summary>
         public INptFilesClient NptFiles { get; }
+
+        /// <summary>
+        /// API methods related to NptRecurrency
+        /// </summary>
+        public INptRecurrencyClient NptRecurrency { get; }
 
         /// <summary>
         /// API methods related to NptStatus
@@ -336,6 +341,7 @@ namespace ProjectManager.SDK
             Npt = new NptClient(this);
             NptDiscussion = new NptDiscussionClient(this);
             NptFiles = new NptFilesClient(this);
+            NptRecurrency = new NptRecurrencyClient(this);
             NptStatus = new NptStatusClient(this);
             NptTag = new NptTagClient(this);
             NptTodos = new NptTodosClient(this);

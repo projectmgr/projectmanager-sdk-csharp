@@ -170,5 +170,45 @@ namespace ProjectManager.SDK.Models
         /// A list of TaskTodo items, which are sub-tasks within this Task.
         /// </summary>
         public TaskTodoDto[] Todos { get; set; }
+
+        /// <summary>
+        /// Timestamp when the NPT was created
+        /// </summary>
+        public DateTime? CreateDate { get; set; }
+
+        /// <summary>
+        /// The owner of this Task.
+        /// </summary>
+        public TaskOwnerDto Owner { get; set; }
+
+        /// <summary>
+        /// The ownerId of this Task.
+        /// </summary>
+        public Guid? OwnerId { get; set; }
+
+        /// <summary>
+        /// Task file data - number of comments, last read time
+        /// </summary>
+        public DiscussionDataDto DiscussionData { get; set; }
+
+        /// <summary>
+        /// Task file data - number of files, last read time
+        /// </summary>
+        public FileDataDto FileData { get; set; }
+
+        /// <summary>
+        /// If this is a recurring Npt task
+        /// </summary>
+        public bool? Recurring { get; set; }
+
+        /// <summary>
+        /// The parent task in the recurring Npt task sequence
+        /// </summary>
+        public Guid? RecurringParentTaskId { get; set; }
+
+        /// <summary>
+        /// The  Npt Task Recurrency settings
+        /// </summary>
+        public RecurringTaskSettingsDto RecurringSettings { get; set; }
     }
 }

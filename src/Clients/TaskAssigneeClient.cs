@@ -85,5 +85,18 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/{taskId}/assignees";
             return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Delete, url, null, body);
         }
+
+        /// <summary>
+        /// Returns list of assignees.
+        ///
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+        /// to a Task and designate what proportion of their time will be allocated to this Task.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task</param>
+        public async Task<AstroResult<AssigneeDto[]>> ReturnsTaskAssignees(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/assignees";
+            return await _client.Request<AssigneeDto[]>(HttpMethod.Get, url, null);
+        }
     }
 }

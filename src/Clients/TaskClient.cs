@@ -120,6 +120,16 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Fetch the first level child tasks from the task
+        /// </summary>
+        /// <param name="taskId">Parent task id</param>
+        public async Task<AstroResult<TaskDto[]>> FetchTheFirstLevelChildTasksFromTheTask(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/subtasks";
+            return await _client.Request<TaskDto[]>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
         /// Create a new Task within a specified project.
         ///
         /// A Task is an individual element of work that must be performed to complete a Project.  A

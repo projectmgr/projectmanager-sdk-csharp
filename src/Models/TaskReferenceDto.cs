@@ -21,19 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Represents a task that links or depends on another task
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class TaskReferenceDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// The unique identifier for the predecessor task.
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public Guid? PredecessorId { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// The unique identifier for the successor task.
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public Guid? SuccessorId { get; set; }
     }
 }

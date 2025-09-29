@@ -65,5 +65,10 @@ namespace ProjectManager.SDK.Models
         /// Specify a list of resources to assign to this NPT
         /// </summary>
         public Guid[] Assignees { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the NptStatus for this Npt
+        /// </summary>
+        public Guid? StatusId { get; set; }
     }
 }

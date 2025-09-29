@@ -311,5 +311,70 @@ namespace ProjectManager.SDK.Models
         /// The name for the parent task of this Task.
         /// </summary>
         public string ParentTaskName { get; set; }
+
+        /// <summary>
+        /// The ownerId of this Task.
+        /// </summary>
+        public Guid? OwnerId { get; set; }
+
+        /// <summary>
+        /// The owner of this Task.
+        /// </summary>
+        public TaskOwnerDto Owner { get; set; }
+
+        /// <summary>
+        /// If this is a recurring task
+        /// </summary>
+        public bool? Recurring { get; set; }
+
+        /// <summary>
+        /// The parent task in the recurring task sequence
+        /// </summary>
+        public Guid? RecurringParentTaskId { get; set; }
+
+        /// <summary>
+        /// The Task Recurrency settings
+        /// </summary>
+        public RecurringTaskSettingsDto RecurringSettings { get; set; }
+
+        /// <summary>
+        /// The Task Approval Status
+        /// </summary>
+        public string ApprovalStatus { get; set; }
+
+        /// <summary>
+        /// The UserId who last changed the approval status
+        /// </summary>
+        public Guid? ApprovalStatusModifiedBy { get; set; }
+
+        /// <summary>
+        /// When the approval status was last changed
+        /// </summary>
+        public DateTime? ApprovalStatusModifiedDate { get; set; }
+
+        /// <summary>
+        /// the last Reminder date for the approval
+        /// </summary>
+        public DateTime? ApprovalLastReminderDate { get; set; }
+
+        /// <summary>
+        /// Task discussion data - number of comments, last read time
+        /// </summary>
+        public DiscussionDataDto DiscussionData { get; set; }
+
+        /// <summary>
+        /// Task file data - number of files, last read time
+        /// </summary>
+        public FileDataDto FileData { get; set; }
+
+        /// <summary>
+        /// Represents a collection of tasks that should execute after the current task
+        /// </summary>
+        public TaskReferenceDto[] Successors { get; set; }
+
+        /// <summary>
+        /// Represents a collection of tasks that should execute before the current task
+        /// </summary>
+        public TaskReferenceDto[] Predecessors { get; set; }
     }
 }

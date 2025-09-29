@@ -170,5 +170,20 @@ namespace ProjectManager.SDK.Models
         /// A list of TaskTodo items, which are sub-tasks within this Task.
         /// </summary>
         public TaskTodoDto[] Todos { get; set; }
+
+        /// <summary>
+        /// Timestamp when the NPT was created
+        /// </summary>
+        public DateTime? CreateDate { get; set; }
+
+        /// <summary>
+        /// The owner of this Task.
+        /// </summary>
+        public TaskOwnerDto Owner { get; set; }
+
+        /// <summary>
+        /// The ownerId of this Task.
+        /// </summary>
+        public Guid? OwnerId { get; set; }
     }
 }

@@ -42,26 +42,6 @@ namespace ProjectManager.SDK.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// The date when work on this Task is planned to begin.
-        ///
-        /// This value contains only the date in year-month-day format. For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
-        ///
-        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
-        /// </summary>
-        public string PlannedStartDate { get; set; }
-
-        /// <summary>
-        /// The date when work on this Task is expected to complete.
-        ///
-        /// This value contains only the date in year-month-day format. For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
-        ///
-        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
-        /// </summary>
-        public string PlannedFinishDate { get; set; }
-
-        /// <summary>
         /// Return the priority of a task
         /// </summary>
         public int? PriorityId { get; set; }
@@ -82,9 +62,39 @@ namespace ProjectManager.SDK.Models
         public Guid? StatusId { get; set; }
 
         /// <summary>
-        /// If specified, replaces the list of resources assigned to this npt.
+        /// The date when work on this Task is planned to begin.
+        ///
+        /// This value contains only the date in year-month-day format. For display, this
+        /// date will always be shown as this same year-month-day regardless of time zone.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public Guid[] Assignees { get; set; }
+        public string PlannedStartDate { get; set; }
+
+        /// <summary>
+        /// The date when work on this Task is expected to complete.
+        ///
+        /// This value contains only the date in year-month-day format. For display, this
+        /// date will always be shown as this same year-month-day regardless of time zone.
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
+        /// </summary>
+        public string PlannedFinishDate { get; set; }
+
+        /// <summary>
+        /// The planned duration (in minutes) for this Task.  Cannot be negative.
+        /// </summary>
+        public int? PlannedDuration { get; set; }
+
+        /// <summary>
+        /// The planned effort (in minutes) for this Task.  Cannot be negative.
+        /// </summary>
+        public int? PlannedEffort { get; set; }
+
+        /// <summary>
+        /// The planned cost for this Task.  Cannot be negative.
+        /// </summary>
+        public decimal? PlannedCost { get; set; }
 
         /// <summary>
         /// If set, this is the actual date when work began on the Task.
@@ -121,13 +131,28 @@ namespace ProjectManager.SDK.Models
         public string ActualFinishDate { get; set; }
 
         /// <summary>
-        /// The planned cost for this Task.  Cannot be negative.
+        /// The actual duration (in minutes) for this Task.  Cannot be negative.
         /// </summary>
-        public decimal? PlannedCost { get; set; }
+        public int? ActualDuration { get; set; }
 
         /// <summary>
         /// If set, this represents the actual tracked cost for this Task.
         /// </summary>
         public decimal? ActualCost { get; set; }
+
+        /// <summary>
+        /// If specified, replaces the list of resources assigned to this npt.
+        /// </summary>
+        public Guid[] Assignees { get; set; }
+
+        /// <summary>
+        /// Indicates whether this task participates in a recurring series.
+        /// true if the task is part of a recurrence (series parent when is, or a child otherwise);
+        /// false if it is a standalone task.
+        /// When saved as false during an update, the service layer detaches the task
+        /// from its series, which clears parent/child relationships including
+        /// and recurringSettings.
+        /// </summary>
+        public bool? Recurring { get; set; }
     }
 }

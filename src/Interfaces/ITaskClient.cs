@@ -87,6 +87,12 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ChangeSetStatusDto>> DeleteTask(Guid taskId);
 
         /// <summary>
+        /// Fetch the first level child tasks from the task
+        /// </summary>
+        /// <param name="taskId">Parent task id</param>
+        Task<AstroResult<TaskDto[]>> FetchTheFirstLevelChildTasksFromTheTask(Guid taskId);
+
+        /// <summary>
         /// Create a new Task within a specified project.
         ///
         /// A Task is an individual element of work that must be performed to complete a Project.  A

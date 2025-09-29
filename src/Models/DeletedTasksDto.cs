@@ -21,19 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Contains details of recurring NPT task deletions.
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class DeletedTasksDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// The total number of tasks that were deleted.
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public int? DeletedCount { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// The unique identifiers of the tasks that were deleted.
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public Guid[] DeletedTaskIds { get; set; }
     }
 }

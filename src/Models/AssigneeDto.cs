@@ -21,19 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Task assignee dto
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class AssigneeDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// Assignee resource id
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public Guid? ResourceId { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// Percent of work assigned to task
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public decimal? PercentAssignment { get; set; }
     }
 }

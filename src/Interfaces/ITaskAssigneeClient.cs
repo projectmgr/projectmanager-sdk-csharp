@@ -62,5 +62,14 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="taskId">The unique identifier of the Task whose TaskAssignee will be removed</param>
         /// <param name="body">List of TaskAssignee records to remove</param>
         Task<AstroResult<ChangeSetStatusDto>> DeleteTaskAssignees(Guid taskId, IdDto[] body);
+
+        /// <summary>
+        /// Returns list of assignees.
+        ///
+        /// A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+        /// to a Task and designate what proportion of their time will be allocated to this Task.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task</param>
+        Task<AstroResult<AssigneeDto[]>> ReturnsTaskAssignees(Guid taskId);
     }
 }

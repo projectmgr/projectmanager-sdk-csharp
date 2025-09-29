@@ -142,6 +142,11 @@ namespace ProjectManager.SDK.Models
         public string ActualFinishDate { get; set; }
 
         /// <summary>
+        /// The actual duration (in minutes) for this Task.  Cannot be negative.
+        /// </summary>
+        public int? ActualDuration { get; set; }
+
+        /// <summary>
         /// If set, this represents the actual tracked cost for this Task.
         /// </summary>
         public decimal? ActualCost { get; set; }

@@ -21,19 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// RecurringTaskValidationResult
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class RecurringTaskValidationResultDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// The Deleted Task Ids
         /// </summary>
-        public Guid[] TaskIds { get; set; }
-
-        /// <summary>
-        /// The ChangeSet Id
-        /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public Guid[] DeletedTaskIds { get; set; }
     }
 }

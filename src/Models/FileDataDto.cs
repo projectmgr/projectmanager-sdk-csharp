@@ -21,19 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// File Data
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class FileDataDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// Task files count
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public int? Count { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// Last update data
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public DateTime? LastUpdatedDate { get; set; }
+
+        /// <summary>
+        /// Last read date
+        /// </summary>
+        public DateTime? LastReadDate { get; set; }
     }
 }

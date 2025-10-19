@@ -35,6 +35,8 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// The new amount of effort to assign for this Resource. This value is measured in minutes.
+        /// If AssignedEffort is null, we try either use the existing AssignedEffort (if there is one),
+        /// or the Default Planned Effort.
         /// </summary>
         public int? AssignedEffort { get; set; }
     }

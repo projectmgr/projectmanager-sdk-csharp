@@ -35,5 +35,10 @@ namespace ProjectManager.SDK.Models
         /// Percent of work assigned to task
         /// </summary>
         public decimal? PercentAssignment { get; set; }
+
+        /// <summary>
+        /// Effort assigned to the resource for the task.
+        /// </summary>
+        public int? AssignedEffort { get; set; }
     }
 }

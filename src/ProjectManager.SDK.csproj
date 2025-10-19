@@ -10,57 +10,19 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 142.0.226
+# Patch notes for 143.0.162
 
-These patch notes summarize the changes from version 141.1.156.
-
-Added 7 new APIs:
-* NptRecurrency.CreateWeeklyRecurringNpts (POST /api/data/npt/{taskId}/recurring/weekly)
-* NptRecurrency.CreateMonthlyRecurringNpts (POST /api/data/npt/{taskId}/recurring/monthly)
-* NptRecurrency.CreateDailyRecurringNpts (POST /api/data/npt/{taskId}/recurring/daily)
-* NptRecurrency.CreateYearlyRecurringNpts (POST /api/data/npt/{taskId}/recurring/yearly)
-* NptRecurrency.DeleteRecurringNpts (DELETE /api/data/npt/{taskId}/recurring/{option})
-* Task.FetchTheFirstLevelChildTasksFromTheTask (GET /api/data/tasks/{taskId}/subtasks)
-* TaskAssignee.ReturnsTaskAssignees (GET /api/data/tasks/{taskId}/assignees)
+These patch notes summarize the changes from version 142.0.226.
 
 Changes to data models:
-* NptCreateDto: Added new field `statusId`
-* NptDetailsDto: Added new field `createDate`
-* NptDetailsDto: Added new field `owner`
-* NptDetailsDto: Added new field `ownerId`
-* NptDetailsDto: Added new field `discussionData`
-* NptDetailsDto: Added new field `fileData`
-* NptDetailsDto: Added new field `recurring`
-* NptDetailsDto: Added new field `recurringParentTaskId`
-* NptDetailsDto: Added new field `recurringSettings`
-* NptDto: Added new field `createDate`
-* NptDto: Added new field `owner`
-* NptDto: Added new field `ownerId`
-* NptUpdateDto: Added new field `plannedDuration`
-* NptUpdateDto: Added new field `plannedEffort`
-* NptUpdateDto: Added new field `actualDuration`
-* NptUpdateDto: Added new field `recurring`
-* RecurringTaskChangeSetDetails: Added new field `changeSetId`
-* TaskDetailsDto: Added new field `ownerId`
-* TaskDetailsDto: Added new field `owner`
-* TaskDetailsDto: Added new field `recurring`
-* TaskDetailsDto: Added new field `recurringParentTaskId`
-* TaskDetailsDto: Added new field `recurringSettings`
-* TaskDetailsDto: Added new field `approvalStatus`
-* TaskDetailsDto: Added new field `approvalStatusModifiedBy`
-* TaskDetailsDto: Added new field `approvalStatusModifiedDate`
-* TaskDetailsDto: Added new field `approvalLastReminderDate`
-* TaskDetailsDto: Added new field `discussionData`
-* TaskDetailsDto: Added new field `fileData`
-* TaskDetailsDto: Added new field `successors`
-* TaskDetailsDto: Added new field `predecessors`
-* TaskUpdateDto: Added new field `actualDuration`
+* AssigneeDto: Added new field `assignedEffort`
+* ProjectCreateDto: Added new field `weekStartsOnMonday`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>142.0.226</version>
+		<version>143.0.162</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

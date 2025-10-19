@@ -172,5 +172,12 @@ namespace ProjectManager.SDK.Models
         /// such as ERP, CRM, or other integrations.
         /// </summary>
         public string ExternalReferenceId { get; set; }
+
+        /// <summary>
+        /// Controls which day is considered the first day of the week for this project.
+        /// If not specified, this will be Sunday in the US and Monday everywhere else.
+        /// If true, the week starts on Monday. If false, the week starts on Sunday.
+        /// </summary>
+        public bool? WeekStartsOnMonday { get; set; }
     }
 }

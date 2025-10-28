@@ -39,6 +39,8 @@ namespace ProjectManager.SDK.Models
 
         /// <summary>
         /// A status code explaining the category of reason this Resource could not be created
+        ///
+        /// For a list of values, see `HttpStatusCodeValues`.
         /// </summary>
         public string StatusCode { get; set; }
     }

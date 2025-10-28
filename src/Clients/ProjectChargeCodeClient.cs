@@ -50,5 +50,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/chargecodes";
             return await _client.Request<ProjectChargeCodeDto[]>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Create a project charge code
+        /// </summary>
+        /// <param name="body">The data to create the charge code</param>
+        public async Task<AstroResult<ProjectChargeCodeDto>> CreateProjectChargeCode(ProjectChargeCodeCreateDto body)
+        {
+            var url = $"/api/data/projects/chargecodes";
+            return await _client.RequestWithBody<ProjectChargeCodeDto>(HttpMethod.Post, url, null, body);
+        }
     }
 }

@@ -71,6 +71,15 @@ namespace ProjectManager.SDK.Models
         public bool? Approved { get; set; }
 
         /// <summary>
+        /// Approval status of the timesheet entry.
+        /// 1 = New (not submitted for approval)
+        /// 2 = Submitted (submitted for approval, pending review)
+        /// 3 = Approved (approved by the approver)
+        /// 4 = Declined (declined by the approver)
+        /// </summary>
+        public int? ApprovalStatusId { get; set; }
+
+        /// <summary>
         /// Total Hours spent on this Task by this Resource on this specific Date
         /// </summary>
         public decimal? Hours { get; set; }

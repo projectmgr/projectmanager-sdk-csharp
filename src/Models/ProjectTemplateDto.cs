@@ -81,5 +81,15 @@ namespace ProjectManager.SDK.Models
         /// The web default view of the template.
         /// </summary>
         public string DefaultView { get; set; }
+
+        /// <summary>
+        /// Used for custom templates - the template owner
+        /// </summary>
+        public Guid? OwnerId { get; set; }
+
+        /// <summary>
+        /// User for custom templates - when was it created?
+        /// </summary>
+        public DateTime? CreateDate { get; set; }
     }
 }

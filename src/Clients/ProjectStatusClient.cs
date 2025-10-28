@@ -50,5 +50,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/statuses";
             return await _client.Request<ProjectStatusDto[]>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Create a project Status
+        /// </summary>
+        /// <param name="body">The data to create the Status</param>
+        public async Task<AstroResult<ProjectStatusDto>> CreateProjectStatus(ProjectStatusCreateDto body)
+        {
+            var url = $"/api/data/projects/statuses";
+            return await _client.RequestWithBody<ProjectStatusDto>(HttpMethod.Post, url, null, body);
+        }
     }
 }

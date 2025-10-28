@@ -35,5 +35,11 @@ namespace ProjectManager.SDK.Interfaces
         /// you like and you can reorganize the order of the ProjectPriority levels at any time.
         /// </summary>
         Task<AstroResult<ProjectStatusDto[]>> RetrieveProjectStatuses();
+
+        /// <summary>
+        /// Create a project Status
+        /// </summary>
+        /// <param name="body">The data to create the Status</param>
+        Task<AstroResult<ProjectStatusDto>> CreateProjectStatus(ProjectStatusCreateDto body);
     }
 }

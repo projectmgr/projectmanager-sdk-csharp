@@ -37,5 +37,40 @@ namespace ProjectManager.SDK.Models
         /// The friendly name of this UserRole.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The description of this UserRole.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Set to true if this is the default Admin role
+        /// </summary>
+        public bool? IsAdmin { get; set; }
+
+        /// <summary>
+        /// Set to true if this is a custom role (Only supported on Enterprise Plan)
+        /// </summary>
+        public bool? IsCustom { get; set; }
+
+        /// <summary>
+        /// Set to true if this is the default Global Admin role
+        /// </summary>
+        public bool? IsGlobalAdmin { get; set; }
+
+        /// <summary>
+        /// Set to true if this is the Guest role
+        /// </summary>
+        public bool? IsGuest { get; set; }
+
+        /// <summary>
+        /// This is the role that will be assigned to new users by default.
+        /// </summary>
+        public bool? IsDefault { get; set; }
+
+        /// <summary>
+        /// Returns the permission setup associated with this UserRole
+        /// </summary>
+        public UserRolePermissionsDto Permissions { get; set; }
     }
 }

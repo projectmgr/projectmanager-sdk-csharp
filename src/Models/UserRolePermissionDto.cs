@@ -21,26 +21,25 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has
-    /// a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared
-    /// among Projects.
+    /// The basic permission object
     /// </summary>
-    public class ProjectChargeCodeDto : ApiModel
+    public class UserRolePermissionDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this ChargeCode
+        /// The description of the permission
         /// </summary>
-        public Guid? Id { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// The name of this ChargeCode
+        /// True if the permission is on
         /// </summary>
-        public string Name { get; set; }
+        public bool? Value { get; set; }
 
         /// <summary>
-        /// Status of Charge Code
+        /// If true this permission can be turned on or off for this role.
+        /// Most roles can have all permissions modified, but some roles have all or some permissions fixed.
         /// </summary>
-        public bool? IsActive { get; set; }
+        public bool? CanBeModified { get; set; }
     }
 }

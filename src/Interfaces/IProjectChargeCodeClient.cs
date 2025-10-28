@@ -35,5 +35,11 @@ namespace ProjectManager.SDK.Interfaces
         /// among Projects.
         /// </summary>
         Task<AstroResult<ProjectChargeCodeDto[]>> RetrieveChargeCodes();
+
+        /// <summary>
+        /// Create a project charge code
+        /// </summary>
+        /// <param name="body">The data to create the charge code</param>
+        Task<AstroResult<ProjectChargeCodeDto>> CreateProjectChargeCode(ProjectChargeCodeCreateDto body);
     }
 }

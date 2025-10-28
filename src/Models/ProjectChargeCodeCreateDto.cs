@@ -21,26 +21,16 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has
-    /// a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared
-    /// among Projects.
+    /// A ProjectCustomer is a code used to identify costs within your Projects.  Each
+    /// ProjectCustomer has a name and a unique identifier.  ChargeCodes are defined per
+    /// Workspace and are shared among Projects.
     /// </summary>
-    public class ProjectChargeCodeDto : ApiModel
+    public class ProjectChargeCodeCreateDto : ApiModel
     {
 
         /// <summary>
-        /// The unique identifier of this ChargeCode
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// The name of this ChargeCode
+        /// The name of this ProjectCustomer
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Status of Charge Code
-        /// </summary>
-        public bool? IsActive { get; set; }
     }
 }

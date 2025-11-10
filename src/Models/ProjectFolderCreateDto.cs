@@ -21,15 +21,13 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Charge Code is a code used to identify costs within your Projects.  Each
-    /// Charge Code has a name and a unique identifier.  ChargeCodes are defined per
-    /// Workspace and are shared among Projects.
+    /// A ProjectFolder is a named storage location that can contain Projects.
     /// </summary>
-    public class ProjectChargeCodeCreateDto : ApiModel
+    public class ProjectFolderCreateDto : ApiModel
     {
 
         /// <summary>
-        /// The name of this Charge Code
+        /// The name of this ProjectFolder.
         /// </summary>
         public string Name { get; set; }
     }

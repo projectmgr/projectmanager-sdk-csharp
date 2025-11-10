@@ -60,5 +60,26 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/statuses";
             return await _client.RequestWithBody<ProjectStatusDto>(HttpMethod.Post, url, null, body);
         }
+
+        /// <summary>
+        /// Update a project Status
+        /// </summary>
+        /// <param name="projectStatusId">The status Id</param>
+        /// <param name="body">The data to create the Status</param>
+        public async Task<AstroResult<ProjectStatusDto>> UpdateProjectStatus(Guid projectStatusId, ProjectStatusUpdateDto body)
+        {
+            var url = $"/api/data/projects/statuses/{projectStatusId}";
+            return await _client.RequestWithBody<ProjectStatusDto>(HttpMethod.Put, url, null, body);
+        }
+
+        /// <summary>
+        /// Delete a project Status
+        /// </summary>
+        /// <param name="projectStatusId">The status Id</param>
+        public async Task<AstroResult<string>> DeleteProjectStatus(Guid projectStatusId)
+        {
+            var url = $"/api/data/projects/statuses/{projectStatusId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
     }
 }

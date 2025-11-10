@@ -129,8 +129,15 @@ namespace ProjectManager.SDK.Models
         public bool? IsMilestone { get; set; }
 
         /// <summary>
-        /// ParentId
+        /// Gets or sets the unique identifier of the parent task.
+        /// If set, this task will be a child of the specified parent task, supporting task hierarchies and sub-tasks.
         /// </summary>
         public Guid? ParentId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position of the task within the list of project tasks.
+        /// Used to determine the order of tasks in the project with the first task being 1.
+        /// </summary>
+        public int? Index { get; set; }
     }
 }

@@ -256,5 +256,11 @@ namespace ProjectManager.SDK.Models
         /// such as ERP, CRM, or other integrations.
         /// </summary>
         public string ExternalReferenceId { get; set; }
+
+        /// <summary>
+        /// Represents the unique identifier of the owner associated with the Project.
+        /// This may be used to identify the user or entity responsible for the Project.
+        /// </summary>
+        public Guid? OwnerId { get; set; }
     }
 }

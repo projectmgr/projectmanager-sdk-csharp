@@ -33,5 +33,24 @@ namespace ProjectManager.SDK.Interfaces
         /// A ProjectFolder is a named storage location that can contain Projects.
         /// </summary>
         Task<AstroResult<ProjectFolderDto[]>> RetrieveProjectFolders();
+
+        /// <summary>
+        /// Create a project folder
+        /// </summary>
+        /// <param name="body">The data to create the folder</param>
+        Task<AstroResult<ProjectFolderDto>> CreateProjectFolder(ProjectFolderCreateDto body);
+
+        /// <summary>
+        /// Update a project folder
+        /// </summary>
+        /// <param name="projectFolderId">The id of the folder</param>
+        /// <param name="body">The data to update the folder</param>
+        Task<AstroResult<ProjectFolderDto>> UpdateProjectFolder(Guid projectFolderId, ProjectFolderUpdateDto body);
+
+        /// <summary>
+        /// Delete a project folder
+        /// </summary>
+        /// <param name="projectFolderId">The id of the folder</param>
+        Task<AstroResult<string>> DeleteProjectFolder(Guid projectFolderId);
     }
 }

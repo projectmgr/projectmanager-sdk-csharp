@@ -41,5 +41,18 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="body">The data to create the Status</param>
         Task<AstroResult<ProjectStatusDto>> CreateProjectStatus(ProjectStatusCreateDto body);
+
+        /// <summary>
+        /// Update a project Status
+        /// </summary>
+        /// <param name="projectStatusId">The status Id</param>
+        /// <param name="body">The data to create the Status</param>
+        Task<AstroResult<ProjectStatusDto>> UpdateProjectStatus(Guid projectStatusId, ProjectStatusUpdateDto body);
+
+        /// <summary>
+        /// Delete a project Status
+        /// </summary>
+        /// <param name="projectStatusId">The status Id</param>
+        Task<AstroResult<string>> DeleteProjectStatus(Guid projectStatusId);
     }
 }

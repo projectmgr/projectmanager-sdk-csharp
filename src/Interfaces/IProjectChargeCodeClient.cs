@@ -41,5 +41,18 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="body">The data to create the charge code</param>
         Task<AstroResult<ProjectChargeCodeDto>> CreateProjectChargeCode(ProjectChargeCodeCreateDto body);
+
+        /// <summary>
+        /// Update a project charge code
+        /// </summary>
+        /// <param name="chargeCodeId">The id of the charge code</param>
+        /// <param name="body">The data to update the charge code</param>
+        Task<AstroResult<ProjectChargeCodeDto>> UpdateProjectChargeCode(Guid chargeCodeId, ProjectChargeCodeUpdateDto body);
+
+        /// <summary>
+        /// Delete a project charge code
+        /// </summary>
+        /// <param name="chargeCodeId">The id of the charge code</param>
+        Task<AstroResult<string>> DeleteProjectChargeCode(Guid chargeCodeId);
     }
 }

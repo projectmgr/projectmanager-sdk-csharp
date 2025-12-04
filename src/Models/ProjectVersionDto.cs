@@ -77,5 +77,20 @@ namespace ProjectManager.SDK.Models
         /// Subset of the changes related to this ProjectVersion
         /// </summary>
         public ProjectVersionChangeDataDto ChangeData { get; set; }
+
+        /// <summary>
+        /// The name of the application that made this change
+        /// </summary>
+        public string ApplicationName { get; set; }
+
+        /// <summary>
+        /// The Id of the token that made this change
+        /// </summary>
+        public Guid? TokenId { get; set; }
+
+        /// <summary>
+        /// The name of the token that made this change
+        /// </summary>
+        public string TokenName { get; set; }
     }
 }

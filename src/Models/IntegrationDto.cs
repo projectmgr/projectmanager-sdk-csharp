@@ -56,11 +56,6 @@ namespace ProjectManager.SDK.Models
         public bool? IsMultiInstance { get; set; }
 
         /// <summary>
-        /// Extra configuration metadata for this Instance.
-        /// </summary>
-        public object Config { get; set; }
-
-        /// <summary>
         /// The list of SKUS for this Integration.
         /// </summary>
         public string[] LicenseSkus { get; set; }

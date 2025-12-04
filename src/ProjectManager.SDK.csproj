@@ -10,39 +10,23 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2025</Copyright>
         <PackageReleaseNotes>
-# Patch notes for 145.0.219
+## Patch notes for 146.1.229
 
-These patch notes summarize the changes from version 144.0.155.
-
-Added 11 new APIs:
-* NptRecurrency.ValidateRecurringNpts (POST /api/data/npt/{taskId}/recurring/settings/validate)
-* NptRecurrency.UpdateRecurringNpts (PUT /api/data/npt/{taskId}/recurring/settings)
-* ProjectChargeCode.UpdateProjectChargeCode (PUT /api/data/projects/chargecodes/{chargeCodeId})
-* ProjectChargeCode.DeleteProjectChargeCode (DELETE /api/data/projects/chargecodes/{chargeCodeId})
-* ProjectFolder.CreateProjectFolder (POST /api/data/project-folders)
-* ProjectFolder.UpdateProjectFolder (PUT /api/data/project-folders/{projectFolderId})
-* ProjectFolder.DeleteProjectFolder (DELETE /api/data/project-folders/{projectFolderId})
-* ProjectStatus.UpdateProjectStatus (PUT /api/data/projects/statuses/{projectStatusId})
-* ProjectStatus.DeleteProjectStatus (DELETE /api/data/projects/statuses/{projectStatusId})
-* TaskRecurrency.ValidateRecurringTasks (POST /api/data/tasks/{taskId}/recurring/settings/validate)
-* TaskRecurrency.UpdateRecurringTasks (PUT /api/data/tasks/{taskId}/recurring/settings)
-
-Renamed 5 old APIs:
-* Renamed 'Timesheet.QueryTimeSheets' to 'Timesheet.QueryTimeEntries'
-* Renamed 'Timesheet.ReturnsActiveAdminTasksThatAreUsedToReportTime' to 'Timesheet.RetrieveAdministrativeTasks'
-* Renamed 'Timesheet.SubmitResourceTimeSheetForApproval' to 'Timesheet.SubmitTimeSheet'
-* Renamed 'Timesheet.ApproveResourceTimeSheetApprovalRequest' to 'Timesheet.ApproveTimeSheet'
-* Renamed 'Timesheet.RejectResourceTimeSheetApprovalRequest' to 'Timesheet.RejectTimeSheet'
+These patch notes summarize the changes from version 145.0.219.
 
 Changes to data models:
-* ProjectDto: Added new field `ownerId`
-* TaskCreateDto: Added new field `index`
+* IntegrationDto: Removed field `config`
+* ProjectDto: Added new field `workingDays`
+* ProjectStatusDto: Added new field `isSystem`
+* ProjectVersionDto: Added new field `applicationName`
+* ProjectVersionDto: Added new field `tokenId`
+* ProjectVersionDto: Added new field `tokenName`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>145.0.219</version>
+		<version>146.1.229</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

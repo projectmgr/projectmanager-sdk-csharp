@@ -262,5 +262,12 @@ namespace ProjectManager.SDK.Models
         /// This may be used to identify the user or entity responsible for the Project.
         /// </summary>
         public Guid? OwnerId { get; set; }
+
+        /// <summary>
+        /// Represents the configuration of working days for the project, indicating which days of the week
+        /// are considered as working days.
+        /// This allows for customization of scheduling and availability based on the project&#39;s requirements.
+        /// </summary>
+        public ProjectWorkingDaysDto WorkingDays { get; set; }
     }
 }

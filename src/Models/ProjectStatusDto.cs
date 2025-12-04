@@ -42,5 +42,10 @@ namespace ProjectManager.SDK.Models
         /// Is this a deleted status
         /// </summary>
         public bool? IsDeleted { get; set; }
+
+        /// <summary>
+        /// Indicates whether this ProjectStatus is a system and cannot be deleted or modified.
+        /// </summary>
+        public bool? IsSystem { get; set; }
     }
 }

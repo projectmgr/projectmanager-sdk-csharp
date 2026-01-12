@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    146.1.229
+ * @version    148.0.136
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "146.1.229";
+        public const string SdkVersion = "148.0.136";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -108,6 +108,11 @@ namespace ProjectManager.SDK
         /// API methods related to Me
         /// </summary>
         public IMeClient Me { get; }
+
+        /// <summary>
+        /// API methods related to Meetings
+        /// </summary>
+        public IMeetingsClient Meetings { get; }
 
         /// <summary>
         /// API methods related to Notification
@@ -337,6 +342,7 @@ namespace ProjectManager.SDK
             IntegrationProvider = new IntegrationProviderClient(this);
             License = new LicenseClient(this);
             Me = new MeClient(this);
+            Meetings = new MeetingsClient(this);
             Notification = new NotificationClient(this);
             Npt = new NptClient(this);
             NptDiscussion = new NptDiscussionClient(this);

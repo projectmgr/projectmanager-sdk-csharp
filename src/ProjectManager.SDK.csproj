@@ -8,25 +8,30 @@
         <PackageReadmeFile>docs/README.md</PackageReadmeFile>
         <Description>Software development kit for the ProjectManager.com API for DotNet</Description>
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
-        <Copyright>Copyright 2023 - 2025</Copyright>
+        <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 146.1.229
+## Patch notes for 148.0.136
 
-These patch notes summarize the changes from version 145.0.219.
+These patch notes summarize the changes from version 146.1.229.
 
-Changes to data models:
-* IntegrationDto: Removed field `config`
-* ProjectDto: Added new field `workingDays`
-* ProjectStatusDto: Added new field `isSystem`
-* ProjectVersionDto: Added new field `applicationName`
-* ProjectVersionDto: Added new field `tokenId`
-* ProjectVersionDto: Added new field `tokenName`
+Added 11 new endpoints:
+* Meetings.GetMeeting
+* Meetings.UpdateMeeting
+* Meetings.RemoveMeeting
+* Meetings.CreateMeeting
+* Meetings.CreateWeeklyRecurringMeetings
+* Meetings.CreateMonthlyRecurringMeetings
+* Meetings.CreateDailyRecurringMeetings
+* Meetings.CreateYearlyRecurringMeetings
+* Meetings.DeleteRecurringMeetings
+* Meetings.ValidateRecurringMeetingSettings
+* Meetings.UpdateRecurringMeetingSettings
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>146.1.229</version>
+		<version>148.0.136</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

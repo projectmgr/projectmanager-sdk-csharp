@@ -21,9 +21,9 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+    /// A Meeting is a task that either does not belong to a project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
     ///
-    /// NPT&#39;s are a lightweight version of a project task.
+    /// Meetings are a lightweight version of a project task.
     /// </summary>
     public class MeetingDetailsDto : ApiModel
     {
@@ -114,6 +114,11 @@ namespace ProjectManager.SDK.Models
         public Guid? OwnerId { get; set; }
 
         /// <summary>
+        /// The project this meeting belongs to
+        /// </summary>
+        public MeetingProjectDto Project { get; set; }
+
+        /// <summary>
         /// Task file data - number of comments, last read time
         /// </summary>
         public DiscussionDataDto DiscussionData { get; set; }
@@ -124,17 +129,17 @@ namespace ProjectManager.SDK.Models
         public FileDataDto FileData { get; set; }
 
         /// <summary>
-        /// If this is a recurring Npt task
+        /// Indicates whether this meeting is part of a recurring meeting series
         /// </summary>
         public bool? Recurring { get; set; }
 
         /// <summary>
-        /// The parent task in the recurring Npt task sequence
+        /// The parent task in the recurring meeting series
         /// </summary>
         public Guid? RecurringParentTaskId { get; set; }
 
         /// <summary>
-        /// The  Npt Task Recurrency settings
+        /// The meeting&#39;s recurrency settings
         /// </summary>
         public RecurringTaskSettingsDto RecurringSettings { get; set; }
     }

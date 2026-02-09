@@ -21,9 +21,9 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+    /// A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
     ///
-    /// NPT&#39;s are a lightweight version of a project task.
+    /// Meeting&#39;s are a lightweight version of a project task.
     /// </summary>
     public class MeetingUpdateDto : ApiModel
     {
@@ -60,7 +60,7 @@ namespace ProjectManager.SDK.Models
         public int? DurationMinutes { get; set; }
 
         /// <summary>
-        /// If specified, replaces the list of resources assigned to this npt.
+        /// If specified, replaces the list of resources assigned to this meeting.
         /// </summary>
         public Guid[] Assignees { get; set; }
 

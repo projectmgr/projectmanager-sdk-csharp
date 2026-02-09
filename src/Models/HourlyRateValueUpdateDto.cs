@@ -21,24 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// User assigned to task or risk
+    /// The payload to update a hourly rate
     /// </summary>
-    public class AssignmentDto : ApiModel
+    public class HourlyRateValueUpdateDto : ApiModel
     {
 
         /// <summary>
-        /// Task or risk the user is assigned to
+        /// The hourly rate value
         /// </summary>
-        public Guid? TaskId { get; set; }
-
-        /// <summary>
-        /// The task or risk project Id
-        /// </summary>
-        public Guid? ProjectId { get; set; }
-
-        /// <summary>
-        /// Resource identifier
-        /// </summary>
-        public Guid? ResourceId { get; set; }
+        public decimal? Value { get; set; }
     }
 }

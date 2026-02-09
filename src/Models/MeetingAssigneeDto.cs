@@ -21,8 +21,8 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A NptAssignee is a Resource to whom a Npt is assigned. A single Npt
-    /// can be assigned to multiple NptAssignee.
+    /// A MeetingAssignee is a Resource to whom a Meeting is assigned. A single Meeting
+    /// can be assigned to multiple MeetingAssignee.
     /// </summary>
     public class MeetingAssigneeDto : ApiModel
     {
@@ -33,23 +33,23 @@ namespace ProjectManager.SDK.Models
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// A shortened set of initials to use when representing this NptAssignee visually
+        /// A shortened set of initials to use when representing this MeetingAssignee visually
         /// in small areas.  The initials may be used in small icons or other overlays.
         /// </summary>
         public string Initials { get; set; }
 
         /// <summary>
-        /// The name of this NptAssignee
+        /// The name of this MeetingAssignee
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// A more complete description of the NptAssignee.
+        /// A more complete description of the MeetingAssignee.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// True if this NptAssignee is currently active with the Project.
+        /// True if this MeetingAssignee is currently active with the Project.
         /// </summary>
         public bool? IsActive { get; set; }
 
@@ -61,28 +61,28 @@ namespace ProjectManager.SDK.Models
         public string ColorName { get; set; }
 
         /// <summary>
-        /// The first or given name of this NptAssignee.
+        /// The first or given name of this MeetingAssignee.
         ///
-        /// For personnel NptAssignees only.
+        /// For personnel MeetingAssignees only.
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The last or family name of this NptAssignee.
+        /// The last or family name of this MeetingAssignee.
         ///
-        /// For personnel NptAssignees only.
+        /// For personnel MeetingAssignees only.
         /// </summary>
         public string LastName { get; set; }
 
         /// <summary>
-        /// A shortened version of the name of this NptAssignee.  This is used in areas
+        /// A shortened version of the name of this MeetingAssignee.  This is used in areas
         /// where the Initials are too short but the full name is too long.
         /// </summary>
         public string ShortName { get; set; }
 
         /// <summary>
-        /// A link to an Avatar for this NptAssignee.  Avatars are small images or representations
-        /// that can be used to visually identify this NptAssignee at a glance.
+        /// A link to an Avatar for this MeetingAssignee.  Avatars are small images or representations
+        /// that can be used to visually identify this MeetingAssignee at a glance.
         /// </summary>
         public string AvatarUrl { get; set; }
 

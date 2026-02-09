@@ -21,7 +21,7 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Meeting is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+    /// A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
     ///
     /// Meeting&#39;s are a lightweight version of a project task.
     /// </summary>
@@ -112,5 +112,10 @@ namespace ProjectManager.SDK.Models
         /// The ownerId of this Task.
         /// </summary>
         public Guid? OwnerId { get; set; }
+
+        /// <summary>
+        /// The project this meeting belongs to
+        /// </summary>
+        public MeetingProjectDto Project { get; set; }
     }
 }

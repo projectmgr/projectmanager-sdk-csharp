@@ -39,6 +39,81 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Retrieve a Risk by its unique identifier or by its short ID.
+        /// A Risk has both a unique identifier (GUID) and a short ID
+        /// that is unique within a Workspace.
+        /// </summary>
+        /// <param name="riskId">The id of the risk</param>
+        public async Task<AstroResult<RiskDetailsDto>> GetRisk(string riskId)
+        {
+            var url = $"/api/data/risks/{riskId}";
+            return await _client.Request<RiskDetailsDto>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
+        /// Updates an existing Risk.
+        ///
+        /// Only the fields provided in the request body will be updated.
+        /// Fields omitted from the request will remain unchanged.
+        ///
+        /// Authorization is enforced to ensure the caller has access
+        /// to modify the specified Risk.
+        /// </summary>
+        /// <param name="riskId">The id of the risk</param>
+        /// <param name="body">The fields to update</param>
+        public async Task<AstroResult<RiskDto>> UpdateRisk(Guid riskId, RiskUpdateDto body)
+        {
+            var url = $"/api/data/risks/{riskId}";
+            return await _client.RequestWithBody<RiskDto>(HttpMethod.Put, url, null, body);
+        }
+
+        /// <summary>
+        /// Permanently removes the specified Risk.
+        ///
+        /// This operation cannot be undone. Any related references
+        /// (such as links, history, or notifications) will be handled
+        /// according to system rules.
+        ///
+        /// Authorization is enforced to ensure the caller has permission
+        /// to delete the Risk.
+        /// </summary>
+        /// <param name="riskId">The id of the risk to remove</param>
+        public async Task<AstroResult<string>> RemoveRisk(Guid riskId)
+        {
+            var url = $"/api/data/risks/{riskId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
+
+        /// <summary>
+        /// Retrieves all Risks associated with the specified Project.
+        ///
+        /// This endpoint returns a flat list of Risk summaries (not details)
+        /// and does not use OData. Results are scoped to the Project and
+        /// respect feature flags such as Hourly Rates.
+        /// </summary>
+        /// <param name="projectId">The id of the project</param>
+        public async Task<AstroResult<RiskDetailsDto[]>> GetRisksForProject(Guid projectId)
+        {
+            var url = $"/api/data/risks/projects/{projectId}";
+            return await _client.Request<RiskDetailsDto[]>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
+        /// Creates a new Risk within the specified Project.
+        ///
+        /// The Risk will inherit Project context such as access permissions
+        /// and workspace ownership. Validation is applied to ensure the
+        /// Project exists and the caller has permission to create Risks.
+        /// </summary>
+        /// <param name="projectId">The id of the project</param>
+        /// <param name="body">The data used to create the Risk</param>
+        public async Task<AstroResult<RiskDto>> CreateRisk(Guid projectId, RiskCreateDto body)
+        {
+            var url = $"/api/data/risks/{projectId}";
+            return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
         /// Initiates a new Export action for Risks.
         ///
         /// Returns the identifier of this Risk Export.

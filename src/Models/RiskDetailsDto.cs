@@ -21,10 +21,13 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a potential threat or uncertainty that could impact a project, system, or process.
-    /// Contains information such as its likelihood, impact, response, and resolution details.
+    /// A Risk represents an item of potential impact or uncertainty.
+    /// It is visible to the creator and users assigned to manage or review it.
+    ///
+    /// Risks share many characteristics with tasks but are tracked independently
+    /// from project execution work.
     /// </summary>
-    public class RiskDto : ApiModel
+    public class RiskDetailsDto : ApiModel
     {
 
         /// <summary>
@@ -157,5 +160,30 @@ namespace ProjectManager.SDK.Models
         /// The Project to which this Risk belongs.
         /// </summary>
         public RiskProjectDto Project { get; set; }
+
+        /// <summary>
+        /// Discussion data – number of comments, last read time
+        /// </summary>
+        public DiscussionDataDto DiscussionData { get; set; }
+
+        /// <summary>
+        /// File data – number of files, last read time
+        /// </summary>
+        public FileDataDto FileData { get; set; }
+
+        /// <summary>
+        /// Indicates whether this risk is recurring
+        /// </summary>
+        public bool? Recurring { get; set; }
+
+        /// <summary>
+        /// The parent risk in a recurring risk sequence
+        /// </summary>
+        public Guid? RecurringParentTaskId { get; set; }
+
+        /// <summary>
+        /// Recurring risk configuration
+        /// </summary>
+        public RecurringTaskSettingsDto RecurringSettings { get; set; }
     }
 }

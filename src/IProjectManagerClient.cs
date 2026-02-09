@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    148.0.136
+ * @version    149.0.187
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -51,6 +51,14 @@ namespace ProjectManager.SDK
         /// API methods related to HomeFile
         /// </summary>
         IHomeFileClient HomeFile { get; }
+        /// <summary>
+        /// API methods related to HourlyRate
+        /// </summary>
+        IHourlyRateClient HourlyRate { get; }
+        /// <summary>
+        /// API methods related to HourlyRatePeriod
+        /// </summary>
+        IHourlyRatePeriodClient HourlyRatePeriod { get; }
         /// <summary>
         /// API methods related to Integration
         /// </summary>

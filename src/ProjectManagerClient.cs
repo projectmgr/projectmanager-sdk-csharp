@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    148.0.136
+ * @version    149.0.187
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "148.0.136";
+        public const string SdkVersion = "149.0.187";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -83,6 +83,16 @@ namespace ProjectManager.SDK
         /// API methods related to HomeFile
         /// </summary>
         public IHomeFileClient HomeFile { get; }
+
+        /// <summary>
+        /// API methods related to HourlyRate
+        /// </summary>
+        public IHourlyRateClient HourlyRate { get; }
+
+        /// <summary>
+        /// API methods related to HourlyRatePeriod
+        /// </summary>
+        public IHourlyRatePeriodClient HourlyRatePeriod { get; }
 
         /// <summary>
         /// API methods related to Integration
@@ -337,6 +347,8 @@ namespace ProjectManager.SDK
             File = new FileClient(this);
             Holiday = new HolidayClient(this);
             HomeFile = new HomeFileClient(this);
+            HourlyRate = new HourlyRateClient(this);
+            HourlyRatePeriod = new HourlyRatePeriodClient(this);
             Integration = new IntegrationClient(this);
             IntegrationCategory = new IntegrationCategoryClient(this);
             IntegrationProvider = new IntegrationProviderClient(this);

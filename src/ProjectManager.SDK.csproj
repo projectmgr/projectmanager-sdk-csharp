@@ -10,36 +10,16 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 149.0.187
+## Patch notes for 150.1.171
 
-These patch notes summarize the changes from version 148.0.136.
+These patch notes summarize the changes from version 149.0.187.
 
-Added 13 new endpoints:
-* HourlyRate.CreateHourlyRate
-* HourlyRate.GetHourlyRates
-* HourlyRate.UpdateHourlyRate
-* HourlyRate.GetHourlyRate
-* HourlyRate.DeleteHourlyRate
-* HourlyRate.UpdateHourlyRateValue
-* HourlyRatePeriod.GetRatePeriods
-* HourlyRatePeriod.CreateRatePeriod
-* Risk.GetRisk
-* Risk.UpdateRisk
-* Risk.RemoveRisk
-* Risk.GetRisksForProject
-* Risk.CreateRisk
-
-Changes to data models:
-* MeetingDetailsDto: Added new field `project`
-* MeetingDto: Added new field `project`
-* RiskDto: Changed the data type of the field `assignments` from `AssignmentDto` to `RiskAssignmentDto`
-* RiskDto: Added new field `project`
-
+* Minor documentation changes, bugfixes, and performance improvements.
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>149.0.187</version>
+		<version>150.1.171</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

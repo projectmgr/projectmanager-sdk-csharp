@@ -186,5 +186,11 @@ namespace ProjectManager.SDK.Models
         /// The language preference for this Resource, used for localization and communication.
         /// </summary>
         public string Language { get; set; }
+
+        /// <summary>
+        /// The type identifier for this Resource.
+        /// 1 = Resource (standard resource), 2 = Sample (sample resource).
+        /// </summary>
+        public int? ResourceTypeId { get; set; }
     }
 }

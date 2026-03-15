@@ -83,16 +83,19 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Replaces the current value of a ProjectField for a specific Project within your Workspace.
+        /// Sets or replaces the value of a ProjectField for a specific Project within your Workspace.
+        /// This updates the stored value (e.g. &quot;High&quot;, &quot;123&quot;, &quot;2025-01-15&quot;) for that project–field combination,
+        /// not the field definition itself. Use UpdateProjectField or UpdateProjectFieldOptions to change
+        /// the field&#39;s name or dropdown options.
         ///
         /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
         /// for any integration purpose that is important to your business.  Each ProjectField has a data
         /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
         /// within your Workspace.
         /// </summary>
-        /// <param name="projectId">The unique identifier of the Project that contains this ProjectField</param>
-        /// <param name="fieldId">The unique identifier or short ID of this ProjectField</param>
-        /// <param name="body">The new information for this ProjectField</param>
+        /// <param name="projectId">The unique identifier of the Project for which to set this field value</param>
+        /// <param name="fieldId">The unique identifier or short ID of the ProjectField</param>
+        /// <param name="body">The new value for this ProjectField on the specified Project</param>
         public async Task<AstroResult<string>> UpdateProjectFieldValue(Guid projectId, string fieldId, UpdateProjectFieldValueDto body)
         {
             var url = $"/api/data/projects/{projectId}/fields/{fieldId}";

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    149.0.187
+ * @version    151.0.100
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "149.0.187";
+        public const string SdkVersion = "151.0.100";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;

@@ -99,11 +99,6 @@ namespace ProjectManager.SDK.Models
         public HourlyRateValueDto[] Values { get; set; }
 
         /// <summary>
-        /// If this is an archived rate
-        /// </summary>
-        public bool? IsActive { get; set; }
-
-        /// <summary>
         /// Total number of tasks with at least 1 association to this rate
         /// </summary>
         public int? TaskCount { get; set; }

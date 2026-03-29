@@ -110,5 +110,11 @@ namespace ProjectManager.SDK.Models
         /// Language code for this Resource.
         /// </summary>
         public string Language { get; set; }
+
+        /// <summary>
+        /// Public avatar image index (1-42). The avatar URL is generated as /assets/images/avatars/{index:000}.png.
+        /// Only numeric public avatars are accepted; custom URLs are not supported.
+        /// </summary>
+        public int? PublicAvatarId { get; set; }
     }
 }

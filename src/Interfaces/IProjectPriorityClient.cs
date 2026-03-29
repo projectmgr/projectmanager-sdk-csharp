@@ -38,5 +38,24 @@ namespace ProjectManager.SDK.Interfaces
         /// if they may have similar names, they are different objects and must be tracked separately.
         /// </summary>
         Task<AstroResult<ProjectPriorityDto[]>> RetrieveProjectPriorities();
+
+        /// <summary>
+        /// Create a project priority
+        /// </summary>
+        /// <param name="body">The data to create the priority</param>
+        Task<AstroResult<ProjectPriorityDto>> CreateProjectPriority(ProjectPriorityCreateDto body);
+
+        /// <summary>
+        /// Updates a project priority
+        /// </summary>
+        /// <param name="priorityId">The id of the priority to update</param>
+        /// <param name="body">The data to update</param>
+        Task<AstroResult<ProjectPriorityDto>> UpdateProjectPriority(Guid priorityId, ProjectPriorityCreateDto body);
+
+        /// <summary>
+        /// Delete a project priority. They will also be removed from any projects they were assigned too.
+        /// </summary>
+        /// <param name="priorityId">The id of the priority to remove</param>
+        Task<AstroResult<string>> DeleteProjectPriority(Guid priorityId);
     }
 }

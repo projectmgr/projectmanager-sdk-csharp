@@ -53,5 +53,36 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/priorities";
             return await _client.Request<ProjectPriorityDto[]>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Create a project priority
+        /// </summary>
+        /// <param name="body">The data to create the priority</param>
+        public async Task<AstroResult<ProjectPriorityDto>> CreateProjectPriority(ProjectPriorityCreateDto body)
+        {
+            var url = $"/api/data/projects/priorities";
+            return await _client.RequestWithBody<ProjectPriorityDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
+        /// Updates a project priority
+        /// </summary>
+        /// <param name="priorityId">The id of the priority to update</param>
+        /// <param name="body">The data to update</param>
+        public async Task<AstroResult<ProjectPriorityDto>> UpdateProjectPriority(Guid priorityId, ProjectPriorityCreateDto body)
+        {
+            var url = $"/api/data/projects/priorities/{priorityId}";
+            return await _client.RequestWithBody<ProjectPriorityDto>(HttpMethod.Put, url, null, body);
+        }
+
+        /// <summary>
+        /// Delete a project priority. They will also be removed from any projects they were assigned too.
+        /// </summary>
+        /// <param name="priorityId">The id of the priority to remove</param>
+        public async Task<AstroResult<string>> DeleteProjectPriority(Guid priorityId)
+        {
+            var url = $"/api/data/projects/priorities/{priorityId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
     }
 }

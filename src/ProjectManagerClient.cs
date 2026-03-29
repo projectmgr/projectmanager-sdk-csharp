@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    151.0.100
+ * @version    152.0.138
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "151.0.100";
+        public const string SdkVersion = "152.0.138";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -123,6 +123,16 @@ namespace ProjectManager.SDK
         /// API methods related to Meetings
         /// </summary>
         public IMeetingsClient Meetings { get; }
+
+        /// <summary>
+        /// API methods related to MeetingTag
+        /// </summary>
+        public IMeetingTagClient MeetingTag { get; }
+
+        /// <summary>
+        /// API methods related to MeetingTodos
+        /// </summary>
+        public IMeetingTodosClient MeetingTodos { get; }
 
         /// <summary>
         /// API methods related to Notification
@@ -245,6 +255,11 @@ namespace ProjectManager.SDK
         public IRiskFileClient RiskFile { get; }
 
         /// <summary>
+        /// API methods related to RiskTag
+        /// </summary>
+        public IRiskTagClient RiskTag { get; }
+
+        /// <summary>
         /// API methods related to Tag
         /// </summary>
         public ITagClient Tag { get; }
@@ -355,6 +370,8 @@ namespace ProjectManager.SDK
             License = new LicenseClient(this);
             Me = new MeClient(this);
             Meetings = new MeetingsClient(this);
+            MeetingTag = new MeetingTagClient(this);
+            MeetingTodos = new MeetingTodosClient(this);
             Notification = new NotificationClient(this);
             Npt = new NptClient(this);
             NptDiscussion = new NptDiscussionClient(this);
@@ -379,6 +396,7 @@ namespace ProjectManager.SDK
             ResourceTeam = new ResourceTeamClient(this);
             Risk = new RiskClient(this);
             RiskFile = new RiskFileClient(this);
+            RiskTag = new RiskTagClient(this);
             Tag = new TagClient(this);
             Task = new TaskClient(this);
             TaskAssignee = new TaskAssigneeClient(this);

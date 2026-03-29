@@ -104,6 +104,26 @@ namespace ProjectManager.SDK.Models
         public string WorkSpaceCountryCode { get; set; }
 
         /// <summary>
+        /// The culture code (e.g., &quot;en-US&quot;) used for formatting and localization in the workspace.
+        /// </summary>
+        public string WorkSpaceCulture { get; set; }
+
+        /// <summary>
+        /// The culture code used for currency formatting in the workspace.
+        /// </summary>
+        public string WorkSpaceCurrencyCulture { get; set; }
+
+        /// <summary>
+        /// The culture code (e.g., &quot;en-US&quot;) used for formatting and localization for the user.
+        /// </summary>
+        public string UserCulture { get; set; }
+
+        /// <summary>
+        /// The culture code used for currency formatting for the user.
+        /// </summary>
+        public string UserCurrencyCulture { get; set; }
+
+        /// <summary>
         /// The location of the user, which is a combination of city, state (US Only), and country.
         /// </summary>
         public string Location { get; set; }

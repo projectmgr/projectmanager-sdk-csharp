@@ -21,39 +21,35 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a file associated with a Task in project manager
+    /// A MeetingTodo is a sub-item that represents a unit of work on the Meeting. You can use
+    /// MeetingTodo to represent individual items for a larger piece of work (e.g. agenda items, action items).
     /// </summary>
-    public class TaskFileDto : ApiModel
+    public class MeetingTodoDto : ApiModel
     {
 
         /// <summary>
-        /// The identifier for this file
+        /// The unique identifier of this MeetingTodo.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The name of the file
+        /// The full description of this MeetingTodo.
         /// </summary>
-        public string Name { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
-        /// The url of the file which can be used for downloading
+        /// True if this MeetingTodo is complete.
         /// </summary>
-        public string Url { get; set; }
+        public bool? Complete { get; set; }
 
         /// <summary>
-        /// The date the file was created/uploaded
+        /// The timestamp in UTC when this object was created.
         /// </summary>
         public DateTime? CreateDate { get; set; }
 
         /// <summary>
-        /// The file type (e.g. extension or MIME type)
+        /// The timestamp in UTC when this object was last modified.
         /// </summary>
-        public string FileType { get; set; }
-
-        /// <summary>
-        /// The display label for the file type
-        /// </summary>
-        public string FileTypeLabel { get; set; }
+        public DateTime? ModifyDate { get; set; }
     }
 }

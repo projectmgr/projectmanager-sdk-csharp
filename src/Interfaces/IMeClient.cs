@@ -38,6 +38,11 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<WorkSpaceUserInfoDto>> RetrieveMe();
 
         /// <summary>
+        /// Removes the logged in user&#39;s custom avatar so the default initials are shown.
+        /// </summary>
+        Task<AstroResult<string>> RemoveMyAvatar();
+
+        /// <summary>
         /// Updates the logged in user avatar
         /// </summary>
         /// <param name="fileName">The full path of a file to upload to the API</param>

@@ -58,14 +58,14 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Update a hourly rate
+        /// Update Hourly Rate Value
         /// </summary>
-        /// <param name="rateId">the id of the rate</param>
-        /// <param name="body">the data to update the rate with</param>
-        public async Task<AstroResult<HourlyRateDto>> UpdateHourlyRate(Guid rateId, HourlyRateUpdateDto body)
+        /// <param name="rateValueId">The rate valueId</param>
+        /// <param name="body">The rate value data</param>
+        public async Task<AstroResult<HourlyRateValueDto>> UpdateHourlyRateValue(Guid rateValueId, HourlyRateValueUpdateDto body)
         {
-            var url = $"/api/data/hourly-rates/{rateId}";
-            return await _client.RequestWithBody<HourlyRateDto>(HttpMethod.Put, url, null, body);
+            var url = $"/api/data/hourly-rates/values/{rateValueId}";
+            return await _client.RequestWithBody<HourlyRateValueDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -86,17 +86,6 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/hourly-rates/{rateId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
-        }
-
-        /// <summary>
-        /// Update Hourly Rate Value
-        /// </summary>
-        /// <param name="rateValueId">The rate valueId</param>
-        /// <param name="body">The rate value data</param>
-        public async Task<AstroResult<HourlyRateValueDto>> UpdateHourlyRateValue(Guid rateValueId, HourlyRateValueUpdateDto body)
-        {
-            var url = $"/api/data/hourly-rates/values/{rateValueId}";
-            return await _client.RequestWithBody<HourlyRateValueDto>(HttpMethod.Put, url, null, body);
         }
     }
 }

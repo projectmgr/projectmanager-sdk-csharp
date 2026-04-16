@@ -36,5 +36,15 @@ namespace ProjectManager.SDK.Models
         /// Gets or sets the name of the country.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The PM Internal Id Reference for a country
+        /// </summary>
+        public int? CountryId { get; set; }
+
+        /// <summary>
+        /// The Culture name for a country
+        /// </summary>
+        public string CultureName { get; set; }
     }
 }

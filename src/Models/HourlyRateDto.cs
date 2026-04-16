@@ -97,10 +97,5 @@ namespace ProjectManager.SDK.Models
         /// A list of all rates for each rate period
         /// </summary>
         public HourlyRateValueDto[] Values { get; set; }
-
-        /// <summary>
-        /// If this is an archived rate
-        /// </summary>
-        public bool? IsActive { get; set; }
     }
 }

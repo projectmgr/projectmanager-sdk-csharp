@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    151.0.100
+ * @version    152.0.138
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -83,6 +83,14 @@ namespace ProjectManager.SDK
         /// API methods related to Meetings
         /// </summary>
         IMeetingsClient Meetings { get; }
+        /// <summary>
+        /// API methods related to MeetingTag
+        /// </summary>
+        IMeetingTagClient MeetingTag { get; }
+        /// <summary>
+        /// API methods related to MeetingTodos
+        /// </summary>
+        IMeetingTodosClient MeetingTodos { get; }
         /// <summary>
         /// API methods related to Notification
         /// </summary>
@@ -179,6 +187,10 @@ namespace ProjectManager.SDK
         /// API methods related to RiskFile
         /// </summary>
         IRiskFileClient RiskFile { get; }
+        /// <summary>
+        /// API methods related to RiskTag
+        /// </summary>
+        IRiskTagClient RiskTag { get; }
         /// <summary>
         /// API methods related to Tag
         /// </summary>

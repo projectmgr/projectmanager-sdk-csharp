@@ -39,11 +39,11 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<HourlyRateDto[]>> GetHourlyRates();
 
         /// <summary>
-        /// Update a hourly rate
+        /// Update Hourly Rate Value
         /// </summary>
-        /// <param name="rateId">the id of the rate</param>
-        /// <param name="body">the data to update the rate with</param>
-        Task<AstroResult<HourlyRateDto>> UpdateHourlyRate(Guid rateId, HourlyRateUpdateDto body);
+        /// <param name="rateValueId">The rate valueId</param>
+        /// <param name="body">The rate value data</param>
+        Task<AstroResult<HourlyRateValueDto>> UpdateHourlyRateValue(Guid rateValueId, HourlyRateValueUpdateDto body);
 
         /// <summary>
         /// Get Hourly Rate
@@ -56,12 +56,5 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="rateId">The rate Id.</param>
         Task<AstroResult<string>> DeleteHourlyRate(Guid rateId);
-
-        /// <summary>
-        /// Update Hourly Rate Value
-        /// </summary>
-        /// <param name="rateValueId">The rate valueId</param>
-        /// <param name="body">The rate value data</param>
-        Task<AstroResult<HourlyRateValueDto>> UpdateHourlyRateValue(Guid rateValueId, HourlyRateValueUpdateDto body);
     }
 }

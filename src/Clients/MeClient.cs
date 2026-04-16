@@ -53,6 +53,15 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Removes the logged in user&#39;s custom avatar so the default initials are shown.
+        /// </summary>
+        public async Task<AstroResult<string>> RemoveMyAvatar()
+        {
+            var url = $"/api/data/me/avatar";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
+
+        /// <summary>
         /// Updates the logged in user avatar
         /// </summary>
         /// <param name="fileName">The full path of a file to upload to the API</param>

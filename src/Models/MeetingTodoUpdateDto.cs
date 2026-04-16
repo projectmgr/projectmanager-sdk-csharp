@@ -21,17 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The payload to update a hourly rate
+    /// The properties for updating a MeetingTodo.
     /// </summary>
-    public class HourlyRateUpdateDto : ApiModel
+    public class MeetingTodoUpdateDto : ApiModel
     {
 
         /// <summary>
-        /// Update the status of the rate from Active to InActive.
-        ///
-        /// An InActive rate will still be used in calculating the cost of a project
-        /// but will not be displayed in the ui.
+        /// The full description of this MeetingTodo.
         /// </summary>
-        public bool? IsActive { get; set; }
+        public string Text { get; set; }
+
+        /// <summary>
+        /// True if this MeetingTodo is complete.
+        /// </summary>
+        public bool? Complete { get; set; }
     }
 }

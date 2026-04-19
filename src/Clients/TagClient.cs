@@ -87,5 +87,15 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tags/{tagId}";
             return await _client.RequestWithBody<TagDto>(HttpMethod.Put, url, null, body);
         }
+
+        /// <summary>
+        /// Permanently removes the specified Tag.
+        /// </summary>
+        /// <param name="tagId">The id of the tag to delete</param>
+        public async Task<AstroResult<string>> DeleteTag(Guid tagId)
+        {
+            var url = $"/api/data/tags/{tagId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
     }
 }

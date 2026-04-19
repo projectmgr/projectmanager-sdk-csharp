@@ -58,5 +58,11 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="tagId">The id of the tag</param>
         /// <param name="body">The information to update the tag</param>
         Task<AstroResult<TagDto>> UpdateTag(Guid tagId, TagUpdateDto body);
+
+        /// <summary>
+        /// Permanently removes the specified Tag.
+        /// </summary>
+        /// <param name="tagId">The id of the tag to delete</param>
+        Task<AstroResult<string>> DeleteTag(Guid tagId);
     }
 }

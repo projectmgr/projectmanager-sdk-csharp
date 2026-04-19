@@ -74,7 +74,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body);
+        Task<AstroResult<ProjectDto>> UpdateProject(Guid projectId, ProjectUpdateDto body);
 
         /// <summary>
         /// Delete a project based on the details provided.
@@ -88,13 +88,13 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<string>> DeleteProject(Guid projectId, bool? hardDelete = null);
 
         /// <summary>
-        /// Restore a soft deleted project based on its unique identifier.
+        /// Check if a project is in a valid state so that it can be reopened without any side effects.
+        /// For example, if Rates have changed for this project, reopening it will result is project
+        /// costs being recalculated which will adjust costs.
         ///
-        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
-        /// represent individual items of work that team members must complete.  The sum total of Tasks
-        /// within a Project represents the work to be completed for that Project.
+        /// This endpoint will return what side effects may occur if it is reopened.
         /// </summary>
-        /// <param name="projectId">The unique identifier of the Project to delete</param>
-        Task<AstroResult<string>> RestoreProject(Guid projectId);
+        /// <param name="projectId">The unique identifier of the project to check.</param>
+        Task<AstroResult<ProjectReopenStatusDto>> ReopenProjectStatus(Guid projectId);
     }
 }

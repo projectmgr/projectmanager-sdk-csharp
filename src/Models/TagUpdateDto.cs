@@ -28,12 +28,18 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
+        /// The name of this Tag. When omitted or null, the name is left unchanged.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// The color that will be used to represent this Tag visually.  This color
         /// is automatically chosen by the application when a user creates a Tag.
         ///
         /// You can choose specify any color that can be represented using HTML RGB
         /// syntax such as `#0088FF`, in the format `RRGGBB`.  You may not use names
         /// for colors.
+        /// When omitted or null, the color is left unchanged.
         /// </summary>
         public string Color { get; set; }
     }

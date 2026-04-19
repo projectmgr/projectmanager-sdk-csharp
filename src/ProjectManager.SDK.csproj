@@ -10,53 +10,30 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 152.0.138
+## Patch notes for 153.2.193
 
-These patch notes summarize the changes from version 151.0.100.
+These patch notes summarize the changes from version 152.0.138.
 
-Added 16 new endpoints:
-* Me.RemoveMyAvatar
-* MeetingTag.ReplaceMeetingTags
-* MeetingTag.AddTagsToMeeting
-* MeetingTag.RemoveTagsFromMeeting
-* MeetingTag.RetrieveTagsForAMeeting
-* MeetingTodos.GetMeetingTodos
-* MeetingTodos.CreateMeetingTodos
-* MeetingTodos.UpdateAMeetingTodos
-* MeetingTodos.RemoveMeetingTodos
-* ProjectPriority.CreateProjectPriority
-* ProjectPriority.UpdateProjectPriority
-* ProjectPriority.DeleteProjectPriority
-* RiskTag.ReplaceRiskTags
-* RiskTag.AddTagsToRisk
-* RiskTag.RemoveTagsFromRisk
-* RiskTag.RetrieveTagsForARisk
+Added 2 new endpoints:
+* Project.ReopenProjectStatus
+* Tag.DeleteTag
 
 Changes to data models:
-* CountryDto: Added new field `countryId`
-* CountryDto: Added new field `cultureName`
-* HourlyRateDetailsDto: Removed field `isActive`
-* HourlyRateDto: Removed field `isActive`
-* ResourceCreateDto: Added new field `publicAvatarId`
-* ResourceUpdateDto: Added new field `publicAvatarId`
-* ResourceUpdateDto: Added new field `clearAvatar`
-* RiskCreateDto: Added new field `riskTypeId`
-* TaskFileDto: Added new field `createDate`
-* TaskFileDto: Added new field `fileType`
-* TaskFileDto: Added new field `fileTypeLabel`
-* WorkSpaceUserInfoDto: Added new field `workSpaceCulture`
-* WorkSpaceUserInfoDto: Added new field `workSpaceCurrencyCulture`
-* WorkSpaceUserInfoDto: Added new field `userCulture`
-* WorkSpaceUserInfoDto: Added new field `userCurrencyCulture`
+* ProjectMemberDto: Added new field `projectId`
+* TagUpdateDto: Added new field `name`
+* WorkSpaceUserInfoDto: Added new field `workspaceCulture`
+* WorkSpaceUserInfoDto: Added new field `workspaceCurrencyCulture`
+* WorkSpaceUserInfoDto: Removed field `workSpaceCulture`
+* WorkSpaceUserInfoDto: Removed field `workSpaceCurrencyCulture`
 
 Deprecated 1 old endpoints:
-* HourlyRate.UpdateHourlyRate
+* Project.RestoreProject
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>152.0.138</version>
+		<version>153.2.193</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

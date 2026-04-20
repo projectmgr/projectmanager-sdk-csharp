@@ -106,12 +106,12 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// The culture code (e.g., &quot;en-US&quot;) used for formatting and localization in the workspace.
         /// </summary>
-        public string WorkSpaceCulture { get; set; }
+        public string WorkspaceCulture { get; set; }
 
         /// <summary>
         /// The culture code used for currency formatting in the workspace.
         /// </summary>
-        public string WorkSpaceCurrencyCulture { get; set; }
+        public string WorkspaceCurrencyCulture { get; set; }
 
         /// <summary>
         /// The culture code (e.g., &quot;en-US&quot;) used for formatting and localization for the user.

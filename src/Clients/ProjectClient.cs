@@ -103,10 +103,10 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        public async Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body)
+        public async Task<AstroResult<ProjectDto>> UpdateProject(Guid projectId, ProjectUpdateDto body)
         {
             var url = $"/api/data/projects/{projectId}";
-            return await _client.RequestWithBody<string>(HttpMethod.Put, url, null, body);
+            return await _client.RequestWithBody<ProjectDto>(HttpMethod.Put, url, null, body);
         }
 
         /// <summary>
@@ -127,17 +127,17 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Restore a soft deleted project based on its unique identifier.
+        /// Check if a project is in a valid state so that it can be reopened without any side effects.
+        /// For example, if Rates have changed for this project, reopening it will result is project
+        /// costs being recalculated which will adjust costs.
         ///
-        /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
-        /// represent individual items of work that team members must complete.  The sum total of Tasks
-        /// within a Project represents the work to be completed for that Project.
+        /// This endpoint will return what side effects may occur if it is reopened.
         /// </summary>
-        /// <param name="projectId">The unique identifier of the Project to delete</param>
-        public async Task<AstroResult<string>> RestoreProject(Guid projectId)
+        /// <param name="projectId">The unique identifier of the project to check.</param>
+        public async Task<AstroResult<ProjectReopenStatusDto>> ReopenProjectStatus(Guid projectId)
         {
-            var url = $"/api/data/projects/{projectId}/restore";
-            return await _client.Request<string>(HttpMethod.Put, url, null);
+            var url = $"/api/data/projects/{projectId}/reopen/status";
+            return await _client.Request<ProjectReopenStatusDto>(HttpMethod.Get, url, null);
         }
     }
 }

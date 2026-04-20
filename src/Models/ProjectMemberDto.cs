@@ -34,6 +34,11 @@ namespace ProjectManager.SDK.Models
         public Guid? Id { get; set; }
 
         /// <summary>
+        /// The unique identifier of the project that this ProjectMember belongs to.
+        /// </summary>
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
         /// the initials of the user
         /// </summary>
         public string Initials { get; set; }

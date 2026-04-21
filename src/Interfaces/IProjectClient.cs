@@ -67,14 +67,10 @@ namespace ProjectManager.SDK.Interfaces
         /// A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
         /// represent individual items of work that team members must complete.  The sum total of Tasks
         /// within a Project represents the work to be completed for that Project.
-        ///
-        /// Multiple users can be working on data at the same time.  When you call an API to update an
-        /// object, this call is converted into a Changeset that is then applied sequentially.  You can use
-        /// RetrieveChangeset to see the status of an individual Changeset.
         /// </summary>
         /// <param name="projectId">The unique identifier of the Project to update</param>
         /// <param name="body">All non-null fields in this object will replace previous data within the Project</param>
-        Task<AstroResult<ProjectDto>> UpdateProject(Guid projectId, ProjectUpdateDto body);
+        Task<AstroResult<string>> UpdateProject(Guid projectId, ProjectUpdateDto body);
 
         /// <summary>
         /// Delete a project based on the details provided.

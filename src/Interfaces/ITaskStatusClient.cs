@@ -55,9 +55,9 @@ namespace ProjectManager.SDK.Interfaces
         /// progress of Tasks.  You can define your own named status levels that are appropriate for
         /// your business.
         /// </summary>
-        /// <param name="projectId">The unique identifier of the Project for the new TaskStatus</param>
-        /// <param name="body">Information about the existing TaskStatus level to update within this Project</param>
-        Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid projectId, TaskStatusUpdateDto body);
+        /// <param name="taskStatusId">The id of the task status</param>
+        /// <param name="body">Information about the existing TaskStatus to update within this Project</param>
+        Task<AstroResult<TaskStatusDto>> UpdateTaskStatus(Guid taskStatusId, TaskStatusUpdateDto body);
 
         /// <summary>
         /// The endpoint is used to delete a TaskStatus.
@@ -65,8 +65,7 @@ namespace ProjectManager.SDK.Interfaces
         /// You will not be able to delete a TaskStatus if there are tasks that have been assigned to this status level
         /// or if the TaskStatus is the default status level.
         /// </summary>
-        /// <param name="projectId">The unique identifier of the Project for the TaskStatus level to delete</param>
-        /// <param name="taskStatusId">The Id of the TaskStatus level to be removed.</param>
-        Task<AstroResult<string>> DeleteTaskStatus(Guid projectId, Guid taskStatusId);
+        /// <param name="taskStatusId">The id of the TaskStatus to be removed.</param>
+        Task<AstroResult<string>> DeleteTaskStatus(Guid taskStatusId);
     }
 }

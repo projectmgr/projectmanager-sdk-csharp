@@ -28,8 +28,30 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Get a list of task statuses that can be used by npt tasks.
+        /// Get a list of task statuses that can be used by non-protect tasks.
         /// </summary>
         Task<AstroResult<NptStatusDto[]>> GetNptTaskStatuses();
+
+        /// <summary>
+        /// Creates a new status level for non-project tasks.
+        /// </summary>
+        /// <param name="body">Information about the new status level to create</param>
+        Task<AstroResult<NptStatusDto>> CreateNptTaskStatus(NptStatusCreateDto body);
+
+        /// <summary>
+        /// Updates an existing status level for non-project tasks.
+        /// </summary>
+        /// <param name="nptStatusId">The unique identifier of the status to update</param>
+        /// <param name="body">Information about the status level to update</param>
+        Task<AstroResult<NptStatusDto>> UpdateNptTaskStatus(Guid nptStatusId, NptStatusUpdateDto body);
+
+        /// <summary>
+        /// Deletes an existing status level for non-project tasks.
+        ///
+        /// You will not be able to delete a status if there are tasks assigned to it
+        /// or if it is the default status level.
+        /// </summary>
+        /// <param name="nptStatusId">The unique identifier of the status to delete</param>
+        Task<AstroResult<string>> DeleteNptTaskStatus(Guid nptStatusId);
     }
 }

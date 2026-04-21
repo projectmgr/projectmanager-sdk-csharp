@@ -21,22 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A TaskStatus is a named status level used by your business to determine how to measure the
-    /// progress of Tasks.  You can define your own named status levels that are appropriate for
-    /// your business and determine which status levels are considered done.
+    /// One property change when updating a business role (batch change-set item).
     /// </summary>
-    public class TaskStatusUpdateDto : ApiModel
+    public class RoleUpdateChangeItemDto : ApiModel
     {
 
         /// <summary>
-        /// The name of this TaskStatus.
+        /// Field to change: name, description, or permissions.
         /// </summary>
-        public string Name { get; set; }
+        public string Property { get; set; }
 
         /// <summary>
-        /// A numerical value that can be used to sort TaskStatus values according to the
-        /// needs of your business.
+        /// New value for the field; for permissions, a JSON object in the role permissions matrix shape.
         /// </summary>
-        public int? Order { get; set; }
+        public object Value { get; set; }
+
+        /// <summary>
+        /// Optional identifier when the change targets a nested or keyed item.
+        /// </summary>
+        public Guid? Id { get; set; }
     }
 }

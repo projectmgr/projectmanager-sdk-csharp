@@ -85,11 +85,11 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Update a Resource Team.
         /// </summary>
-        /// <param name="teamresourceId">The id of the resource team</param>
+        /// <param name="resourceTeamId">The id of the resource team</param>
         /// <param name="body">The name of the team to Update.</param>
-        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body)
+        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid resourceTeamId, UpdateResourceTeamDto body)
         {
-            var url = $"/api/data/resources/teams/{teamresourceId}";
+            var url = $"/api/data/resources/teams/{resourceTeamId}";
             return await _client.RequestWithBody<ResourceTeamDto>(HttpMethod.Put, url, null, body);
         }
     }

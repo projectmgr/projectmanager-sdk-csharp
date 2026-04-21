@@ -51,9 +51,9 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Update a Resource Skill.
         /// </summary>
-        /// <param name="skillId">The id of the skill to update.</param>
+        /// <param name="resourceSkillId">The id of the skill to update.</param>
         /// <param name="body">The data of the skill to update.</param>
-        Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body);
+        Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid resourceSkillId, UpdateResourceSkillDto body);
 
         /// <summary>
         /// The endpoint is used to delete a resource skill. Users assigned to this skill will no longer be assigned thereafter.

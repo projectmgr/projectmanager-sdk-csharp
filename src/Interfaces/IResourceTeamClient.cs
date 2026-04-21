@@ -56,8 +56,8 @@ namespace ProjectManager.SDK.Interfaces
         /// <summary>
         /// Update a Resource Team.
         /// </summary>
-        /// <param name="teamresourceId">The id of the resource team</param>
+        /// <param name="resourceTeamId">The id of the resource team</param>
         /// <param name="body">The name of the team to Update.</param>
-        Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid teamresourceId, UpdateResourceTeamDto body);
+        Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid resourceTeamId, UpdateResourceTeamDto body);
     }
 }

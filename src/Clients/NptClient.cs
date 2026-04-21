@@ -39,6 +39,33 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Retrieve a list of Non-Project Tasks (NPTs).
+        ///
+        /// This endpoint does not use OData.
+        /// </summary>
+        public async Task<AstroResult<NptDto[]>> GetNpts()
+        {
+            var url = $"/api/data/non-project-tasks";
+            return await _client.Request<NptDto[]>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
+        /// Creates a new Non-Project Task (NPT) for the current user. If you specify an assignee for this NPT, that user will be assigned to this task.
+        /// If you do not specify an assignee, the NPT will be automatically assigned to you.
+        ///
+        /// A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+        /// Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+        /// all the same features as other tasks, but since they are not part of a project, they can
+        /// be tracked separately by individuals.
+        /// </summary>
+        /// <param name="body">The data used to create the Npt</param>
+        public async Task<AstroResult<NptDto>> CreateNpt(NptCreateDto body)
+        {
+            var url = $"/api/data/non-project-tasks";
+            return await _client.RequestWithBody<NptDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
         /// Retrieve a Non-Project Task (NPT) by its unique identifier or by its short ID.
         /// An NPT has both a unique identifier, which is a GUID, and a short ID, which is a small text label that is unique only within your Workspace.
         ///
@@ -83,22 +110,6 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/non-project-tasks/{nptId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
-        }
-
-        /// <summary>
-        /// Creates a new Non-Project Task (NPT) for the current user. If you specify an assignee for this NPT, that user will be assigned to this task.
-        /// If you do not specify an assignee, the NPT will be automatically assigned to you.
-        ///
-        /// A Non-Project Task (NPT) is an individual element of work that is outside of a project.
-        /// Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
-        /// all the same features as other tasks, but since they are not part of a project, they can
-        /// be tracked separately by individuals.
-        /// </summary>
-        /// <param name="body">The data used to create the Npt</param>
-        public async Task<AstroResult<NptDto>> CreateNpt(NptCreateDto body)
-        {
-            var url = $"/api/data/non-project-tasks";
-            return await _client.RequestWithBody<NptDto>(HttpMethod.Post, url, null, body);
         }
     }
 }

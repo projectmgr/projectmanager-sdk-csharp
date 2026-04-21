@@ -21,9 +21,7 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Information about a currently logged in user.
-    ///
-    /// You can call the RetrieveMe API to gather information about the current user.
+    /// Workspace permission flags (same shape as RetrieveMe `permissions`). Use `true`/`false`; omit or null means off for role create.
     /// </summary>
     public class WorkSpacePermissionsDto : ApiModel
     {

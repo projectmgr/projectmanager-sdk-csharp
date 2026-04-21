@@ -80,7 +80,7 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The id of the project</param>
         /// <param name="body">The data used to create the Risk</param>
-        Task<AstroResult<RiskDto>> CreateRisk(Guid projectId, RiskCreateDto body);
+        Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body);
 
         /// <summary>
         /// Initiates a new Export action for Risks.

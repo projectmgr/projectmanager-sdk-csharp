@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    153.2.193
+ * @version    154.0.181
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "153.2.193";
+        public const string SdkVersion = "154.0.181";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -260,6 +260,11 @@ namespace ProjectManager.SDK
         public IRiskTagClient RiskTag { get; }
 
         /// <summary>
+        /// API methods related to Security
+        /// </summary>
+        public ISecurityClient Security { get; }
+
+        /// <summary>
         /// API methods related to Tag
         /// </summary>
         public ITagClient Tag { get; }
@@ -397,6 +402,7 @@ namespace ProjectManager.SDK
             Risk = new RiskClient(this);
             RiskFile = new RiskFileClient(this);
             RiskTag = new RiskTagClient(this);
+            Security = new SecurityClient(this);
             Tag = new TagClient(this);
             Task = new TaskClient(this);
             TaskAssignee = new TaskAssigneeClient(this);

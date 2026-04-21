@@ -286,7 +286,7 @@ namespace ProjectManager.SDK.Models
         /// <summary>
         /// Task fields array with values
         /// </summary>
-        public TaskFieldValueDto[] FieldValues { get; set; }
+        public SimpleTaskFieldValueDto[] FieldValues { get; set; }
 
         /// <summary>
         /// The list of files associated with this Task, if any.

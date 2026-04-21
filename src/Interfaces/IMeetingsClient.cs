@@ -28,6 +28,22 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
+        /// Retrieve a list of Meetings.
+        ///
+        /// This endpoint does not use OData. If `projectId` is provided, results are limited to that Project.
+        /// </summary>
+        /// <param name="projectId">Optional project id to scope results</param>
+        Task<AstroResult<MeetingDto[]>> GetMeetings(Guid? projectId = null);
+
+        /// <summary>
+        /// Creates a new Meeting for the current user.
+        /// If you specify an assignee for this Meeting, that user will be assigned to it.
+        /// If you do not specify an assignee, the Meeting will be automatically assigned to you.
+        /// </summary>
+        /// <param name="body">The data used to create the Meeting</param>
+        Task<AstroResult<MeetingDto>> CreateMeeting(MeetingCreateDto body);
+
+        /// <summary>
         /// Retrieve a Meeting by its unique identifier or by its short ID.
         /// A Meeting has both a unique identifier, which is a GUID, and a short ID, which is a small text label that is unique only within your Workspace.
         /// </summary>
@@ -46,14 +62,6 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="meetingId">the id of the meeting to remove</param>
         Task<AstroResult<string>> RemoveMeeting(Guid meetingId);
-
-        /// <summary>
-        /// Creates a new Meeting for the current user.
-        /// If you specify an assignee for this Meeting, that user will be assigned to it.
-        /// If you do not specify an assignee, the Meeting will be automatically assigned to you.
-        /// </summary>
-        /// <param name="body">The data used to create the Meeting</param>
-        Task<AstroResult<MeetingDto>> CreateMeeting(MeetingCreateDto body);
 
         /// <summary>
         /// Changes an existing Non-Project Task into a Recurring Task, so that it will recur regularly given the specified

@@ -107,9 +107,9 @@ namespace ProjectManager.SDK.Clients
         /// </summary>
         /// <param name="projectId">The id of the project</param>
         /// <param name="body">The data used to create the Risk</param>
-        public async Task<AstroResult<RiskDto>> CreateRisk(Guid projectId, RiskCreateDto body)
+        public async Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body)
         {
-            var url = $"/api/data/risks/{projectId}";
+            var url = $"/api/data/risks/projects/{projectId}";
             return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
         }
 

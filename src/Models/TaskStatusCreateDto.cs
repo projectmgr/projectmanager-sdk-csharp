@@ -29,11 +29,6 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// The unique identifier of this TaskStatus.
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
         /// The name of this TaskStatus.
         /// </summary>
         public string Name { get; set; }

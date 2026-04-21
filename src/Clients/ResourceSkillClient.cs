@@ -76,11 +76,11 @@ namespace ProjectManager.SDK.Clients
         /// <summary>
         /// Update a Resource Skill.
         /// </summary>
-        /// <param name="skillId">The id of the skill to update.</param>
+        /// <param name="resourceSkillId">The id of the skill to update.</param>
         /// <param name="body">The data of the skill to update.</param>
-        public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid skillId, UpdateResourceSkillDto body)
+        public async Task<AstroResult<ResourceSkillDto>> UpdateResourceSkill(Guid resourceSkillId, UpdateResourceSkillDto body)
         {
-            var url = $"/api/data/resources/skills/{skillId}";
+            var url = $"/api/data/resources/skills/{resourceSkillId}";
             return await _client.RequestWithBody<ResourceSkillDto>(HttpMethod.Put, url, null, body);
         }
 

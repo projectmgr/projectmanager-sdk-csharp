@@ -10,30 +10,45 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 153.2.193
+## Patch notes for 154.0.181
 
-These patch notes summarize the changes from version 152.0.138.
+These patch notes summarize the changes from version 153.2.193.
 
-Added 2 new endpoints:
-* Project.ReopenProjectStatus
-* Tag.DeleteTag
+Added 11 new endpoints:
+* Meetings.GetMeetings
+* Npt.GetNpts
+* NptStatus.CreateNptTaskStatus
+* NptStatus.UpdateNptTaskStatus
+* NptStatus.DeleteNptTaskStatus
+* Risk.CreateProjectRisk
+* Security.ListBusinessRoles
+* Security.CreateBusinessRole
+* Security.UpdateBusinessRole
+* Security.DeleteBusinessRole
+* Security.ResendEmailValidation
+
+Changes to existing endpoints:
+* ResourceSkill.UpdateResourceSkill added path parameter `resourceSkillId`
+* ResourceSkill.UpdateResourceSkill removed path parameter `skillId`
+* ResourceTeam.UpdateResourceTeam added path parameter `resourceTeamId`
+* ResourceTeam.UpdateResourceTeam removed path parameter `teamresourceId`
+* TaskStatus.UpdateTaskStatus added path parameter `taskStatusId`
+* TaskStatus.UpdateTaskStatus removed path parameter `projectId`
+* TaskStatus.DeleteTaskStatus removed path parameter `projectId`
 
 Changes to data models:
-* ProjectMemberDto: Added new field `projectId`
-* TagUpdateDto: Added new field `name`
-* WorkSpaceUserInfoDto: Added new field `workspaceCulture`
-* WorkSpaceUserInfoDto: Added new field `workspaceCurrencyCulture`
-* WorkSpaceUserInfoDto: Removed field `workSpaceCulture`
-* WorkSpaceUserInfoDto: Removed field `workSpaceCurrencyCulture`
+* TaskDetailsDto: Changed the data type of the field `fieldValues` from `TaskFieldValueDto` to `SimpleTaskFieldValueDto`
+* TaskDto: Changed the data type of the field `fieldValues` from `TaskFieldValueDto` to `SimpleTaskFieldValueDto`
+* TaskStatusUpdateDto: Removed field `id`
 
 Deprecated 1 old endpoints:
-* Project.RestoreProject
+* Risk.CreateRisk
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>153.2.193</version>
+		<version>154.0.181</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

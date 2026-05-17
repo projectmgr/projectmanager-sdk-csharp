@@ -21,29 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// User dashboard create or update dto
+    /// Planned time for one resource assigned to the task.
     /// </summary>
-    public class DashboardSettingCreateDto : ApiModel
+    public class TaskPlannedResourceTimeDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// Resource identifier for this planned row.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// User ID
+        /// Total planned minutes for this resource (sum of allocations when broken down by day).
         /// </summary>
-        public Guid? UserId { get; set; }
+        public int? TotalMinutes { get; set; }
 
         /// <summary>
-        /// Either custom or one of DashboardType enum
+        /// Planned minutes grouped by calendar date for this resource.
         /// </summary>
-        public string Type { get; set; }
-
-        /// <summary>
-        /// React grid layout configuration
-        /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
+        public TaskPlannedAllocationDto[] Allocations { get; set; }
     }
 }

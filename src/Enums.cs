@@ -19,15 +19,6 @@ namespace ProjectManager.SDK
     /// <summary>
     /// To prevent enum parsing errors, all enums are rendered as constants.
     /// </summary>
-    public static class DashboardTypeValues
-    {
-        public const string MySummary = "MySummary";
-        public const string PortfolioSummary = "PortfolioSummary";
-    }
-
-    /// <summary>
-    /// To prevent enum parsing errors, all enums are rendered as constants.
-    /// </summary>
     public static class HttpStatusCodeValues
     {
         public const string Continue = "Continue";

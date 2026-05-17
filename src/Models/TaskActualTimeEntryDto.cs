@@ -21,29 +21,26 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
+    /// A single timesheet line for the task and resource.
     /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class TaskActualTimeEntryDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// Timesheet row identifier.
         /// </summary>
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// User ID
+        /// Calendar date of the time entry (date-only).
+        ///
+        /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
-        public Guid? UserId { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
-        /// Either custom or one of DashboardType enum
+        /// Minutes reported on this timesheet row for the task.
         /// </summary>
-        public string Type { get; set; }
-
-        /// <summary>
-        /// React grid layout configuration
-        /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
+        public int? Minutes { get; set; }
     }
 }

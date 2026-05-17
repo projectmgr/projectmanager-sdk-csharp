@@ -39,6 +39,44 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Creates a new Risk within the specified Project.
+        ///
+        /// The Risk will inherit Project context such as access permissions
+        /// and workspace ownership. Validation is applied to ensure the
+        /// Project exists and the caller has permission to create Risks.
+        /// </summary>
+        /// <param name="projectId">The id of the project</param>
+        /// <param name="body">The data used to create the Risk</param>
+        public async Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body)
+        {
+            var url = $"/api/data/projects/{projectId}";
+            return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
+        }
+
+        /// <summary>
+        /// Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
+        ///
+        /// A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
+        /// Assumptions, Issues, or Dependencies.
+        /// </summary>
+        /// <param name="top">The number of records to return</param>
+        /// <param name="skip">Skips the given number of records and then returns $top records</param>
+        /// <param name="filter">Filter the expression according to oData queries</param>
+        /// <param name="orderby">Order collection by this field.</param>
+        /// <param name="expand">Include related data in the response</param>
+        public async Task<AstroResult<RiskDto[]>> QueryRisks(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        {
+            var url = $"/api/data/risks";
+            var options = new Dictionary<string, object>();
+            if (top != null) { options["$top"] = top; }
+            if (skip != null) { options["$skip"] = skip; }
+            if (filter != null) { options["$filter"] = filter; }
+            if (orderby != null) { options["$orderby"] = orderby; }
+            if (expand != null) { options["$expand"] = expand; }
+            return await _client.Request<RiskDto[]>(HttpMethod.Get, url, options);
+        }
+
+        /// <summary>
         /// Retrieve a Risk by its unique identifier or by its short ID.
         /// A Risk has both a unique identifier (GUID) and a short ID
         /// that is unique within a Workspace.
@@ -99,21 +137,6 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Creates a new Risk within the specified Project.
-        ///
-        /// The Risk will inherit Project context such as access permissions
-        /// and workspace ownership. Validation is applied to ensure the
-        /// Project exists and the caller has permission to create Risks.
-        /// </summary>
-        /// <param name="projectId">The id of the project</param>
-        /// <param name="body">The data used to create the Risk</param>
-        public async Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body)
-        {
-            var url = $"/api/data/risks/projects/{projectId}";
-            return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
-        }
-
-        /// <summary>
         /// Initiates a new Export action for Risks.
         ///
         /// Returns the identifier of this Risk Export.
@@ -124,29 +147,6 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/projects/{projectId}/risks/export";
             return await _client.RequestWithBody<ExportDto>(HttpMethod.Post, url, null, body);
-        }
-
-        /// <summary>
-        /// Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
-        ///
-        /// A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
-        /// Assumptions, Issues, or Dependencies.
-        /// </summary>
-        /// <param name="top">The number of records to return</param>
-        /// <param name="skip">Skips the given number of records and then returns $top records</param>
-        /// <param name="filter">Filter the expression according to oData queries</param>
-        /// <param name="orderby">Order collection by this field.</param>
-        /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<RiskDto[]>> QueryRisks(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
-        {
-            var url = $"/api/data/risks";
-            var options = new Dictionary<string, object>();
-            if (top != null) { options["$top"] = top; }
-            if (skip != null) { options["$skip"] = skip; }
-            if (filter != null) { options["$filter"] = filter; }
-            if (orderby != null) { options["$orderby"] = orderby; }
-            if (expand != null) { options["$expand"] = expand; }
-            return await _client.Request<RiskDto[]>(HttpMethod.Get, url, options);
         }
     }
 }

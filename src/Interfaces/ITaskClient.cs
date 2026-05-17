@@ -148,5 +148,13 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskId">The child task</param>
         Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId);
+
+        /// <summary>
+        /// Updates the task user read record (last viewed) for the authenticated user. Use this
+        /// when the UI only needs to mark file/discussion read state
+        /// without loading full task details.
+        /// </summary>
+        /// <param name="taskId">Task unique identifier</param>
+        Task<AstroResult<string>> MarkTaskAsReadForTheCurrentUser(Guid taskId);
     }
 }

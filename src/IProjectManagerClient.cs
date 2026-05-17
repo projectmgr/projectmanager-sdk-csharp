@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    154.0.181
+ * @version    155.0.121
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -31,10 +31,6 @@ namespace ProjectManager.SDK
         /// API methods related to Changeset
         /// </summary>
         IChangesetClient Changeset { get; }
-        /// <summary>
-        /// API methods related to Dashboard
-        /// </summary>
-        IDashboardClient Dashboard { get; }
         /// <summary>
         /// API methods related to Discussion
         /// </summary>

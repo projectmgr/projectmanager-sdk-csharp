@@ -192,5 +192,15 @@ namespace ProjectManager.SDK.Models
         /// 1 = Resource (standard resource), 2 = Sample (sample resource).
         /// </summary>
         public int? ResourceTypeId { get; set; }
+
+        /// <summary>
+        /// Default planned effort for this resource, in hours (stored as whole minutes server-side).
+        /// </summary>
+        public decimal? DefaultPlannedHours { get; set; }
+
+        /// <summary>
+        /// Hours available per weekday for scheduling (whole hours per day; matches workspace/resource calendar rows).
+        /// </summary>
+        public ResourceWorkingDaysHours WorkingDays { get; set; }
     }
 }

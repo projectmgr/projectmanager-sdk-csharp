@@ -209,5 +209,17 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/{taskId}/parent";
             return await _client.Request<ChangeSetStatusDto>(HttpMethod.Delete, url, null);
         }
+
+        /// <summary>
+        /// Updates the task user read record (last viewed) for the authenticated user. Use this
+        /// when the UI only needs to mark file/discussion read state
+        /// without loading full task details.
+        /// </summary>
+        /// <param name="taskId">Task unique identifier</param>
+        public async Task<AstroResult<string>> MarkTaskAsReadForTheCurrentUser(Guid taskId)
+        {
+            var url = $"/api/data/tasks/{taskId}/mark-read";
+            return await _client.Request<string>(HttpMethod.Post, url, null);
+        }
     }
 }

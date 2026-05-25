@@ -174,5 +174,10 @@ namespace ProjectManager.SDK.Models
         /// milestone is locked, it represents a fixed time within the project that can be used to relate to other tasks.
         /// </summary>
         public bool? IsMilestone { get; set; }
+
+        /// <summary>
+        /// Object contains data to move task to another project
+        /// </summary>
+        public MoveTaskToProjectDto MoveToProject { get; set; }
     }
 }

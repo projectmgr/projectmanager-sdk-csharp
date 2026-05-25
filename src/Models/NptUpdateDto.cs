@@ -154,5 +154,10 @@ namespace ProjectManager.SDK.Models
         /// and recurringSettings.
         /// </summary>
         public bool? Recurring { get; set; }
+
+        /// <summary>
+        /// Object contains data to move npt to another project
+        /// </summary>
+        public MoveTaskToProjectDto MoveToProject { get; set; }
     }
 }

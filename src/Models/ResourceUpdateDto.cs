@@ -137,5 +137,15 @@ namespace ProjectManager.SDK.Models
         /// When true, removes the resource&#39;s custom avatar so the default initials are shown.
         /// </summary>
         public bool? ClearAvatar { get; set; }
+
+        /// <summary>
+        /// Default planned effort in hours. When set, updates the resource; when omitted, existing value is unchanged.
+        /// </summary>
+        public decimal? DefaultPlannedHours { get; set; }
+
+        /// <summary>
+        /// Per-day working hours. When non-null, updates or creates the resource calendar; set only days to change—they merge over workspace defaults.
+        /// </summary>
+        public ResourceWorkingDaysHours WorkingDays { get; set; }
     }
 }

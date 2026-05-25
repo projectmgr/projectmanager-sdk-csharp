@@ -20,30 +20,23 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    /// <summary>
-    /// The Dashboards API is intended for use by ProjectManager
-    /// </summary>
-    public class DashboardSettingDto : ApiModel
+    public class TaskStatusUpdateObsoleteDto : ApiModel
     {
 
         /// <summary>
-        /// Unique ID
+        /// The name of this TaskStatus.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// A numerical value that can be used to sort TaskStatus values according to the
+        /// needs of your business.
+        /// </summary>
+        public int? Order { get; set; }
+
+        /// <summary>
+        /// The unique identifier of this TaskStatus.
         /// </summary>
         public Guid? Id { get; set; }
-
-        /// <summary>
-        /// User ID
-        /// </summary>
-        public Guid? UserId { get; set; }
-
-        /// <summary>
-        /// Either custom or one of DashboardType enum
-        /// </summary>
-        public string Type { get; set; }
-
-        /// <summary>
-        /// React grid layout configuration
-        /// </summary>
-        public ReactGridLayoutDto ReactGridLayout { get; set; }
     }
 }

@@ -97,5 +97,10 @@ namespace ProjectManager.SDK.Models
         /// Change = 5
         /// </summary>
         public int? RiskTypeId { get; set; }
+
+        /// <summary>
+        /// Object contains data to move risk to another project
+        /// </summary>
+        public MoveTaskToProjectDto MoveToProject { get; set; }
     }
 }

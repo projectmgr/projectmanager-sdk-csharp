@@ -116,5 +116,16 @@ namespace ProjectManager.SDK.Models
         /// Only numeric public avatars are accepted; custom URLs are not supported.
         /// </summary>
         public int? PublicAvatarId { get; set; }
+
+        /// <summary>
+        /// Default planned effort in hours for this resource. If omitted, the workspace default (or 8 hours) is applied.
+        /// </summary>
+        public decimal? DefaultPlannedHours { get; set; }
+
+        /// <summary>
+        /// Per-day working hours (Monday … Sunday). When omitted, no resource-specific calendar is created and the
+        /// workspace calendar applies. Set only the days you need; they merge over the workspace defaults.
+        /// </summary>
+        public ResourceWorkingDaysHours WorkingDays { get; set; }
     }
 }

@@ -55,5 +55,10 @@ namespace ProjectManager.SDK.Models
         /// The display label for the file type
         /// </summary>
         public string FileTypeLabel { get; set; }
+
+        /// <summary>
+        /// File size in bytes (for task attachment lists / Gantt grid)
+        /// </summary>
+        public int? Size { get; set; }
     }
 }

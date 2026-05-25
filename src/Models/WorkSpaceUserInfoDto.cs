@@ -127,5 +127,11 @@ namespace ProjectManager.SDK.Models
         /// The location of the user, which is a combination of city, state (US Only), and country.
         /// </summary>
         public string Location { get; set; }
+
+        /// <summary>
+        /// The entitlements active for this Workspace. Each entry is either a boolean switch or a
+        /// numeric limit.
+        /// </summary>
+        public EntitlementDto[] Entitlements { get; set; }
     }
 }

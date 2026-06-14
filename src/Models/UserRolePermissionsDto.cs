@@ -102,7 +102,7 @@ namespace ProjectManager.SDK.Models
         public UserRolePermissionDto ViewPersonalBoard { get; set; }
 
         /// <summary>
-        /// Access all projects and timesheets
+        /// Edit all projects and timesheets
         /// </summary>
         public UserRolePermissionDto EditAllProjects { get; set; }
 

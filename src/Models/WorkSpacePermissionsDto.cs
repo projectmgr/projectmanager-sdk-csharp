@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Models
         public bool? EditRole { get; set; }
 
         /// <summary>
-        /// True if this user can Access all account data
+        /// True if this user can edit all projects and timesheets
         /// </summary>
         public bool? EditAllProjects { get; set; }
 

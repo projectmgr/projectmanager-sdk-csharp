@@ -61,5 +61,17 @@ namespace ProjectManager.SDK.Interfaces
         /// contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
         Task<AstroResult<IntegrationDto[]>> RetrieveAllIntegrations();
+
+        /// <summary>
+        /// Replaces the metadata stored against a specific Integration for the current Workspace.
+        /// Metadata is a list of key-value pairs where values are comma-separated strings to support
+        /// multiple values per key (e.g. a list of IDs, names, or reference values).
+        ///
+        /// The Integrations API is intended for use by ProjectManager and its business development
+        /// partners.  Please contact ProjectManager&#39;s sales team to request use of this API.
+        /// </summary>
+        /// <param name="integrationId">The unique identifier of the Integration to update</param>
+        /// <param name="body">The full set of metadata key-value pairs to store against this Integration</param>
+        Task<AstroResult<IntegrationDto>> UpdateIntegrationMetadata(Guid integrationId, IntegrationMetadataDto[] body);
     }
 }

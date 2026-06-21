@@ -376,5 +376,10 @@ namespace ProjectManager.SDK.Models
         /// Represents a collection of tasks that should execute before the current task
         /// </summary>
         public TaskReferenceDto[] Predecessors { get; set; }
+
+        /// <summary>
+        /// The baseline values for this Task, if a project baseline has been set.
+        /// </summary>
+        public TaskBaselineDto Baseline { get; set; }
     }
 }

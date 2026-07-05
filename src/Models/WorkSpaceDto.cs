@@ -78,5 +78,10 @@ namespace ProjectManager.SDK.Models
         /// True if this Workspace has an active subscription; false if this is a free trial.
         /// </summary>
         public bool? IsPaid { get; set; }
+
+        /// <summary>
+        /// Workspace-level scheduling defaults.
+        /// </summary>
+        public WorkspaceSettingsDto Settings { get; set; }
     }
 }

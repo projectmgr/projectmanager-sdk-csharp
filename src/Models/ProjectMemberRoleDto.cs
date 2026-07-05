@@ -27,7 +27,10 @@ namespace ProjectManager.SDK.Models
     {
 
         /// <summary>
-        /// Role to apply
+        /// Role to apply. Optional — when omitted, a default role is applied based on the
+        /// target user&#39;s workspace access: users who can edit all projects become a Manager,
+        /// guest users become a Guest, and everyone else becomes an Editor. When updating an
+        /// existing member, omitting the role leaves their current role unchanged.
         ///
         /// For a list of values, see `ProjectPermissionValues`.
         /// </summary>

@@ -21,15 +21,20 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a request to update the approval status of a Task.
+    /// Request body for updating workspace-level scheduling defaults.
+    /// Omit properties to leave existing values unchanged.
     /// </summary>
-    public class TaskApprovalStatusUpdateDto : ApiModel
+    public class WorkspaceSettingsUpdateDto : ApiModel
     {
 
         /// <summary>
-        /// The approval status to apply to the Task.
-        /// Must be one of: approved, denied, or pending.
+        /// Default planned hours per day for new resources (0–24).
         /// </summary>
-        public string Status { get; set; }
+        public decimal? DefaultPlannedHours { get; set; }
+
+        /// <summary>
+        /// Default working hours per weekday for the workspace calendar.
+        /// </summary>
+        public WorkspaceWorkingDaysDto WorkingDays { get; set; }
     }
 }

@@ -10,48 +10,47 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 2026.156.162
+## Patch notes for 2026.159.208
 
-These patch notes summarize the changes from version 154.0.181.
+These patch notes summarize the changes from version 2026.156.162.
 
-Added 4 new endpoints:
-* Discussion.CreateTaskComments
-* Project.RestoreProject
-* Risk.CreateRisk
-* Task.MarkTaskAsReadForTheCurrentUser
+Added 2 new endpoints:
+* Resource.BulkUpdateResources
+* WorkSpace.UpdateCurrentWorkspaceSettings
+
+Renamed 2 endpoints:
+* Renamed ProjectMembers.UpdateUserProjectMembership to ProjectMembers.CreateOrUpdateUserProjectMembership
+* Renamed WorkSpace.RetrieveWorkspaces to WorkSpace.RetrieveCurrentWorkspace
 
 Changes to existing endpoints:
-* Breaking change: TaskField.RetrieveTaskFieldValue path changed from `/api/data/tasks/{taskId}/fields/{fieldId}/values` to `/api/data/tasks/{taskId}/fields/{fieldId}`
-* Breaking change: TaskField.UpdateTaskFieldValue path changed from `/api/data/tasks/{taskId}/fields/{fieldId}/values` to `/api/data/tasks/{taskId}/fields/{fieldId}`
+* Breaking change: TaskField.RetrieveTaskFieldValue path changed from `/api/data/tasks/{taskId}/fields/{fieldId}` to `/api/data/tasks/{taskId}/fields/{fieldId}/values`
+* Breaking change: TaskField.UpdateTaskFieldValue path changed from `/api/data/tasks/{taskId}/fields/{fieldId}` to `/api/data/tasks/{taskId}/fields/{fieldId}/values`
 * Breaking change: TaskStatus.UpdateTaskStatus path changed from `/api/data/tasks/statuses/{taskStatusId}` to `/api/data/projects/{projectId}/tasks/statuses`
 * TaskStatus.UpdateTaskStatus added path parameter `projectId`
 * TaskStatus.UpdateTaskStatus removed path parameter `taskStatusId`
-* Breaking change: TaskStatus.DeleteTaskStatus path changed from `/api/data/tasks/statuses/{taskStatusId}` to `/api/data/projects/{projectId}/tasks/statuses/{taskStatusId}`
-* TaskStatus.DeleteTaskStatus added path parameter `projectId`
+* Breaking change: TaskStatus.DeleteTaskStatus path changed from `/api/data/projects/{projectId}/tasks/statuses/{taskStatusId}` to `/api/data/tasks/statuses/{taskStatusId}`
+* TaskStatus.DeleteTaskStatus removed path parameter `projectId`
 
 Changes to data models:
-* MeetingUpdateDto: Added new field `moveToProject`
-* NptUpdateDto: Added new field `moveToProject`
-* ResourceCreateDto: Added new field `defaultPlannedHours`
-* ResourceCreateDto: Added new field `workingDays`
-* ResourceDto: Added new field `defaultPlannedHours`
-* ResourceDto: Added new field `workingDays`
-* ResourceUpdateDto: Added new field `defaultPlannedHours`
-* ResourceUpdateDto: Added new field `workingDays`
-* RiskUpdateDto: Added new field `moveToProject`
-* TaskFileDto: Added new field `size`
-* TaskUpdateDto: Added new field `moveToProject`
-* WorkSpaceUserInfoDto: Added new field `entitlements`
-
-Deprecated 2 old endpoints:
-* Dashboard.RetrieveDashboardUserSettings
-* Dashboard.CreateOrUpdateUserDashboardSettings
+* IntegrationProviderDto: Added new field `unauthorized`
+* ResourceDto: Added new field `roleId`
+* TaskDetailsDto: Added new field `baseline`
+* UserRolePermissionsDto: Added new field `useMcp`
+* WorkSpaceDto: Added new field `accountOwnerId`
+* WorkSpaceDto: Added new field `status`
+* WorkSpaceDto: Added new field `isActive`
+* WorkSpaceDto: Added new field `isReseller`
+* WorkSpaceDto: Added new field `licenses`
+* WorkSpaceDto: Added new field `settings`
+* WorkSpacePermissionsDto: Added new field `changeOwnEmail`
+* WorkSpacePermissionsDto: Added new field `useMcp`
+* WorkSpaceUserInfoDto: Added new field `isSocial`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>2026.156.162</version>
+		<version>2026.159.208</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

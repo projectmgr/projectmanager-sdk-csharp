@@ -44,6 +44,11 @@ namespace ProjectManager.SDK.Models
         public string CustomProductDomain { get; set; }
 
         /// <summary>
+        /// The unique identifier of the user that is the account owner of this Workspace.
+        /// </summary>
+        public Guid? AccountOwnerId { get; set; }
+
+        /// <summary>
         /// This value is set to true if the user who retrieves this Workspace object via an API call is
         /// the owner of this Workspace.
         /// </summary>
@@ -78,5 +83,30 @@ namespace ProjectManager.SDK.Models
         /// True if this Workspace has an active subscription; false if this is a free trial.
         /// </summary>
         public bool? IsPaid { get; set; }
+
+        /// <summary>
+        /// The account status of this Workspace (for example `Active`, `Trial`, `Cancelled`).
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// True if this Workspace is currently active or in trial and can be used.
+        /// </summary>
+        public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// True if this Workspace is provisioned through a reseller (for example, Acumatica).
+        /// </summary>
+        public bool? IsReseller { get; set; }
+
+        /// <summary>
+        /// A summary of the paid user licenses for this Workspace.
+        /// </summary>
+        public WorkspaceLicensesDto Licenses { get; set; }
+
+        /// <summary>
+        /// Workspace-level scheduling defaults.
+        /// </summary>
+        public WorkspaceSettingsDto Settings { get; set; }
     }
 }

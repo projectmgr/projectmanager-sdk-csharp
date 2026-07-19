@@ -78,7 +78,7 @@ namespace ProjectManager.SDK.Interfaces
         /// Workspace, create a new Resource for that user.
         /// </summary>
         /// <param name="resourceId">The id of the Resource</param>
-        Task<AstroResult<ResourceDto>> RetrieveResource(Guid resourceId);
+        Task<AstroResult<ResourceDetailsDto>> RetrieveResource(Guid resourceId);
 
         /// <summary>
         /// Deletes an existing Resource based on information you provide.
@@ -91,6 +91,18 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="resourceId">The id of the resource</param>
         Task<AstroResult<ResourceDto>> DeleteResource(Guid resourceId);
+
+        /// <summary>
+        /// Updates a list of existing Resources in a single API call.
+        ///
+        /// Each entry identifies the Resource to update via its ResourceId and supplies the fields to change.
+        /// Only fields that are sensible to update across many Resources at once are accepted; see
+        /// ResourceBulkUpdateDto for the supported fields. The whole request is validated before any changes
+        /// are applied - if any entry fails validation, no Resources are updated and the individual failures
+        /// are returned in the AdditionalErrors of the result.
+        /// </summary>
+        /// <param name="body">The list of Resources to update</param>
+        Task<AstroResult<ResourceDto[]>> BulkUpdateResources(ResourceBulkUpdateDto[] body);
 
         /// <summary>
         /// Create new Resources within your Workspace.

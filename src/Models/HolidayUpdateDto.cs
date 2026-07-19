@@ -21,15 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a request to update the approval status of a Task.
+    /// Request body for updating a holiday. Only the reason can be changed.
     /// </summary>
-    public class TaskApprovalStatusUpdateDto : ApiModel
+    public class HolidayUpdateDto : ApiModel
     {
 
         /// <summary>
-        /// The approval status to apply to the Task.
-        /// Must be one of: approved, denied, or pending.
+        /// Updated reason or label for the holiday.
         /// </summary>
-        public string Status { get; set; }
+        public string Reason { get; set; }
     }
 }

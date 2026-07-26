@@ -21,15 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// Represents a request to update the approval status of a Task.
+    /// A resource affected by a holiday. Additional fields may be added later.
     /// </summary>
-    public class TaskApprovalStatusUpdateDto : ApiModel
+    public class HolidayResourceDto : ApiModel
     {
 
         /// <summary>
-        /// The approval status to apply to the Task.
-        /// Must be one of: approved, denied, or pending.
+        /// The resource identifier.
         /// </summary>
-        public string Status { get; set; }
+        public Guid? Id { get; set; }
     }
 }

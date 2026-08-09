@@ -21,24 +21,19 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Workspace-level scheduling defaults returned with a workspace.
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class WorkspaceSettingsDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// Default planned hours per day for new resources (0–24).
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public decimal? DefaultPlannedHours { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// Default working hours per weekday for the workspace calendar.
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
-
-        /// <summary>
-        /// The recurrence instances created by this action
-        /// </summary>
-        public RecurrenceDto[] Recurrences { get; set; }
+        public WorkspaceWorkingDaysDto WorkingDays { get; set; }
     }
 }

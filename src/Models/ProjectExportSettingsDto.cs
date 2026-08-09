@@ -21,24 +21,34 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Export settings for Projects export
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class ProjectExportSettingsDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// Format to export to, currently csv and excel are supported
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// Include closed projects to export
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public bool? IncludeClosed { get; set; }
 
         /// <summary>
-        /// The recurrence instances created by this action
+        /// The list of column names to export
         /// </summary>
-        public RecurrenceDto[] Recurrences { get; set; }
+        public object Columns { get; set; }
+
+        /// <summary>
+        /// Export filters
+        /// </summary>
+        public ProjectExportFilterDto Filters { get; set; }
+
+        /// <summary>
+        /// Order of columns to export
+        /// </summary>
+        public string[] Order { get; set; }
     }
 }

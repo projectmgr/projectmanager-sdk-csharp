@@ -21,9 +21,8 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Meeting is a task that either does not belong to a project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
-    ///
-    /// Meetings are a lightweight version of a project task.
+    /// A Meeting is a lightweight calendar event that may or may not belong to a project.
+    /// It is only visible to the person who created it and the users assigned to it.
     /// </summary>
     public class MeetingDetailsDto : ApiModel
     {
@@ -34,46 +33,39 @@ namespace ProjectManager.SDK.Models
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// The common name of this Task.
+        /// The common name of this Meeting.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// This field contains the task&#39;s &quot;Note&quot; or &quot;Description&quot;, which is a description of the work to be done to complete the task.
-        ///
-        /// Within the ProjectManager application, you can use this field as follows:
-        /// * When in the Board or List view, click on a task to open the task panel, then edit the &quot;Description&quot; field.
+        /// This field contains the Meeting&#39;s description.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// The date when work on this Task is planned to begin.
-        ///
-        /// This value contains only the date in year-month-day format. For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
+        /// The planned start date/time for this Meeting, in UTC.
+        /// Clients should convert to local time only when displaying to the user.
         /// </summary>
         public DateTime? PlannedStartDate { get; set; }
 
         /// <summary>
-        /// The date when work on this Task is expected to complete.
-        ///
-        /// This value contains only the date in year-month-day format. For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
+        /// The planned finish date/time for this Meeting, in UTC.
+        /// Clients should convert to local time only when displaying to the user.
         /// </summary>
         public DateTime? PlannedFinishDate { get; set; }
 
         /// <summary>
-        /// The planned duration (in minutes) for this Task.
+        /// The planned duration (in minutes) for this Meeting.
         /// </summary>
         public int? PlannedDuration { get; set; }
 
         /// <summary>
-        /// The planned effort (in minutes) for this Task.
+        /// The planned effort (in minutes) for this Meeting.
         /// </summary>
         public int? PlannedEffort { get; set; }
 
         /// <summary>
-        /// Return the priority of a task
+        /// Return the priority of a Meeting
         /// </summary>
         public int? PriorityId { get; set; }
 
@@ -83,18 +75,18 @@ namespace ProjectManager.SDK.Models
         public MeetingAssigneeDto[] Assignees { get; set; }
 
         /// <summary>
-        /// A short ID that can be used to refer to this Task.  This short ID is
+        /// A short ID that can be used to refer to this Meeting. This short ID is
         /// guaranteed to be unique within your Workspace.
         /// </summary>
         public string ShortId { get; set; }
 
         /// <summary>
-        /// The TaskTags that apply to this Task.
+        /// The tags that apply to this Meeting.
         /// </summary>
         public TaskTagDto[] Tags { get; set; }
 
         /// <summary>
-        /// A list of TaskTodo items, which are sub-tasks within this Task.
+        /// A list of todo items for this Meeting.
         /// </summary>
         public TaskTodoDto[] Todos { get; set; }
 
@@ -104,12 +96,12 @@ namespace ProjectManager.SDK.Models
         public DateTime? CreateDate { get; set; }
 
         /// <summary>
-        /// The owner of this Task.
+        /// The owner of this Meeting.
         /// </summary>
         public TaskOwnerDto Owner { get; set; }
 
         /// <summary>
-        /// The ownerId of this Task.
+        /// The ownerId of this Meeting.
         /// </summary>
         public Guid? OwnerId { get; set; }
 
@@ -119,12 +111,12 @@ namespace ProjectManager.SDK.Models
         public MeetingProjectDto Project { get; set; }
 
         /// <summary>
-        /// Task file data - number of comments, last read time
+        /// Discussion data - number of comments, last read time
         /// </summary>
         public DiscussionDataDto DiscussionData { get; set; }
 
         /// <summary>
-        /// Task file data - number of files, last read time
+        /// File data - number of files, last read time
         /// </summary>
         public FileDataDto FileData { get; set; }
 

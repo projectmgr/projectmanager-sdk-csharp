@@ -21,24 +21,24 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// A single recurrence instance created by a recurring Task, NPT, or Meeting action
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class RecurrenceDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// The unique identifier of the created recurrence instance
         /// </summary>
-        public Guid[] TaskIds { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
-        /// The ChangeSet Id
+        /// The occurrence start (UTC). For Meetings this carries the meeting time.
         /// </summary>
-        public Guid? ChangeSetId { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The recurrence instances created by this action
+        /// The occurrence finish (UTC)
         /// </summary>
-        public RecurrenceDto[] Recurrences { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }

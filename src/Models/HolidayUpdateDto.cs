@@ -21,24 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// Request body for updating a holiday. Only the reason can be changed.
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class HolidayUpdateDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// Updated reason or label for the holiday.
         /// </summary>
-        public Guid[] TaskIds { get; set; }
-
-        /// <summary>
-        /// The ChangeSet Id
-        /// </summary>
-        public Guid? ChangeSetId { get; set; }
-
-        /// <summary>
-        /// The recurrence instances created by this action
-        /// </summary>
-        public RecurrenceDto[] Recurrences { get; set; }
+        public string Reason { get; set; }
     }
 }

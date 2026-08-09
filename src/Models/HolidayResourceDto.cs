@@ -21,24 +21,14 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// RecurringTaskChangeSetDetails
+    /// A resource affected by a holiday. Additional fields may be added later.
     /// </summary>
-    public class RecurringTaskChangeSetDetails : ApiModel
+    public class HolidayResourceDto : ApiModel
     {
 
         /// <summary>
-        /// The created Task Ids
+        /// The resource identifier.
         /// </summary>
-        public Guid[] TaskIds { get; set; }
-
-        /// <summary>
-        /// The ChangeSet Id
-        /// </summary>
-        public Guid? ChangeSetId { get; set; }
-
-        /// <summary>
-        /// The recurrence instances created by this action
-        /// </summary>
-        public RecurrenceDto[] Recurrences { get; set; }
+        public Guid? Id { get; set; }
     }
 }

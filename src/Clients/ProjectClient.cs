@@ -135,5 +135,17 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/projects/{projectId}/reopen/status";
             return await _client.Request<ProjectReopenStatusDto>(HttpMethod.Get, url, null);
         }
+
+        /// <summary>
+        /// Initiates a new Export action for Projects.
+        ///
+        /// Returns the identifier of this Projects Export.
+        /// </summary>
+        /// <param name="body">The settings to use for this export action</param>
+        public async Task<AstroResult<ExportDto>> CreateProjectExport(ProjectExportSettingsDto body)
+        {
+            var url = $"/api/data/projects/export";
+            return await _client.RequestWithBody<ExportDto>(HttpMethod.Post, url, null, body);
+        }
     }
 }

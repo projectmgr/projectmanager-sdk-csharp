@@ -21,32 +21,26 @@ namespace ProjectManager.SDK.Models
 {
 
     /// <summary>
-    /// A Meeting is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
-    ///
-    /// Meeting&#39;s are a lightweight version of a project task.
+    /// A Meeting is a lightweight calendar event that may or may not belong to a project.
+    /// It is only visible to the person who created it and the users assigned to it.
     /// </summary>
     public class MeetingCreateDto : ApiModel
     {
 
         /// <summary>
-        /// The common name of this Task.
+        /// The common name of this Meeting.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// This field contains the task&#39;s &quot;Note&quot; or &quot;Description&quot;, which is a description of the work to be done to complete the task.
-        ///
-        /// Within the ProjectManager application, you can use this field as follows:
-        /// * When in the Board or List view, click on a task to open the task panel, then edit the &quot;Description&quot; field.
+        /// This field contains the Meeting&#39;s description.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// The date when work on this Task is planned to begin.
-        ///
-        /// This value contains only the date in year-month-day format.  For display, this
-        /// date will always be shown as this same year-month-day regardless of time zone.
-        ///  time needs to be in 15-minute increments, valid values are 0, 15, 30, 45
+        /// The planned start date/time for this Meeting, in UTC.
+        /// Time must be on a 15-minute boundary (0, 15, 30, or 45 minutes).
+        /// Clients should convert to local time only when displaying to the user.
         /// </summary>
         public DateTime? StartDate { get; set; }
 
@@ -56,7 +50,7 @@ namespace ProjectManager.SDK.Models
         public int? DurationMinutes { get; set; }
 
         /// <summary>
-        /// Specify a list of resources to assign to this NPT
+        /// Specify a list of resources to assign to this Meeting
         /// </summary>
         public Guid[] Assignees { get; set; }
 

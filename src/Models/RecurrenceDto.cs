@@ -20,23 +20,25 @@ using System;
 namespace ProjectManager.SDK.Models
 {
 
-    public class TaskStatusUpdateObsoleteDto : ApiModel
+    /// <summary>
+    /// A single recurrence instance created by a recurring Task, NPT, or Meeting action
+    /// </summary>
+    public class RecurrenceDto : ApiModel
     {
 
         /// <summary>
-        /// The name of this TaskStatus.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// A numerical value that can be used to sort TaskStatus values according to the
-        /// needs of your business.
-        /// </summary>
-        public int? Order { get; set; }
-
-        /// <summary>
-        /// The unique identifier of this TaskStatus.
+        /// The unique identifier of the created recurrence instance
         /// </summary>
         public Guid? Id { get; set; }
+
+        /// <summary>
+        /// The occurrence start (UTC). For Meetings this carries the meeting time.
+        /// </summary>
+        public DateTime? StartDate { get; set; }
+
+        /// <summary>
+        /// The occurrence finish (UTC)
+        /// </summary>
+        public DateTime? EndDate { get; set; }
     }
 }

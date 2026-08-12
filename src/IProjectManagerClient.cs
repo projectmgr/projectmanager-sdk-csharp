@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    2026.156.162
+ * @version    2026.160.203
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,10 +39,6 @@ namespace ProjectManager.SDK
         /// API methods related to File
         /// </summary>
         IFileClient File { get; }
-        /// <summary>
-        /// API methods related to Holiday
-        /// </summary>
-        IHolidayClient Holiday { get; }
         /// <summary>
         /// API methods related to HomeFile
         /// </summary>
@@ -75,6 +71,10 @@ namespace ProjectManager.SDK
         /// API methods related to Me
         /// </summary>
         IMeClient Me { get; }
+        /// <summary>
+        /// API methods related to MeetingRecurrency
+        /// </summary>
+        IMeetingRecurrencyClient MeetingRecurrency { get; }
         /// <summary>
         /// API methods related to Meetings
         /// </summary>

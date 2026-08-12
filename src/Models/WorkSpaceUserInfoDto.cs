@@ -133,5 +133,10 @@ namespace ProjectManager.SDK.Models
         /// numeric limit.
         /// </summary>
         public EntitlementDto[] Entitlements { get; set; }
+
+        /// <summary>
+        /// True if the user signed in via a social provider (Google, Apple, or Microsoft).
+        /// </summary>
+        public bool? IsSocial { get; set; }
     }
 }

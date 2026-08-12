@@ -102,7 +102,7 @@ namespace ProjectManager.SDK.Models
         public UserRolePermissionDto ViewPersonalBoard { get; set; }
 
         /// <summary>
-        /// Access all projects and timesheets
+        /// Edit all projects and timesheets
         /// </summary>
         public UserRolePermissionDto EditAllProjects { get; set; }
 
@@ -110,5 +110,10 @@ namespace ProjectManager.SDK.Models
         /// Edit own email address
         /// </summary>
         public UserRolePermissionDto ChangeOwnEmail { get; set; }
+
+        /// <summary>
+        /// Use MCP server and AI integrations via OAuth
+        /// </summary>
+        public UserRolePermissionDto UseMcp { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Models
         public bool? EditRole { get; set; }
 
         /// <summary>
-        /// True if this user can Access all account data
+        /// True if this user can edit all projects and timesheets
         /// </summary>
         public bool? EditAllProjects { get; set; }
 
@@ -110,5 +110,15 @@ namespace ProjectManager.SDK.Models
         /// True if this user can View personal board
         /// </summary>
         public bool? ViewMyBoard { get; set; }
+
+        /// <summary>
+        /// True if this user can Edit their own email address
+        /// </summary>
+        public bool? ChangeOwnEmail { get; set; }
+
+        /// <summary>
+        /// True if this user can use the MCP server and AI integrations via OAuth
+        /// </summary>
+        public bool? UseMcp { get; set; }
     }
 }

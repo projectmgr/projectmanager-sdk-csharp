@@ -94,5 +94,18 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/tasks/statuses/{taskStatusId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
+
+        /// <summary>
+        /// Moves one or more Tasks into the specified TaskStatus.  If a Position is specified for a Task,
+        /// it will be placed at that position within the target TaskStatus.  If no Position is specified,
+        /// the Task will be placed at the end of the list within the target TaskStatus.
+        /// </summary>
+        /// <param name="taskStatusId">The unique identifier of the TaskStatus to move the Tasks into</param>
+        /// <param name="body">The Tasks to move and the position each should occupy within the target TaskStatus</param>
+        public async Task<AstroResult<TaskStatusMoveResultDto[]>> MoveTasksToATaskStatus(Guid taskStatusId, TaskStatusMoveDto[] body)
+        {
+            var url = $"/api/data/tasks/statuses/{taskStatusId}/tasks";
+            return await _client.RequestWithBody<TaskStatusMoveResultDto[]>(HttpMethod.Post, url, null, body);
+        }
     }
 }

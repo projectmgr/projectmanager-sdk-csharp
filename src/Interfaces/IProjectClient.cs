@@ -92,5 +92,13 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The unique identifier of the project to check.</param>
         Task<AstroResult<ProjectReopenStatusDto>> ReopenProjectStatus(Guid projectId);
+
+        /// <summary>
+        /// Initiates a new Export action for Projects.
+        ///
+        /// Returns the identifier of this Projects Export.
+        /// </summary>
+        /// <param name="body">The settings to use for this export action</param>
+        Task<AstroResult<ExportDto>> CreateProjectExport(ProjectExportSettingsDto body);
     }
 }

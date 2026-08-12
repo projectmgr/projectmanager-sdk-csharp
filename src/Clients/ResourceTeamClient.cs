@@ -39,6 +39,49 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Retrieves a single ResourceTeam object by its unique identifier
+        ///
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+        /// in a manner consistent with your business needs.  You can assign Resources to be members
+        /// of zero, one, or many ResourceTeams.
+        /// </summary>
+        /// <param name="resourceTeamId">The unique identifier of the ResourceTeam to retrieve</param>
+        public async Task<AstroResult<ResourceTeamDto>> GetResourceTeam(Guid resourceTeamId)
+        {
+            var url = $"/api/data/resources/teams/{resourceTeamId}";
+            return await _client.Request<ResourceTeamDto>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
+        /// Deletes a resource team by its unique identifier.
+        ///
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+        /// in a manner consistent with your business needs.  You can assign Resources to be members
+        /// of zero, one, or many ResourceTeams.
+        /// </summary>
+        /// <param name="resourceTeamId">The unique ID of the team to be removed</param>
+        public async Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId)
+        {
+            var url = $"/api/data/resources/teams/{resourceTeamId}";
+            return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
+
+        /// <summary>
+        /// Update a Resource Team.
+        ///
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+        /// in a manner consistent with your business needs.  You can assign Resources to be members
+        /// of zero, one, or many ResourceTeams.
+        /// </summary>
+        /// <param name="resourceTeamId">The id of the resource team</param>
+        /// <param name="body">The name of the team to Update.</param>
+        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid resourceTeamId, UpdateResourceTeamDto body)
+        {
+            var url = $"/api/data/resources/teams/{resourceTeamId}";
+            return await _client.RequestWithBody<ResourceTeamDto>(HttpMethod.Put, url, null, body);
+        }
+
+        /// <summary>
         /// Retrieves all ResourceTeams defined within your Workspace that match an [OData formatted query](https://www.odata.org/).
         ///
         /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
@@ -50,7 +93,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="filter">Filter the expression according to oData queries</param>
         /// <param name="orderby">Order collection by this field.</param>
         /// <param name="expand">Include related data in the response</param>
-        public async Task<AstroResult<ResourceTeamDto[]>> RetrieveResourceTeams(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
+        public async Task<AstroResult<ResourceTeamDto[]>> QueryResourceTeams(int? top = null, int? skip = null, string filter = null, string orderby = null, string expand = null)
         {
             var url = $"/api/data/resources/teams";
             var options = new Dictionary<string, object>();
@@ -63,34 +106,17 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Create a Resource Team.
+        /// Create a Resource Team within your workspace
+        ///
+        /// A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+        /// in a manner consistent with your business needs.  You can assign Resources to be members
+        /// of zero, one, or many ResourceTeams.
         /// </summary>
-        /// <param name="body">The name of the team to create.</param>
+        /// <param name="body">The name of the ResourceTeam to create</param>
         public async Task<AstroResult<ResourceTeamDto>> CreateResourceTeam(CreateResourceTeamDto body)
         {
             var url = $"/api/data/resources/teams";
             return await _client.RequestWithBody<ResourceTeamDto>(HttpMethod.Post, url, null, body);
-        }
-
-        /// <summary>
-        /// The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
-        /// </summary>
-        /// <param name="resourceTeamId">The Id of the team to be removed.</param>
-        public async Task<AstroResult<string>> DeleteResourceTeam(Guid resourceTeamId)
-        {
-            var url = $"/api/data/resources/teams/{resourceTeamId}";
-            return await _client.Request<string>(HttpMethod.Delete, url, null);
-        }
-
-        /// <summary>
-        /// Update a Resource Team.
-        /// </summary>
-        /// <param name="resourceTeamId">The id of the resource team</param>
-        /// <param name="body">The name of the team to Update.</param>
-        public async Task<AstroResult<ResourceTeamDto>> UpdateResourceTeam(Guid resourceTeamId, UpdateResourceTeamDto body)
-        {
-            var url = $"/api/data/resources/teams/{resourceTeamId}";
-            return await _client.RequestWithBody<ResourceTeamDto>(HttpMethod.Put, url, null, body);
         }
     }
 }

@@ -67,5 +67,14 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="taskStatusId">The id of the TaskStatus to be removed.</param>
         Task<AstroResult<string>> DeleteTaskStatus(Guid taskStatusId);
+
+        /// <summary>
+        /// Moves one or more Tasks into the specified TaskStatus.  If a Position is specified for a Task,
+        /// it will be placed at that position within the target TaskStatus.  If no Position is specified,
+        /// the Task will be placed at the end of the list within the target TaskStatus.
+        /// </summary>
+        /// <param name="taskStatusId">The unique identifier of the TaskStatus to move the Tasks into</param>
+        /// <param name="body">The Tasks to move and the position each should occupy within the target TaskStatus</param>
+        Task<AstroResult<TaskStatusMoveResultDto[]>> MoveTasksToATaskStatus(Guid taskStatusId, TaskStatusMoveDto[] body);
     }
 }

@@ -14,13 +14,10 @@
 
 These patch notes summarize the changes from version 2026.156.162.
 
-Added 8 new endpoints:
-* Discussion.CreateTaskComments
-* Project.RestoreProject
+Added 5 new endpoints:
 * Project.CreateProjectExport
 * Resource.BulkUpdateResources
 * ResourceTeam.GetResourceTeam
-* Risk.CreateRisk
 * TaskStatus.MoveTasksToATaskStatus
 * WorkSpace.UpdateCurrentWorkspaceSettings
 

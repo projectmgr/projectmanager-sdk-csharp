@@ -10,60 +10,26 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 2026.160.203
+## Patch notes for 2026.161.148
 
-These patch notes summarize the changes from version 2026.156.162.
+These patch notes summarize the changes from version 2026.160.203.
 
-Added 8 new endpoints:
-* Discussion.CreateTaskComments
-* Project.RestoreProject
-* Project.CreateProjectExport
-* Resource.BulkUpdateResources
-* ResourceTeam.GetResourceTeam
+Added 1 new endpoints:
 * Risk.CreateRisk
-* TaskStatus.MoveTasksToATaskStatus
-* WorkSpace.UpdateCurrentWorkspaceSettings
-
-Renamed 10 endpoints:
-* Renamed Meetings.CreateWeeklyRecurringMeetings to MeetingRecurrency.CreateWeeklyRecurringMeetings
-* Renamed Meetings.CreateMonthlyRecurringMeetings to MeetingRecurrency.CreateMonthlyRecurringMeetings
-* Renamed Meetings.CreateDailyRecurringMeetings to MeetingRecurrency.CreateDailyRecurringMeetings
-* Renamed Meetings.CreateYearlyRecurringMeetings to MeetingRecurrency.CreateYearlyRecurringMeetings
-* Renamed Meetings.DeleteRecurringMeetings to MeetingRecurrency.DeleteRecurringMeetings
-* Renamed Meetings.ValidateRecurringMeetingSettings to MeetingRecurrency.ValidateRecurringMeetingSettings
-* Renamed Meetings.UpdateRecurringMeetingSettings to MeetingRecurrency.UpdateRecurringMeetingSettings
-* Renamed ProjectMembers.UpdateUserProjectMembership to ProjectMembers.CreateOrUpdateUserProjectMembership
-* Renamed ResourceTeam.RetrieveResourceTeams to ResourceTeam.QueryResourceTeams
-* Renamed WorkSpace.RetrieveWorkspaces to WorkSpace.RetrieveCurrentWorkspace
 
 Changes to data models:
-* IntegrationProviderDto: Added new field `unauthorized`
-* RecurringTaskChangeSetDetails: Added new field `recurrences`
-* ResourceDto: Added new field `roleId`
-* TaskDetailsDto: Added new field `baseline`
-* UserRolePermissionsDto: Added new field `useMcp`
-* WorkSpaceDto: Added new field `accountOwnerId`
-* WorkSpaceDto: Added new field `status`
-* WorkSpaceDto: Added new field `isActive`
-* WorkSpaceDto: Added new field `isReseller`
-* WorkSpaceDto: Added new field `licenses`
-* WorkSpaceDto: Added new field `settings`
-* WorkSpacePermissionsDto: Added new field `changeOwnEmail`
-* WorkSpacePermissionsDto: Added new field `useMcp`
-* WorkSpaceUserInfoDto: Added new field `isSocial`
+* MeetingUpdateDto: Added new field `breakRecurrency`
+* NptUpdateDto: Added new field `breakRecurrency`
+* TaskUpdateDto: Added new field `breakRecurrency`
 
-Deprecated 5 old endpoints:
-* Holiday.QueryResourceHolidays
-* Holiday.QueryCountryHolidays
-* Holiday.QueryGlobalHolidays
-* ProjectMembers.UpdateAListOfUserProjectMembership
-* ProjectMembers.CreateUserProjectMembership
+Deprecated 1 old endpoints:
+* Risk.CreateProjectRisk
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>2026.160.203</version>
+		<version>2026.161.148</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

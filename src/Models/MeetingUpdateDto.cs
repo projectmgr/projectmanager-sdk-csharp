@@ -60,14 +60,16 @@ namespace ProjectManager.SDK.Models
         public Guid[] Assignees { get; set; }
 
         /// <summary>
-        /// Indicates whether this Meeting participates in a recurring series.
-        /// true if the Meeting is part of a recurrence (series parent when is, or a child otherwise);
-        /// false if it is a standalone Meeting.
-        /// When saved as false during an update, the service layer detaches the Meeting
-        /// from its series, which clears parent/child relationships including
-        /// and recurringSettings.
+        /// Set this to true to break this Meeting out of its recurring series as part of this update.
+        ///
+        /// The Meeting is detached from its series, clearing its parent/child relationship and its
+        /// recurrence settings.  Any other changes in the same update are then applied to this
+        /// Meeting alone rather than being propagated across the rest of the series.
+        ///
+        /// This has no effect if the Meeting is not part of a recurring series.  A Meeting can only
+        /// be made recurring through the MeetingRecurrency endpoints.
         /// </summary>
-        public bool? Recurring { get; set; }
+        public bool? BreakRecurrency { get; set; }
 
         /// <summary>
         /// Object contains data to move meeting to another project

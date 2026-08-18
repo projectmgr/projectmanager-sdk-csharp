@@ -28,17 +28,6 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Creates a new Risk within the specified Project.
-        ///
-        /// The Risk will inherit Project context such as access permissions
-        /// and workspace ownership. Validation is applied to ensure the
-        /// Project exists and the caller has permission to create Risks.
-        /// </summary>
-        /// <param name="projectId">The id of the project</param>
-        /// <param name="body">The data used to create the Risk</param>
-        Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body);
-
-        /// <summary>
         /// Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
         ///
         /// A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
@@ -94,6 +83,17 @@ namespace ProjectManager.SDK.Interfaces
         /// </summary>
         /// <param name="projectId">The id of the project</param>
         Task<AstroResult<RiskDetailsDto[]>> GetRisksForProject(Guid projectId);
+
+        /// <summary>
+        /// Creates a new Risk within the specified Project.
+        ///
+        /// The Risk will inherit Project context such as access permissions
+        /// and workspace ownership. Validation is applied to ensure the
+        /// Project exists and the caller has permission to create Risks.
+        /// </summary>
+        /// <param name="projectId">The id of the project</param>
+        /// <param name="body">The data used to create the Risk</param>
+        Task<AstroResult<RiskDto>> CreateRisk(Guid projectId, RiskCreateDto body);
 
         /// <summary>
         /// Initiates a new Export action for Risks.

@@ -31,6 +31,13 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: dotnet pack
 
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Push generated package to GitHub registry
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: dotnet nuget push src/bin/Release/*.nupkg --source 'https://api.nuget.org/v3/index.json' --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push src/bin/Release/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source 'https://api.nuget.org/v3/index.json'

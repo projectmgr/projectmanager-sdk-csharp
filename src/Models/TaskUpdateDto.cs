@@ -176,6 +176,18 @@ namespace ProjectManager.SDK.Models
         public bool? IsMilestone { get; set; }
 
         /// <summary>
+        /// Set this to true to break this Task out of its recurring series as part of this update.
+        ///
+        /// The Task is detached from its series, clearing its parent/child relationship and its
+        /// recurrence settings.  Any other changes in the same update are then applied to this
+        /// Task alone rather than being propagated across the rest of the series.
+        ///
+        /// This has no effect if the Task is not part of a recurring series.  A Task can only be
+        /// made recurring through the TaskRecurrency endpoints.
+        /// </summary>
+        public bool? BreakRecurrency { get; set; }
+
+        /// <summary>
         /// Object contains data to move task to another project
         /// </summary>
         public MoveTaskToProjectDto MoveToProject { get; set; }

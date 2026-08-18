@@ -39,21 +39,6 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Creates a new Risk within the specified Project.
-        ///
-        /// The Risk will inherit Project context such as access permissions
-        /// and workspace ownership. Validation is applied to ensure the
-        /// Project exists and the caller has permission to create Risks.
-        /// </summary>
-        /// <param name="projectId">The id of the project</param>
-        /// <param name="body">The data used to create the Risk</param>
-        public async Task<AstroResult<RiskDto>> CreateProjectRisk(Guid projectId, RiskCreateDto body)
-        {
-            var url = $"/api/data/projects/{projectId}";
-            return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
-        }
-
-        /// <summary>
         /// Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
         ///
         /// A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
@@ -134,6 +119,21 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/risks/projects/{projectId}";
             return await _client.Request<RiskDetailsDto[]>(HttpMethod.Get, url, null);
+        }
+
+        /// <summary>
+        /// Creates a new Risk within the specified Project.
+        ///
+        /// The Risk will inherit Project context such as access permissions
+        /// and workspace ownership. Validation is applied to ensure the
+        /// Project exists and the caller has permission to create Risks.
+        /// </summary>
+        /// <param name="projectId">The id of the project</param>
+        /// <param name="body">The data used to create the Risk</param>
+        public async Task<AstroResult<RiskDto>> CreateRisk(Guid projectId, RiskCreateDto body)
+        {
+            var url = $"/api/data/projects/{projectId}/risks";
+            return await _client.RequestWithBody<RiskDto>(HttpMethod.Post, url, null, body);
         }
 
         /// <summary>

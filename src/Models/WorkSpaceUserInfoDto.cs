@@ -89,6 +89,16 @@ namespace ProjectManager.SDK.Models
         public string WorkSpaceStatus { get; set; }
 
         /// <summary>
+        /// This is pricing type of workspace
+        /// </summary>
+        public int? WorkSpacePricingType { get; set; }
+
+        /// <summary>
+        /// This is true if workspace has scheduled changes
+        /// </summary>
+        public bool? WorkSpaceHasScheduledChanges { get; set; }
+
+        /// <summary>
         /// This is true if the WorkSpace is in the Active or Trial state.
         /// </summary>
         public bool? WorkSpaceIsActive { get; set; }
@@ -109,19 +119,19 @@ namespace ProjectManager.SDK.Models
         public string WorkspaceCulture { get; set; }
 
         /// <summary>
-        /// The culture code used for currency formatting in the workspace.
+        /// The currency symbol used for currency formatting in the workspace (e.g., &quot;$&quot; for USD, &quot;€&quot; for EUR).
         /// </summary>
-        public string WorkspaceCurrencyCulture { get; set; }
+        public string WorkspaceCurrencySymbol { get; set; }
+
+        /// <summary>
+        /// The name of the currency used for currency formatting in the workspace (e.g., &quot;USD&quot; for US Dollar, &quot;EUR&quot; for Euro).
+        /// </summary>
+        public string WorkspaceCurrency { get; set; }
 
         /// <summary>
         /// The culture code (e.g., &quot;en-US&quot;) used for formatting and localization for the user.
         /// </summary>
         public string UserCulture { get; set; }
-
-        /// <summary>
-        /// The culture code used for currency formatting for the user.
-        /// </summary>
-        public string UserCurrencyCulture { get; set; }
 
         /// <summary>
         /// The location of the user, which is a combination of city, state (US Only), and country.

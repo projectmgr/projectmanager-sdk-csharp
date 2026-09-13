@@ -112,7 +112,7 @@ namespace ProjectManager.SDK.Models
         public UserRolePermissionDto ChangeOwnEmail { get; set; }
 
         /// <summary>
-        /// Use MCP server and AI integrations via OAuth
+        /// Access work from ChatGPT and Claude via OAuth
         /// </summary>
         public UserRolePermissionDto UseMcp { get; set; }
     }

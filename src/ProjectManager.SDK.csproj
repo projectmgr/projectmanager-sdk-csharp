@@ -10,26 +10,23 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 2026.161.148
+## Patch notes for 2026.162.255
 
-These patch notes summarize the changes from version 2026.160.203.
-
-Added 1 new endpoints:
-* Risk.CreateRisk
+These patch notes summarize the changes from version 2026.161.148.
 
 Changes to data models:
-* MeetingUpdateDto: Added new field `breakRecurrency`
-* NptUpdateDto: Added new field `breakRecurrency`
-* TaskUpdateDto: Added new field `breakRecurrency`
-
-Deprecated 1 old endpoints:
-* Risk.CreateProjectRisk
+* TaskOwnerDto: Added new field `name`
+* TaskOwnerDto: Added new field `shortName`
+* WorkSpaceUserInfoDto: Added new field `workSpacePricingType`
+* WorkSpaceUserInfoDto: Added new field `workSpaceHasScheduledChanges`
+* WorkSpaceUserInfoDto: Added new field `workspaceCurrencySymbol`
+* WorkSpaceUserInfoDto: Added new field `workspaceCurrency`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>2026.161.148</version>
+		<version>2026.162.255</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

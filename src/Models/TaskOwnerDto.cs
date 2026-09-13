@@ -41,6 +41,16 @@ namespace ProjectManager.SDK.Models
         public string Initials { get; set; }
 
         /// <summary>
+        /// Display name for this Resource.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Short display name for this Resource.
+        /// </summary>
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// The first name of the person Resource.
         ///
         /// Applies to personnel Resources only.

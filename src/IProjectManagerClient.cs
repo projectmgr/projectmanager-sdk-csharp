@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    2026.162.255
+ * @version    2026.163.302
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -212,6 +212,10 @@ namespace ProjectManager.SDK
         /// </summary>
         ITaskFileClient TaskFile { get; }
         /// <summary>
+        /// API methods related to TaskLink
+        /// </summary>
+        ITaskLinkClient TaskLink { get; }
+        /// <summary>
         /// API methods related to TaskMetadata
         /// </summary>
         ITaskMetadataClient TaskMetadata { get; }
@@ -243,6 +247,10 @@ namespace ProjectManager.SDK
         /// API methods related to UserRole
         /// </summary>
         IUserRoleClient UserRole { get; }
+        /// <summary>
+        /// API methods related to Workload
+        /// </summary>
+        IWorkloadClient Workload { get; }
         /// <summary>
         /// API methods related to WorkSpace
         /// </summary>

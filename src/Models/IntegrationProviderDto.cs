@@ -95,5 +95,11 @@ namespace ProjectManager.SDK.Models
         /// Flag whether user/workspace needs to be setup in Workato
         /// </summary>
         public bool? CreateInWorkato { get; set; }
+
+        /// <summary>
+        /// For Acumatica/MYOB: which cost types Receive Costs includes (Planned, Committed, Actual).
+        /// Null for other providers. Used so the UI can unlock Planned Cost when it is not synced.
+        /// </summary>
+        public string[] IncludeCosts { get; set; }
     }
 }

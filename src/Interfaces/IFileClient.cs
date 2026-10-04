@@ -42,7 +42,7 @@ namespace ProjectManager.SDK.Interfaces
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
-        /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
+        /// <param name="type">If you specify a type of `html`, processes the file using text encoding. A type of `inline` displays PDF files in the browser. Otherwise, returns a download.</param>
         Task<AstroResult<byte[]>> DownloadFile(Guid documentId, string type = null);
 
         /// <summary>

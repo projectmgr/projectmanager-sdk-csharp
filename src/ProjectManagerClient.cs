@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  ProjectManager.com, Inc.
- * @version    2026.162.255
+ * @version    2026.163.309
  * @link       https://github.com/projectmgr/projectmanager-sdk-csharp
  */
 
@@ -39,7 +39,7 @@ namespace ProjectManager.SDK
         /// <summary>
         /// The version of the SDK
         /// </summary>
-        public const string SdkVersion = "2026.162.255";
+        public const string SdkVersion = "2026.163.309";
         
         private readonly string _apiUrl;
         private readonly HttpClient _client;
@@ -285,6 +285,11 @@ namespace ProjectManager.SDK
         public ITaskFileClient TaskFile { get; }
 
         /// <summary>
+        /// API methods related to TaskLink
+        /// </summary>
+        public ITaskLinkClient TaskLink { get; }
+
+        /// <summary>
         /// API methods related to TaskMetadata
         /// </summary>
         public ITaskMetadataClient TaskMetadata { get; }
@@ -323,6 +328,11 @@ namespace ProjectManager.SDK
         /// API methods related to UserRole
         /// </summary>
         public IUserRoleClient UserRole { get; }
+
+        /// <summary>
+        /// API methods related to Workload
+        /// </summary>
+        public IWorkloadClient Workload { get; }
 
         /// <summary>
         /// API methods related to WorkSpace
@@ -402,6 +412,7 @@ namespace ProjectManager.SDK
             TaskAssignee = new TaskAssigneeClient(this);
             TaskField = new TaskFieldClient(this);
             TaskFile = new TaskFileClient(this);
+            TaskLink = new TaskLinkClient(this);
             TaskMetadata = new TaskMetadataClient(this);
             TaskRecurrency = new TaskRecurrencyClient(this);
             TaskStatus = new TaskStatusClient(this);
@@ -410,6 +421,7 @@ namespace ProjectManager.SDK
             Teams = new TeamsClient(this);
             Timesheet = new TimesheetClient(this);
             UserRole = new UserRoleClient(this);
+            Workload = new WorkloadClient(this);
             WorkSpace = new WorkSpaceClient(this);
                 
             // Configure JSON serializer options

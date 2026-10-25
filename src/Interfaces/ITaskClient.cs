@@ -90,10 +90,10 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ChangeSetStatusDto>> DeleteTask(Guid taskId);
 
         /// <summary>
-        /// Fetch the first level child tasks from the task
+        /// Fetch the first level child tasks from the task.
         /// </summary>
         /// <param name="taskId">Parent task id</param>
-        Task<AstroResult<TaskDto[]>> FetchTheFirstLevelChildTasksFromTheTask(Guid taskId);
+        Task<AstroResult<TaskDto[]>> RetrieveFirstLevelChildTasks(Guid taskId);
 
         /// <summary>
         /// Create a new Task within a specified project.
@@ -150,11 +150,34 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<ChangeSetStatusDto>> RemoveParentTask(Guid taskId);
 
         /// <summary>
+        /// Sets the approval status of an existing Task to either `Approved` or `Denied`.
+        ///
+        /// Approval status is only supported for project Tasks. Non-project tasks (NPTs) and
+        /// non-task task types do not support approval and will return a validation error.
+        ///
+        /// This operation is processed as a Changeset to ensure sequential application and
+        /// concurrency safety.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task to update</param>
+        /// <param name="body">The approval status update payload indicating whether the Task is approved or denied.</param>
+        Task<AstroResult<ChangeSetStatusDto>> UpdateApprovalStatus(Guid taskId, TaskApprovalStatusUpdateDto body);
+
+        /// <summary>
+        /// Marks the specified Task as having been &#39;read&#39; by the current user.
+        ///
         /// Updates the task user read record (last viewed) for the authenticated user. Use this
         /// when the UI only needs to mark file/discussion read state
         /// without loading full task details.
         /// </summary>
         /// <param name="taskId">Task unique identifier</param>
-        Task<AstroResult<string>> MarkTaskAsReadForTheCurrentUser(Guid taskId);
+        Task<AstroResult<string>> MarkTaskRead(Guid taskId);
+
+        /// <summary>
+        /// Returns a summary of planned allocations and logged timesheet minutes for the specified task,
+        /// grouped by resource. Use this when the client needs time rollups without loading individual
+        /// timesheet entries.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the task</param>
+        Task<AstroResult<TaskTimeSummaryDto>> RetrieveTaskTimeAllocations(Guid taskId);
     }
 }

@@ -51,9 +51,11 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Returns a list of project permissions the user is a member of
+        /// Returns a list of projects where the currently authenticated user is a member.
+        ///
+        /// The information returned by this API indicates the project&#39;s ID and the current user&#39;s role.
         /// </summary>
-        public async Task<AstroResult<ProjectAccessDto[]>> RetrieveProjectsTheUserIsAMemberOf()
+        public async Task<AstroResult<ProjectAccessDto[]>> RetrieveProjectsByUser()
         {
             var url = $"/api/data/projects/membership";
             return await _client.Request<ProjectAccessDto[]>(HttpMethod.Get, url, null);
@@ -105,7 +107,7 @@ namespace ProjectManager.SDK.Clients
         /// <param name="projectId">Reference to Project</param>
         /// <param name="userId">Reference to User</param>
         /// <param name="body">The permission to set. The role is optional.</param>
-        public async Task<AstroResult<ProjectMemberDto>> CreateOrUpdateUserProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
+        public async Task<AstroResult<ProjectMemberDto>> CreateOrUpdateProjectMembership(Guid projectId, Guid userId, ProjectMemberRoleDto body)
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.RequestWithBody<ProjectMemberDto>(HttpMethod.Put, url, null, body);
@@ -123,6 +125,27 @@ namespace ProjectManager.SDK.Clients
         {
             var url = $"/api/data/projects/{projectId}/members/{userId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
+        }
+
+        /// <summary>
+        /// Adds all active people on a business team to a project.
+        ///
+        /// Resolves the team to its member resources, grants project access to each user who is not already a member,
+        /// and leaves existing members unchanged. Access levels follow the same rules as creating or updating
+        /// individual project membership (workspace role constraints, guest vs licensed user, global admin, etc.).
+        ///
+        /// A project member is a user who has access to a specific project.
+        /// Project members are assigned a project security role, which controls the level of access they have to
+        /// the project.
+        /// Possible project security roles include manage, edit, collaborate, creator, and guest.
+        /// </summary>
+        /// <param name="projectId">Reference to the project receiving access.</param>
+        /// <param name="teamId">Business team identifier (`BusinessTeamId`); all active team members with a user account are considered.</param>
+        /// <param name="body">Optional flags for default access (e.g. editor vs collaborator) for newly added members.</param>
+        public async Task<AstroResult<ProjectMemberDto>> AddTeamToProject(Guid projectId, Guid teamId, AddProjectTeamMembersRequestDto body)
+        {
+            var url = $"/api/data/projects/{projectId}/teams/{teamId}/members";
+            return await _client.RequestWithBody<ProjectMemberDto>(HttpMethod.Post, url, null, body);
         }
     }
 }

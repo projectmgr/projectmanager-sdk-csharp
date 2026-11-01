@@ -10,23 +10,54 @@
         <PackageTags>projectmanager project management task tracking projects tasks</PackageTags>
         <Copyright>Copyright 2023 - 2026</Copyright>
         <PackageReleaseNotes>
-## Patch notes for 2026.162.255
+## Patch notes for 2026.164.251
 
-These patch notes summarize the changes from version 2026.161.148.
+These patch notes summarize the changes from version 2026.162.255.
+
+Added 18 new endpoints:
+* Country.ListCountries
+* Country.GetStates
+* Holidays.ListHolidays
+* Holidays.CreateHolidays
+* Holidays.RetrieveHoliday
+* Holidays.UpdateHolidayName
+* Holidays.DeleteHoliday
+* Npt.GetNptTime
+* ProjectField.UpdateProjectFieldDefinition
+* ProjectField.UpdateProjectFieldOptions
+* ProjectMembers.AddTeamToProject
+* Task.UpdateApprovalStatus
+* Task.RetrieveTaskTimeAllocations
+* TaskLink.CreateTaskLink
+* TaskLink.UpdateTaskLink
+* TaskLink.DeleteTaskLink
+* TaskLink.RetrieveTaskLinks
+* Workload.QueryResourceWorkload
+
+Renamed 12 endpoints:
+* Renamed Changeset.RetrieveChangesetStatus to Changeset.RetrieveChangeset
+* Renamed Changeset.RetrieveCompletedChangesetStatus to Changeset.RetrieveCompletedChangeset
+* Renamed File.DownloadAThumbnailImage to File.DownloadThumbnailImage
+* Renamed NptDiscussion.LikeAComment to NptDiscussion.LikeNptComment
+* Renamed NptDiscussion.RemovesAThumbsupFromAComment to NptDiscussion.UnlikeNptComment
+* Renamed NptDiscussion.RemoveAComment to NptDiscussion.RemoveComment
+* Renamed NptFiles.UploadFileToNonProjectTasks to NptFiles.UploadNptFile
+* Renamed ProjectMembers.RetrieveProjectsTheUserIsAMemberOf to ProjectMembers.RetrieveProjectsByUser
+* Renamed ProjectMembers.CreateOrUpdateUserProjectMembership to ProjectMembers.CreateOrUpdateProjectMembership
+* Renamed Task.FetchTheFirstLevelChildTasksFromTheTask to Task.RetrieveFirstLevelChildTasks
+* Renamed Task.MarkTaskAsReadForTheCurrentUser to Task.MarkTaskRead
+* Renamed Teams.RetrieveZipFileForTeamsIntegrations to Teams.RetrieveIntegrationBundle
 
 Changes to data models:
-* TaskOwnerDto: Added new field `name`
-* TaskOwnerDto: Added new field `shortName`
-* WorkSpaceUserInfoDto: Added new field `workSpacePricingType`
-* WorkSpaceUserInfoDto: Added new field `workSpaceHasScheduledChanges`
-* WorkSpaceUserInfoDto: Added new field `workspaceCurrencySymbol`
-* WorkSpaceUserInfoDto: Added new field `workspaceCurrency`
+* IntegrationProviderDto: Added new field `includeCosts`
+* IntegrationProviderDto: Added new field `timeSyncDirection`
+* TimesheetAdminTypeDto: Added new field `providerShortId`
 
 
         </PackageReleaseNotes>
         <PackageIcon>docs/logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<version>2026.162.255</version>
+		<version>2026.164.251</version>
         <Authors>ProjectManager.com</Authors>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>

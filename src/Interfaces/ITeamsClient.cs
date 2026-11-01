@@ -28,11 +28,11 @@ namespace ProjectManager.SDK.Interfaces
     {
 
         /// <summary>
-        /// Retrieves zip file for teams integrations.
+        /// Retrieves the integration&#39;s bundle (a zip file) for teams integrations.
         ///
         /// The Teams API is intended for use by ProjectManager and its business development partners.  Please
         /// contact ProjectManager&#39;s sales team to request use of this API.
         /// </summary>
-        Task<AstroResult<byte[]>> RetrieveZipFileForTeamsIntegrations();
+        Task<AstroResult<byte[]>> RetrieveIntegrationBundle();
     }
 }

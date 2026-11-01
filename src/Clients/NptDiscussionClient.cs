@@ -65,10 +65,13 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Puts a thumbsup on a comment
+        /// Puts a thumbsup on a comment on a non-project task.
+        ///
+        /// Comments may have reactions, specifically thumbsup reactions, associated with them.  You can add a thumbs-up to
+        /// a comment by calling this API.  You can remove the thumbs-up by calling UnlikeNptComment
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        public async Task<AstroResult<string>> LikeAComment(Guid commentId)
+        public async Task<AstroResult<string>> LikeNptComment(Guid commentId)
         {
             var url = $"/api/data/non-project-tasks/comments/{commentId}/like";
             return await _client.Request<string>(HttpMethod.Post, url, null);
@@ -78,7 +81,7 @@ namespace ProjectManager.SDK.Clients
         /// Unlike a comment that was previously liked
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        public async Task<AstroResult<string>> RemovesAThumbsupFromAComment(Guid commentId)
+        public async Task<AstroResult<string>> UnlikeNptComment(Guid commentId)
         {
             var url = $"/api/data/non-project-tasks/comments/{commentId}/like";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
@@ -88,7 +91,7 @@ namespace ProjectManager.SDK.Clients
         /// Removes a comment by it&#39;s id
         /// </summary>
         /// <param name="commentId">Remove a comment</param>
-        public async Task<AstroResult<string>> RemoveAComment(Guid commentId)
+        public async Task<AstroResult<string>> RemoveComment(Guid commentId)
         {
             var url = $"/api/data/non-project-tasks/comments/{commentId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);

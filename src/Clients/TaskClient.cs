@@ -123,10 +123,10 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
-        /// Fetch the first level child tasks from the task
+        /// Fetch the first level child tasks from the task.
         /// </summary>
         /// <param name="taskId">Parent task id</param>
-        public async Task<AstroResult<TaskDto[]>> FetchTheFirstLevelChildTasksFromTheTask(Guid taskId)
+        public async Task<AstroResult<TaskDto[]>> RetrieveFirstLevelChildTasks(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/subtasks";
             return await _client.Request<TaskDto[]>(HttpMethod.Get, url, null);
@@ -211,15 +211,46 @@ namespace ProjectManager.SDK.Clients
         }
 
         /// <summary>
+        /// Sets the approval status of an existing Task to either `Approved` or `Denied`.
+        ///
+        /// Approval status is only supported for project Tasks. Non-project tasks (NPTs) and
+        /// non-task task types do not support approval and will return a validation error.
+        ///
+        /// This operation is processed as a Changeset to ensure sequential application and
+        /// concurrency safety.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the Task to update</param>
+        /// <param name="body">The approval status update payload indicating whether the Task is approved or denied.</param>
+        public async Task<AstroResult<ChangeSetStatusDto>> UpdateApprovalStatus(Guid taskId, TaskApprovalStatusUpdateDto body)
+        {
+            var url = $"/api/data/tasks/{taskId}/approval-status";
+            return await _client.RequestWithBody<ChangeSetStatusDto>(HttpMethod.Put, url, null, body);
+        }
+
+        /// <summary>
+        /// Marks the specified Task as having been &#39;read&#39; by the current user.
+        ///
         /// Updates the task user read record (last viewed) for the authenticated user. Use this
         /// when the UI only needs to mark file/discussion read state
         /// without loading full task details.
         /// </summary>
         /// <param name="taskId">Task unique identifier</param>
-        public async Task<AstroResult<string>> MarkTaskAsReadForTheCurrentUser(Guid taskId)
+        public async Task<AstroResult<string>> MarkTaskRead(Guid taskId)
         {
             var url = $"/api/data/tasks/{taskId}/mark-read";
             return await _client.Request<string>(HttpMethod.Post, url, null);
+        }
+
+        /// <summary>
+        /// Returns a summary of planned allocations and logged timesheet minutes for the specified task,
+        /// grouped by resource. Use this when the client needs time rollups without loading individual
+        /// timesheet entries.
+        /// </summary>
+        /// <param name="taskId">The unique identifier of the task</param>
+        public async Task<AstroResult<TaskTimeSummaryDto>> RetrieveTaskTimeAllocations(Guid taskId)
+        {
+            var url = $"/api/data/task/{taskId}/time";
+            return await _client.Request<TaskTimeSummaryDto>(HttpMethod.Get, url, null);
         }
     }
 }

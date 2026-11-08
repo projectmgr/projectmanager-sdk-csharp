@@ -42,14 +42,14 @@ namespace ProjectManager.SDK.Models
         public string Type { get; set; }
 
         /// <summary>
-        /// Start of the holiday date span (metadata).
+        /// Start of the holiday date span (year-month-day only; no time zone).
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>
         public string DateFrom { get; set; }
 
         /// <summary>
-        /// End of the holiday date span (metadata).
+        /// End of the holiday date span (year-month-day only; no time zone).
         ///
         /// This is a date-only field stored as a string in ISO 8601 (YYYY-MM-DD) format.
         /// </summary>

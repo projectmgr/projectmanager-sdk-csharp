@@ -60,6 +60,20 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<string>> DeleteProjectField(string fieldId);
 
         /// <summary>
+        /// Updates the definition of a ProjectField within your Workspace, such as renaming the field.
+        /// This changes the field metadata for the entire Workspace, not the value stored for any project.
+        /// To change a field&#39;s value for a specific project, use UpdateProjectFieldValue instead.
+        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
+        /// </summary>
+        /// <param name="fieldId">The unique identifier or short ID of the ProjectField to update</param>
+        /// <param name="body">The new definition (e.g. name) for this ProjectField</param>
+        Task<AstroResult<string>> UpdateProjectFieldDefinition(string fieldId, UpdateProjectFieldDto body);
+
+        /// <summary>
         /// Sets or replaces the value of a ProjectField for a specific Project within your Workspace.
         /// This updates the stored value (e.g. &quot;High&quot;, &quot;123&quot;, &quot;2025-01-15&quot;) for that project–field combination,
         /// not the field definition itself. Use UpdateProjectField or UpdateProjectFieldOptions to change
@@ -86,6 +100,21 @@ namespace ProjectManager.SDK.Interfaces
         /// <param name="projectId">The unique identifier of the Project of the value to retrieve</param>
         /// <param name="fieldId">The unique identifier or short ID of the ProjectField of the value to retrieve</param>
         Task<AstroResult<ProjectFieldValueDto>> RetrieveProjectFieldValue(Guid projectId, string fieldId);
+
+        /// <summary>
+        /// Updates the list of options for a ProjectField of type Dropdown. This changes the field
+        /// definition for the entire Workspace (the choices available when editing any project),
+        /// not the value stored for any specific project. To change a field&#39;s value for a project,
+        /// use UpdateProjectFieldValue instead.
+        ///
+        /// A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+        /// for any integration purpose that is important to your business.  Each ProjectField has a data
+        /// type as well as options in how it is handled.  ProjectFields can be edited for each Project
+        /// within your Workspace.
+        /// </summary>
+        /// <param name="fieldId">The unique identifier or short ID of the ProjectField to update</param>
+        /// <param name="body">The new list of option strings (e.g. ["Option A", "Option B", "Option C"])</param>
+        Task<AstroResult<string>> UpdateProjectFieldOptions(string fieldId, string[] body);
 
         /// <summary>
         /// Retrieves all ProjectField values for a particular Project.

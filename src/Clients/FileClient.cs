@@ -53,7 +53,7 @@ namespace ProjectManager.SDK.Clients
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document to download</param>
-        /// <param name="type">If you specify a type of `html`, processes the file using text encoding, otherwise binary</param>
+        /// <param name="type">If you specify a type of `html`, processes the file using text encoding. A type of `inline` displays PDF files in the browser. Otherwise, returns a download.</param>
         public async Task<AstroResult<byte[]>> DownloadFile(Guid documentId, string type = null)
         {
             var url = $"/api/data/files/{documentId}/download";
@@ -76,7 +76,7 @@ namespace ProjectManager.SDK.Clients
         /// occurs, you will receive a JSON result with error information.
         /// </summary>
         /// <param name="documentId">The unique identifier of the document for which to download the thumbnail.</param>
-        public async Task<AstroResult<byte[]>> DownloadAThumbnailImage(Guid documentId)
+        public async Task<AstroResult<byte[]>> DownloadThumbnailImage(Guid documentId)
         {
             var url = $"/api/data/files/{documentId}/thumbnail";
             return await _client.Request<byte[]>(HttpMethod.Get, url, null);

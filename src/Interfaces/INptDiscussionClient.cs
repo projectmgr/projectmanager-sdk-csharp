@@ -46,21 +46,24 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<DiscussionCommentCreateResponseDto>> CreateNptComments(Guid nptId, DiscussionCommentCreateDto body);
 
         /// <summary>
-        /// Puts a thumbsup on a comment
+        /// Puts a thumbsup on a comment on a non-project task.
+        ///
+        /// Comments may have reactions, specifically thumbsup reactions, associated with them.  You can add a thumbs-up to
+        /// a comment by calling this API.  You can remove the thumbs-up by calling UnlikeNptComment
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        Task<AstroResult<string>> LikeAComment(Guid commentId);
+        Task<AstroResult<string>> LikeNptComment(Guid commentId);
 
         /// <summary>
         /// Unlike a comment that was previously liked
         /// </summary>
         /// <param name="commentId">the id of the comment</param>
-        Task<AstroResult<string>> RemovesAThumbsupFromAComment(Guid commentId);
+        Task<AstroResult<string>> UnlikeNptComment(Guid commentId);
 
         /// <summary>
         /// Removes a comment by it&#39;s id
         /// </summary>
         /// <param name="commentId">Remove a comment</param>
-        Task<AstroResult<string>> RemoveAComment(Guid commentId);
+        Task<AstroResult<string>> RemoveComment(Guid commentId);
     }
 }

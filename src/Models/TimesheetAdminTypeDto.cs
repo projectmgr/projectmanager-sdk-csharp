@@ -35,5 +35,10 @@ namespace ProjectManager.SDK.Models
         /// admin task name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The integration that created this admin task for its non-project time, such as acumatica
+        /// </summary>
+        public string ProviderShortId { get; set; }
     }
 }

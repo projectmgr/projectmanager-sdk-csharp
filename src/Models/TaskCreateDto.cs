@@ -88,7 +88,7 @@ namespace ProjectManager.SDK.Models
         public int? PlannedEffort { get; set; }
 
         /// <summary>
-        /// The planned cost for this Task.  Cannot be negative.
+        /// The planned cost for this Task.  Cannot be negative or more than 90,000,000,000,000.
         /// </summary>
         public decimal? PlannedCost { get; set; }
 
@@ -100,7 +100,7 @@ namespace ProjectManager.SDK.Models
         public string ActualStartDate { get; set; }
 
         /// <summary>
-        /// The actual cost of this Task to date, if known.
+        /// The actual cost of this Task to date, if known.  Cannot be negative or more than 90,000,000,000,000.
         /// </summary>
         public decimal? ActualCost { get; set; }
 

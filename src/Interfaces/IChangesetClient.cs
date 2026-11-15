@@ -41,7 +41,7 @@ namespace ProjectManager.SDK.Interfaces
         /// finished processing.
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangesetStatus(Guid changeSetId);
+        Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangeset(Guid changeSetId);
 
         /// <summary>
         /// Retrieve a Changeset by its unique ID. This endpoint waits for the Changeset to complete its
@@ -52,8 +52,8 @@ namespace ProjectManager.SDK.Interfaces
         /// a Changeset causes a conflict or cannot be applied, it will be rejected.  You can examine a
         /// Changeset to determine its conflict resolution status.
         ///
-        /// When checking the status of a Changeset, you can call either RetrieveChangeset or
-        /// RetrieveCompletedChangeset.  Using RetrieveChangeset will give you the immediate status of the
+        /// When checking the status of a Changeset, you can call either `RetrieveChangeset` or
+        /// `RetrieveCompletedChangeset`.  Using RetrieveChangeset will give you the immediate status of the
         /// Changeset.  Using RetrieveCompletedChangeset will delay the response until the Changeset has
         /// finished processing.
         ///
@@ -63,6 +63,6 @@ namespace ProjectManager.SDK.Interfaces
         /// still being processed.
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangesetStatus(Guid changeSetId);
+        Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangeset(Guid changeSetId);
     }
 }

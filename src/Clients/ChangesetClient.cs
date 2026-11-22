@@ -52,7 +52,7 @@ namespace ProjectManager.SDK.Clients
         /// finished processing.
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangesetStatus(Guid changeSetId)
+        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveChangeset(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}";
             return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null);
@@ -67,8 +67,8 @@ namespace ProjectManager.SDK.Clients
         /// a Changeset causes a conflict or cannot be applied, it will be rejected.  You can examine a
         /// Changeset to determine its conflict resolution status.
         ///
-        /// When checking the status of a Changeset, you can call either RetrieveChangeset or
-        /// RetrieveCompletedChangeset.  Using RetrieveChangeset will give you the immediate status of the
+        /// When checking the status of a Changeset, you can call either `RetrieveChangeset` or
+        /// `RetrieveCompletedChangeset`.  Using RetrieveChangeset will give you the immediate status of the
         /// Changeset.  Using RetrieveCompletedChangeset will delay the response until the Changeset has
         /// finished processing.
         ///
@@ -78,7 +78,7 @@ namespace ProjectManager.SDK.Clients
         /// still being processed.
         /// </summary>
         /// <param name="changeSetId">The unique ID number of the Changeset to retrieve</param>
-        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangesetStatus(Guid changeSetId)
+        public async Task<AstroResult<ProjectChangeStatusDto>> RetrieveCompletedChangeset(Guid changeSetId)
         {
             var url = $"/api/data/changesets/{changeSetId}/poll";
             return await _client.Request<ProjectChangeStatusDto>(HttpMethod.Get, url, null);

@@ -54,14 +54,20 @@ namespace ProjectManager.SDK.Clients
         /// <param name="taskId">The reference to the task</param>
         /// <param name="fileName">The full path of a file to upload to the API</param>
         /// <param name="fileBytes">The contents of the file to upload as a `byte[]` array</param>
-        public async Task<AstroResult<FileDto>> UploadFileToNonProjectTasks(Guid taskId, string fileName, byte[] fileBytes)
+        public async Task<AstroResult<FileDto>> UploadNptFile(Guid taskId, string fileName, byte[] fileBytes)
         {
             var url = $"/api/data/non-project-tasks/{taskId}/files";
             return await _client.RequestWithFile<FileDto>(HttpMethod.Post, url, null, fileBytes, fileName);
         }
 
         /// <summary>
-        /// retrieves Npt files
+        /// ProjectManager allows you to store Files connected to other elements of your Workspace
+        /// such as a Project, a Task, or Home.  Files are maintained separately based on the location
+        /// where the file was stored.
+        ///
+        /// When you upload a File, please allow a few moments for the File to be processed and verified.
+        /// ProjectManager may reject File uploads that contain problems such as malware. Once a File has
+        /// completed the upload the process, you may retrieve it using the DownloadFile API.    ///
         /// </summary>
         /// <param name="taskId">The reference to the Npt</param>
         public async Task<AstroResult<TaskFileDto[]>> GetNptFiles(Guid taskId)

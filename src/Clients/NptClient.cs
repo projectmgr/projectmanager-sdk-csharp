@@ -111,5 +111,21 @@ namespace ProjectManager.SDK.Clients
             var url = $"/api/data/non-project-tasks/{nptId}";
             return await _client.Request<string>(HttpMethod.Delete, url, null);
         }
+
+        /// <summary>
+        /// Retrieve allocations and actual timesheet minutes for a non-project task, grouped by resource.
+        ///
+        /// Returns a summary of planned allocations and logged timesheet minutes for the specified NPT,
+        /// grouped by resource. Use this when the client needs time rollups without loading individual
+        /// timesheet entries. The root `totalActualMinutes` is at least the task&#39;s stored actual work
+        /// (minutes) and the merged timesheet total. `hasTimeEntries` is true only when merged timesheet
+        /// rows exist, not when actual work was set without timesheets (e.g. import).
+        /// </summary>
+        /// <param name="nptId">The unique identifier of the non-project task</param>
+        public async Task<AstroResult<TaskTimeSummaryDto>> GetNptTime(Guid nptId)
+        {
+            var url = $"/api/data/non-project-tasks/{nptId}/time";
+            return await _client.Request<TaskTimeSummaryDto>(HttpMethod.Get, url, null);
+        }
     }
 }

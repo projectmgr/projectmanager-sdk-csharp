@@ -41,7 +41,7 @@ namespace ProjectManager.SDK.Interfaces
         Task<AstroResult<TaskTodoDto>> CreateTodo(Guid taskId, TaskTodoCreateDto body);
 
         /// <summary>
-        /// Update a todo for a task
+        /// Update a todo for a task. Collaborators can only mark a todo complete or incomplete.
         /// </summary>
         /// <param name="todoId">the id of the todo</param>
         /// <param name="body">the data for updating a todo</param>
